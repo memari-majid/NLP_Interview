@@ -8,6 +8,7 @@
 - **Full Topic Map (Hyperlinked)**
 - **Review Plans: 7-Day and 14-Day**
 - **Phone Interview Memorization Plan**
+- **Anki Integration (Spaced Repetition)**
 - **Company-Specific Focus**
 - **Common Interview Traps**
 - **Checklist and Quick Commands**
@@ -108,6 +109,22 @@ How to use each day:
 ## ☎️ Phone Interview Memorization Plan
 Use the dedicated phone screen plan for fast recall, one‑minute scripts, and spaced repetition:
 - See: [PHONE_INTERVIEW_STUDY_PLAN.md](PHONE_INTERVIEW_STUDY_PLAN.md)
+
+## 🧠 Anki Integration (Spaced Repetition)
+**Automatically convert all problems/solutions to Anki flashcards!**
+
+- **30+ cards** auto-generated from this repo
+- **3 card types**: Implementation, Concepts, Complexity
+- **Syncs with GitHub** via CrowdAnki
+- **Mobile-friendly** for practice anywhere
+
+Quick setup:
+```bash
+python convert_to_anki.py  # Generate deck
+# Then import in Anki via CrowdAnki addon
+```
+
+Full guide: [ANKI_SETUP.md](ANKI_SETUP.md)
 
 ## 🏢 Company-Specific Questions
 

@@ -128,3 +128,6 @@ data/processed/
 # Documentation build
 docs/_build/
 site/
+
+# Anki deck (generated)
+anki_deck/
