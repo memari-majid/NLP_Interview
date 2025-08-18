@@ -1,6 +1,12 @@
 # NLP Interview Question Bank — Comprehensive Resource
 
-**The most efficient NLP interview preparation system**: 27 topics, 123+ Anki cards, company-specific guides, and solution patterns.
+**The most complete NLP interview preparation system**: 27+ coding problems, 180+ flashcards (theory + practical), comprehensive knowledge base, company-specific guides, and solution patterns.
+
+## 🆕 Now with Comprehensive Coverage
+- **180+ Flashcards**: Theory concepts + practical implementations
+- **Integrated NLP Cheat Sheet**: Code snippets, formulas, and examples
+- **Knowledge Base**: Libraries, models, datasets, metrics all documented
+- **Quick Reference Cards**: Instant access to key information
 
 ## 🚀 Quick Start Paths
 
@@ -22,12 +28,28 @@
 
 ## 📚 Comprehensive Resources
 
+### Core Study Materials
+| Resource | Description | Best For |
+|----------|-------------|----------|
+| [Comprehensive Study Guide](docs/comprehensive_nlp_study_guide.md) | 6-week structured learning path | Complete preparation |
+| [NLP Knowledge Base](data/comprehensive_nlp_knowledge_base.json) | All concepts, formulas, patterns | Reference during study |
+| [Theory Flashcards](data/nlp_theory_flashcards.json) | 60+ conceptual questions | Understanding fundamentals |
+| [Practical Flashcards](data/nlp_practical_flashcards.json) | 21+ implementation examples | Coding interviews |
+
+### Interview Guides
 | Resource | Description | Best For |
 |----------|-------------|----------|
 | [Question Bank Index](docs/interview-guides/QUESTION_BANK_INDEX.md) | All problems by difficulty, company, topic | Finding specific problems |
 | [Company Guide](docs/interview-guides/COMPANY_SPECIFIC_GUIDE.md) | What each company asks, prep strategies | Targeted preparation |
 | [Solution Patterns](docs/interview-guides/SOLUTION_PATTERNS.md) | 10 reusable templates for NLP problems | Efficient problem-solving |
-| [Quick Reference](docs/interview-guides/INTERVIEW_QUICK_REFERENCE.md) | Key formulas and talking points | Last-minute review |
+| [Quick Reference](docs/nlp_quick_reference.md) | Code snippets and formulas | During coding interviews |
+
+### Learning Tools
+| Tool | Description | Usage |
+|------|-------------|-------|
+| [Problem Finder](scripts/problem_finder.py) | Interactive problem navigation | `python scripts/problem_finder.py` |
+| [Theory Anki Generator](scripts/convert_theory_to_anki.py) | Create theory flashcard deck | `python scripts/convert_theory_to_anki.py` |
+| [Practical Anki Generator](scripts/convert_to_anki_optimized.py) | Create coding flashcard deck | `python scripts/convert_to_anki_optimized.py` |
 
 ## Table of Contents
 - **Vision**
@@ -43,11 +65,14 @@
 
 ## Vision
 The most comprehensive and efficient NLP interview preparation system:
-- **27 Topics** covering classical NLP to modern LLMs
+- **27+ Coding Problems** covering classical NLP to modern LLMs
+- **180+ Flashcards**: Theory concepts and practical implementations
+- **Integrated Knowledge Base**: Libraries, models, datasets, formulas
 - **Multiple Access Patterns**: By difficulty, company, topic, or time
 - **Efficient Learning**: Solution patterns, Anki cards, memory techniques
 - **Company-Specific**: Tailored guides for FAANG+ companies
 - **Interview-Ready**: Heavily commented solutions with follow-ups
+- **Complete Coverage**: From tokenization basics to LLM alignment
 
 ### 📊 Repository Statistics
 - **Total Problems**: 27 core problems + variations
