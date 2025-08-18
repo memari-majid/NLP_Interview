@@ -1,56 +1,18 @@
 # 🎯 NLP Interview Preparation Hub
 
-> **Complete NLP interview preparation system** with 27+ coding problems, 180+ flashcards, and structured learning paths for FAANG+ companies.
+> **Complete NLP interview preparation system** with 27+ coding problems and structured learning paths for FAANG+ companies.
 
 ---
 
-## ⚡ Quick Start (Choose Your Path)
+## ⚡ Quick Start
 
 ### 🚀 "I have an interview in..."
 
-<table>
-<tr>
-<td width="33%">
-
-**📅 1 Week**
-```bash
-# Focus on top 10 problems
-python scripts/problem_finder.py
-
-# Generate flashcards
-python scripts/convert_theory_to_anki.py
-```
-📖 [7-Day Plan](#-7-day-crash-course)
-
-</td>
-<td width="33%">
-
-**📅 2 Weeks**
-```bash
-# Full problem set
-python scripts/problem_finder.py
-
-# Study patterns
-open docs/interview-guides/SOLUTION_PATTERNS.md
-```
-📖 [14-Day Plan](#-14-day-comprehensive)
-
-</td>
-<td width="33%">
-
-**📅 1 Month**
-```bash
-# Complete mastery
-python scripts/create_comprehensive_nlp_kb.py
-
-# All materials
-open MASTER_INDEX.md
-```
-📖 [Complete Guide](#-complete-study-guide)
-
-</td>
-</tr>
-</table>
+| Timeline | Focus | Study Plan |
+|----------|-------|------------|
+| **1 Week** | Top 10 problems + Core concepts | [7-Day Plan](#-7-day-crash-course) |
+| **2 Weeks** | Full problem set + Patterns | [14-Day Plan](#-14-day-comprehensive) |
+| **1 Month** | Complete mastery + Deep understanding | [Complete Guide](#-complete-study-guide) |
 
 ### 🏢 "I'm interviewing at..."
 
@@ -75,7 +37,7 @@ open MASTER_INDEX.md
 - Fundamentals to LLMs
 - Mathematical formulas
 - Architecture comparisons
-- [View Flashcards](data/nlp_theory_flashcards.json)
+- Complete coverage
 
 </td>
 <td>
@@ -99,16 +61,12 @@ open MASTER_INDEX.md
 </tr>
 </table>
 
-### 📊 Coverage Stats
+### 📊 Coverage
 
-```
-├── 📝 Problems: 27 (7 Easy • 9 Medium • 11 Hard)
-├── 🎴 Flashcards: 180+ (Theory + Practical)
-├── 🏢 Companies: 10+ guides
-├── 📖 Study Plans: 6 structured paths
-├── 🔧 Tools: 5 Python scripts
-└── 📚 Knowledge Base: Complete NLP coverage
-```
+- **Problems**: 27 (7 Easy • 9 Medium • 11 Hard)
+- **Topics**: Classical NLP to Modern LLMs
+- **Companies**: 10+ interview guides
+- **Study Plans**: 6 structured paths
 
 ---
 
@@ -388,44 +346,14 @@ Key Questions:
 
 ---
 
-## 🧠 Learning Tools
-
-### 🎴 Flashcard Systems
-
-Generate Anki decks for spaced repetition:
-
-```bash
-# Theory concepts (60+ cards)
-python scripts/convert_theory_to_anki.py
-
-# Practical implementations (21+ cards)
-python scripts/convert_to_anki_optimized.py
-
-# Import to Anki
-# File -> Import -> Select generated CSV
-```
-
-### 🔍 Interactive Tools
-
-```bash
-# Find problems by difficulty/topic/company
-python scripts/problem_finder.py
-
-# Build comprehensive knowledge base
-python scripts/create_comprehensive_nlp_kb.py
-
-# Extract cheatsheet content
-python scripts/extract_cheatsheet_content.py
-```
-
-### 📋 Quick References
+## 📋 Quick References
 
 | Resource | Description | When to Use |
 |----------|-------------|-------------|
 | [Quick Reference](docs/nlp_quick_reference.md) | Code snippets | During coding |
-| [Knowledge Base](data/comprehensive_nlp_knowledge_base.json) | All concepts | Study sessions |
 | [Solution Patterns](docs/interview-guides/SOLUTION_PATTERNS.md) | Templates | Problem solving |
 | [Company Guide](docs/interview-guides/COMPANY_SPECIFIC_GUIDE.md) | Focus areas | Before interviews |
+| [Question Bank](docs/interview-guides/QUESTION_BANK_INDEX.md) | All problems indexed | Planning study |
 
 ---
 
@@ -478,40 +406,26 @@ python scripts/extract_cheatsheet_content.py
 
 ---
 
-## 🚀 Quick Commands
+## 🚀 Getting Started
 
 ```bash
-# Setup environment
+# Clone repository
 git clone https://github.com/yourusername/NLP_Interview.git
 cd NLP_Interview
-pip install -r requirements.txt
 
-# Start learning
-python scripts/problem_finder.py  # Interactive problem selection
-
-# Practice top problems
+# Run any solution directly (they include test cases)
 python NLP/TFIDF/tfidf_solution.py
 python NLP/Attention_Mechanisms/self_attention_solution.py
 python NLP/Text_Classification/text_classification_solution.py
-
-# Generate study materials
-python scripts/convert_theory_to_anki.py  # Create flashcards
-python scripts/create_comprehensive_nlp_kb.py  # Build knowledge base
 ```
 
 ---
 
 ## 📊 Repository Stats
 
-```
-Last Updated: 2024
-Problems: 27 (with solutions)
-Flashcards: 180+
-Study Plans: 6
-Company Guides: 10+
-Code Snippets: 30+
-Success Rate: 89% offer rate among users
-```
+- **Problems**: 27 complete implementations with solutions
+- **Study Materials**: Theory guides, practice problems, company-specific prep
+- **Last Updated**: 2024
 
 ---
 
@@ -519,7 +433,6 @@ Success Rate: 89% offer rate among users
 
 Found an error? Want to add a problem? PRs welcome!
 - Add problems to `NLP/` following existing structure
-- Update `scripts/problem_finder.py` with metadata
 - Include test cases in solutions
 
 ---
