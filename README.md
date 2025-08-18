@@ -109,6 +109,7 @@ How to use each day:
 ## ☎️ Phone Interview Memorization Plan
 Use the dedicated phone screen plan for fast recall, one‑minute scripts, and spaced repetition:
 - See: [PHONE_INTERVIEW_STUDY_PLAN.md](PHONE_INTERVIEW_STUDY_PLAN.md)
+- Creative memory techniques: [NLP_MEMORY_PALACE.md](NLP_MEMORY_PALACE.md)
 
 ## 🧠 Anki Integration (Spaced Repetition)
 **Automatically convert all problems/solutions to Anki flashcards!**
