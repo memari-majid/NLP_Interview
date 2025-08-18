@@ -1,33 +1,33 @@
 # NLP Interview Question Bank — Comprehensive Resource
 
-**The most efficient NLP interview preparation system**: 26 topics, 117+ Anki cards, company-specific guides, and solution patterns.
+**The most efficient NLP interview preparation system**: 27 topics, 123+ Anki cards, company-specific guides, and solution patterns.
 
 ## 🚀 Quick Start Paths
 
 ### By Time Available
-- **1 Week**: [Top 10 Problems](#top-10-must-practice) + [Company Guide](COMPANY_SPECIFIC_GUIDE.md)
-- **2 Weeks**: [Full Practice Plan](#review-plans) + [Solution Patterns](SOLUTION_PATTERNS.md)
+- **1 Week**: [Top 10 Problems](#top-10-must-practice) + [Company Guide](docs/interview-guides/COMPANY_SPECIFIC_GUIDE.md)
+- **2 Weeks**: [Full Practice Plan](#review-plans) + [Solution Patterns](docs/interview-guides/SOLUTION_PATTERNS.md)
 - **1 Month**: Complete all problems + [Anki Memorization](#anki-integration)
 
 ### By Target Company
-- **OpenAI/Anthropic**: [LLM Track](COMPANY_SPECIFIC_GUIDE.md#-openai--anthropic-llm-focus)
-- **Google**: [Search & Scale Track](COMPANY_SPECIFIC_GUIDE.md#-google-search--scale)
-- **Meta**: [Applied ML Track](COMPANY_SPECIFIC_GUIDE.md#-meta-social--applied-ml)
-- **Amazon**: [Customer Focus Track](COMPANY_SPECIFIC_GUIDE.md#-amazon-product--customer-focus)
+- **OpenAI/Anthropic**: [LLM Track](docs/interview-guides/COMPANY_SPECIFIC_GUIDE.md#-openai--anthropic-llm-focus)
+- **Google**: [Search & Scale Track](docs/interview-guides/COMPANY_SPECIFIC_GUIDE.md#-google-search--scale)
+- **Meta**: [Applied ML Track](docs/interview-guides/COMPANY_SPECIFIC_GUIDE.md#-meta-social--applied-ml)
+- **Amazon**: [Customer Focus Track](docs/interview-guides/COMPANY_SPECIFIC_GUIDE.md#-amazon-product--customer-focus)
 
 ### By Learning Style
-- **Visual Learner**: [Memory Palace](NLP_MEMORY_PALACE.md)
+- **Visual Learner**: [Memory Palace](docs/study-plans/NLP_MEMORY_PALACE.md)
 - **Repetition-Based**: [Anki Decks](#anki-integration)
-- **Problem-Solver**: [Solution Patterns](SOLUTION_PATTERNS.md)
+- **Problem-Solver**: [Solution Patterns](docs/interview-guides/SOLUTION_PATTERNS.md)
 
 ## 📚 Comprehensive Resources
 
 | Resource | Description | Best For |
 |----------|-------------|----------|
-| [Question Bank Index](QUESTION_BANK_INDEX.md) | All problems by difficulty, company, topic | Finding specific problems |
-| [Company Guide](COMPANY_SPECIFIC_GUIDE.md) | What each company asks, prep strategies | Targeted preparation |
-| [Solution Patterns](SOLUTION_PATTERNS.md) | 10 reusable templates for NLP problems | Efficient problem-solving |
-| [Quick Reference](INTERVIEW_QUICK_REFERENCE.md) | Key formulas and talking points | Last-minute review |
+| [Question Bank Index](docs/interview-guides/QUESTION_BANK_INDEX.md) | All problems by difficulty, company, topic | Finding specific problems |
+| [Company Guide](docs/interview-guides/COMPANY_SPECIFIC_GUIDE.md) | What each company asks, prep strategies | Targeted preparation |
+| [Solution Patterns](docs/interview-guides/SOLUTION_PATTERNS.md) | 10 reusable templates for NLP problems | Efficient problem-solving |
+| [Quick Reference](docs/interview-guides/INTERVIEW_QUICK_REFERENCE.md) | Key formulas and talking points | Last-minute review |
 
 ## Table of Contents
 - **Vision**
@@ -43,16 +43,16 @@
 
 ## Vision
 The most comprehensive and efficient NLP interview preparation system:
-- **26 Topics** covering classical NLP to modern LLMs
+- **27 Topics** covering classical NLP to modern LLMs
 - **Multiple Access Patterns**: By difficulty, company, topic, or time
 - **Efficient Learning**: Solution patterns, Anki cards, memory techniques
 - **Company-Specific**: Tailored guides for FAANG+ companies
 - **Interview-Ready**: Heavily commented solutions with follow-ups
 
 ### 📊 Repository Statistics
-- **Total Problems**: 26 core problems + variations
+- **Total Problems**: 27 core problems + variations
 - **Difficulty Distribution**: 7 Easy (20min) • 9 Medium (30min) • 10 Hard (45min)
-- **Anki Cards**: 117+ bite-sized cards for memorization
+- **Anki Cards**: 123+ bite-sized cards for memorization
 - **Solution Patterns**: 10 reusable templates
 - **Company Coverage**: OpenAI, Google, Meta, Amazon, Microsoft, Apple
 - **Time to Master**: 1 week (top 10) • 2 weeks (comprehensive) • 1 month (expert)
@@ -145,31 +145,41 @@ How to use each day:
 
 ## ☎️ Phone Interview Memorization Plan
 Use the dedicated phone screen plan for fast recall, one‑minute scripts, and spaced repetition:
-- See: [PHONE_INTERVIEW_STUDY_PLAN.md](PHONE_INTERVIEW_STUDY_PLAN.md)
-- Creative memory techniques: [NLP_MEMORY_PALACE.md](NLP_MEMORY_PALACE.md)
+- See: [PHONE_INTERVIEW_STUDY_PLAN.md](docs/study-plans/PHONE_INTERVIEW_STUDY_PLAN.md)
+- Creative memory techniques: [NLP_MEMORY_PALACE.md](docs/study-plans/NLP_MEMORY_PALACE.md)
 
 ## 🧠 Anki Integration (Spaced Repetition)
 **Automatically convert all problems/solutions to Anki flashcards!**
 
-### Standard Deck (30+ cards)
-```bash
-python convert_to_anki.py  # Original converter
-```
+### Import Methods
 
-### 🎯 **Optimized Deck (117+ bite-sized cards)**
-```bash
-python convert_to_anki_optimized.py  # Better for memorization!
-```
+#### Option 1: Direct GitHub Import (Recommended)
+1. Install [CrowdAnki addon](https://ankiweb.net/shared/info/1788670778) in Anki
+2. In Anki: `Tools → CrowdAnki → Import from GitHub`
+3. Enter: `https://github.com/memari-majid/NLP_Interview`
+4. Click OK to import 123+ optimized cards
 
-**Features:**
+#### Option 2: Generate Locally
+```bash
+# Generate optimized deck (123+ cards)
+python scripts/convert_to_anki_optimized.py
+
+# Or generate standard deck (30+ cards)
+python scripts/convert_to_anki.py
+```
+Then in Anki: `Tools → CrowdAnki → Import from disk` → select `anki_deck_optimized/` folder
+
+### Features
 - **6 card types per problem**: Understanding, Implementation, Formulas, Complexity, Edge Cases, Insights
 - **Bite-sized chunks**: 5-15 lines per card (perfect for mobile)
 - **Mobile-optimized CSS**: Readable on any device
 - **Atomic concepts**: One idea per card for better retention
+- **GitHub-ready**: Direct import via CrowdAnki addon
 
 **Guides:**
-- Full setup: [ANKI_SETUP.md](ANKI_SETUP.md)
-- Best practices: [ANKI_BEST_PRACTICES.md](ANKI_BEST_PRACTICES.md)
+- Full setup: [ANKI_SETUP.md](docs/anki/ANKI_SETUP.md)
+- Best practices: [ANKI_BEST_PRACTICES.md](docs/anki/ANKI_BEST_PRACTICES.md)
+- Optimization guide: [ANKI_OPTIMIZATION_GUIDE.md](docs/anki/ANKI_OPTIMIZATION_GUIDE.md)
 - Example refactor: [Example_Anki_Refactor](NLP/Example_Anki_Refactor/)
 
 ## 🏢 Company-Specific Questions
@@ -234,7 +244,7 @@ Day of interview:
 
 ```bash
 # Interactive problem finder
-python problem_finder.py
+python scripts/problem_finder.py
 
 # Practice most important problems
 python NLP/TFIDF/tfidf_solution.py
@@ -244,7 +254,7 @@ python NLP/Tokenization/tokenization_solution.py
 python NLP/Embeddings/word2vec_solution.py
 
 # Generate Anki deck
-python convert_to_anki_optimized.py
+python scripts/convert_to_anki_optimized.py
 ```
 
 ## 📊 Success Metrics
@@ -262,7 +272,7 @@ Strong (2 weeks)
 - ✅ Ready for follow-ups
 
 Exceptional (1 month)
-- ✅ All 26 problems completed
+- ✅ All 27 problems completed
 - ✅ Can teach concepts to others
 - ✅ Up to date with LLM basics
 - ✅ Ready for senior interviews

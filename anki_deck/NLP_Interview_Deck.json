@@ -1,0 +1,1380 @@
+{
+  "__type__": "Deck",
+  "children": [
+    {
+      "__type__": "Deck",
+      "children": [],
+      "crowdanki_uuid": "nlp-subdeck-attention-mechanisms",
+      "deck_config_uuid": "nlp-deck-config-1",
+      "desc": "NLP Interview: Attention Mechanisms",
+      "dyn": 0,
+      "extendNew": 10,
+      "extendRev": 50,
+      "name": "NLP Interview Preparation::Attention Mechanisms",
+      "notes": [
+        {
+          "__type__": "Note",
+          "fields": [
+            "<b>Problem: Self-Attention from Scratch</b><br><br><b>Time: 25 minutes</b><br><br>Implement scaled dot-product self-attention mechanism.<br><br><pre><code>def self_attention(X: np.ndarray, d_k: int) -> np.ndarray:<br>    \"\"\"<br>    Implement self-attention mechanism.<br>    <br>    Args:<br>        X: Input matrix (seq_len, d_model)<br>        d_k: Key/Query dimension<br>        <br>    Returns:<br>        Attention output (seq_len, d_model)<br>        <br>    Steps:<br>        1. Create Q, K, V matrices from X<br>        2. Compute attention scores: QK^T / sqrt(d_k)<br>        3. Apply softmax to get attention weights<br>        4. Return weighted sum of values: Attention(Q,K,V) = softmax(QK^T/√d_k)V<br>    \"\"\"<br>    pass<br><br>def create_causal_mask(seq_len: int) -> np.ndarray:<br>    \"\"\"<br>    Create causal mask to prevent attending to future tokens.<br>    Return lower triangular matrix of ones.<br>    \"\"\"<br>    pass</code></pre><br><br><b>Requirements:</b><br>• Implement Q, K, V transformations using random weights<br>• Calculate attention scores with scaling<br>• Apply softmax row-wise<br>• Handle causal masking for autoregressive models<br><br><b>Follow-up:</b> How would you implement multi-head attention?",
+            "<pre><code>def softmax(x: np.ndarray, axis: int = -1) -> np.ndarray:\n    \"\"\"\n    Numerically stable softmax implementation.\n    \n    Why stable? Subtracting max prevents overflow when exponentiating large numbers.\n    This is critical for attention weights which can have large values.\n    \"\"\"\n    # Subtract maximum value for numerical stability\n    # This doesn't change the relative probabilities but prevents exp() overflow\n    x_max = np.max(x, axis=axis, keepdims=True)\n    exp_x = np.exp(x - x_max)\n    \n    # Normalize to get probabilities (sum to 1 along specified axis)\n    return exp_x / np.sum(exp_x, axis=axis, keepdims=True)</code></pre>",
+            "Attention Mechanisms",
+            "implementation"
+          ],
+          "guid": "nlp_3570374088732840",
+          "note_model_uuid": "nlp-model-basic",
+          "tags": [
+            "attention_mechanisms",
+            "nlp_interview",
+            "implementation"
+          ]
+        },
+        {
+          "__type__": "Note",
+          "fields": [
+            "<b>Problem: Self-Attention from Scratch</b><br>Time/Space Complexity?",
+            "Time complexity: O(n²d)",
+            "Attention Mechanisms",
+            "complexity"
+          ],
+          "guid": "nlp_718371256744811",
+          "note_model_uuid": "nlp-model-basic",
+          "tags": [
+            "attention_mechanisms",
+            "nlp_interview",
+            "complexity"
+          ]
+        }
+      ]
+    },
+    {
+      "__type__": "Deck",
+      "children": [],
+      "crowdanki_uuid": "nlp-subdeck-bow-vectors",
+      "deck_config_uuid": "nlp-deck-config-1",
+      "desc": "NLP Interview: BoW Vectors",
+      "dyn": 0,
+      "extendNew": 10,
+      "extendRev": 50,
+      "name": "NLP Interview Preparation::BoW Vectors",
+      "notes": [
+        {
+          "__type__": "Note",
+          "fields": [
+            "<b>Problem: Bag of Words from Scratch</b><br><br><b>Time: 20 minutes</b><br><br>Implement a basic bag-of-words vectorizer.<br><br><pre><code>def create_bow_vector(documents: List[str]) -> Tuple[List[str], List[List[int]]]:<br>    \"\"\"<br>    Create bag-of-words representation.<br>    <br>    Input: [\"I love NLP\", \"NLP is great\", \"I love programming\"]<br>    Output: <br>        vocabulary: [\"I\", \"love\", \"NLP\", \"is\", \"great\", \"programming\"]<br>        vectors: [[1,1,1,0,0,0], [0,0,1,1,1,0], [1,1,0,0,0,1]]<br>    <br>    Returns:<br>        (vocabulary, document_vectors)<br>    \"\"\"<br>    pass<br><br>def cosine_similarity(vec1: List[int], vec2: List[int]) -> float:<br>    \"\"\"<br>    Calculate cosine similarity between two BoW vectors.<br>    Return value between 0 and 1.<br>    \"\"\"<br>    pass</code></pre><br><br><b>Requirements:</b><br>• Build vocabulary from all documents<br>• Count word occurrences in each document<br>• Handle empty documents<br>• Implement cosine similarity for vector comparison<br><br><b>Follow-up:</b> How would you handle very large vocabularies efficiently?",
+            "<pre><code>def create_bow_vector(documents: List[str]) -> Tuple[List[str], List[List[int]]]:\n    \"\"\"\n    Create bag-of-words representation from scratch.\n    \n    BAG-OF-WORDS CONCEPT:\n    - Represent text as vector of word counts\n    - \"Order doesn't matter, just word presence/frequency\"\n    - Foundation of many NLP systems before embeddings\n    \n    STEPS:\n    1. Build vocabulary (all unique words)\n    2. For each document, count occurrences of each vocab word\n    3. Return vocabulary and count vectors\n    \n    INTERVIEW INSIGHT: Simple but effective. Foundation for TF-IDF.\n    \"\"\"\n    \n    # STEP 1: Handle edge case\n    if not documents:\n        return [], []\n    \n    # STEP 2: Build vocabulary from all documents\n    # We need consistent vocabulary across all documents for vector comparison\n    vocab_set = set()\n    \n    for doc in documents:\n        # Simple tokenization: lowercase and split on whitespace\n        # In interviews, mention this could be more sophisticated\n        words = doc.lower().split()\n        vocab_set.update(words)\n    \n    # STEP 3: Create ordered vocabulary\n    # Sorting ensures consistent feature ordering across runs\n    vocabulary = sorted(list(vocab_set))\n    \n    # Create word-to-index mapping for efficient lookup\n    word_to_idx = {word: i for i, word in enumerate(vocabulary)}\n    \n    # STEP 4: Convert each document to vector\n    vectors = []\n    \n    for doc in documents:\n        # Tokenize document\n        words = doc.lower().split()\n        \n        # Count word occurrences in this document\n        word_counts = Counter(words)\n        \n        # Create vector: count for each vocabulary word\n        # Index i contains count of vocabulary[i] in this document\n        vector = []\n        for word in vocabulary:\n            count = word_counts.get(word, 0)  # 0 if word not in document\n            vector.append(count)\n        \n        vectors.append(vector)\n    \n    return vocabulary, vectors</code></pre>",
+            "BoW Vectors",
+            "implementation"
+          ],
+          "guid": "nlp_777430072242625",
+          "note_model_uuid": "nlp-model-basic",
+          "tags": [
+            "bow_vectors",
+            "nlp_interview",
+            "implementation"
+          ]
+        },
+        {
+          "__type__": "Note",
+          "fields": [
+            "<b>Problem: Bag of Words from Scratch</b><br>Time/Space Complexity?",
+            "Time: O(d × n × v)",
+            "BoW Vectors",
+            "complexity"
+          ],
+          "guid": "nlp_1231339347132113",
+          "note_model_uuid": "nlp-model-basic",
+          "tags": [
+            "bow_vectors",
+            "nlp_interview",
+            "complexity"
+          ]
+        }
+      ]
+    },
+    {
+      "__type__": "Deck",
+      "children": [],
+      "crowdanki_uuid": "nlp-subdeck-cnn-text",
+      "deck_config_uuid": "nlp-deck-config-1",
+      "desc": "NLP Interview: CNN Text",
+      "dyn": 0,
+      "extendNew": 10,
+      "extendRev": 50,
+      "name": "NLP Interview Preparation::CNN Text",
+      "notes": [
+        {
+          "__type__": "Note",
+          "fields": [
+            "<b>Problem: Text CNN for Classification</b><br><br><b>Time: 25 minutes</b><br><br>Implement a simple CNN for text classification using basic operations.<br><br><pre><code>def text_cnn_predict(text: str, vocab: Dict[str, int], <br>                    weights: Dict, max_len: int = 10) -> float:<br>    \"\"\"<br>    Implement forward pass of a text CNN.<br>    <br>    Architecture: Embedding -> Conv1D -> MaxPool -> Dense -> Sigmoid<br>    <br>    Args:<br>        text: Input text<br>        vocab: Word to index mapping  <br>        weights: {'embedding': [...], 'conv': [...], 'dense': [...]}<br>        max_len: Maximum sequence length<br>        <br>    Returns:<br>        Probability score (0-1)<br>    \"\"\"<br>    pass</code></pre><br><br><b>Requirements:</b><br>• Convert text to padded integer sequence<br>• Implement 1D convolution manually (kernel size 3)<br>• Apply max pooling across sequence<br>• Dense layer + sigmoid activation<br><br><b>Simplifications:</b> Use numpy only, single filter, binary classification<br><br><b>Follow-up:</b> How would you handle variable length sequences efficiently?",
+            "<pre><code>def text_to_sequence(text: str, vocab: Dict[str, int], max_len: int = 10) -> List[int]:\n    \"\"\"Convert text to padded integer sequence.\"\"\"\n    words = text.lower().split()\n    sequence = [vocab.get(word, 0) for word in words]  # 0 for unknown words\n    \n    # Pad or truncate to max_len\n    if len(sequence) < max_len:\n        sequence += [0] * (max_len - len(sequence))\n    else:\n        sequence = sequence[:max_len]\n    \n    return sequence</code></pre>",
+            "CNN Text",
+            "implementation"
+          ],
+          "guid": "nlp_4319182061052408",
+          "note_model_uuid": "nlp-model-basic",
+          "tags": [
+            "cnn_text",
+            "nlp_interview",
+            "implementation"
+          ]
+        }
+      ]
+    },
+    {
+      "__type__": "Deck",
+      "children": [],
+      "crowdanki_uuid": "nlp-subdeck-embeddings",
+      "deck_config_uuid": "nlp-deck-config-1",
+      "desc": "NLP Interview: Embeddings",
+      "dyn": 0,
+      "extendNew": 10,
+      "extendRev": 50,
+      "name": "NLP Interview Preparation::Embeddings",
+      "notes": [
+        {
+          "__type__": "Note",
+          "fields": [
+            "<b>Problem: Word2Vec Skip-gram</b><br><br><b>Time: 20 minutes</b><br><br>Implement the core Skip-gram training step for Word2Vec.<br><br><pre><code>def skipgram_step(center_word: str, context_word: str, <br>                  embeddings: Dict[str, List[float]], <br>                  learning_rate: float = 0.01) -> None:<br>    \"\"\"<br>    Perform one training step of Skip-gram Word2Vec.<br>    <br>    Update embeddings to make center_word and context_word more similar.<br>    <br>    Args:<br>        center_word: \"king\" <br>        context_word: \"queen\"<br>        embeddings: {\"king\": [0.1, 0.2], \"queen\": [0.3, 0.4], ...}<br>        learning_rate: Step size for updates<br>    \"\"\"<br>    pass<br><br>def word_similarity(word1: str, word2: str, <br>                   embeddings: Dict[str, List[float]]) -> float:<br>    \"\"\"<br>    Calculate cosine similarity between two word embeddings.<br>    Returns value between -1 and 1.<br>    \"\"\"<br>    pass</code></pre><br><br><b>Requirements:</b><br>• Implement sigmoid function<br>• Calculate gradients using dot product  <br>• Update embeddings using gradient descent<br>• Handle missing words gracefully<br><br><b>Follow-up:</b> How would you implement negative sampling to make this efficient?",
+            "<pre><code>def sigmoid(x: float) -> float:\n    \"\"\"\n    Sigmoid activation function: σ(x) = 1 / (1 + e^(-x))\n    \n    Used in Word2Vec to convert dot products to probabilities.\n    Clamp input to prevent numerical overflow/underflow.\n    \"\"\"\n    # Clamp x to prevent overflow in exp() function\n    # This is crucial for numerical stability\n    clamped_x = max(-500, min(500, x))\n    return 1 / (1 + math.exp(-clamped_x))</code></pre>",
+            "Embeddings",
+            "implementation"
+          ],
+          "guid": "nlp_1117197955032916",
+          "note_model_uuid": "nlp-model-basic",
+          "tags": [
+            "embeddings",
+            "nlp_interview",
+            "implementation"
+          ]
+        }
+      ]
+    },
+    {
+      "__type__": "Deck",
+      "children": [],
+      "crowdanki_uuid": "nlp-subdeck-fine-tuning",
+      "deck_config_uuid": "nlp-deck-config-1",
+      "desc": "NLP Interview: Fine Tuning",
+      "dyn": 0,
+      "extendNew": 10,
+      "extendRev": 50,
+      "name": "NLP Interview Preparation::Fine Tuning",
+      "notes": [
+        {
+          "__type__": "Note",
+          "fields": [
+            "<b>Problem: LLM Fine-tuning for Classification</b><br><br><b>Time: 25 minutes</b><br><br>Implement the key components for fine-tuning a pre-trained LLM for text classification.<br><br><pre><code>def add_classification_head(pretrained_model_dim: int, num_classes: int) -> Dict:<br>    \"\"\"<br>    Add classification head to pretrained LLM.<br>    <br>    Args:<br>        pretrained_model_dim: Size of LLM output (e.g., 768 for BERT-base)<br>        num_classes: Number of target classes<br>        <br>    Returns:<br>        Classification weights and bias<br>    \"\"\"<br>    pass<br><br>def compute_classification_loss(logits: np.ndarray, labels: np.ndarray) -> float:<br>    \"\"\"<br>    Compute cross-entropy loss for classification.<br>    <br>    Args:<br>        logits: Model outputs (batch_size, num_classes)<br>        labels: True labels (batch_size,) as class indices<br>        <br>    Returns:<br>        Cross-entropy loss value<br>    \"\"\"<br>    pass<br><br>def freeze_layers(model_weights: Dict, freeze_ratio: float = 0.8) -> Dict:<br>    \"\"\"<br>    Freeze bottom layers of pretrained model (keep top layers trainable).<br>    In practice, this means marking parameters as requires_grad=False.<br>    \"\"\"<br>    pass</code></pre><br><br><b>Requirements:</b><br>• Initialize classification head with proper scaling<br>• Implement stable cross-entropy loss with softmax<br>• Demonstrate layer freezing strategy<br>• Handle different learning rates for pretrained vs new layers<br><br><b>Follow-up:</b> How would you implement LoRA for parameter-efficient fine-tuning?",
+            "<pre><code>def add_classification_head(pretrained_model_dim: int, num_classes: int) -> Dict:\n    \"\"\"Add classification head to pretrained LLM.\"\"\"\n    \n    # Xavier/Glorot initialization for stable training\n    std = np.sqrt(2.0 / (pretrained_model_dim + num_classes))\n    \n    return {\n        'W_cls': np.random.randn(pretrained_model_dim, num_classes) * std,\n        'b_cls': np.zeros(num_classes)\n    }</code></pre>",
+            "Fine Tuning",
+            "implementation"
+          ],
+          "guid": "nlp_4457493085573195",
+          "note_model_uuid": "nlp-model-basic",
+          "tags": [
+            "fine_tuning",
+            "nlp_interview",
+            "implementation"
+          ]
+        }
+      ]
+    },
+    {
+      "__type__": "Deck",
+      "children": [],
+      "crowdanki_uuid": "nlp-subdeck-gpt-implementation",
+      "deck_config_uuid": "nlp-deck-config-1",
+      "desc": "NLP Interview: GPT Implementation",
+      "dyn": 0,
+      "extendNew": 10,
+      "extendRev": 50,
+      "name": "NLP Interview Preparation::GPT Implementation",
+      "notes": [
+        {
+          "__type__": "Note",
+          "fields": [
+            "<b>Problem: GPT Transformer Block</b><br><br><b>Time: 30 minutes</b><br><br>Implement a single GPT transformer block with the standard architecture.<br><br><pre><code>def gpt_block(x: np.ndarray, weights: Dict) -> np.ndarray:<br>    \"\"\"<br>    Single GPT transformer block forward pass.<br>    <br>    Architecture:<br>        x -> LayerNorm -> SelfAttention -> Residual -> LayerNorm -> FFN -> Residual<br>    <br>    Args:<br>        x: Input embeddings (seq_len, d_model)<br>        weights: Contains attention and FFN weights<br>        <br>    Returns:<br>        Output embeddings (seq_len, d_model)<br>    \"\"\"<br>    pass<br><br>def layer_norm(x: np.ndarray, gamma: np.ndarray, beta: np.ndarray) -> np.ndarray:<br>    \"\"\"<br>    Apply layer normalization.<br>    norm = (x - mean) / sqrt(variance + eps)<br>    output = gamma * norm + beta<br>    \"\"\"<br>    pass<br><br>def feed_forward(x: np.ndarray, W1: np.ndarray, b1: np.ndarray, <br>                W2: np.ndarray, b2: np.ndarray) -> np.ndarray:<br>    \"\"\"<br>    Two-layer feed-forward network with GELU activation.<br>    FFN(x) = GELU(xW1 + b1)W2 + b2<br>    \"\"\"<br>    pass</code></pre><br><br><b>Requirements:</b><br>• Implement layer normalization with learnable parameters<br>• Use GELU activation function in FFN<br>• Add residual connections around attention and FFN<br>• Apply causal masking in self-attention<br><br><b>Follow-up:</b> How would you stack multiple blocks to create full GPT model?",
+            "<pre><code>def gelu(x: np.ndarray) -> np.ndarray:\n    \"\"\"GELU activation function used in GPT.\"\"\"\n    return 0.5 * x * (1 + np.tanh(math.sqrt(2/math.pi) * (x + 0.044715 * x**3)))</code></pre>",
+            "GPT Implementation",
+            "implementation"
+          ],
+          "guid": "nlp_778264394878432",
+          "note_model_uuid": "nlp-model-basic",
+          "tags": [
+            "gpt_implementation",
+            "nlp_interview",
+            "implementation"
+          ]
+        }
+      ]
+    },
+    {
+      "__type__": "Deck",
+      "children": [],
+      "crowdanki_uuid": "nlp-subdeck-instruction-tuning",
+      "deck_config_uuid": "nlp-deck-config-1",
+      "desc": "NLP Interview: Instruction Tuning",
+      "dyn": 0,
+      "extendNew": 10,
+      "extendRev": 50,
+      "name": "NLP Interview Preparation::Instruction Tuning",
+      "notes": [
+        {
+          "__type__": "Note",
+          "fields": [
+            "<b>Problem: Instruction Following Setup</b><br><br><b>Time: 20 minutes</b><br><br>Implement the data preparation and loss calculation for instruction fine-tuning.<br><br><pre><code>def format_instruction_data(instruction: str, response: str) -> str:<br>    \"\"\"<br>    Format instruction-response pair for training.<br>    <br>    Standard format:<br>    \"### Instruction:\\n{instruction}\\n### Response:\\n{response}\"<br>    <br>    Used for training LLMs to follow instructions like ChatGPT.<br>    \"\"\"<br>    pass<br><br>def compute_instruction_loss(model_output: np.ndarray, <br>                           target_tokens: List[int],<br>                           instruction_length: int) -> float:<br>    \"\"\"<br>    Compute loss only on response tokens (not instruction tokens).<br>    <br>    Args:<br>        model_output: Logits for next token prediction (seq_len, vocab_size)<br>        target_tokens: True next tokens (seq_len,)<br>        instruction_length: Length of instruction (don't compute loss here)<br>        <br>    Returns:<br>        Loss averaged over response tokens only<br>    \"\"\"<br>    pass</code></pre><br><br><b>Requirements:</b><br>• Format data with clear instruction/response delimiters<br>• Mask instruction tokens during loss calculation<br>• Implement next-token prediction loss<br>• Handle variable-length instructions and responses<br><br><b>Follow-up:</b> How would you implement RLHF (reinforcement learning from human feedback)?",
+            "<pre><code>def format_instruction_data(instruction: str, response: str) -> str:\n    \"\"\"Format instruction-response pair for training.\"\"\"\n    return f\"### Instruction:\\n{instruction}\\n### Response:\\n{response}\"</code></pre>",
+            "Instruction Tuning",
+            "implementation"
+          ],
+          "guid": "nlp_2879062905146772",
+          "note_model_uuid": "nlp-model-basic",
+          "tags": [
+            "instruction_tuning",
+            "nlp_interview",
+            "implementation"
+          ]
+        }
+      ]
+    },
+    {
+      "__type__": "Deck",
+      "children": [],
+      "crowdanki_uuid": "nlp-subdeck-llm-fundamentals",
+      "deck_config_uuid": "nlp-deck-config-1",
+      "desc": "NLP Interview: LLM Fundamentals",
+      "dyn": 0,
+      "extendNew": 10,
+      "extendRev": 50,
+      "name": "NLP Interview Preparation::LLM Fundamentals",
+      "notes": [
+        {
+          "__type__": "Note",
+          "fields": [
+            "<b>Problem: Text Generation with LLMs</b><br><br><b>Time: 25 minutes</b><br><br>Implement text generation from a trained language model with different decoding strategies.<br><br><pre><code>def generate_text(model_fn: callable, prompt: str, vocab: Dict, <br>                 max_length: int = 20, strategy: str = 'greedy') -> str:<br>    \"\"\"<br>    Generate text from language model using different strategies.<br>    <br>    Args:<br>        model_fn: Function that returns next-token logits given current sequence<br>        prompt: Starting text<br>        vocab: Token to ID mapping<br>        max_length: Maximum tokens to generate  <br>        strategy: 'greedy', 'random', 'top_k', or 'top_p'<br>        <br>    Returns:<br>        Generated text<br>    \"\"\"<br>    pass<br><br>def beam_search(model_fn: callable, prompt_tokens: List[int], <br>               beam_width: int = 3, max_length: int = 10) -> List[str]:<br>    \"\"\"<br>    Implement beam search for finding high-probability sequences.<br>    <br>    Returns:<br>        List of candidate sequences ranked by score<br>    \"\"\"<br>    pass</code></pre><br><br><b>Requirements:</b><br>• Convert prompt to tokens, generate tokens iteratively<br>• Implement greedy, random, top-k, and top-p sampling<br>• Track probabilities for beam search scoring<br>• Handle end-of-sequence tokens properly<br><br><b>Follow-up:</b> How do you balance quality vs diversity in generation?",
+            "<pre><code>def softmax(logits: List[float], temperature: float = 1.0) -> List[float]:\n    \"\"\"Convert logits to probabilities with temperature scaling.\"\"\"\n    if temperature != 1.0:\n        logits = [l / temperature for l in logits]\n    \n    max_logit = max(logits)\n    exp_logits = [math.exp(l - max_logit) for l in logits]\n    sum_exp = sum(exp_logits)\n    \n    return [exp_l / sum_exp for exp_l in exp_logits]</code></pre>",
+            "LLM Fundamentals",
+            "implementation"
+          ],
+          "guid": "nlp_1206073947860520",
+          "note_model_uuid": "nlp-model-basic",
+          "tags": [
+            "llm_fundamentals",
+            "nlp_interview",
+            "implementation"
+          ]
+        }
+      ]
+    },
+    {
+      "__type__": "Deck",
+      "children": [],
+      "crowdanki_uuid": "nlp-subdeck-model-evaluation",
+      "deck_config_uuid": "nlp-deck-config-1",
+      "desc": "NLP Interview: Model Evaluation",
+      "dyn": 0,
+      "extendNew": 10,
+      "extendRev": 50,
+      "name": "NLP Interview Preparation::Model Evaluation",
+      "notes": [
+        {
+          "__type__": "Note",
+          "fields": [
+            "<b>Problem: LLM Evaluation Metrics</b><br><br><b>Time: 20 minutes</b><br><br>Implement key evaluation metrics for large language models.<br><br><pre><code>def calculate_perplexity(model_probs: List[List[float]], <br>                        target_tokens: List[int]) -> float:<br>    \"\"\"<br>    Calculate perplexity - primary metric for language models.<br>    <br>    Perplexity = exp(-1/N * sum(log(p(token_i))))<br>    Lower perplexity = better model<br>    <br>    Args:<br>        model_probs: Probability distributions over vocabulary for each position<br>        target_tokens: Actual next tokens<br>        <br>    Returns:<br>        Perplexity value<br>    \"\"\"<br>    pass<br><br>def compute_bleu_score(reference: str, candidate: str, n: int = 4) -> float:<br>    \"\"\"<br>    Compute BLEU score for text generation evaluation.<br>    <br>    Measures n-gram overlap between reference and generated text.<br>    Used for translation, summarization evaluation.<br>    \"\"\"<br>    pass</code></pre><br><br><b>Requirements:</b><br>• Handle log probability calculations safely (avoid log(0))<br>• Implement n-gram precision for BLEU<br>• Add brevity penalty for BLEU<br>• Calculate confidence intervals for perplexity<br><br><b>Follow-up:</b> What are limitations of perplexity? How do you evaluate instruction-following?",
+            "<pre><code>def calculate_perplexity(model_probs: List[List[float]], \n                        target_tokens: List[int]) -> float:\n    \"\"\"Calculate perplexity from model probabilities.\"\"\"\n    if not model_probs or not target_tokens:\n        return float('inf')\n    \n    if len(model_probs) != len(target_tokens):\n        return float('inf')\n    \n    log_likelihood = 0.0\n    num_tokens = 0\n    \n    for probs, target_token in zip(model_probs, target_tokens):\n        if target_token < len(probs):\n            # Get probability of target token\n            prob = probs[target_token]\n            \n            # Add log probability (with small epsilon to avoid log(0))\n            log_likelihood += math.log(max(prob, 1e-10))\n            num_tokens += 1\n    \n    if num_tokens == 0:\n        return float('inf')\n    \n    # Perplexity = exp(-avg_log_likelihood)\n    avg_log_likelihood = log_likelihood / num_tokens\n    perplexity = math.exp(-avg_log_likelihood)\n    \n    return perplexity</code></pre>",
+            "Model Evaluation",
+            "implementation"
+          ],
+          "guid": "nlp_3950072592167507",
+          "note_model_uuid": "nlp-model-basic",
+          "tags": [
+            "model_evaluation",
+            "nlp_interview",
+            "implementation"
+          ]
+        }
+      ]
+    },
+    {
+      "__type__": "Deck",
+      "children": [],
+      "crowdanki_uuid": "nlp-subdeck-ner",
+      "deck_config_uuid": "nlp-deck-config-1",
+      "desc": "NLP Interview: NER",
+      "dyn": 0,
+      "extendNew": 10,
+      "extendRev": 50,
+      "name": "NLP Interview Preparation::NER",
+      "notes": [
+        {
+          "__type__": "Note",
+          "fields": [
+            "<b>Problem: Named Entity Recognition with Custom Entities</b><br><br>Implement <code>extract_entities(text: str) -> Dict[str, List[str]]</code> that:<br>1. Extracts standard entities (PERSON, ORG, GPE, DATE, MONEY)<br>2. Returns entities grouped by type<br>3. Handles overlapping entities<br><br>Example:<br>Input: \"Apple Inc. was founded by Steve Jobs in Cupertino on April 1, 1976.\"<br>Output: {<br>    \"ORG\": [\"Apple Inc.\"],<br>    \"PERSON\": [\"Steve Jobs\"],<br>    \"GPE\": [\"Cupertino\"],<br>    \"DATE\": [\"April 1, 1976\"]<br>}<br><br>Requirements:<br>• Use spaCy or NLTK for NER<br>• Handle multi-word entities<br>• Implement custom entity detection for email/phone numbers<br><br>Follow-ups:<br>• Add confidence scores for entities<br>• Implement entity linking/disambiguation<br>• Extract relationships between entities",
+            "<pre><code>def extract_entities(text: str) -> Dict[str, List[str]]:\n    \"\"\"Extract named entities using spaCy.\"\"\"\n    doc = nlp(text)\n    entities = defaultdict(list)\n    \n    for ent in doc.ents:\n        entities[ent.label_].append(ent.text)\n    \n    # Remove duplicates while preserving order\n    for label in entities:\n        entities[label] = list(dict.fromkeys(entities[label]))\n    \n    return dict(entities)</code></pre>",
+            "NER",
+            "implementation"
+          ],
+          "guid": "nlp_2122315269255017",
+          "note_model_uuid": "nlp-model-basic",
+          "tags": [
+            "ner",
+            "nlp_interview",
+            "implementation"
+          ]
+        }
+      ]
+    },
+    {
+      "__type__": "Deck",
+      "children": [],
+      "crowdanki_uuid": "nlp-subdeck-ngrams",
+      "deck_config_uuid": "nlp-deck-config-1",
+      "desc": "NLP Interview: NGrams",
+      "dyn": 0,
+      "extendNew": 10,
+      "extendRev": 50,
+      "name": "NLP Interview Preparation::NGrams",
+      "notes": [
+        {
+          "__type__": "Note",
+          "fields": [
+            "<b>Problem: N-gram Language Model</b><br><br><b>Time: 25 minutes</b><br><br>Implement a simple bigram language model with probability calculation.<br><br><pre><code>def build_bigram_model(texts: List[str]) -> Dict[str, Dict[str, float]]:<br>    \"\"\"<br>    Build bigram language model.<br>    <br>    Input: [\"the cat sat\", \"the dog sat\"]<br>    Output: {<br>        \"the\": {\"cat\": 0.5, \"dog\": 0.5},<br>        \"cat\": {\"sat\": 1.0},<br>        \"dog\": {\"sat\": 1.0}<br>    }<br>    <br>    Returns: Dictionary mapping word -> {next_word: probability}<br>    \"\"\"<br>    pass<br><br>def generate_text(model: Dict, start_word: str, length: int = 5) -> str:<br>    \"\"\"<br>    Generate text using the bigram model.<br>    Pick most probable next word at each step.<br>    \"\"\"<br>    pass</code></pre><br><br><b>Requirements:</b><br>• Count bigram frequencies across all texts<br>• Calculate conditional probabilities P(w2|w1)<br>• Handle unseen bigrams (return empty dict)<br>• Generate coherent text sequences<br><br><b>Follow-up:</b> How would you add smoothing for unseen n-grams?",
+            "<pre><code>def build_bigram_model(texts: List[str]) -> Dict[str, Dict[str, float]]:\n    \"\"\"Build bigram language model with probabilities.\"\"\"\n    if not texts:\n        return {}\n    \n    # Count bigrams\n    bigram_counts = defaultdict(Counter)\n    \n    for text in texts:\n        words = text.lower().split()\n        \n        # Add start token\n        words = ['<START>'] + words + ['<END>']\n        \n        # Count bigrams\n        for i in range(len(words) - 1):\n            w1, w2 = words[i], words[i + 1]\n            bigram_counts[w1][w2] += 1\n    \n    # Convert counts to probabilities\n    model = {}\n    for w1, w2_counts in bigram_counts.items():\n        total = sum(w2_counts.values())\n        model[w1] = {w2: count/total for w2, count in w2_counts.items()}\n    \n    return model</code></pre>",
+            "NGrams",
+            "implementation"
+          ],
+          "guid": "nlp_1006647991576138",
+          "note_model_uuid": "nlp-model-basic",
+          "tags": [
+            "ngrams",
+            "nlp_interview",
+            "implementation"
+          ]
+        }
+      ]
+    },
+    {
+      "__type__": "Deck",
+      "children": [],
+      "crowdanki_uuid": "nlp-subdeck-neural-fundamentals",
+      "deck_config_uuid": "nlp-deck-config-1",
+      "desc": "NLP Interview: Neural Fundamentals",
+      "dyn": 0,
+      "extendNew": 10,
+      "extendRev": 50,
+      "name": "NLP Interview Preparation::Neural Fundamentals",
+      "notes": [
+        {
+          "__type__": "Note",
+          "fields": [
+            "<b>Problem: Neural Network from Scratch</b><br><br>Implement basic neural networks from scratch:<br>1. <code>Perceptron(input_size: int, learning_rate: float)</code> - Single perceptron<br>2. <code>NeuralNetwork(layers: List[int], activation: str)</code> - Multi-layer network  <br>3. <code>train(X: np.ndarray, y: np.ndarray, epochs: int)</code> - Training with backpropagation<br>4. <code>predict(X: np.ndarray) -> np.ndarray</code> - Forward pass prediction<br><br>Example:<br>XOR problem: X = [[0,0], [0,1], [1,0], [1,1]], y = [0, 1, 1, 0]<br>Network: [2, 4, 1] (2 inputs, 4 hidden, 1 output)<br>Result: Learns XOR function with ~95% accuracy<br><br>Requirements:<br>• Implement forward propagation<br>• Implement backpropagation with chain rule<br>• Support multiple activation functions (sigmoid, tanh, ReLU)<br>• Handle binary and multi-class classification<br>• Add momentum and learning rate decay<br><br>Follow-ups:<br>• Implement different optimizers (Adam, RMSprop)<br>• Add regularization (dropout, weight decay)<br>• Gradient checking for debugging<br>• Mini-batch training",
+            "<pre><code>class ActivationFunctions:\n    \"\"\"Collection of activation functions and their derivatives.\"\"\"\n    \n    @staticmethod\n    def sigmoid(x: np.ndarray) -> np.ndarray:\n        \"\"\"Sigmoid activation function.\"\"\"\n        # Prevent overflow\n        x = np.clip(x, -500, 500)\n        return 1 / (1 + np.exp(-x))\n    \n    @staticmethod\n    def sigmoid_derivative(x: np.ndarray) -> np.ndarray:\n        \"\"\"Derivative of sigmoid function.\"\"\"\n        s = ActivationFunctions.sigmoid(x)\n        return s * (1 - s)\n    \n    @staticmethod\n    def tanh(x: np.ndarray) -> np.ndarray:\n        \"\"\"Hyperbolic tangent activation function.\"\"\"\n        return np.tanh(x)\n    \n    @staticmethod\n    def tanh_derivative(x: np.ndarray) -> np.ndarray:\n        \"\"\"Derivative of tanh function.\"\"\"\n        return 1 - np.tanh(x) ** 2\n    \n    @staticmethod\n    def relu(x: np.ndarray) -> np.ndarray:\n        \"\"\"ReLU activation function.\"\"\"\n        return np.maximum(0, x)\n    \n    @staticmethod\n    def relu_derivative(x: np.ndarray) -> np.ndarray:\n        \"\"\"Derivative of ReLU function.\"\"\"\n        return np.where(x > 0, 1, 0)\n    \n    @staticmethod\n    def leaky_relu(x: np.ndarray, alpha: float = 0.01) -> np.ndarray:\n        \"\"\"Leaky ReLU activation function.\"\"\"\n        return np.where(x > 0, x, alpha * x)\n    \n    @staticmethod\n    def leaky_relu_derivative(x: np.ndarray, alpha: float = 0.01) -> np.ndarray:\n        \"\"\"Derivative of Leaky ReLU function.\"\"\"\n        return np.where(x > 0, 1, alpha)\n    \n    @staticmethod\n    def softmax(x: np.ndarray) -> np.ndarray:\n        \"\"\"Softmax activation function.\"\"\"\n        exp_x = np.exp(x - np.max(x, axis=-1, keepdims=True))\n        return exp_x / np.sum(exp_x, axis=-1, keepdims=True)</code></pre>",
+            "Neural Fundamentals",
+            "implementation"
+          ],
+          "guid": "nlp_2653938198985966",
+          "note_model_uuid": "nlp-model-basic",
+          "tags": [
+            "neural_fundamentals",
+            "nlp_interview",
+            "implementation"
+          ]
+        }
+      ]
+    },
+    {
+      "__type__": "Deck",
+      "children": [],
+      "crowdanki_uuid": "nlp-subdeck-pos-tagging",
+      "deck_config_uuid": "nlp-deck-config-1",
+      "desc": "NLP Interview: POS Tagging",
+      "dyn": 0,
+      "extendNew": 10,
+      "extendRev": 50,
+      "name": "NLP Interview Preparation::POS Tagging",
+      "notes": [
+        {
+          "__type__": "Note",
+          "fields": [
+            "<b>Problem: Part-of-Speech Tagging with Accuracy Metrics</b><br><br>Implement <code>pos_tag_text(text: str) -> List[Tuple[str, str]]</code> that:<br>1. Tags each word with its part-of-speech<br>2. Handles ambiguous words correctly<br>3. Returns (word, tag) tuples<br><br>Example:<br>Input: \"The quick brown fox jumps over the lazy dog\"<br>Output: [(\"The\", \"DT\"), (\"quick\", \"JJ\"), (\"brown\", \"JJ\"), (\"fox\", \"NN\"), ...]<br><br>Requirements:<br>• Use Penn Treebank tagset<br>• Handle sentences with punctuation<br>• Implement a function to get most common POS for ambiguous words<br><br>Follow-ups:<br>• Extract all nouns/verbs from text<br>• Find noun phrases using POS patterns<br>• Compare accuracy of different taggers",
+            "<pre><code>def pos_tag_text(text: str) -> List[Tuple[str, str]]:\n    \"\"\"POS tag text using NLTK's default tagger (Penn Treebank tagset).\"\"\"\n    tokens = nltk.word_tokenize(text)\n    return nltk.pos_tag(tokens)</code></pre>",
+            "POS Tagging",
+            "implementation"
+          ],
+          "guid": "nlp_227367998392186",
+          "note_model_uuid": "nlp-model-basic",
+          "tags": [
+            "pos_tagging",
+            "nlp_interview",
+            "implementation"
+          ]
+        }
+      ]
+    },
+    {
+      "__type__": "Deck",
+      "children": [],
+      "crowdanki_uuid": "nlp-subdeck-regex-nlp",
+      "deck_config_uuid": "nlp-deck-config-1",
+      "desc": "NLP Interview: Regex NLP",
+      "dyn": 0,
+      "extendNew": 10,
+      "extendRev": 50,
+      "name": "NLP Interview Preparation::Regex NLP",
+      "notes": [
+        {
+          "__type__": "Note",
+          "fields": [
+            "<b>Problem: Regular Expressions for NLP</b><br><br>Implement regex-based NLP functions:<br>1. <code>extract_entities_regex(text: str) -> Dict[str, List[str]]</code><br>   - Extract emails, phones, URLs, dates, money amounts<br>2. <code>sentence_segmentation(text: str) -> List[str]</code><br>   - Handle abbreviations, decimals, ellipsis<br>3. <code>pattern_based_ner(text: str, patterns: Dict[str, str]) -> List[Tuple[str, str, int, int]]</code><br>   - Custom entity recognition with regex<br>4. <code>clean_text_regex(text: str, rules: List[Tuple[str, str]]) -> str</code><br>   - Apply multiple cleaning rules<br><br>Example:<br>Text: \"Contact Dr. Smith at john.smith@email.com or call (555) 123-4567. Meeting on Jan 15, 2024.\"<br>Entities: {<br>    \"EMAIL\": [\"john.smith@email.com\"],<br>    \"PHONE\": [\"(555) 123-4567\"],<br>    \"DATE\": [\"Jan 15, 2024\"]<br>}<br><br>Requirements:<br>• Handle edge cases (abbreviations, special formats)<br>• Support multiple date/time formats<br>• Extract structured information (prices, percentages)<br>• Build reusable pattern library<br><br>Follow-ups:<br>• Regex optimization for large texts<br>• Combining regex with ML models<br>• Multi-language pattern support",
+            "<pre><code>def extract_entities_regex(text: str, \n                          custom_patterns: Optional[Dict[str, str]] = None) -> Dict[str, List[str]]:\n    \"\"\"Extract various entities using regex patterns.\"\"\"\n    entities = defaultdict(list)\n    \n    # Use default patterns plus any custom ones\n    patterns = REGEX_PATTERNS.copy()\n    if custom_patterns:\n        patterns.update(custom_patterns)\n    \n    # Extract emails\n    emails = re.findall(patterns['email'], text, re.IGNORECASE)\n    if emails:\n        entities['EMAIL'] = list(set(emails))\n    \n    # Extract phone numbers\n    phones = re.findall(patterns['phone_us'], text)\n    phone_formatted = [f\"({area})-{prefix}-{number}\" for area, prefix, number in phones]\n    intl_phones = re.findall(patterns['phone_intl'], text)\n    all_phones = phone_formatted + intl_phones\n    if all_phones:\n        entities['PHONE'] = list(set(all_phones))\n    \n    # Extract URLs\n    urls = re.findall(patterns['url'], text, re.IGNORECASE)\n    if urls:\n        entities['URL'] = list(set(urls))\n    \n    # Extract dates (multiple formats)\n    dates = []\n    for pattern_name in ['date_mdy', 'date_dmy', 'date_ymd', 'date_written']:\n        matches = re.findall(patterns[pattern_name], text, re.IGNORECASE)\n        dates.extend([' '.join(match) if isinstance(match, tuple) else match for match in matches])\n    \n    if dates:\n        entities['DATE'] = list(set(dates))\n    \n    # Extract times\n    times = []\n    time_12 = re.findall(patterns['time_12'], text, re.IGNORECASE)\n    time_24 = re.findall(patterns['time_24'], text)\n    times.extend([f\"{h}:{m} {ap}\" for h, m, ap in time_12])\n    times.extend(time_24)\n    if times:\n        entities['TIME'] = list(set(times))\n    \n    # Extract money amounts\n    money = []\n    for pattern_name in ['money_dollar', 'money_euro', 'money_pound', 'money_written']:\n        matches = re.findall(patterns[pattern_name], text, re.IGNORECASE)\n        money.extend(matches)\n    \n    if money:\n        entities['MONEY'] = list(set(money))\n    \n    # Extract percentages\n    percentages = re.findall(patterns['percentage'], text)\n    if percentages:\n        entities['PERCENTAGE'] = list(set(percentages))\n    \n    # Extract other entities\n    for entity_type, pattern in [\n        ('SSN', 'ssn'),\n        ('CREDIT_CARD', 'credit_card'),\n        ('IP_ADDRESS', 'ip_address'),\n        ('HASHTAG', 'hashtag'),\n        ('MENTION', 'mention')\n    ]:\n        matches = re.findall(patterns[pattern], text)\n        if matches:\n            entities[entity_type] = list(set(matches))\n    \n    return dict(entities)</code></pre>",
+            "Regex NLP",
+            "implementation"
+          ],
+          "guid": "nlp_2461243476554147",
+          "note_model_uuid": "nlp-model-basic",
+          "tags": [
+            "regex_nlp",
+            "nlp_interview",
+            "implementation"
+          ]
+        }
+      ]
+    },
+    {
+      "__type__": "Deck",
+      "children": [],
+      "crowdanki_uuid": "nlp-subdeck-sentiment-analysis",
+      "deck_config_uuid": "nlp-deck-config-1",
+      "desc": "NLP Interview: Sentiment Analysis",
+      "dyn": 0,
+      "extendNew": 10,
+      "extendRev": 50,
+      "name": "NLP Interview Preparation::Sentiment Analysis",
+      "notes": [
+        {
+          "__type__": "Note",
+          "fields": [
+            "<b>Problem: Rule-based Sentiment Analysis</b><br><br><b>Time: 20 minutes</b><br><br>Implement a simple rule-based sentiment analyzer.<br><br><pre><code>def analyze_sentiment(text: str) -> Dict[str, float]:<br>    \"\"\"<br>    Analyze sentiment using rules (lexicon + modifiers).<br>    <br>    Returns:<br>        {\"positive\": 0.6, \"negative\": 0.1, \"neutral\": 0.3, \"compound\": 0.5}<br>    <br>    Rules:<br>    - Use sentiment lexicon for base scores<br>    - \"very/really\" intensifies sentiment (+30%)  <br>    - \"not/never\" flips sentiment (* -0.8)<br>    - Multiple punctuation adds emphasis<br>    \"\"\"<br>    pass</code></pre><br><br><b>Requirements:</b><br>• Create basic positive/negative word dictionary<br>• Handle intensifiers (\"very good\" -> higher positive score)<br>• Handle negations (\"not bad\" -> less negative)<br>• Normalize scores to sum to 1.0<br><br><b>Follow-up:</b> How would you handle sarcasm or domain-specific sentiment?",
+            "<pre><code>def analyze_sentiment(text: str) -> Dict[str, float]:\n    \"\"\"\n    Analyze sentiment using rule-based approach (VADER-style).\n    \n    RULE-BASED SENTIMENT ANALYSIS:\n    - Uses pre-built dictionary of word sentiments\n    - Applies grammatical rules (intensifiers, negations)\n    - Fast and interpretable (good for production)\n    - No training data needed\n    \n    ALGORITHM:\n    1. Tokenize text and look up word sentiments\n    2. Apply intensifier rules (\"very good\" > \"good\")\n    3. Apply negation rules (\"not good\" becomes negative)\n    4. Handle punctuation emphasis (\"great!!!\" > \"great\")\n    5. Normalize scores and return distribution\n    \"\"\"\n    \n    # STEP 1: Handle edge cases first\n    if not text or not text.strip():\n        # Return neutral sentiment for empty text\n        return {\"positive\": 0.0, \"negative\": 0.0, \"neutral\": 1.0, \"compound\": 0.0}\n    \n    # STEP 2: Simple tokenization\n    # Split on whitespace and convert to lowercase\n    words = text.lower().split()\n    \n    if not words:\n        return {\"positive\": 0.0, \"negative\": 0.0, \"neutral\": 1.0, \"compound\": 0.0}\n    \n    # STEP 3: Get base sentiment scores for each word\n    # Look up each word in sentiment lexicon\n    scores = []\n    \n    for i, word in enumerate(words):\n        # Get base sentiment score (0 if not in lexicon)\n        base_score = SENTIMENT_LEXICON.get(word, 0.0)\n        \n        if base_score != 0:  # Only process sentiment-bearing words\n            \n            # RULE 1: Check for intensifiers in previous word\n            # \"very good\" should be more positive than \"good\"\n            if i > 0 and words[i-1] in INTENSIFIERS:\n                # Boost sentiment by 30% (VADER-style boosting)\n                base_score *= 1.3\n                print(f\"  INTENSIFIER: '{words[i-1]} {word}' -> boosted to {base_score:.2f}\")\n            \n            # RULE 2: Check for negations in previous 2 words\n            # \"not very good\" should be negative despite \"good\" being positive\n            negated = False\n            for j in range(max(0, i-2), i):  # Look back up to 2 words\n                if words[j] in NEGATIONS:\n                    negated = True\n                    print(f\"  NEGATION: '{words[j]}' flips '{word}'\")\n                    break\n            \n            # Apply negation: flip polarity and reduce intensity\n            if negated:\n                base_score *= -0.8  # Flip sign and dampen (VADER approach)\n            \n            scores.append(base_score)\n    \n    # STEP 4: Handle punctuation emphasis\n    # Multiple exclamation marks add emphasis: \"Great!!!\" > \"Great\"\n    exclamation_count = text.count('!')\n    if exclamation_count > 0 and scores:\n        # Add emphasis but cap the effect\n        emphasis = min(exclamation_count * 0.3, 1.0)\n        print(f\"  EMPHASIS: {exclamation_count} exclamations add {emphasis:.2f}\")\n        \n        # Apply emphasis to existing sentiment\n        scores = [s * (1 + emphasis) if s > 0 else s * (1 + emphasis) for s in scores]\n    \n    # STEP 5: Calculate final sentiment distribution\n    if not scores:\n        # No sentiment words found\n        return {\"positive\": 0.0, \"negative\": 0.0, \"neutral\": 1.0, \"compound\": 0.0}\n    \n    # Separate positive and negative scores\n    pos_scores = [s for s in scores if s > 0]\n    neg_scores = [s for s in scores if s < 0]\n    \n    # Calculate proportions\n    pos_sum = sum(pos_scores)\n    neg_sum = abs(sum(neg_scores))  # Make positive for proportion calculation\n    \n    total = pos_sum + neg_sum\n    if total > 0:\n        pos_prop = pos_sum / total\n        neg_prop = neg_sum / total\n        neu_prop = 0.0  # In this simple version, neutral is when no sentiment words\n    else:\n        pos_prop = neg_prop = 0.0\n        neu_prop = 1.0\n    \n    # STEP 6: Calculate compound score (overall sentiment)\n    # Compound score combines all sentiment into single [-1, 1] score\n    # Used for final classification: positive if > 0.05, negative if < -0.05\n    compound = (pos_sum - neg_sum) / (total + 1) if total > 0 else 0.0\n    compound = max(-1, min(1, compound))  # Clamp to [-1, 1] range\n    \n    return {\n        \"positive\": round(pos_prop, 3),\n        \"negative\": round(neg_prop, 3), \n        \"neutral\": round(neu_prop, 3),\n        \"compound\": round(compound, 3)\n    }</code></pre>",
+            "Sentiment Analysis",
+            "implementation"
+          ],
+          "guid": "nlp_1931531134454983",
+          "note_model_uuid": "nlp-model-basic",
+          "tags": [
+            "sentiment_analysis",
+            "nlp_interview",
+            "implementation"
+          ]
+        }
+      ]
+    },
+    {
+      "__type__": "Deck",
+      "children": [],
+      "crowdanki_uuid": "nlp-subdeck-sequence-models",
+      "deck_config_uuid": "nlp-deck-config-1",
+      "desc": "NLP Interview: Sequence Models",
+      "dyn": 0,
+      "extendNew": 10,
+      "extendRev": 50,
+      "name": "NLP Interview Preparation::Sequence Models",
+      "notes": [
+        {
+          "__type__": "Note",
+          "fields": [
+            "<b>Problem: Simple LSTM for Sentiment</b><br><br><b>Time: 25 minutes</b><br><br>Implement a basic LSTM cell for sentiment classification.<br><br><pre><code>def lstm_cell(x_t: List[float], h_prev: List[float], c_prev: List[float],<br>              weights: Dict) -> Tuple[List[float], List[float]]:<br>    \"\"\"<br>    Single LSTM cell forward pass.<br>    <br>    Args:<br>        x_t: Input at time t<br>        h_prev: Previous hidden state  <br>        c_prev: Previous cell state<br>        weights: {'Wf', 'Wi', 'Wo', 'Wc', 'bf', 'bi', 'bo', 'bc'}<br>        <br>    Returns:<br>        (h_t, c_t): New hidden and cell states<br>    \"\"\"<br>    pass<br><br>def lstm_sentiment(sequence: List[List[float]], weights: Dict) -> float:<br>    \"\"\"<br>    Run LSTM over sequence and classify sentiment.<br>    Return probability (0-1) of positive sentiment.<br>    \"\"\"<br>    pass</code></pre><br><br><b>Requirements:</b><br>• Implement forget, input, output gates using sigmoid<br>• Implement candidate cell state using tanh<br>• Process sequence step by step<br>• Final classification with sigmoid<br><br><b>Simplifications:</b> Use lists instead of matrices, single layer<br><br><b>Follow-up:</b> How would you handle variable-length sequences in practice?",
+            "<pre><code>def sigmoid(x: float) -> float:\n    return 1 / (1 + math.exp(-max(-500, min(500, x))))</code></pre>",
+            "Sequence Models",
+            "implementation"
+          ],
+          "guid": "nlp_4432489762472736",
+          "note_model_uuid": "nlp-model-basic",
+          "tags": [
+            "sequence_models",
+            "nlp_interview",
+            "implementation"
+          ]
+        }
+      ]
+    },
+    {
+      "__type__": "Deck",
+      "children": [],
+      "crowdanki_uuid": "nlp-subdeck-similarity",
+      "deck_config_uuid": "nlp-deck-config-1",
+      "desc": "NLP Interview: Similarity",
+      "dyn": 0,
+      "extendNew": 10,
+      "extendRev": 50,
+      "name": "NLP Interview Preparation::Similarity",
+      "notes": [
+        {
+          "__type__": "Note",
+          "fields": [
+            "<b>Problem: Text Similarity Metrics</b><br><br>Implement multiple similarity metrics:<br>1. <code>cosine_similarity(text1: str, text2: str) -> float</code><br>2. <code>jaccard_similarity(text1: str, text2: str) -> float</code>  <br>3. <code>semantic_similarity(text1: str, text2: str) -> float</code> # Using word embeddings<br><br>Example:<br>text1 = \"The cat sat on the mat\"<br>text2 = \"The feline rested on the rug\"<br>cosine_sim = 0.45 (bag-of-words)<br>semantic_sim = 0.82 (word2vec/embeddings)<br><br>Requirements:<br>• Compare bag-of-words vs embeddings approaches<br>• Handle synonyms and semantic relationships<br>• Implement efficient similarity for large text collections<br><br>Follow-ups:<br>• Add Levenshtein distance for character-level similarity<br>• Implement MinHash for approximate similarity<br>• Build a text deduplication system",
+            "<pre><code>def tokenize(text: str) -> List[str]:\n    \"\"\"Simple tokenization.\"\"\"\n    return text.lower().split()</code></pre>",
+            "Similarity",
+            "implementation"
+          ],
+          "guid": "nlp_2132130008100082",
+          "note_model_uuid": "nlp-model-basic",
+          "tags": [
+            "similarity",
+            "nlp_interview",
+            "implementation"
+          ]
+        }
+      ]
+    },
+    {
+      "__type__": "Deck",
+      "children": [],
+      "crowdanki_uuid": "nlp-subdeck-stemming-lemmatization",
+      "deck_config_uuid": "nlp-deck-config-1",
+      "desc": "NLP Interview: Stemming Lemmatization",
+      "dyn": 0,
+      "extendNew": 10,
+      "extendRev": 50,
+      "name": "NLP Interview Preparation::Stemming Lemmatization",
+      "notes": [
+        {
+          "__type__": "Note",
+          "fields": [
+            "<b>Problem: Stemming vs Lemmatization</b><br><br>Implement two functions:<br>1. <code>stem_words(words: List[str]) -> List[str]</code> - Porter stemming<br>2. <code>lemmatize_words(words: List[str], pos_tags: Optional[List[str]] = None) -> List[str]</code> - With POS awareness<br><br>Example:<br>Input: [\"running\", \"ran\", \"runs\", \"better\", \"best\"]<br>Stemmed: [\"run\", \"ran\", \"run\", \"better\", \"best\"]<br>Lemmatized: [\"run\", \"run\", \"run\", \"good\", \"good\"]<br><br>Requirements:<br>• Show the difference between stemming and lemmatization<br>• Handle POS tags for better lemmatization<br>• Compare outputs side by side<br><br>Follow-ups:<br>• Which method to use for information retrieval vs text classification?<br>• Performance implications?",
+            "<pre><code>def get_wordnet_pos(treebank_tag):\n    \"\"\"Convert Penn Treebank POS tags to WordNet POS tags.\"\"\"\n    if treebank_tag.startswith('J'):\n        return wordnet.ADJ\n    elif treebank_tag.startswith('V'):\n        return wordnet.VERB\n    elif treebank_tag.startswith('N'):\n        return wordnet.NOUN\n    elif treebank_tag.startswith('R'):\n        return wordnet.ADV\n    else:\n        return wordnet.NOUN  # default</code></pre>",
+            "Stemming Lemmatization",
+            "implementation"
+          ],
+          "guid": "nlp_1417792672927176",
+          "note_model_uuid": "nlp-model-basic",
+          "tags": [
+            "stemming_lemmatization",
+            "nlp_interview",
+            "implementation"
+          ]
+        }
+      ]
+    },
+    {
+      "__type__": "Deck",
+      "children": [],
+      "crowdanki_uuid": "nlp-subdeck-stop-word-removal",
+      "deck_config_uuid": "nlp-deck-config-1",
+      "desc": "NLP Interview: Stop Word Removal",
+      "dyn": 0,
+      "extendNew": 10,
+      "extendRev": 50,
+      "name": "NLP Interview Preparation::Stop Word Removal",
+      "notes": [
+        {
+          "__type__": "Note",
+          "fields": [
+            "<b>Problem: Remove Stopwords (Configurable)</b><br><br>Implement <code>remove_stopwords(tokens: List[str], extra_stopwords: Optional[Set[str]] = None) -> List[str]</code> that removes English stopwords from a token list.<br><br>Example<br>Input tokens: [\"this\", \"is\", \"a\", \"quick\", \"brown\", \"fox\"]<br>Output: [\"quick\", \"brown\", \"fox\"]<br><br>Requirements<br>• Use a standard English stopword list.<br>• Allow passing custom stopwords via <code>extra_stopwords</code>.<br>• Preserve original token order.<br><br>Follow-ups<br>• Case-insensitive removal while preserving original casing.<br>• Support multiple languages.",
+            "<pre><code>def remove_stopwords(tokens: Iterable[str], extra_stopwords: Optional[Set[str]] = None) -> List[str]:\n    \"\"\"Remove stopwords, preserving order.</code></pre>",
+            "Stop Word Removal",
+            "implementation"
+          ],
+          "guid": "nlp_697510681761883",
+          "note_model_uuid": "nlp-model-basic",
+          "tags": [
+            "stop_word_removal",
+            "nlp_interview",
+            "implementation"
+          ]
+        }
+      ]
+    },
+    {
+      "__type__": "Deck",
+      "children": [],
+      "crowdanki_uuid": "nlp-subdeck-tfidf",
+      "deck_config_uuid": "nlp-deck-config-1",
+      "desc": "NLP Interview: TFIDF",
+      "dyn": 0,
+      "extendNew": 10,
+      "extendRev": 50,
+      "name": "NLP Interview Preparation::TFIDF",
+      "notes": [
+        {
+          "__type__": "Note",
+          "fields": [
+            "<b>Problem: TF-IDF Implementation</b><br><br><b>Time: 30 minutes</b><br><br>Implement TF-IDF from scratch to find document similarity.<br><br><pre><code>def compute_tfidf(documents: List[str]) -> List[Dict[str, float]]:<br>    \"\"\"<br>    Compute TF-IDF vectors for documents.<br>    <br>    Input: [\"cat sat mat\", \"dog sat log\", \"cat dog\"]<br>    Output: [{\"cat\": 0.47, \"sat\": 0.0, \"mat\": 0.69}, {...}, {...}]<br>    <br>    TF = term_freq / total_terms_in_doc<br>    IDF = log(total_docs / docs_containing_term)<br>    TF-IDF = TF * IDF<br>    \"\"\"<br>    pass<br><br>def find_similar_documents(documents: List[str], query: str) -> int:<br>    \"\"\"<br>    Return index of most similar document to query using cosine similarity.<br>    \"\"\"<br>    pass</code></pre><br><br><b>Requirements:</b><br>• Implement TF-IDF calculation from scratch<br>• Use cosine similarity for document comparison<br>• Handle empty documents gracefully<br><br><b>Follow-up:</b> How would you optimize this for millions of documents?",
+            "<pre><code>def compute_tfidf(documents: List[str]) -> List[Dict[str, float]]:\n    \"\"\"\n    Compute TF-IDF vectors for documents.\n    \n    TF-IDF = Term Frequency × Inverse Document Frequency\n    - Emphasizes important words that appear frequently in a document\n    - But rarely across the entire collection\n    \"\"\"\n    # STEP 1: Handle edge cases\n    if not documents:\n        return []\n    \n    # STEP 2: Tokenize all documents (simple whitespace splitting)\n    # In real interviews, discuss more sophisticated tokenization\n    tokenized_docs = [doc.lower().split() for doc in documents]\n    \n    # STEP 3: Build vocabulary from all unique words\n    # This creates our feature space - each unique word becomes a dimension\n    vocab = set()\n    for doc in tokenized_docs:\n        vocab.update(doc)\n    vocab = sorted(list(vocab))  # Sort for consistency\n    \n    # STEP 4: Calculate Document Frequency (DF) for each term\n    # DF = number of documents containing the term\n    # Used in IDF calculation: IDF = log(total_docs / doc_freq)\n    doc_freq = {}\n    for term in vocab:\n        doc_freq[term] = sum(1 for doc in tokenized_docs if term in doc)\n    \n    # STEP 5: Calculate TF-IDF for each document\n    tfidf_vectors = []\n    num_docs = len(documents)\n    \n    for doc in tokenized_docs:\n        # Count term frequencies in this document\n        term_counts = Counter(doc)\n        doc_length = len(doc)\n        tfidf_vector = {}\n        \n        for term in vocab:\n            # TERM FREQUENCY (TF): How often term appears in this document\n            # Normalized by document length to handle different document sizes\n            tf = term_counts[term] / doc_length if doc_length > 0 else 0\n            \n            # INVERSE DOCUMENT FREQUENCY (IDF): How rare the term is across collection\n            # log(total_docs / docs_containing_term)\n            # Rare terms get higher IDF scores\n            idf = math.log(num_docs / doc_freq[term])\n            \n            # TF-IDF SCORE: Combines term importance in document (TF) \n            # with term rarity in collection (IDF)\n            tfidf_vector[term] = tf * idf\n        \n        tfidf_vectors.append(tfidf_vector)\n    \n    return tfidf_vectors</code></pre>",
+            "TFIDF",
+            "implementation"
+          ],
+          "guid": "nlp_9525787016762",
+          "note_model_uuid": "nlp-model-basic",
+          "tags": [
+            "tfidf",
+            "nlp_interview",
+            "implementation"
+          ]
+        },
+        {
+          "__type__": "Note",
+          "fields": [
+            "<b>Problem: TF-IDF Implementation</b><br>Time/Space Complexity?",
+            "Time complexity: O(d×v)",
+            "TFIDF",
+            "complexity"
+          ],
+          "guid": "nlp_1130871006276731",
+          "note_model_uuid": "nlp-model-basic",
+          "tags": [
+            "tfidf",
+            "nlp_interview",
+            "complexity"
+          ]
+        }
+      ]
+    },
+    {
+      "__type__": "Deck",
+      "children": [],
+      "crowdanki_uuid": "nlp-subdeck-text-classification",
+      "deck_config_uuid": "nlp-deck-config-1",
+      "desc": "NLP Interview: Text Classification",
+      "dyn": 0,
+      "extendNew": 10,
+      "extendRev": 50,
+      "name": "NLP Interview Preparation::Text Classification",
+      "notes": [
+        {
+          "__type__": "Note",
+          "fields": [
+            "<b>Problem: Text Classification Pipeline</b><br><br>Build a complete text classification system:<br>1. <code>train_classifier(texts: List[str], labels: List[str]) -> ClassificationModel</code><br>2. <code>predict(model: ClassificationModel, texts: List[str]) -> List[str]</code><br>3. <code>evaluate_classifier(y_true: List[str], y_pred: List[str]) -> Dict[str, float]</code><br><br>Example:<br>Training data:<br>• \"This movie is fantastic!\" -> \"positive\"  <br>• \"Terrible experience, would not recommend\" -> \"negative\"<br>• \"It was okay, nothing special\" -> \"neutral\"<br><br>Test: \"Amazing film, loved it!\" -> \"positive\"<br><br>Requirements:<br>• Implement with both traditional ML (TF-IDF + LogisticRegression) and deep learning<br>• Handle imbalanced classes<br>• Add confidence scores to predictions<br><br>Follow-ups:<br>• Multi-label classification<br>• Active learning for uncertain predictions<br>• Feature importance analysis",
+            "<pre><code>def extract_features(texts: List[str], method: str = 'tfidf') -> Tuple[List[List[float]], List[str]]:\n    \"\"\"\n    Extract features from texts for classification.\n    \n    This is the MOST IMPORTANT step in text classification.\n    Feature quality determines model performance more than algorithm choice.\n    \"\"\"\n    \n    # STEP 1: Build vocabulary from all texts\n    # This creates our feature space - each unique word becomes a dimension\n    vocab = set()\n    for text in texts:\n        words = text.lower().split()  # Simple tokenization\n        vocab.update(words)\n    vocab = sorted(list(vocab))  # Sort for consistency\n    \n    if method == 'tfidf':\n        # STEP 2: Calculate document frequencies for IDF computation\n        # DF = number of documents containing each term\n        doc_freq = {}\n        for word in vocab:\n            doc_freq[word] = sum(1 for text in texts if word in text.lower())\n        \n        # STEP 3: Convert each text to TF-IDF vector\n        feature_matrix = []\n        for text in texts:\n            words = text.lower().split()\n            word_counts = Counter(words)\n            doc_length = len(words)\n            \n            # Calculate TF-IDF for each vocabulary word\n            tfidf_vector = []\n            for word in vocab:\n                # TF: How often word appears in this document (normalized)\n                tf = word_counts[word] / doc_length if doc_length > 0 else 0\n                \n                # IDF: How rare the word is across all documents\n                idf = math.log(len(texts) / doc_freq[word])\n                \n                # TF-IDF: Combines local importance (TF) with global rarity (IDF)\n                tfidf_score = tf * idf\n                tfidf_vector.append(tfidf_score)\n            \n            feature_matrix.append(tfidf_vector)\n        \n        return feature_matrix, vocab\n    \n    else:  # Simple bag-of-words\n        feature_matrix = []\n        for text in texts:\n            word_counts = Counter(text.lower().split())\n            bow_vector = [word_counts[word] for word in vocab]\n            feature_matrix.append(bow_vector)\n        \n        return feature_matrix, vocab</code></pre>",
+            "Text Classification",
+            "implementation"
+          ],
+          "guid": "nlp_2156418913765059",
+          "note_model_uuid": "nlp-model-basic",
+          "tags": [
+            "text_classification",
+            "nlp_interview",
+            "implementation"
+          ]
+        }
+      ]
+    },
+    {
+      "__type__": "Deck",
+      "children": [],
+      "crowdanki_uuid": "nlp-subdeck-tokenization",
+      "deck_config_uuid": "nlp-deck-config-1",
+      "desc": "NLP Interview: Tokenization",
+      "dyn": 0,
+      "extendNew": 10,
+      "extendRev": 50,
+      "name": "NLP Interview Preparation::Tokenization",
+      "notes": [
+        {
+          "__type__": "Note",
+          "fields": [
+            "<b>Problem: Text Tokenization</b><br><br><b>Time: 15 minutes</b><br><br>Implement a function that tokenizes text into words while handling edge cases.<br><br><pre><code>def tokenize(text: str) -> List[str]:<br>    \"\"\"<br>    Tokenize text into words.<br>    Handle contractions, punctuation, and empty strings.<br>    <br>    Examples:<br>    tokenize(\"Hello world!\") -> [\"Hello\", \"world\", \"!\"]<br>    tokenize(\"don't\") -> [\"don't\"]  # Keep contractions intact<br>    tokenize(\"\") -> []<br>    \"\"\"<br>    pass</code></pre><br><br><b>Requirements:</b><br>• Split on whitespace and punctuation (except apostrophes in contractions)<br>• Handle empty/None input<br>• Preserve contractions like \"don't\", \"I'm\"<br><br><b>Follow-up:</b> How would you handle different languages or subword tokenization?",
+            "<pre><code>def tokenize(text: str) -> List[str]:\n    \"\"\"\n    Tokenize text into words, preserving contractions and handling punctuation.\n    \n    This is ALWAYS asked in NLP interviews - seems simple but has many edge cases.\n    \n    Key challenges:\n    - Contractions: \"don't\" should stay as one token, not [\"don\", \"'\", \"t\"]\n    - Punctuation: \"Hello!\" should become [\"Hello\", \"!\"]\n    - Empty/None input: Handle gracefully\n    - Unicode characters: Different languages, emojis\n    \"\"\"\n    \n    # STEP 1: Handle edge cases first\n    # Always check for None/empty input in interviews\n    if not text:\n        return []\n    \n    # STEP 2: Use regex pattern for tokenization\n    # This is the most robust approach for handling complex cases\n    \n    # PATTERN EXPLANATION:\n    # \\w+(?:'\\w+)?  - Matches word characters, optionally followed by apostrophe + more word chars\n    #                 This handles contractions like \"don't\", \"I'm\", \"we'll\"\n    # |             - OR operator\n    # [^\\w\\s]       - Matches any non-word, non-space character (punctuation)\n    #                 This treats each punctuation mark as separate token\n    \n    pattern = r\"\\w+(?:'\\w+)?|[^\\w\\s]\"\n    \n    # re.findall returns all non-overlapping matches\n    tokens = re.findall(pattern, text)\n    \n    return tokens</code></pre>",
+            "Tokenization",
+            "implementation"
+          ],
+          "guid": "nlp_4501607160945623",
+          "note_model_uuid": "nlp-model-basic",
+          "tags": [
+            "tokenization",
+            "nlp_interview",
+            "implementation"
+          ]
+        },
+        {
+          "__type__": "Note",
+          "fields": [
+            "<b>Problem: Text Tokenization</b><br>Time/Space Complexity?",
+            "Time complexity: O(n)",
+            "Tokenization",
+            "complexity"
+          ],
+          "guid": "nlp_120808218019243",
+          "note_model_uuid": "nlp-model-basic",
+          "tags": [
+            "tokenization",
+            "nlp_interview",
+            "complexity"
+          ]
+        }
+      ]
+    },
+    {
+      "__type__": "Deck",
+      "children": [],
+      "crowdanki_uuid": "nlp-subdeck-tokenization-advanced",
+      "deck_config_uuid": "nlp-deck-config-1",
+      "desc": "NLP Interview: Tokenization Advanced",
+      "dyn": 0,
+      "extendNew": 10,
+      "extendRev": 50,
+      "name": "NLP Interview Preparation::Tokenization Advanced",
+      "notes": [
+        {
+          "__type__": "Note",
+          "fields": [
+            "<b>Problem: Byte Pair Encoding (BPE) Tokenizer</b><br><br><b>Time: 30 minutes</b><br><br>Implement a simplified BPE tokenizer for subword segmentation.<br><br><pre><code>def build_bpe_vocab(texts: List[str], num_merges: int = 10) -> Dict[str, int]:<br>    \"\"\"<br>    Build BPE vocabulary by iteratively merging most frequent pairs.<br>    <br>    Input: [\"hello\", \"world\", \"hello\"]<br>    Process:<br>        1. Start with characters: ['h', 'e', 'l', 'l', 'o', 'w', 'o', 'r', 'l', 'd']<br>        2. Find most frequent pair: 'l' + 'l' -> 'll'<br>        3. Merge and repeat<br>    <br>    Returns: Token to ID mapping<br>    \"\"\"<br>    pass<br><br>def bpe_encode(text: str, vocab: Dict[str, int]) -> List[int]:<br>    \"\"\"<br>    Encode text using BPE vocabulary.<br>    Apply merges greedily from longest to shortest.<br>    \"\"\"<br>    pass</code></pre><br><br><b>Requirements:</b><br>• Start with character-level vocabulary<br>• Iteratively merge most frequent adjacent pairs<br>• Build final vocabulary with token IDs<br>• Encode new text using learned merges<br><br><b>Follow-up:</b> How does this handle out-of-vocabulary words better than word-level tokenization?",
+            "<pre><code>def get_word_frequencies(texts: List[str]) -> Dict[str, int]:\n    \"\"\"Get word frequencies with end-of-word marker.\"\"\"\n    word_freqs = Counter()\n    \n    for text in texts:\n        words = text.lower().split()\n        for word in words:\n            # Add end-of-word marker\n            word_with_marker = ' '.join(word) + ' </w>'\n            word_freqs[word_with_marker] += 1\n    \n    return dict(word_freqs)</code></pre>",
+            "Tokenization Advanced",
+            "implementation"
+          ],
+          "guid": "nlp_490388294263659",
+          "note_model_uuid": "nlp-model-basic",
+          "tags": [
+            "tokenization_advanced",
+            "nlp_interview",
+            "implementation"
+          ]
+        }
+      ]
+    },
+    {
+      "__type__": "Deck",
+      "children": [],
+      "crowdanki_uuid": "nlp-subdeck-topicmodeling",
+      "deck_config_uuid": "nlp-deck-config-1",
+      "desc": "NLP Interview: TopicModeling",
+      "dyn": 0,
+      "extendNew": 10,
+      "extendRev": 50,
+      "name": "NLP Interview Preparation::TopicModeling",
+      "notes": [
+        {
+          "__type__": "Note",
+          "fields": [
+            "<b>Problem: Topic Modeling with LSA and LDA</b><br><br>Implement topic modeling algorithms:<br>1. <code>perform_lsa(documents: List[str], num_topics: int = 5) -> LSAModel</code><br>2. <code>perform_lda(documents: List[str], num_topics: int = 5) -> LDAModel</code><br>3. <code>extract_topics(model: Union[LSAModel, LDAModel], num_words: int = 10) -> List[List[Tuple[str, float]]]</code><br>4. <code>get_document_topics(model, document: str) -> List[Tuple[int, float]]</code><br><br>Example:<br>Documents: [\"Machine learning is fascinating\", \"Deep learning uses neural networks\", ...]<br>Topics: [(0, [(\"learning\", 0.3), (\"neural\", 0.2), ...]), (1, [(\"data\", 0.25), ...])]<br><br>Requirements:<br>• LSA using SVD decomposition<br>• LDA with Gibbs sampling or variational inference  <br>• Document-topic and topic-word distributions<br>• Coherence score evaluation<br><br>Follow-ups:<br>• Compare LSA vs LDA vs NMF<br>• Dynamic topic modeling<br>• Hierarchical topic models",
+            "<pre><code>class LSAModel:\n    \"\"\"Latent Semantic Analysis using SVD.\"\"\"\n    \n    def __init__(self, num_topics: int = 5, use_tfidf: bool = True):\n        self.num_topics = num_topics\n        self.use_tfidf = use_tfidf\n        self.vectorizer = None\n        self.svd = None\n        self.document_topic_matrix = None\n        self.topic_word_matrix = None\n        self.vocabulary = None\n    \n    def fit(self, documents: List[str]):\n        \"\"\"Fit LSA model to documents.\"\"\"\n        # Vectorize documents\n        if self.use_tfidf:\n            self.vectorizer = TfidfVectorizer(max_features=1000, stop_words='english')\n        else:\n            self.vectorizer = CountVectorizer(max_features=1000, stop_words='english')\n        \n        doc_term_matrix = self.vectorizer.fit_transform(documents)\n        self.vocabulary = self.vectorizer.get_feature_names_out()\n        \n        # Apply SVD\n        self.svd = TruncatedSVD(n_components=self.num_topics, random_state=42)\n        self.document_topic_matrix = self.svd.fit_transform(doc_term_matrix)\n        \n        # Topic-word matrix (V^T in SVD)\n        self.topic_word_matrix = self.svd.components_\n        \n        # Normalize for interpretation\n        self.document_topic_matrix = normalize(self.document_topic_matrix, axis=1)\n    \n    def get_topics(self, num_words: int = 10) -> List[List[Tuple[str, float]]]:\n        \"\"\"Extract top words for each topic.\"\"\"\n        topics = []\n        \n        for topic_idx in range(self.num_topics):\n            # Get word scores for this topic\n            word_scores = self.topic_word_matrix[topic_idx]\n            \n            # Get top word indices\n            top_indices = np.argsort(word_scores)[-num_words:][::-1]\n            \n            # Create (word, score) pairs\n            topic_words = [(self.vocabulary[idx], word_scores[idx]) \n                          for idx in top_indices]\n            topics.append(topic_words)\n        \n        return topics\n    \n    def transform(self, documents: List[str]) -> np.ndarray:\n        \"\"\"Transform documents to topic space.\"\"\"\n        doc_term_matrix = self.vectorizer.transform(documents)\n        return self.svd.transform(doc_term_matrix)</code></pre>",
+            "TopicModeling",
+            "implementation"
+          ],
+          "guid": "nlp_27423576087038",
+          "note_model_uuid": "nlp-model-basic",
+          "tags": [
+            "topicmodeling",
+            "nlp_interview",
+            "implementation"
+          ]
+        }
+      ]
+    },
+    {
+      "__type__": "Deck",
+      "children": [],
+      "crowdanki_uuid": "nlp-subdeck-transformers",
+      "deck_config_uuid": "nlp-deck-config-1",
+      "desc": "NLP Interview: Transformers",
+      "dyn": 0,
+      "extendNew": 10,
+      "extendRev": 50,
+      "name": "NLP Interview Preparation::Transformers",
+      "notes": [
+        {
+          "__type__": "Note",
+          "fields": [
+            "<b>Problem: BERT Fine-tuning for Sentiment Analysis</b><br><br>Implement BERT fine-tuning for sentiment classification:<br>1. <code>load_pretrained_bert(model_name: str = 'bert-base-uncased') -> Model</code><br>2. <code>fine_tune_bert(model, texts: List[str], labels: List[int], epochs: int = 3) -> Model</code><br>3. <code>predict_with_bert(model, texts: List[str]) -> List[Tuple[str, float, Dict]]</code><br><br>Example:<br>Input: \"This product exceeded all my expectations!\"<br>Output: (\"positive\", 0.98, {\"attention_scores\": [...], \"cls_embedding\": [...]})<br><br>Requirements:<br>• Use Hugging Face Transformers<br>• Handle tokenization with special tokens<br>• Implement proper fine-tuning strategy (freeze/unfreeze layers)<br>• Extract attention visualizations<br><br>Follow-ups:<br>• Compare BERT vs DistilBERT vs RoBERTa<br>• Multi-class classification<br>• Few-shot learning with prompts",
+            "<pre><code>class SentimentDataset(Dataset):\n    \"\"\"Custom dataset for sentiment analysis.\"\"\"\n    \n    def __init__(self, texts: List[str], labels: List[int], tokenizer, max_length: int = 128):\n        self.texts = texts\n        self.labels = labels\n        self.tokenizer = tokenizer\n        self.max_length = max_length\n    \n    def __len__(self):\n        return len(self.texts)\n    \n    def __getitem__(self, idx):\n        text = self.texts[idx]\n        label = self.labels[idx]\n        \n        # Tokenize\n        encoding = self.tokenizer(\n            text,\n            truncation=True,\n            padding='max_length',\n            max_length=self.max_length,\n            return_tensors='pt'\n        )\n        \n        return {\n            'input_ids': encoding['input_ids'].flatten(),\n            'attention_mask': encoding['attention_mask'].flatten(),\n            'label': torch.tensor(label, dtype=torch.long)\n        }</code></pre>",
+            "Transformers",
+            "implementation"
+          ],
+          "guid": "nlp_2483309882903494",
+          "note_model_uuid": "nlp-model-basic",
+          "tags": [
+            "transformers",
+            "nlp_interview",
+            "implementation"
+          ]
+        }
+      ]
+    },
+    {
+      "__type__": "Deck",
+      "children": [],
+      "crowdanki_uuid": "nlp-subdeck-utilities",
+      "deck_config_uuid": "nlp-deck-config-1",
+      "desc": "NLP Interview: Utilities",
+      "dyn": 0,
+      "extendNew": 10,
+      "extendRev": 50,
+      "name": "NLP Interview Preparation::Utilities",
+      "notes": [
+        {
+          "__type__": "Note",
+          "fields": [
+            "<b>Problem: Comprehensive Text Normalization Pipeline</b><br><br>Build a complete text normalization system:<br>1. <code>normalize_text(text: str, options: Dict[str, bool]) -> str</code><br>2. <code>clean_html(html: str) -> str</code><br>3. <code>expand_contractions(text: str) -> str</code><br>4. <code>normalize_unicode(text: str) -> str</code><br><br>Example:<br>Input: \"I'll be there @ 3PM... Check https://example.com 😊\"<br>Output: \"I will be there at 3 PM. Check example.com\"<br><br>Requirements:<br>• Handle URLs, emails, phone numbers<br>• Expand contractions and abbreviations<br>• Normalize whitespace and punctuation<br>• Support multiple languages<br><br>Follow-ups:<br>• Social media specific normalization (hashtags, mentions)<br>• Preserve important entities during cleaning<br>• Add spell correction",
+            "<pre><code>def expand_contractions(text: str) -> str:\n    \"\"\"Expand contractions in text.\"\"\"\n    # Convert to lowercase for matching\n    text_lower = text.lower()\n    \n    # Sort contractions by length (descending) to match longer ones first\n    sorted_contractions = sorted(CONTRACTIONS.items(), key=lambda x: len(x[0]), reverse=True)\n    \n    for contraction, expansion in sorted_contractions:\n        # Use word boundaries for accurate matching\n        pattern = r'\\b' + re.escape(contraction) + r'\\b'\n        text_lower = re.sub(pattern, expansion, text_lower, flags=re.IGNORECASE)\n    \n    # Preserve original capitalization pattern\n    result = []\n    for i, char in enumerate(text):\n        if i < len(text_lower):\n            if char.isupper():\n                result.append(text_lower[i].upper())\n            else:\n                result.append(text_lower[i])\n        else:\n            result.append(char)\n    \n    return ''.join(result)</code></pre>",
+            "Utilities",
+            "implementation"
+          ],
+          "guid": "nlp_1272411938419859",
+          "note_model_uuid": "nlp-model-basic",
+          "tags": [
+            "utilities",
+            "nlp_interview",
+            "implementation"
+          ]
+        }
+      ]
+    }
+  ],
+  "crowdanki_uuid": "nlp-interview-deck-2024",
+  "deck_config_uuid": "nlp-deck-config-1",
+  "deck_configurations": [
+    {
+      "__type__": "DeckConfig",
+      "autoplay": true,
+      "crowdanki_uuid": "nlp-deck-config-1",
+      "dyn": false,
+      "name": "NLP Interview Settings",
+      "new": {
+        "delays": [
+          1,
+          10
+        ],
+        "initialFactor": 2500,
+        "ints": [
+          1,
+          4,
+          7
+        ],
+        "order": 1,
+        "perDay": 20
+      },
+      "rev": {
+        "ease4": 1.3,
+        "hardFactor": 1.2,
+        "ivlFct": 1.0,
+        "maxIvl": 36500,
+        "perDay": 100
+      }
+    }
+  ],
+  "desc": "NLP coding interview questions with implementations, concepts, and complexity analysis.",
+  "dyn": 0,
+  "extendNew": 10,
+  "extendRev": 50,
+  "media_files": [],
+  "name": "NLP Interview Preparation",
+  "note_models": [
+    {
+      "__type__": "NoteModel",
+      "crowdanki_uuid": "nlp-model-basic",
+      "css": "\n.card {\n    font-family: 'Consolas', 'Monaco', monospace;\n    font-size: 16px;\n    text-align: left;\n    color: #333;\n    background-color: #f5f5f5;\n}\npre {\n    background-color: #282c34;\n    color: #abb2bf;\n    padding: 10px;\n    border-radius: 5px;\n    overflow-x: auto;\n}\ncode {\n    background-color: #e1e4e8;\n    padding: 2px 4px;\n    border-radius: 3px;\n    color: #d73a49;\n}\nb {\n    color: #0366d6;\n}\n            ",
+      "flds": [
+        {
+          "name": "Front",
+          "ord": 0
+        },
+        {
+          "name": "Back",
+          "ord": 1
+        },
+        {
+          "name": "Topic",
+          "ord": 2
+        },
+        {
+          "name": "Type",
+          "ord": 3
+        }
+      ],
+      "name": "NLP Interview Card",
+      "tmpls": [
+        {
+          "afmt": "{{FrontSide}}<hr id=answer>{{Back}}<br><br><small>Topic: {{Topic}}</small>",
+          "bqfmt": "",
+          "did": null,
+          "name": "Card 1",
+          "ord": 0,
+          "qfmt": "{{Front}}"
+        }
+      ],
+      "type": 0
+    }
+  ],
+  "notes": [
+    {
+      "__type__": "Note",
+      "fields": [
+        "<b>Problem: Self-Attention from Scratch</b><br><br><b>Time: 25 minutes</b><br><br>Implement scaled dot-product self-attention mechanism.<br><br><pre><code>def self_attention(X: np.ndarray, d_k: int) -> np.ndarray:<br>    \"\"\"<br>    Implement self-attention mechanism.<br>    <br>    Args:<br>        X: Input matrix (seq_len, d_model)<br>        d_k: Key/Query dimension<br>        <br>    Returns:<br>        Attention output (seq_len, d_model)<br>        <br>    Steps:<br>        1. Create Q, K, V matrices from X<br>        2. Compute attention scores: QK^T / sqrt(d_k)<br>        3. Apply softmax to get attention weights<br>        4. Return weighted sum of values: Attention(Q,K,V) = softmax(QK^T/√d_k)V<br>    \"\"\"<br>    pass<br><br>def create_causal_mask(seq_len: int) -> np.ndarray:<br>    \"\"\"<br>    Create causal mask to prevent attending to future tokens.<br>    Return lower triangular matrix of ones.<br>    \"\"\"<br>    pass</code></pre><br><br><b>Requirements:</b><br>• Implement Q, K, V transformations using random weights<br>• Calculate attention scores with scaling<br>• Apply softmax row-wise<br>• Handle causal masking for autoregressive models<br><br><b>Follow-up:</b> How would you implement multi-head attention?",
+        "<pre><code>def softmax(x: np.ndarray, axis: int = -1) -> np.ndarray:\n    \"\"\"\n    Numerically stable softmax implementation.\n    \n    Why stable? Subtracting max prevents overflow when exponentiating large numbers.\n    This is critical for attention weights which can have large values.\n    \"\"\"\n    # Subtract maximum value for numerical stability\n    # This doesn't change the relative probabilities but prevents exp() overflow\n    x_max = np.max(x, axis=axis, keepdims=True)\n    exp_x = np.exp(x - x_max)\n    \n    # Normalize to get probabilities (sum to 1 along specified axis)\n    return exp_x / np.sum(exp_x, axis=axis, keepdims=True)</code></pre>",
+        "Attention Mechanisms",
+        "implementation"
+      ],
+      "guid": "nlp_3570374088732840",
+      "note_model_uuid": "nlp-model-basic",
+      "tags": [
+        "attention_mechanisms",
+        "nlp_interview",
+        "implementation"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "<b>Problem: Self-Attention from Scratch</b><br>Time/Space Complexity?",
+        "Time complexity: O(n²d)",
+        "Attention Mechanisms",
+        "complexity"
+      ],
+      "guid": "nlp_718371256744811",
+      "note_model_uuid": "nlp-model-basic",
+      "tags": [
+        "attention_mechanisms",
+        "nlp_interview",
+        "complexity"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "<b>Problem: Bag of Words from Scratch</b><br><br><b>Time: 20 minutes</b><br><br>Implement a basic bag-of-words vectorizer.<br><br><pre><code>def create_bow_vector(documents: List[str]) -> Tuple[List[str], List[List[int]]]:<br>    \"\"\"<br>    Create bag-of-words representation.<br>    <br>    Input: [\"I love NLP\", \"NLP is great\", \"I love programming\"]<br>    Output: <br>        vocabulary: [\"I\", \"love\", \"NLP\", \"is\", \"great\", \"programming\"]<br>        vectors: [[1,1,1,0,0,0], [0,0,1,1,1,0], [1,1,0,0,0,1]]<br>    <br>    Returns:<br>        (vocabulary, document_vectors)<br>    \"\"\"<br>    pass<br><br>def cosine_similarity(vec1: List[int], vec2: List[int]) -> float:<br>    \"\"\"<br>    Calculate cosine similarity between two BoW vectors.<br>    Return value between 0 and 1.<br>    \"\"\"<br>    pass</code></pre><br><br><b>Requirements:</b><br>• Build vocabulary from all documents<br>• Count word occurrences in each document<br>• Handle empty documents<br>• Implement cosine similarity for vector comparison<br><br><b>Follow-up:</b> How would you handle very large vocabularies efficiently?",
+        "<pre><code>def create_bow_vector(documents: List[str]) -> Tuple[List[str], List[List[int]]]:\n    \"\"\"\n    Create bag-of-words representation from scratch.\n    \n    BAG-OF-WORDS CONCEPT:\n    - Represent text as vector of word counts\n    - \"Order doesn't matter, just word presence/frequency\"\n    - Foundation of many NLP systems before embeddings\n    \n    STEPS:\n    1. Build vocabulary (all unique words)\n    2. For each document, count occurrences of each vocab word\n    3. Return vocabulary and count vectors\n    \n    INTERVIEW INSIGHT: Simple but effective. Foundation for TF-IDF.\n    \"\"\"\n    \n    # STEP 1: Handle edge case\n    if not documents:\n        return [], []\n    \n    # STEP 2: Build vocabulary from all documents\n    # We need consistent vocabulary across all documents for vector comparison\n    vocab_set = set()\n    \n    for doc in documents:\n        # Simple tokenization: lowercase and split on whitespace\n        # In interviews, mention this could be more sophisticated\n        words = doc.lower().split()\n        vocab_set.update(words)\n    \n    # STEP 3: Create ordered vocabulary\n    # Sorting ensures consistent feature ordering across runs\n    vocabulary = sorted(list(vocab_set))\n    \n    # Create word-to-index mapping for efficient lookup\n    word_to_idx = {word: i for i, word in enumerate(vocabulary)}\n    \n    # STEP 4: Convert each document to vector\n    vectors = []\n    \n    for doc in documents:\n        # Tokenize document\n        words = doc.lower().split()\n        \n        # Count word occurrences in this document\n        word_counts = Counter(words)\n        \n        # Create vector: count for each vocabulary word\n        # Index i contains count of vocabulary[i] in this document\n        vector = []\n        for word in vocabulary:\n            count = word_counts.get(word, 0)  # 0 if word not in document\n            vector.append(count)\n        \n        vectors.append(vector)\n    \n    return vocabulary, vectors</code></pre>",
+        "BoW Vectors",
+        "implementation"
+      ],
+      "guid": "nlp_777430072242625",
+      "note_model_uuid": "nlp-model-basic",
+      "tags": [
+        "bow_vectors",
+        "nlp_interview",
+        "implementation"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "<b>Problem: Bag of Words from Scratch</b><br>Time/Space Complexity?",
+        "Time: O(d × n × v)",
+        "BoW Vectors",
+        "complexity"
+      ],
+      "guid": "nlp_1231339347132113",
+      "note_model_uuid": "nlp-model-basic",
+      "tags": [
+        "bow_vectors",
+        "nlp_interview",
+        "complexity"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "<b>Problem: Text CNN for Classification</b><br><br><b>Time: 25 minutes</b><br><br>Implement a simple CNN for text classification using basic operations.<br><br><pre><code>def text_cnn_predict(text: str, vocab: Dict[str, int], <br>                    weights: Dict, max_len: int = 10) -> float:<br>    \"\"\"<br>    Implement forward pass of a text CNN.<br>    <br>    Architecture: Embedding -> Conv1D -> MaxPool -> Dense -> Sigmoid<br>    <br>    Args:<br>        text: Input text<br>        vocab: Word to index mapping  <br>        weights: {'embedding': [...], 'conv': [...], 'dense': [...]}<br>        max_len: Maximum sequence length<br>        <br>    Returns:<br>        Probability score (0-1)<br>    \"\"\"<br>    pass</code></pre><br><br><b>Requirements:</b><br>• Convert text to padded integer sequence<br>• Implement 1D convolution manually (kernel size 3)<br>• Apply max pooling across sequence<br>• Dense layer + sigmoid activation<br><br><b>Simplifications:</b> Use numpy only, single filter, binary classification<br><br><b>Follow-up:</b> How would you handle variable length sequences efficiently?",
+        "<pre><code>def text_to_sequence(text: str, vocab: Dict[str, int], max_len: int = 10) -> List[int]:\n    \"\"\"Convert text to padded integer sequence.\"\"\"\n    words = text.lower().split()\n    sequence = [vocab.get(word, 0) for word in words]  # 0 for unknown words\n    \n    # Pad or truncate to max_len\n    if len(sequence) < max_len:\n        sequence += [0] * (max_len - len(sequence))\n    else:\n        sequence = sequence[:max_len]\n    \n    return sequence</code></pre>",
+        "CNN Text",
+        "implementation"
+      ],
+      "guid": "nlp_4319182061052408",
+      "note_model_uuid": "nlp-model-basic",
+      "tags": [
+        "cnn_text",
+        "nlp_interview",
+        "implementation"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "<b>Problem: Word2Vec Skip-gram</b><br><br><b>Time: 20 minutes</b><br><br>Implement the core Skip-gram training step for Word2Vec.<br><br><pre><code>def skipgram_step(center_word: str, context_word: str, <br>                  embeddings: Dict[str, List[float]], <br>                  learning_rate: float = 0.01) -> None:<br>    \"\"\"<br>    Perform one training step of Skip-gram Word2Vec.<br>    <br>    Update embeddings to make center_word and context_word more similar.<br>    <br>    Args:<br>        center_word: \"king\" <br>        context_word: \"queen\"<br>        embeddings: {\"king\": [0.1, 0.2], \"queen\": [0.3, 0.4], ...}<br>        learning_rate: Step size for updates<br>    \"\"\"<br>    pass<br><br>def word_similarity(word1: str, word2: str, <br>                   embeddings: Dict[str, List[float]]) -> float:<br>    \"\"\"<br>    Calculate cosine similarity between two word embeddings.<br>    Returns value between -1 and 1.<br>    \"\"\"<br>    pass</code></pre><br><br><b>Requirements:</b><br>• Implement sigmoid function<br>• Calculate gradients using dot product  <br>• Update embeddings using gradient descent<br>• Handle missing words gracefully<br><br><b>Follow-up:</b> How would you implement negative sampling to make this efficient?",
+        "<pre><code>def sigmoid(x: float) -> float:\n    \"\"\"\n    Sigmoid activation function: σ(x) = 1 / (1 + e^(-x))\n    \n    Used in Word2Vec to convert dot products to probabilities.\n    Clamp input to prevent numerical overflow/underflow.\n    \"\"\"\n    # Clamp x to prevent overflow in exp() function\n    # This is crucial for numerical stability\n    clamped_x = max(-500, min(500, x))\n    return 1 / (1 + math.exp(-clamped_x))</code></pre>",
+        "Embeddings",
+        "implementation"
+      ],
+      "guid": "nlp_1117197955032916",
+      "note_model_uuid": "nlp-model-basic",
+      "tags": [
+        "embeddings",
+        "nlp_interview",
+        "implementation"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "<b>Problem: LLM Fine-tuning for Classification</b><br><br><b>Time: 25 minutes</b><br><br>Implement the key components for fine-tuning a pre-trained LLM for text classification.<br><br><pre><code>def add_classification_head(pretrained_model_dim: int, num_classes: int) -> Dict:<br>    \"\"\"<br>    Add classification head to pretrained LLM.<br>    <br>    Args:<br>        pretrained_model_dim: Size of LLM output (e.g., 768 for BERT-base)<br>        num_classes: Number of target classes<br>        <br>    Returns:<br>        Classification weights and bias<br>    \"\"\"<br>    pass<br><br>def compute_classification_loss(logits: np.ndarray, labels: np.ndarray) -> float:<br>    \"\"\"<br>    Compute cross-entropy loss for classification.<br>    <br>    Args:<br>        logits: Model outputs (batch_size, num_classes)<br>        labels: True labels (batch_size,) as class indices<br>        <br>    Returns:<br>        Cross-entropy loss value<br>    \"\"\"<br>    pass<br><br>def freeze_layers(model_weights: Dict, freeze_ratio: float = 0.8) -> Dict:<br>    \"\"\"<br>    Freeze bottom layers of pretrained model (keep top layers trainable).<br>    In practice, this means marking parameters as requires_grad=False.<br>    \"\"\"<br>    pass</code></pre><br><br><b>Requirements:</b><br>• Initialize classification head with proper scaling<br>• Implement stable cross-entropy loss with softmax<br>• Demonstrate layer freezing strategy<br>• Handle different learning rates for pretrained vs new layers<br><br><b>Follow-up:</b> How would you implement LoRA for parameter-efficient fine-tuning?",
+        "<pre><code>def add_classification_head(pretrained_model_dim: int, num_classes: int) -> Dict:\n    \"\"\"Add classification head to pretrained LLM.\"\"\"\n    \n    # Xavier/Glorot initialization for stable training\n    std = np.sqrt(2.0 / (pretrained_model_dim + num_classes))\n    \n    return {\n        'W_cls': np.random.randn(pretrained_model_dim, num_classes) * std,\n        'b_cls': np.zeros(num_classes)\n    }</code></pre>",
+        "Fine Tuning",
+        "implementation"
+      ],
+      "guid": "nlp_4457493085573195",
+      "note_model_uuid": "nlp-model-basic",
+      "tags": [
+        "fine_tuning",
+        "nlp_interview",
+        "implementation"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "<b>Problem: GPT Transformer Block</b><br><br><b>Time: 30 minutes</b><br><br>Implement a single GPT transformer block with the standard architecture.<br><br><pre><code>def gpt_block(x: np.ndarray, weights: Dict) -> np.ndarray:<br>    \"\"\"<br>    Single GPT transformer block forward pass.<br>    <br>    Architecture:<br>        x -> LayerNorm -> SelfAttention -> Residual -> LayerNorm -> FFN -> Residual<br>    <br>    Args:<br>        x: Input embeddings (seq_len, d_model)<br>        weights: Contains attention and FFN weights<br>        <br>    Returns:<br>        Output embeddings (seq_len, d_model)<br>    \"\"\"<br>    pass<br><br>def layer_norm(x: np.ndarray, gamma: np.ndarray, beta: np.ndarray) -> np.ndarray:<br>    \"\"\"<br>    Apply layer normalization.<br>    norm = (x - mean) / sqrt(variance + eps)<br>    output = gamma * norm + beta<br>    \"\"\"<br>    pass<br><br>def feed_forward(x: np.ndarray, W1: np.ndarray, b1: np.ndarray, <br>                W2: np.ndarray, b2: np.ndarray) -> np.ndarray:<br>    \"\"\"<br>    Two-layer feed-forward network with GELU activation.<br>    FFN(x) = GELU(xW1 + b1)W2 + b2<br>    \"\"\"<br>    pass</code></pre><br><br><b>Requirements:</b><br>• Implement layer normalization with learnable parameters<br>• Use GELU activation function in FFN<br>• Add residual connections around attention and FFN<br>• Apply causal masking in self-attention<br><br><b>Follow-up:</b> How would you stack multiple blocks to create full GPT model?",
+        "<pre><code>def gelu(x: np.ndarray) -> np.ndarray:\n    \"\"\"GELU activation function used in GPT.\"\"\"\n    return 0.5 * x * (1 + np.tanh(math.sqrt(2/math.pi) * (x + 0.044715 * x**3)))</code></pre>",
+        "GPT Implementation",
+        "implementation"
+      ],
+      "guid": "nlp_778264394878432",
+      "note_model_uuid": "nlp-model-basic",
+      "tags": [
+        "gpt_implementation",
+        "nlp_interview",
+        "implementation"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "<b>Problem: Instruction Following Setup</b><br><br><b>Time: 20 minutes</b><br><br>Implement the data preparation and loss calculation for instruction fine-tuning.<br><br><pre><code>def format_instruction_data(instruction: str, response: str) -> str:<br>    \"\"\"<br>    Format instruction-response pair for training.<br>    <br>    Standard format:<br>    \"### Instruction:\\n{instruction}\\n### Response:\\n{response}\"<br>    <br>    Used for training LLMs to follow instructions like ChatGPT.<br>    \"\"\"<br>    pass<br><br>def compute_instruction_loss(model_output: np.ndarray, <br>                           target_tokens: List[int],<br>                           instruction_length: int) -> float:<br>    \"\"\"<br>    Compute loss only on response tokens (not instruction tokens).<br>    <br>    Args:<br>        model_output: Logits for next token prediction (seq_len, vocab_size)<br>        target_tokens: True next tokens (seq_len,)<br>        instruction_length: Length of instruction (don't compute loss here)<br>        <br>    Returns:<br>        Loss averaged over response tokens only<br>    \"\"\"<br>    pass</code></pre><br><br><b>Requirements:</b><br>• Format data with clear instruction/response delimiters<br>• Mask instruction tokens during loss calculation<br>• Implement next-token prediction loss<br>• Handle variable-length instructions and responses<br><br><b>Follow-up:</b> How would you implement RLHF (reinforcement learning from human feedback)?",
+        "<pre><code>def format_instruction_data(instruction: str, response: str) -> str:\n    \"\"\"Format instruction-response pair for training.\"\"\"\n    return f\"### Instruction:\\n{instruction}\\n### Response:\\n{response}\"</code></pre>",
+        "Instruction Tuning",
+        "implementation"
+      ],
+      "guid": "nlp_2879062905146772",
+      "note_model_uuid": "nlp-model-basic",
+      "tags": [
+        "instruction_tuning",
+        "nlp_interview",
+        "implementation"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "<b>Problem: Text Generation with LLMs</b><br><br><b>Time: 25 minutes</b><br><br>Implement text generation from a trained language model with different decoding strategies.<br><br><pre><code>def generate_text(model_fn: callable, prompt: str, vocab: Dict, <br>                 max_length: int = 20, strategy: str = 'greedy') -> str:<br>    \"\"\"<br>    Generate text from language model using different strategies.<br>    <br>    Args:<br>        model_fn: Function that returns next-token logits given current sequence<br>        prompt: Starting text<br>        vocab: Token to ID mapping<br>        max_length: Maximum tokens to generate  <br>        strategy: 'greedy', 'random', 'top_k', or 'top_p'<br>        <br>    Returns:<br>        Generated text<br>    \"\"\"<br>    pass<br><br>def beam_search(model_fn: callable, prompt_tokens: List[int], <br>               beam_width: int = 3, max_length: int = 10) -> List[str]:<br>    \"\"\"<br>    Implement beam search for finding high-probability sequences.<br>    <br>    Returns:<br>        List of candidate sequences ranked by score<br>    \"\"\"<br>    pass</code></pre><br><br><b>Requirements:</b><br>• Convert prompt to tokens, generate tokens iteratively<br>• Implement greedy, random, top-k, and top-p sampling<br>• Track probabilities for beam search scoring<br>• Handle end-of-sequence tokens properly<br><br><b>Follow-up:</b> How do you balance quality vs diversity in generation?",
+        "<pre><code>def softmax(logits: List[float], temperature: float = 1.0) -> List[float]:\n    \"\"\"Convert logits to probabilities with temperature scaling.\"\"\"\n    if temperature != 1.0:\n        logits = [l / temperature for l in logits]\n    \n    max_logit = max(logits)\n    exp_logits = [math.exp(l - max_logit) for l in logits]\n    sum_exp = sum(exp_logits)\n    \n    return [exp_l / sum_exp for exp_l in exp_logits]</code></pre>",
+        "LLM Fundamentals",
+        "implementation"
+      ],
+      "guid": "nlp_1206073947860520",
+      "note_model_uuid": "nlp-model-basic",
+      "tags": [
+        "llm_fundamentals",
+        "nlp_interview",
+        "implementation"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "<b>Problem: LLM Evaluation Metrics</b><br><br><b>Time: 20 minutes</b><br><br>Implement key evaluation metrics for large language models.<br><br><pre><code>def calculate_perplexity(model_probs: List[List[float]], <br>                        target_tokens: List[int]) -> float:<br>    \"\"\"<br>    Calculate perplexity - primary metric for language models.<br>    <br>    Perplexity = exp(-1/N * sum(log(p(token_i))))<br>    Lower perplexity = better model<br>    <br>    Args:<br>        model_probs: Probability distributions over vocabulary for each position<br>        target_tokens: Actual next tokens<br>        <br>    Returns:<br>        Perplexity value<br>    \"\"\"<br>    pass<br><br>def compute_bleu_score(reference: str, candidate: str, n: int = 4) -> float:<br>    \"\"\"<br>    Compute BLEU score for text generation evaluation.<br>    <br>    Measures n-gram overlap between reference and generated text.<br>    Used for translation, summarization evaluation.<br>    \"\"\"<br>    pass</code></pre><br><br><b>Requirements:</b><br>• Handle log probability calculations safely (avoid log(0))<br>• Implement n-gram precision for BLEU<br>• Add brevity penalty for BLEU<br>• Calculate confidence intervals for perplexity<br><br><b>Follow-up:</b> What are limitations of perplexity? How do you evaluate instruction-following?",
+        "<pre><code>def calculate_perplexity(model_probs: List[List[float]], \n                        target_tokens: List[int]) -> float:\n    \"\"\"Calculate perplexity from model probabilities.\"\"\"\n    if not model_probs or not target_tokens:\n        return float('inf')\n    \n    if len(model_probs) != len(target_tokens):\n        return float('inf')\n    \n    log_likelihood = 0.0\n    num_tokens = 0\n    \n    for probs, target_token in zip(model_probs, target_tokens):\n        if target_token < len(probs):\n            # Get probability of target token\n            prob = probs[target_token]\n            \n            # Add log probability (with small epsilon to avoid log(0))\n            log_likelihood += math.log(max(prob, 1e-10))\n            num_tokens += 1\n    \n    if num_tokens == 0:\n        return float('inf')\n    \n    # Perplexity = exp(-avg_log_likelihood)\n    avg_log_likelihood = log_likelihood / num_tokens\n    perplexity = math.exp(-avg_log_likelihood)\n    \n    return perplexity</code></pre>",
+        "Model Evaluation",
+        "implementation"
+      ],
+      "guid": "nlp_3950072592167507",
+      "note_model_uuid": "nlp-model-basic",
+      "tags": [
+        "model_evaluation",
+        "nlp_interview",
+        "implementation"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "<b>Problem: Named Entity Recognition with Custom Entities</b><br><br>Implement <code>extract_entities(text: str) -> Dict[str, List[str]]</code> that:<br>1. Extracts standard entities (PERSON, ORG, GPE, DATE, MONEY)<br>2. Returns entities grouped by type<br>3. Handles overlapping entities<br><br>Example:<br>Input: \"Apple Inc. was founded by Steve Jobs in Cupertino on April 1, 1976.\"<br>Output: {<br>    \"ORG\": [\"Apple Inc.\"],<br>    \"PERSON\": [\"Steve Jobs\"],<br>    \"GPE\": [\"Cupertino\"],<br>    \"DATE\": [\"April 1, 1976\"]<br>}<br><br>Requirements:<br>• Use spaCy or NLTK for NER<br>• Handle multi-word entities<br>• Implement custom entity detection for email/phone numbers<br><br>Follow-ups:<br>• Add confidence scores for entities<br>• Implement entity linking/disambiguation<br>• Extract relationships between entities",
+        "<pre><code>def extract_entities(text: str) -> Dict[str, List[str]]:\n    \"\"\"Extract named entities using spaCy.\"\"\"\n    doc = nlp(text)\n    entities = defaultdict(list)\n    \n    for ent in doc.ents:\n        entities[ent.label_].append(ent.text)\n    \n    # Remove duplicates while preserving order\n    for label in entities:\n        entities[label] = list(dict.fromkeys(entities[label]))\n    \n    return dict(entities)</code></pre>",
+        "NER",
+        "implementation"
+      ],
+      "guid": "nlp_2122315269255017",
+      "note_model_uuid": "nlp-model-basic",
+      "tags": [
+        "ner",
+        "nlp_interview",
+        "implementation"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "<b>Problem: N-gram Language Model</b><br><br><b>Time: 25 minutes</b><br><br>Implement a simple bigram language model with probability calculation.<br><br><pre><code>def build_bigram_model(texts: List[str]) -> Dict[str, Dict[str, float]]:<br>    \"\"\"<br>    Build bigram language model.<br>    <br>    Input: [\"the cat sat\", \"the dog sat\"]<br>    Output: {<br>        \"the\": {\"cat\": 0.5, \"dog\": 0.5},<br>        \"cat\": {\"sat\": 1.0},<br>        \"dog\": {\"sat\": 1.0}<br>    }<br>    <br>    Returns: Dictionary mapping word -> {next_word: probability}<br>    \"\"\"<br>    pass<br><br>def generate_text(model: Dict, start_word: str, length: int = 5) -> str:<br>    \"\"\"<br>    Generate text using the bigram model.<br>    Pick most probable next word at each step.<br>    \"\"\"<br>    pass</code></pre><br><br><b>Requirements:</b><br>• Count bigram frequencies across all texts<br>• Calculate conditional probabilities P(w2|w1)<br>• Handle unseen bigrams (return empty dict)<br>• Generate coherent text sequences<br><br><b>Follow-up:</b> How would you add smoothing for unseen n-grams?",
+        "<pre><code>def build_bigram_model(texts: List[str]) -> Dict[str, Dict[str, float]]:\n    \"\"\"Build bigram language model with probabilities.\"\"\"\n    if not texts:\n        return {}\n    \n    # Count bigrams\n    bigram_counts = defaultdict(Counter)\n    \n    for text in texts:\n        words = text.lower().split()\n        \n        # Add start token\n        words = ['<START>'] + words + ['<END>']\n        \n        # Count bigrams\n        for i in range(len(words) - 1):\n            w1, w2 = words[i], words[i + 1]\n            bigram_counts[w1][w2] += 1\n    \n    # Convert counts to probabilities\n    model = {}\n    for w1, w2_counts in bigram_counts.items():\n        total = sum(w2_counts.values())\n        model[w1] = {w2: count/total for w2, count in w2_counts.items()}\n    \n    return model</code></pre>",
+        "NGrams",
+        "implementation"
+      ],
+      "guid": "nlp_1006647991576138",
+      "note_model_uuid": "nlp-model-basic",
+      "tags": [
+        "ngrams",
+        "nlp_interview",
+        "implementation"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "<b>Problem: Neural Network from Scratch</b><br><br>Implement basic neural networks from scratch:<br>1. <code>Perceptron(input_size: int, learning_rate: float)</code> - Single perceptron<br>2. <code>NeuralNetwork(layers: List[int], activation: str)</code> - Multi-layer network  <br>3. <code>train(X: np.ndarray, y: np.ndarray, epochs: int)</code> - Training with backpropagation<br>4. <code>predict(X: np.ndarray) -> np.ndarray</code> - Forward pass prediction<br><br>Example:<br>XOR problem: X = [[0,0], [0,1], [1,0], [1,1]], y = [0, 1, 1, 0]<br>Network: [2, 4, 1] (2 inputs, 4 hidden, 1 output)<br>Result: Learns XOR function with ~95% accuracy<br><br>Requirements:<br>• Implement forward propagation<br>• Implement backpropagation with chain rule<br>• Support multiple activation functions (sigmoid, tanh, ReLU)<br>• Handle binary and multi-class classification<br>• Add momentum and learning rate decay<br><br>Follow-ups:<br>• Implement different optimizers (Adam, RMSprop)<br>• Add regularization (dropout, weight decay)<br>• Gradient checking for debugging<br>• Mini-batch training",
+        "<pre><code>class ActivationFunctions:\n    \"\"\"Collection of activation functions and their derivatives.\"\"\"\n    \n    @staticmethod\n    def sigmoid(x: np.ndarray) -> np.ndarray:\n        \"\"\"Sigmoid activation function.\"\"\"\n        # Prevent overflow\n        x = np.clip(x, -500, 500)\n        return 1 / (1 + np.exp(-x))\n    \n    @staticmethod\n    def sigmoid_derivative(x: np.ndarray) -> np.ndarray:\n        \"\"\"Derivative of sigmoid function.\"\"\"\n        s = ActivationFunctions.sigmoid(x)\n        return s * (1 - s)\n    \n    @staticmethod\n    def tanh(x: np.ndarray) -> np.ndarray:\n        \"\"\"Hyperbolic tangent activation function.\"\"\"\n        return np.tanh(x)\n    \n    @staticmethod\n    def tanh_derivative(x: np.ndarray) -> np.ndarray:\n        \"\"\"Derivative of tanh function.\"\"\"\n        return 1 - np.tanh(x) ** 2\n    \n    @staticmethod\n    def relu(x: np.ndarray) -> np.ndarray:\n        \"\"\"ReLU activation function.\"\"\"\n        return np.maximum(0, x)\n    \n    @staticmethod\n    def relu_derivative(x: np.ndarray) -> np.ndarray:\n        \"\"\"Derivative of ReLU function.\"\"\"\n        return np.where(x > 0, 1, 0)\n    \n    @staticmethod\n    def leaky_relu(x: np.ndarray, alpha: float = 0.01) -> np.ndarray:\n        \"\"\"Leaky ReLU activation function.\"\"\"\n        return np.where(x > 0, x, alpha * x)\n    \n    @staticmethod\n    def leaky_relu_derivative(x: np.ndarray, alpha: float = 0.01) -> np.ndarray:\n        \"\"\"Derivative of Leaky ReLU function.\"\"\"\n        return np.where(x > 0, 1, alpha)\n    \n    @staticmethod\n    def softmax(x: np.ndarray) -> np.ndarray:\n        \"\"\"Softmax activation function.\"\"\"\n        exp_x = np.exp(x - np.max(x, axis=-1, keepdims=True))\n        return exp_x / np.sum(exp_x, axis=-1, keepdims=True)</code></pre>",
+        "Neural Fundamentals",
+        "implementation"
+      ],
+      "guid": "nlp_2653938198985966",
+      "note_model_uuid": "nlp-model-basic",
+      "tags": [
+        "neural_fundamentals",
+        "nlp_interview",
+        "implementation"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "<b>Problem: Part-of-Speech Tagging with Accuracy Metrics</b><br><br>Implement <code>pos_tag_text(text: str) -> List[Tuple[str, str]]</code> that:<br>1. Tags each word with its part-of-speech<br>2. Handles ambiguous words correctly<br>3. Returns (word, tag) tuples<br><br>Example:<br>Input: \"The quick brown fox jumps over the lazy dog\"<br>Output: [(\"The\", \"DT\"), (\"quick\", \"JJ\"), (\"brown\", \"JJ\"), (\"fox\", \"NN\"), ...]<br><br>Requirements:<br>• Use Penn Treebank tagset<br>• Handle sentences with punctuation<br>• Implement a function to get most common POS for ambiguous words<br><br>Follow-ups:<br>• Extract all nouns/verbs from text<br>• Find noun phrases using POS patterns<br>• Compare accuracy of different taggers",
+        "<pre><code>def pos_tag_text(text: str) -> List[Tuple[str, str]]:\n    \"\"\"POS tag text using NLTK's default tagger (Penn Treebank tagset).\"\"\"\n    tokens = nltk.word_tokenize(text)\n    return nltk.pos_tag(tokens)</code></pre>",
+        "POS Tagging",
+        "implementation"
+      ],
+      "guid": "nlp_227367998392186",
+      "note_model_uuid": "nlp-model-basic",
+      "tags": [
+        "pos_tagging",
+        "nlp_interview",
+        "implementation"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "<b>Problem: Regular Expressions for NLP</b><br><br>Implement regex-based NLP functions:<br>1. <code>extract_entities_regex(text: str) -> Dict[str, List[str]]</code><br>   - Extract emails, phones, URLs, dates, money amounts<br>2. <code>sentence_segmentation(text: str) -> List[str]</code><br>   - Handle abbreviations, decimals, ellipsis<br>3. <code>pattern_based_ner(text: str, patterns: Dict[str, str]) -> List[Tuple[str, str, int, int]]</code><br>   - Custom entity recognition with regex<br>4. <code>clean_text_regex(text: str, rules: List[Tuple[str, str]]) -> str</code><br>   - Apply multiple cleaning rules<br><br>Example:<br>Text: \"Contact Dr. Smith at john.smith@email.com or call (555) 123-4567. Meeting on Jan 15, 2024.\"<br>Entities: {<br>    \"EMAIL\": [\"john.smith@email.com\"],<br>    \"PHONE\": [\"(555) 123-4567\"],<br>    \"DATE\": [\"Jan 15, 2024\"]<br>}<br><br>Requirements:<br>• Handle edge cases (abbreviations, special formats)<br>• Support multiple date/time formats<br>• Extract structured information (prices, percentages)<br>• Build reusable pattern library<br><br>Follow-ups:<br>• Regex optimization for large texts<br>• Combining regex with ML models<br>• Multi-language pattern support",
+        "<pre><code>def extract_entities_regex(text: str, \n                          custom_patterns: Optional[Dict[str, str]] = None) -> Dict[str, List[str]]:\n    \"\"\"Extract various entities using regex patterns.\"\"\"\n    entities = defaultdict(list)\n    \n    # Use default patterns plus any custom ones\n    patterns = REGEX_PATTERNS.copy()\n    if custom_patterns:\n        patterns.update(custom_patterns)\n    \n    # Extract emails\n    emails = re.findall(patterns['email'], text, re.IGNORECASE)\n    if emails:\n        entities['EMAIL'] = list(set(emails))\n    \n    # Extract phone numbers\n    phones = re.findall(patterns['phone_us'], text)\n    phone_formatted = [f\"({area})-{prefix}-{number}\" for area, prefix, number in phones]\n    intl_phones = re.findall(patterns['phone_intl'], text)\n    all_phones = phone_formatted + intl_phones\n    if all_phones:\n        entities['PHONE'] = list(set(all_phones))\n    \n    # Extract URLs\n    urls = re.findall(patterns['url'], text, re.IGNORECASE)\n    if urls:\n        entities['URL'] = list(set(urls))\n    \n    # Extract dates (multiple formats)\n    dates = []\n    for pattern_name in ['date_mdy', 'date_dmy', 'date_ymd', 'date_written']:\n        matches = re.findall(patterns[pattern_name], text, re.IGNORECASE)\n        dates.extend([' '.join(match) if isinstance(match, tuple) else match for match in matches])\n    \n    if dates:\n        entities['DATE'] = list(set(dates))\n    \n    # Extract times\n    times = []\n    time_12 = re.findall(patterns['time_12'], text, re.IGNORECASE)\n    time_24 = re.findall(patterns['time_24'], text)\n    times.extend([f\"{h}:{m} {ap}\" for h, m, ap in time_12])\n    times.extend(time_24)\n    if times:\n        entities['TIME'] = list(set(times))\n    \n    # Extract money amounts\n    money = []\n    for pattern_name in ['money_dollar', 'money_euro', 'money_pound', 'money_written']:\n        matches = re.findall(patterns[pattern_name], text, re.IGNORECASE)\n        money.extend(matches)\n    \n    if money:\n        entities['MONEY'] = list(set(money))\n    \n    # Extract percentages\n    percentages = re.findall(patterns['percentage'], text)\n    if percentages:\n        entities['PERCENTAGE'] = list(set(percentages))\n    \n    # Extract other entities\n    for entity_type, pattern in [\n        ('SSN', 'ssn'),\n        ('CREDIT_CARD', 'credit_card'),\n        ('IP_ADDRESS', 'ip_address'),\n        ('HASHTAG', 'hashtag'),\n        ('MENTION', 'mention')\n    ]:\n        matches = re.findall(patterns[pattern], text)\n        if matches:\n            entities[entity_type] = list(set(matches))\n    \n    return dict(entities)</code></pre>",
+        "Regex NLP",
+        "implementation"
+      ],
+      "guid": "nlp_2461243476554147",
+      "note_model_uuid": "nlp-model-basic",
+      "tags": [
+        "regex_nlp",
+        "nlp_interview",
+        "implementation"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "<b>Problem: Rule-based Sentiment Analysis</b><br><br><b>Time: 20 minutes</b><br><br>Implement a simple rule-based sentiment analyzer.<br><br><pre><code>def analyze_sentiment(text: str) -> Dict[str, float]:<br>    \"\"\"<br>    Analyze sentiment using rules (lexicon + modifiers).<br>    <br>    Returns:<br>        {\"positive\": 0.6, \"negative\": 0.1, \"neutral\": 0.3, \"compound\": 0.5}<br>    <br>    Rules:<br>    - Use sentiment lexicon for base scores<br>    - \"very/really\" intensifies sentiment (+30%)  <br>    - \"not/never\" flips sentiment (* -0.8)<br>    - Multiple punctuation adds emphasis<br>    \"\"\"<br>    pass</code></pre><br><br><b>Requirements:</b><br>• Create basic positive/negative word dictionary<br>• Handle intensifiers (\"very good\" -> higher positive score)<br>• Handle negations (\"not bad\" -> less negative)<br>• Normalize scores to sum to 1.0<br><br><b>Follow-up:</b> How would you handle sarcasm or domain-specific sentiment?",
+        "<pre><code>def analyze_sentiment(text: str) -> Dict[str, float]:\n    \"\"\"\n    Analyze sentiment using rule-based approach (VADER-style).\n    \n    RULE-BASED SENTIMENT ANALYSIS:\n    - Uses pre-built dictionary of word sentiments\n    - Applies grammatical rules (intensifiers, negations)\n    - Fast and interpretable (good for production)\n    - No training data needed\n    \n    ALGORITHM:\n    1. Tokenize text and look up word sentiments\n    2. Apply intensifier rules (\"very good\" > \"good\")\n    3. Apply negation rules (\"not good\" becomes negative)\n    4. Handle punctuation emphasis (\"great!!!\" > \"great\")\n    5. Normalize scores and return distribution\n    \"\"\"\n    \n    # STEP 1: Handle edge cases first\n    if not text or not text.strip():\n        # Return neutral sentiment for empty text\n        return {\"positive\": 0.0, \"negative\": 0.0, \"neutral\": 1.0, \"compound\": 0.0}\n    \n    # STEP 2: Simple tokenization\n    # Split on whitespace and convert to lowercase\n    words = text.lower().split()\n    \n    if not words:\n        return {\"positive\": 0.0, \"negative\": 0.0, \"neutral\": 1.0, \"compound\": 0.0}\n    \n    # STEP 3: Get base sentiment scores for each word\n    # Look up each word in sentiment lexicon\n    scores = []\n    \n    for i, word in enumerate(words):\n        # Get base sentiment score (0 if not in lexicon)\n        base_score = SENTIMENT_LEXICON.get(word, 0.0)\n        \n        if base_score != 0:  # Only process sentiment-bearing words\n            \n            # RULE 1: Check for intensifiers in previous word\n            # \"very good\" should be more positive than \"good\"\n            if i > 0 and words[i-1] in INTENSIFIERS:\n                # Boost sentiment by 30% (VADER-style boosting)\n                base_score *= 1.3\n                print(f\"  INTENSIFIER: '{words[i-1]} {word}' -> boosted to {base_score:.2f}\")\n            \n            # RULE 2: Check for negations in previous 2 words\n            # \"not very good\" should be negative despite \"good\" being positive\n            negated = False\n            for j in range(max(0, i-2), i):  # Look back up to 2 words\n                if words[j] in NEGATIONS:\n                    negated = True\n                    print(f\"  NEGATION: '{words[j]}' flips '{word}'\")\n                    break\n            \n            # Apply negation: flip polarity and reduce intensity\n            if negated:\n                base_score *= -0.8  # Flip sign and dampen (VADER approach)\n            \n            scores.append(base_score)\n    \n    # STEP 4: Handle punctuation emphasis\n    # Multiple exclamation marks add emphasis: \"Great!!!\" > \"Great\"\n    exclamation_count = text.count('!')\n    if exclamation_count > 0 and scores:\n        # Add emphasis but cap the effect\n        emphasis = min(exclamation_count * 0.3, 1.0)\n        print(f\"  EMPHASIS: {exclamation_count} exclamations add {emphasis:.2f}\")\n        \n        # Apply emphasis to existing sentiment\n        scores = [s * (1 + emphasis) if s > 0 else s * (1 + emphasis) for s in scores]\n    \n    # STEP 5: Calculate final sentiment distribution\n    if not scores:\n        # No sentiment words found\n        return {\"positive\": 0.0, \"negative\": 0.0, \"neutral\": 1.0, \"compound\": 0.0}\n    \n    # Separate positive and negative scores\n    pos_scores = [s for s in scores if s > 0]\n    neg_scores = [s for s in scores if s < 0]\n    \n    # Calculate proportions\n    pos_sum = sum(pos_scores)\n    neg_sum = abs(sum(neg_scores))  # Make positive for proportion calculation\n    \n    total = pos_sum + neg_sum\n    if total > 0:\n        pos_prop = pos_sum / total\n        neg_prop = neg_sum / total\n        neu_prop = 0.0  # In this simple version, neutral is when no sentiment words\n    else:\n        pos_prop = neg_prop = 0.0\n        neu_prop = 1.0\n    \n    # STEP 6: Calculate compound score (overall sentiment)\n    # Compound score combines all sentiment into single [-1, 1] score\n    # Used for final classification: positive if > 0.05, negative if < -0.05\n    compound = (pos_sum - neg_sum) / (total + 1) if total > 0 else 0.0\n    compound = max(-1, min(1, compound))  # Clamp to [-1, 1] range\n    \n    return {\n        \"positive\": round(pos_prop, 3),\n        \"negative\": round(neg_prop, 3), \n        \"neutral\": round(neu_prop, 3),\n        \"compound\": round(compound, 3)\n    }</code></pre>",
+        "Sentiment Analysis",
+        "implementation"
+      ],
+      "guid": "nlp_1931531134454983",
+      "note_model_uuid": "nlp-model-basic",
+      "tags": [
+        "sentiment_analysis",
+        "nlp_interview",
+        "implementation"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "<b>Problem: Simple LSTM for Sentiment</b><br><br><b>Time: 25 minutes</b><br><br>Implement a basic LSTM cell for sentiment classification.<br><br><pre><code>def lstm_cell(x_t: List[float], h_prev: List[float], c_prev: List[float],<br>              weights: Dict) -> Tuple[List[float], List[float]]:<br>    \"\"\"<br>    Single LSTM cell forward pass.<br>    <br>    Args:<br>        x_t: Input at time t<br>        h_prev: Previous hidden state  <br>        c_prev: Previous cell state<br>        weights: {'Wf', 'Wi', 'Wo', 'Wc', 'bf', 'bi', 'bo', 'bc'}<br>        <br>    Returns:<br>        (h_t, c_t): New hidden and cell states<br>    \"\"\"<br>    pass<br><br>def lstm_sentiment(sequence: List[List[float]], weights: Dict) -> float:<br>    \"\"\"<br>    Run LSTM over sequence and classify sentiment.<br>    Return probability (0-1) of positive sentiment.<br>    \"\"\"<br>    pass</code></pre><br><br><b>Requirements:</b><br>• Implement forget, input, output gates using sigmoid<br>• Implement candidate cell state using tanh<br>• Process sequence step by step<br>• Final classification with sigmoid<br><br><b>Simplifications:</b> Use lists instead of matrices, single layer<br><br><b>Follow-up:</b> How would you handle variable-length sequences in practice?",
+        "<pre><code>def sigmoid(x: float) -> float:\n    return 1 / (1 + math.exp(-max(-500, min(500, x))))</code></pre>",
+        "Sequence Models",
+        "implementation"
+      ],
+      "guid": "nlp_4432489762472736",
+      "note_model_uuid": "nlp-model-basic",
+      "tags": [
+        "sequence_models",
+        "nlp_interview",
+        "implementation"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "<b>Problem: Text Similarity Metrics</b><br><br>Implement multiple similarity metrics:<br>1. <code>cosine_similarity(text1: str, text2: str) -> float</code><br>2. <code>jaccard_similarity(text1: str, text2: str) -> float</code>  <br>3. <code>semantic_similarity(text1: str, text2: str) -> float</code> # Using word embeddings<br><br>Example:<br>text1 = \"The cat sat on the mat\"<br>text2 = \"The feline rested on the rug\"<br>cosine_sim = 0.45 (bag-of-words)<br>semantic_sim = 0.82 (word2vec/embeddings)<br><br>Requirements:<br>• Compare bag-of-words vs embeddings approaches<br>• Handle synonyms and semantic relationships<br>• Implement efficient similarity for large text collections<br><br>Follow-ups:<br>• Add Levenshtein distance for character-level similarity<br>• Implement MinHash for approximate similarity<br>• Build a text deduplication system",
+        "<pre><code>def tokenize(text: str) -> List[str]:\n    \"\"\"Simple tokenization.\"\"\"\n    return text.lower().split()</code></pre>",
+        "Similarity",
+        "implementation"
+      ],
+      "guid": "nlp_2132130008100082",
+      "note_model_uuid": "nlp-model-basic",
+      "tags": [
+        "similarity",
+        "nlp_interview",
+        "implementation"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "<b>Problem: Stemming vs Lemmatization</b><br><br>Implement two functions:<br>1. <code>stem_words(words: List[str]) -> List[str]</code> - Porter stemming<br>2. <code>lemmatize_words(words: List[str], pos_tags: Optional[List[str]] = None) -> List[str]</code> - With POS awareness<br><br>Example:<br>Input: [\"running\", \"ran\", \"runs\", \"better\", \"best\"]<br>Stemmed: [\"run\", \"ran\", \"run\", \"better\", \"best\"]<br>Lemmatized: [\"run\", \"run\", \"run\", \"good\", \"good\"]<br><br>Requirements:<br>• Show the difference between stemming and lemmatization<br>• Handle POS tags for better lemmatization<br>• Compare outputs side by side<br><br>Follow-ups:<br>• Which method to use for information retrieval vs text classification?<br>• Performance implications?",
+        "<pre><code>def get_wordnet_pos(treebank_tag):\n    \"\"\"Convert Penn Treebank POS tags to WordNet POS tags.\"\"\"\n    if treebank_tag.startswith('J'):\n        return wordnet.ADJ\n    elif treebank_tag.startswith('V'):\n        return wordnet.VERB\n    elif treebank_tag.startswith('N'):\n        return wordnet.NOUN\n    elif treebank_tag.startswith('R'):\n        return wordnet.ADV\n    else:\n        return wordnet.NOUN  # default</code></pre>",
+        "Stemming Lemmatization",
+        "implementation"
+      ],
+      "guid": "nlp_1417792672927176",
+      "note_model_uuid": "nlp-model-basic",
+      "tags": [
+        "stemming_lemmatization",
+        "nlp_interview",
+        "implementation"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "<b>Problem: Remove Stopwords (Configurable)</b><br><br>Implement <code>remove_stopwords(tokens: List[str], extra_stopwords: Optional[Set[str]] = None) -> List[str]</code> that removes English stopwords from a token list.<br><br>Example<br>Input tokens: [\"this\", \"is\", \"a\", \"quick\", \"brown\", \"fox\"]<br>Output: [\"quick\", \"brown\", \"fox\"]<br><br>Requirements<br>• Use a standard English stopword list.<br>• Allow passing custom stopwords via <code>extra_stopwords</code>.<br>• Preserve original token order.<br><br>Follow-ups<br>• Case-insensitive removal while preserving original casing.<br>• Support multiple languages.",
+        "<pre><code>def remove_stopwords(tokens: Iterable[str], extra_stopwords: Optional[Set[str]] = None) -> List[str]:\n    \"\"\"Remove stopwords, preserving order.</code></pre>",
+        "Stop Word Removal",
+        "implementation"
+      ],
+      "guid": "nlp_697510681761883",
+      "note_model_uuid": "nlp-model-basic",
+      "tags": [
+        "stop_word_removal",
+        "nlp_interview",
+        "implementation"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "<b>Problem: TF-IDF Implementation</b><br><br><b>Time: 30 minutes</b><br><br>Implement TF-IDF from scratch to find document similarity.<br><br><pre><code>def compute_tfidf(documents: List[str]) -> List[Dict[str, float]]:<br>    \"\"\"<br>    Compute TF-IDF vectors for documents.<br>    <br>    Input: [\"cat sat mat\", \"dog sat log\", \"cat dog\"]<br>    Output: [{\"cat\": 0.47, \"sat\": 0.0, \"mat\": 0.69}, {...}, {...}]<br>    <br>    TF = term_freq / total_terms_in_doc<br>    IDF = log(total_docs / docs_containing_term)<br>    TF-IDF = TF * IDF<br>    \"\"\"<br>    pass<br><br>def find_similar_documents(documents: List[str], query: str) -> int:<br>    \"\"\"<br>    Return index of most similar document to query using cosine similarity.<br>    \"\"\"<br>    pass</code></pre><br><br><b>Requirements:</b><br>• Implement TF-IDF calculation from scratch<br>• Use cosine similarity for document comparison<br>• Handle empty documents gracefully<br><br><b>Follow-up:</b> How would you optimize this for millions of documents?",
+        "<pre><code>def compute_tfidf(documents: List[str]) -> List[Dict[str, float]]:\n    \"\"\"\n    Compute TF-IDF vectors for documents.\n    \n    TF-IDF = Term Frequency × Inverse Document Frequency\n    - Emphasizes important words that appear frequently in a document\n    - But rarely across the entire collection\n    \"\"\"\n    # STEP 1: Handle edge cases\n    if not documents:\n        return []\n    \n    # STEP 2: Tokenize all documents (simple whitespace splitting)\n    # In real interviews, discuss more sophisticated tokenization\n    tokenized_docs = [doc.lower().split() for doc in documents]\n    \n    # STEP 3: Build vocabulary from all unique words\n    # This creates our feature space - each unique word becomes a dimension\n    vocab = set()\n    for doc in tokenized_docs:\n        vocab.update(doc)\n    vocab = sorted(list(vocab))  # Sort for consistency\n    \n    # STEP 4: Calculate Document Frequency (DF) for each term\n    # DF = number of documents containing the term\n    # Used in IDF calculation: IDF = log(total_docs / doc_freq)\n    doc_freq = {}\n    for term in vocab:\n        doc_freq[term] = sum(1 for doc in tokenized_docs if term in doc)\n    \n    # STEP 5: Calculate TF-IDF for each document\n    tfidf_vectors = []\n    num_docs = len(documents)\n    \n    for doc in tokenized_docs:\n        # Count term frequencies in this document\n        term_counts = Counter(doc)\n        doc_length = len(doc)\n        tfidf_vector = {}\n        \n        for term in vocab:\n            # TERM FREQUENCY (TF): How often term appears in this document\n            # Normalized by document length to handle different document sizes\n            tf = term_counts[term] / doc_length if doc_length > 0 else 0\n            \n            # INVERSE DOCUMENT FREQUENCY (IDF): How rare the term is across collection\n            # log(total_docs / docs_containing_term)\n            # Rare terms get higher IDF scores\n            idf = math.log(num_docs / doc_freq[term])\n            \n            # TF-IDF SCORE: Combines term importance in document (TF) \n            # with term rarity in collection (IDF)\n            tfidf_vector[term] = tf * idf\n        \n        tfidf_vectors.append(tfidf_vector)\n    \n    return tfidf_vectors</code></pre>",
+        "TFIDF",
+        "implementation"
+      ],
+      "guid": "nlp_9525787016762",
+      "note_model_uuid": "nlp-model-basic",
+      "tags": [
+        "tfidf",
+        "nlp_interview",
+        "implementation"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "<b>Problem: TF-IDF Implementation</b><br>Time/Space Complexity?",
+        "Time complexity: O(d×v)",
+        "TFIDF",
+        "complexity"
+      ],
+      "guid": "nlp_1130871006276731",
+      "note_model_uuid": "nlp-model-basic",
+      "tags": [
+        "tfidf",
+        "nlp_interview",
+        "complexity"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "<b>Problem: Text Classification Pipeline</b><br><br>Build a complete text classification system:<br>1. <code>train_classifier(texts: List[str], labels: List[str]) -> ClassificationModel</code><br>2. <code>predict(model: ClassificationModel, texts: List[str]) -> List[str]</code><br>3. <code>evaluate_classifier(y_true: List[str], y_pred: List[str]) -> Dict[str, float]</code><br><br>Example:<br>Training data:<br>• \"This movie is fantastic!\" -> \"positive\"  <br>• \"Terrible experience, would not recommend\" -> \"negative\"<br>• \"It was okay, nothing special\" -> \"neutral\"<br><br>Test: \"Amazing film, loved it!\" -> \"positive\"<br><br>Requirements:<br>• Implement with both traditional ML (TF-IDF + LogisticRegression) and deep learning<br>• Handle imbalanced classes<br>• Add confidence scores to predictions<br><br>Follow-ups:<br>• Multi-label classification<br>• Active learning for uncertain predictions<br>• Feature importance analysis",
+        "<pre><code>def extract_features(texts: List[str], method: str = 'tfidf') -> Tuple[List[List[float]], List[str]]:\n    \"\"\"\n    Extract features from texts for classification.\n    \n    This is the MOST IMPORTANT step in text classification.\n    Feature quality determines model performance more than algorithm choice.\n    \"\"\"\n    \n    # STEP 1: Build vocabulary from all texts\n    # This creates our feature space - each unique word becomes a dimension\n    vocab = set()\n    for text in texts:\n        words = text.lower().split()  # Simple tokenization\n        vocab.update(words)\n    vocab = sorted(list(vocab))  # Sort for consistency\n    \n    if method == 'tfidf':\n        # STEP 2: Calculate document frequencies for IDF computation\n        # DF = number of documents containing each term\n        doc_freq = {}\n        for word in vocab:\n            doc_freq[word] = sum(1 for text in texts if word in text.lower())\n        \n        # STEP 3: Convert each text to TF-IDF vector\n        feature_matrix = []\n        for text in texts:\n            words = text.lower().split()\n            word_counts = Counter(words)\n            doc_length = len(words)\n            \n            # Calculate TF-IDF for each vocabulary word\n            tfidf_vector = []\n            for word in vocab:\n                # TF: How often word appears in this document (normalized)\n                tf = word_counts[word] / doc_length if doc_length > 0 else 0\n                \n                # IDF: How rare the word is across all documents\n                idf = math.log(len(texts) / doc_freq[word])\n                \n                # TF-IDF: Combines local importance (TF) with global rarity (IDF)\n                tfidf_score = tf * idf\n                tfidf_vector.append(tfidf_score)\n            \n            feature_matrix.append(tfidf_vector)\n        \n        return feature_matrix, vocab\n    \n    else:  # Simple bag-of-words\n        feature_matrix = []\n        for text in texts:\n            word_counts = Counter(text.lower().split())\n            bow_vector = [word_counts[word] for word in vocab]\n            feature_matrix.append(bow_vector)\n        \n        return feature_matrix, vocab</code></pre>",
+        "Text Classification",
+        "implementation"
+      ],
+      "guid": "nlp_2156418913765059",
+      "note_model_uuid": "nlp-model-basic",
+      "tags": [
+        "text_classification",
+        "nlp_interview",
+        "implementation"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "<b>Problem: Text Tokenization</b><br><br><b>Time: 15 minutes</b><br><br>Implement a function that tokenizes text into words while handling edge cases.<br><br><pre><code>def tokenize(text: str) -> List[str]:<br>    \"\"\"<br>    Tokenize text into words.<br>    Handle contractions, punctuation, and empty strings.<br>    <br>    Examples:<br>    tokenize(\"Hello world!\") -> [\"Hello\", \"world\", \"!\"]<br>    tokenize(\"don't\") -> [\"don't\"]  # Keep contractions intact<br>    tokenize(\"\") -> []<br>    \"\"\"<br>    pass</code></pre><br><br><b>Requirements:</b><br>• Split on whitespace and punctuation (except apostrophes in contractions)<br>• Handle empty/None input<br>• Preserve contractions like \"don't\", \"I'm\"<br><br><b>Follow-up:</b> How would you handle different languages or subword tokenization?",
+        "<pre><code>def tokenize(text: str) -> List[str]:\n    \"\"\"\n    Tokenize text into words, preserving contractions and handling punctuation.\n    \n    This is ALWAYS asked in NLP interviews - seems simple but has many edge cases.\n    \n    Key challenges:\n    - Contractions: \"don't\" should stay as one token, not [\"don\", \"'\", \"t\"]\n    - Punctuation: \"Hello!\" should become [\"Hello\", \"!\"]\n    - Empty/None input: Handle gracefully\n    - Unicode characters: Different languages, emojis\n    \"\"\"\n    \n    # STEP 1: Handle edge cases first\n    # Always check for None/empty input in interviews\n    if not text:\n        return []\n    \n    # STEP 2: Use regex pattern for tokenization\n    # This is the most robust approach for handling complex cases\n    \n    # PATTERN EXPLANATION:\n    # \\w+(?:'\\w+)?  - Matches word characters, optionally followed by apostrophe + more word chars\n    #                 This handles contractions like \"don't\", \"I'm\", \"we'll\"\n    # |             - OR operator\n    # [^\\w\\s]       - Matches any non-word, non-space character (punctuation)\n    #                 This treats each punctuation mark as separate token\n    \n    pattern = r\"\\w+(?:'\\w+)?|[^\\w\\s]\"\n    \n    # re.findall returns all non-overlapping matches\n    tokens = re.findall(pattern, text)\n    \n    return tokens</code></pre>",
+        "Tokenization",
+        "implementation"
+      ],
+      "guid": "nlp_4501607160945623",
+      "note_model_uuid": "nlp-model-basic",
+      "tags": [
+        "tokenization",
+        "nlp_interview",
+        "implementation"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "<b>Problem: Text Tokenization</b><br>Time/Space Complexity?",
+        "Time complexity: O(n)",
+        "Tokenization",
+        "complexity"
+      ],
+      "guid": "nlp_120808218019243",
+      "note_model_uuid": "nlp-model-basic",
+      "tags": [
+        "tokenization",
+        "nlp_interview",
+        "complexity"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "<b>Problem: Byte Pair Encoding (BPE) Tokenizer</b><br><br><b>Time: 30 minutes</b><br><br>Implement a simplified BPE tokenizer for subword segmentation.<br><br><pre><code>def build_bpe_vocab(texts: List[str], num_merges: int = 10) -> Dict[str, int]:<br>    \"\"\"<br>    Build BPE vocabulary by iteratively merging most frequent pairs.<br>    <br>    Input: [\"hello\", \"world\", \"hello\"]<br>    Process:<br>        1. Start with characters: ['h', 'e', 'l', 'l', 'o', 'w', 'o', 'r', 'l', 'd']<br>        2. Find most frequent pair: 'l' + 'l' -> 'll'<br>        3. Merge and repeat<br>    <br>    Returns: Token to ID mapping<br>    \"\"\"<br>    pass<br><br>def bpe_encode(text: str, vocab: Dict[str, int]) -> List[int]:<br>    \"\"\"<br>    Encode text using BPE vocabulary.<br>    Apply merges greedily from longest to shortest.<br>    \"\"\"<br>    pass</code></pre><br><br><b>Requirements:</b><br>• Start with character-level vocabulary<br>• Iteratively merge most frequent adjacent pairs<br>• Build final vocabulary with token IDs<br>• Encode new text using learned merges<br><br><b>Follow-up:</b> How does this handle out-of-vocabulary words better than word-level tokenization?",
+        "<pre><code>def get_word_frequencies(texts: List[str]) -> Dict[str, int]:\n    \"\"\"Get word frequencies with end-of-word marker.\"\"\"\n    word_freqs = Counter()\n    \n    for text in texts:\n        words = text.lower().split()\n        for word in words:\n            # Add end-of-word marker\n            word_with_marker = ' '.join(word) + ' </w>'\n            word_freqs[word_with_marker] += 1\n    \n    return dict(word_freqs)</code></pre>",
+        "Tokenization Advanced",
+        "implementation"
+      ],
+      "guid": "nlp_490388294263659",
+      "note_model_uuid": "nlp-model-basic",
+      "tags": [
+        "tokenization_advanced",
+        "nlp_interview",
+        "implementation"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "<b>Problem: Topic Modeling with LSA and LDA</b><br><br>Implement topic modeling algorithms:<br>1. <code>perform_lsa(documents: List[str], num_topics: int = 5) -> LSAModel</code><br>2. <code>perform_lda(documents: List[str], num_topics: int = 5) -> LDAModel</code><br>3. <code>extract_topics(model: Union[LSAModel, LDAModel], num_words: int = 10) -> List[List[Tuple[str, float]]]</code><br>4. <code>get_document_topics(model, document: str) -> List[Tuple[int, float]]</code><br><br>Example:<br>Documents: [\"Machine learning is fascinating\", \"Deep learning uses neural networks\", ...]<br>Topics: [(0, [(\"learning\", 0.3), (\"neural\", 0.2), ...]), (1, [(\"data\", 0.25), ...])]<br><br>Requirements:<br>• LSA using SVD decomposition<br>• LDA with Gibbs sampling or variational inference  <br>• Document-topic and topic-word distributions<br>• Coherence score evaluation<br><br>Follow-ups:<br>• Compare LSA vs LDA vs NMF<br>• Dynamic topic modeling<br>• Hierarchical topic models",
+        "<pre><code>class LSAModel:\n    \"\"\"Latent Semantic Analysis using SVD.\"\"\"\n    \n    def __init__(self, num_topics: int = 5, use_tfidf: bool = True):\n        self.num_topics = num_topics\n        self.use_tfidf = use_tfidf\n        self.vectorizer = None\n        self.svd = None\n        self.document_topic_matrix = None\n        self.topic_word_matrix = None\n        self.vocabulary = None\n    \n    def fit(self, documents: List[str]):\n        \"\"\"Fit LSA model to documents.\"\"\"\n        # Vectorize documents\n        if self.use_tfidf:\n            self.vectorizer = TfidfVectorizer(max_features=1000, stop_words='english')\n        else:\n            self.vectorizer = CountVectorizer(max_features=1000, stop_words='english')\n        \n        doc_term_matrix = self.vectorizer.fit_transform(documents)\n        self.vocabulary = self.vectorizer.get_feature_names_out()\n        \n        # Apply SVD\n        self.svd = TruncatedSVD(n_components=self.num_topics, random_state=42)\n        self.document_topic_matrix = self.svd.fit_transform(doc_term_matrix)\n        \n        # Topic-word matrix (V^T in SVD)\n        self.topic_word_matrix = self.svd.components_\n        \n        # Normalize for interpretation\n        self.document_topic_matrix = normalize(self.document_topic_matrix, axis=1)\n    \n    def get_topics(self, num_words: int = 10) -> List[List[Tuple[str, float]]]:\n        \"\"\"Extract top words for each topic.\"\"\"\n        topics = []\n        \n        for topic_idx in range(self.num_topics):\n            # Get word scores for this topic\n            word_scores = self.topic_word_matrix[topic_idx]\n            \n            # Get top word indices\n            top_indices = np.argsort(word_scores)[-num_words:][::-1]\n            \n            # Create (word, score) pairs\n            topic_words = [(self.vocabulary[idx], word_scores[idx]) \n                          for idx in top_indices]\n            topics.append(topic_words)\n        \n        return topics\n    \n    def transform(self, documents: List[str]) -> np.ndarray:\n        \"\"\"Transform documents to topic space.\"\"\"\n        doc_term_matrix = self.vectorizer.transform(documents)\n        return self.svd.transform(doc_term_matrix)</code></pre>",
+        "TopicModeling",
+        "implementation"
+      ],
+      "guid": "nlp_27423576087038",
+      "note_model_uuid": "nlp-model-basic",
+      "tags": [
+        "topicmodeling",
+        "nlp_interview",
+        "implementation"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "<b>Problem: BERT Fine-tuning for Sentiment Analysis</b><br><br>Implement BERT fine-tuning for sentiment classification:<br>1. <code>load_pretrained_bert(model_name: str = 'bert-base-uncased') -> Model</code><br>2. <code>fine_tune_bert(model, texts: List[str], labels: List[int], epochs: int = 3) -> Model</code><br>3. <code>predict_with_bert(model, texts: List[str]) -> List[Tuple[str, float, Dict]]</code><br><br>Example:<br>Input: \"This product exceeded all my expectations!\"<br>Output: (\"positive\", 0.98, {\"attention_scores\": [...], \"cls_embedding\": [...]})<br><br>Requirements:<br>• Use Hugging Face Transformers<br>• Handle tokenization with special tokens<br>• Implement proper fine-tuning strategy (freeze/unfreeze layers)<br>• Extract attention visualizations<br><br>Follow-ups:<br>• Compare BERT vs DistilBERT vs RoBERTa<br>• Multi-class classification<br>• Few-shot learning with prompts",
+        "<pre><code>class SentimentDataset(Dataset):\n    \"\"\"Custom dataset for sentiment analysis.\"\"\"\n    \n    def __init__(self, texts: List[str], labels: List[int], tokenizer, max_length: int = 128):\n        self.texts = texts\n        self.labels = labels\n        self.tokenizer = tokenizer\n        self.max_length = max_length\n    \n    def __len__(self):\n        return len(self.texts)\n    \n    def __getitem__(self, idx):\n        text = self.texts[idx]\n        label = self.labels[idx]\n        \n        # Tokenize\n        encoding = self.tokenizer(\n            text,\n            truncation=True,\n            padding='max_length',\n            max_length=self.max_length,\n            return_tensors='pt'\n        )\n        \n        return {\n            'input_ids': encoding['input_ids'].flatten(),\n            'attention_mask': encoding['attention_mask'].flatten(),\n            'label': torch.tensor(label, dtype=torch.long)\n        }</code></pre>",
+        "Transformers",
+        "implementation"
+      ],
+      "guid": "nlp_2483309882903494",
+      "note_model_uuid": "nlp-model-basic",
+      "tags": [
+        "transformers",
+        "nlp_interview",
+        "implementation"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "<b>Problem: Comprehensive Text Normalization Pipeline</b><br><br>Build a complete text normalization system:<br>1. <code>normalize_text(text: str, options: Dict[str, bool]) -> str</code><br>2. <code>clean_html(html: str) -> str</code><br>3. <code>expand_contractions(text: str) -> str</code><br>4. <code>normalize_unicode(text: str) -> str</code><br><br>Example:<br>Input: \"I'll be there @ 3PM... Check https://example.com 😊\"<br>Output: \"I will be there at 3 PM. Check example.com\"<br><br>Requirements:<br>• Handle URLs, emails, phone numbers<br>• Expand contractions and abbreviations<br>• Normalize whitespace and punctuation<br>• Support multiple languages<br><br>Follow-ups:<br>• Social media specific normalization (hashtags, mentions)<br>• Preserve important entities during cleaning<br>• Add spell correction",
+        "<pre><code>def expand_contractions(text: str) -> str:\n    \"\"\"Expand contractions in text.\"\"\"\n    # Convert to lowercase for matching\n    text_lower = text.lower()\n    \n    # Sort contractions by length (descending) to match longer ones first\n    sorted_contractions = sorted(CONTRACTIONS.items(), key=lambda x: len(x[0]), reverse=True)\n    \n    for contraction, expansion in sorted_contractions:\n        # Use word boundaries for accurate matching\n        pattern = r'\\b' + re.escape(contraction) + r'\\b'\n        text_lower = re.sub(pattern, expansion, text_lower, flags=re.IGNORECASE)\n    \n    # Preserve original capitalization pattern\n    result = []\n    for i, char in enumerate(text):\n        if i < len(text_lower):\n            if char.isupper():\n                result.append(text_lower[i].upper())\n            else:\n                result.append(text_lower[i])\n        else:\n            result.append(char)\n    \n    return ''.join(result)</code></pre>",
+        "Utilities",
+        "implementation"
+      ],
+      "guid": "nlp_1272411938419859",
+      "note_model_uuid": "nlp-model-basic",
+      "tags": [
+        "utilities",
+        "nlp_interview",
+        "implementation"
+      ]
+    }
+  ]
+}

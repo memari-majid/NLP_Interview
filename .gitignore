@@ -129,6 +129,8 @@ data/processed/
 docs/_build/
 site/
 
-# Anki deck (generated)
-anki_deck/
-anki_deck_optimized/
+# Anki temporary files
+*.anki2
+*.apkg
+collection.anki2
+# Note: anki_deck/ and anki_deck_optimized/ are kept as they contain important JSON files
