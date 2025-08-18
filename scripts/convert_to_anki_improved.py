@@ -75,7 +75,7 @@ def create_concept_cards(problem_path: Path, solution_path: Path, topic: str) ->
                     "full_implementation"
                 ],
                 "guid": f"nlp_{hashlib.md5(f'{title}_full_impl'.encode()).hexdigest()[:13]}",
-                "note_model_uuid": "nlp-model-basic",
+                "note_model_uuid": "nlp-model-improved",
                 "tags": [topic.lower().replace(' ', '_'), "implementation", "core"]
             })
     
@@ -90,7 +90,7 @@ def create_concept_cards(problem_path: Path, solution_path: Path, topic: str) ->
                 "formula"
             ],
             "guid": f"nlp_{hashlib.md5('tfidf_formula_complete'.encode()).hexdigest()[:13]}",
-            "note_model_uuid": "nlp-model-basic",
+            "note_model_uuid": "nlp-model-improved",
             "tags": ["tfidf", "formula"]
         })
     
@@ -104,7 +104,7 @@ def create_concept_cards(problem_path: Path, solution_path: Path, topic: str) ->
                 "formula"
             ],
             "guid": f"nlp_{hashlib.md5('attention_formula_complete'.encode()).hexdigest()[:13]}",
-            "note_model_uuid": "nlp-model-basic",
+            "note_model_uuid": "nlp-model-improved",
             "tags": ["attention", "formula"]
         })
     
@@ -118,7 +118,7 @@ def create_concept_cards(problem_path: Path, solution_path: Path, topic: str) ->
                 "formula"
             ],
             "guid": f"nlp_{hashlib.md5('cosine_formula_complete'.encode()).hexdigest()[:13]}",
-            "note_model_uuid": "nlp-model-basic",
+            "note_model_uuid": "nlp-model-improved",
             "tags": ["similarity", "formula"]
         })
     
@@ -137,7 +137,7 @@ def create_concept_cards(problem_path: Path, solution_path: Path, topic: str) ->
                 "algorithm_steps"
             ],
             "guid": f"nlp_{hashlib.md5(f'{title}_steps'.encode()).hexdigest()[:13]}",
-            "note_model_uuid": "nlp-model-basic",
+            "note_model_uuid": "nlp-model-improved",
             "tags": [topic.lower().replace(' ', '_'), "steps"]
         })
     
@@ -167,7 +167,7 @@ def create_concept_cards(problem_path: Path, solution_path: Path, topic: str) ->
                 "complexity"
             ],
             "guid": f"nlp_{hashlib.md5(f'{title}_complexity'.encode()).hexdigest()[:13]}",
-            "note_model_uuid": "nlp-model-basic",
+            "note_model_uuid": "nlp-model-improved",
             "tags": [topic.lower().replace(' ', '_'), "complexity"]
         })
     
@@ -201,7 +201,7 @@ def create_concept_cards(problem_path: Path, solution_path: Path, topic: str) ->
                 "insights"
             ],
             "guid": f"nlp_{hashlib.md5(f'{title}_insights'.encode()).hexdigest()[:13]}",
-            "note_model_uuid": "nlp-model-basic",
+            "note_model_uuid": "nlp-model-improved",
             "tags": [topic.lower().replace(' ', '_'), "interview_tips"]
         })
     
@@ -233,7 +233,7 @@ def create_concept_cards(problem_path: Path, solution_path: Path, topic: str) ->
                 "pitfalls"
             ],
             "guid": f"nlp_{hashlib.md5(f'{title}_mistakes'.encode()).hexdigest()[:13]}",
-            "note_model_uuid": "nlp-model-basic",
+            "note_model_uuid": "nlp-model-improved",
             "tags": [topic.lower().replace(' ', '_'), "mistakes"]
         })
     

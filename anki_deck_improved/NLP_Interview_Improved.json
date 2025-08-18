@@ -111,7 +111,7 @@
         "full_implementation"
       ],
       "guid": "nlp_bf899785af07d",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "attention_mechanisms",
         "implementation",
@@ -127,7 +127,7 @@
         "formula"
       ],
       "guid": "nlp_39b82a34ded1c",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "attention",
         "formula"
@@ -142,7 +142,7 @@
         "algorithm_steps"
       ],
       "guid": "nlp_fd477dbea0ab3",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "attention_mechanisms",
         "steps"
@@ -157,7 +157,7 @@
         "complexity"
       ],
       "guid": "nlp_28d5ad7933b6b",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "attention_mechanisms",
         "complexity"
@@ -172,7 +172,7 @@
         "insights"
       ],
       "guid": "nlp_064cf5f8eeb03",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "attention_mechanisms",
         "interview_tips"
@@ -187,7 +187,7 @@
         "pitfalls"
       ],
       "guid": "nlp_93f71970f4308",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "attention_mechanisms",
         "mistakes"
@@ -202,7 +202,7 @@
         "full_implementation"
       ],
       "guid": "nlp_e2a29df5f362d",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "bow_vectors",
         "implementation",
@@ -218,7 +218,7 @@
         "algorithm_steps"
       ],
       "guid": "nlp_f0579c113f02e",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "bow_vectors",
         "steps"
@@ -233,7 +233,7 @@
         "complexity"
       ],
       "guid": "nlp_45fe588623ed1",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "bow_vectors",
         "complexity"
@@ -248,7 +248,7 @@
         "full_implementation"
       ],
       "guid": "nlp_918c4f5a90af7",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "cnn_text",
         "implementation",
@@ -264,7 +264,7 @@
         "full_implementation"
       ],
       "guid": "nlp_40a79d927dc33",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "embeddings",
         "implementation",
@@ -280,7 +280,7 @@
         "algorithm_steps"
       ],
       "guid": "nlp_f30341fe0a98a",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "embeddings",
         "steps"
@@ -295,7 +295,7 @@
         "insights"
       ],
       "guid": "nlp_c1ce5e08317b5",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "embeddings",
         "interview_tips"
@@ -310,7 +310,7 @@
         "full_implementation"
       ],
       "guid": "nlp_080d4d9ea6ad5",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "example_anki_refactor",
         "implementation",
@@ -326,7 +326,7 @@
         "insights"
       ],
       "guid": "nlp_21977d9d62488",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "example_anki_refactor",
         "interview_tips"
@@ -341,7 +341,7 @@
         "full_implementation"
       ],
       "guid": "nlp_172f14cab496d",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "fine_tuning",
         "implementation",
@@ -357,7 +357,7 @@
         "full_implementation"
       ],
       "guid": "nlp_35761a9632096",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "gpt_implementation",
         "implementation",
@@ -373,7 +373,7 @@
         "insights"
       ],
       "guid": "nlp_9430c74349c45",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "gpt_implementation",
         "interview_tips"
@@ -388,7 +388,7 @@
         "full_implementation"
       ],
       "guid": "nlp_67630723fb9e4",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "instruction_tuning",
         "implementation",
@@ -404,7 +404,7 @@
         "insights"
       ],
       "guid": "nlp_9b13726ea24c6",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "instruction_tuning",
         "interview_tips"
@@ -419,7 +419,7 @@
         "full_implementation"
       ],
       "guid": "nlp_f7e6a4a3364d5",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "llm_fundamentals",
         "implementation",
@@ -435,7 +435,7 @@
         "full_implementation"
       ],
       "guid": "nlp_c8ecaad9a747b",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "model_evaluation",
         "implementation",
@@ -451,7 +451,7 @@
         "full_implementation"
       ],
       "guid": "nlp_8671636a4a805",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "ner",
         "implementation",
@@ -467,7 +467,7 @@
         "full_implementation"
       ],
       "guid": "nlp_1b88d7051062c",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "ngrams",
         "implementation",
@@ -483,7 +483,7 @@
         "full_implementation"
       ],
       "guid": "nlp_3021ca3360a7d",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "neural_fundamentals",
         "implementation",
@@ -499,7 +499,7 @@
         "full_implementation"
       ],
       "guid": "nlp_209506cb10266",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "pos_tagging",
         "implementation",
@@ -515,7 +515,7 @@
         "full_implementation"
       ],
       "guid": "nlp_e708694e49b18",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "sentiment_analysis",
         "implementation",
@@ -531,7 +531,7 @@
         "algorithm_steps"
       ],
       "guid": "nlp_ef4b2fe28f804",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "sentiment_analysis",
         "steps"
@@ -546,7 +546,7 @@
         "insights"
       ],
       "guid": "nlp_e5d7633d8d41f",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "sentiment_analysis",
         "interview_tips"
@@ -561,7 +561,7 @@
         "full_implementation"
       ],
       "guid": "nlp_142ded0cf7e77",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "sequence_models",
         "implementation",
@@ -577,7 +577,7 @@
         "full_implementation"
       ],
       "guid": "nlp_2392c06e7db06",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "similarity",
         "implementation",
@@ -593,7 +593,7 @@
         "formula"
       ],
       "guid": "nlp_aa6d1fef19e90",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "similarity",
         "formula"
@@ -608,7 +608,7 @@
         "full_implementation"
       ],
       "guid": "nlp_6b95545c5e6fa",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "stemming_lemmatization",
         "implementation",
@@ -624,7 +624,7 @@
         "full_implementation"
       ],
       "guid": "nlp_c53f1b799e4cd",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "stop_word_removal",
         "implementation",
@@ -640,7 +640,7 @@
         "formula"
       ],
       "guid": "nlp_4f90c5ed33b43",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "tfidf",
         "formula"
@@ -655,7 +655,7 @@
         "algorithm_steps"
       ],
       "guid": "nlp_e907efc46cda1",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "tfidf",
         "steps"
@@ -670,7 +670,7 @@
         "complexity"
       ],
       "guid": "nlp_651ff4dbefa8a",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "tfidf",
         "complexity"
@@ -685,7 +685,7 @@
         "insights"
       ],
       "guid": "nlp_bc447dcd51970",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "tfidf",
         "interview_tips"
@@ -700,7 +700,7 @@
         "pitfalls"
       ],
       "guid": "nlp_4f106f60ff8d8",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "tfidf",
         "mistakes"
@@ -715,7 +715,7 @@
         "algorithm_steps"
       ],
       "guid": "nlp_40a526be8c6f1",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "text_classification",
         "steps"
@@ -730,7 +730,7 @@
         "insights"
       ],
       "guid": "nlp_2dad2bd0782a2",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "text_classification",
         "interview_tips"
@@ -745,7 +745,7 @@
         "full_implementation"
       ],
       "guid": "nlp_abd694be465d5",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "tokenization",
         "implementation",
@@ -761,7 +761,7 @@
         "algorithm_steps"
       ],
       "guid": "nlp_f9b8b596c025b",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "tokenization",
         "steps"
@@ -776,7 +776,7 @@
         "complexity"
       ],
       "guid": "nlp_06ddfdaebc5ab",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "tokenization",
         "complexity"
@@ -791,7 +791,7 @@
         "insights"
       ],
       "guid": "nlp_67bf47e3df85b",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "tokenization",
         "interview_tips"
@@ -806,7 +806,7 @@
         "full_implementation"
       ],
       "guid": "nlp_b4f4d1cc86b9a",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "tokenization_advanced",
         "implementation",
@@ -822,7 +822,7 @@
         "insights"
       ],
       "guid": "nlp_c56bb9f0ac098",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "tokenization_advanced",
         "interview_tips"
@@ -837,7 +837,7 @@
         "full_implementation"
       ],
       "guid": "nlp_98f28297c1078",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "topicmodeling",
         "implementation",
@@ -853,7 +853,7 @@
         "full_implementation"
       ],
       "guid": "nlp_88e31cbd13b7a",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "transformers",
         "implementation",
@@ -869,7 +869,7 @@
         "full_implementation"
       ],
       "guid": "nlp_8bfe78ced795d",
-      "note_model_uuid": "nlp-model-basic",
+      "note_model_uuid": "nlp-model-improved",
       "tags": [
         "utilities",
         "implementation",
