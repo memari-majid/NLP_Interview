@@ -1,28 +1,30 @@
-# Problem: Rule-Based Sentiment Analysis (VADER-style)
+# Problem: Rule-based Sentiment Analysis
 
-Implement a rule-based sentiment analyzer similar to VADER:
-1. `VaderSentimentAnalyzer()` - Main analyzer class
-2. `analyze_sentiment(text: str) -> Dict[str, float]` - Return compound, pos, neu, neg scores
-3. `score_lexicon(words: List[str]) -> float` - Score based on sentiment lexicon
-4. `handle_intensifiers(words: List[str]) -> List[float]` - Boost/reduce based on intensifiers
+**Time: 20 minutes**
 
-Example:
-Input: "This movie is absolutely fantastic!"
-Output: {
-    "compound": 0.78,
-    "pos": 0.65,
-    "neu": 0.25,
-    "neg": 0.10
-}
+Implement a simple rule-based sentiment analyzer.
 
-Requirements:
-- Build sentiment lexicon with polarity scores
-- Handle intensifiers ("very", "extremely", "quite")
-- Process negations ("not good" → negative)
-- Handle punctuation emphasis ("!!!")
-- Normalize scores to [-1, 1] range
+```python
+def analyze_sentiment(text: str) -> Dict[str, float]:
+    """
+    Analyze sentiment using rules (lexicon + modifiers).
+    
+    Returns:
+        {"positive": 0.6, "negative": 0.1, "neutral": 0.3, "compound": 0.5}
+    
+    Rules:
+    - Use sentiment lexicon for base scores
+    - "very/really" intensifies sentiment (+30%)  
+    - "not/never" flips sentiment (* -0.8)
+    - Multiple punctuation adds emphasis
+    """
+    pass
+```
 
-Follow-ups:
-- Compare with machine learning approaches
-- Handle emoji sentiment
-- Domain-specific lexicon adaptation
+**Requirements:**
+- Create basic positive/negative word dictionary
+- Handle intensifiers ("very good" -> higher positive score)
+- Handle negations ("not bad" -> less negative)
+- Normalize scores to sum to 1.0
+
+**Follow-up:** How would you handle sarcasm or domain-specific sentiment?

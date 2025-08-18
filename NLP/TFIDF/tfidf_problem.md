@@ -1,20 +1,33 @@
-# Problem: TF-IDF Implementation and Document Similarity
+# Problem: TF-IDF Implementation
 
-Implement a TF-IDF system with:
-1. `calculate_tfidf(documents: List[str]) -> np.ndarray` - Returns TF-IDF matrix
-2. `find_similar_documents(query: str, documents: List[str], top_k: int = 3) -> List[Tuple[int, float]]` - Returns top-k similar documents
+**Time: 30 minutes**
 
-Example:
-Documents = ["The cat sat on mat", "The dog sat on log", "Cats and dogs are pets"]
-Query = "cat on mat"
-Output: [(0, 0.89), (2, 0.52), (1, 0.31)]  # (doc_index, similarity_score)
+Implement TF-IDF from scratch to find document similarity.
 
-Requirements:
-- Implement from scratch (formulas) and using sklearn
-- Handle edge cases (empty docs, single word)
-- Compare with BM25 scoring
+```python
+def compute_tfidf(documents: List[str]) -> List[Dict[str, float]]:
+    """
+    Compute TF-IDF vectors for documents.
+    
+    Input: ["cat sat mat", "dog sat log", "cat dog"]
+    Output: [{"cat": 0.47, "sat": 0.0, "mat": 0.69}, {...}, {...}]
+    
+    TF = term_freq / total_terms_in_doc
+    IDF = log(total_docs / docs_containing_term)
+    TF-IDF = TF * IDF
+    """
+    pass
 
-Follow-ups:
-- Add IDF smoothing options
-- Implement sublinear TF scaling
-- Optimize for large document collections
+def find_similar_documents(documents: List[str], query: str) -> int:
+    """
+    Return index of most similar document to query using cosine similarity.
+    """
+    pass
+```
+
+**Requirements:**
+- Implement TF-IDF calculation from scratch
+- Use cosine similarity for document comparison
+- Handle empty documents gracefully
+
+**Follow-up:** How would you optimize this for millions of documents?

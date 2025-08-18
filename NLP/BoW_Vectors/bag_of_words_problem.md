@@ -1,25 +1,36 @@
 # Problem: Bag of Words from Scratch
 
-Implement bag-of-words representation from scratch:
-1. `BagOfWords(max_features: int, binary: bool)` - BoW vectorizer class
-2. `fit(documents: List[str])` - Build vocabulary from documents
-3. `transform(documents: List[str]) -> np.ndarray` - Convert to BoW vectors
-4. `get_feature_names() -> List[str]` - Get vocabulary words
+**Time: 20 minutes**
 
-Example:
-Documents: ["I love NLP", "NLP is great", "I love programming"]
-Vocabulary: ["I", "love", "NLP", "is", "great", "programming"]
-BoW matrix: [[1,1,1,0,0,0], [0,0,1,1,1,0], [1,1,0,0,0,1]]
+Implement a basic bag-of-words vectorizer.
 
-Requirements:
-- Handle different tokenization strategies
-- Support binary vs count-based representation  
-- Implement vocabulary pruning (min_df, max_df)
-- Compare with character-level BoW
-- Handle out-of-vocabulary words
+```python
+def create_bow_vector(documents: List[str]) -> Tuple[List[str], List[List[int]]]:
+    """
+    Create bag-of-words representation.
+    
+    Input: ["I love NLP", "NLP is great", "I love programming"]
+    Output: 
+        vocabulary: ["I", "love", "NLP", "is", "great", "programming"]
+        vectors: [[1,1,1,0,0,0], [0,0,1,1,1,0], [1,1,0,0,0,1]]
+    
+    Returns:
+        (vocabulary, document_vectors)
+    """
+    pass
 
-Follow-ups:
-- Add n-gram support (bigrams, trigrams)
-- Implement feature selection (chi-square, mutual information)
-- Memory-efficient sparse matrix representation
-- Streaming/incremental vocabulary building
+def cosine_similarity(vec1: List[int], vec2: List[int]) -> float:
+    """
+    Calculate cosine similarity between two BoW vectors.
+    Return value between 0 and 1.
+    """
+    pass
+```
+
+**Requirements:**
+- Build vocabulary from all documents
+- Count word occurrences in each document
+- Handle empty documents
+- Implement cosine similarity for vector comparison
+
+**Follow-up:** How would you handle very large vocabularies efficiently?

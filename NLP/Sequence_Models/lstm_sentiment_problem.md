@@ -1,21 +1,40 @@
-# Problem: LSTM for Sentiment Analysis
+# Problem: Simple LSTM for Sentiment
 
-Implement an LSTM-based sentiment classifier:
-1. `build_lstm_model(vocab_size: int, embedding_dim: int = 100) -> Model`
-2. `train_sentiment_model(texts: List[str], labels: List[int], epochs: int = 10) -> Model`
-3. `predict_sentiment(model: Model, texts: List[str]) -> List[Tuple[int, float]]`
+**Time: 25 minutes**
 
-Example:
-Input: "This movie was absolutely fantastic!"
-Output: (1, 0.95)  # 1=positive, confidence=0.95
+Implement a basic LSTM cell for sentiment classification.
 
-Requirements:
-- Handle variable-length sequences
-- Implement with PyTorch or TensorFlow
-- Add attention mechanism for interpretability
-- Compare with GRU and simple RNN
+```python
+def lstm_cell(x_t: List[float], h_prev: List[float], c_prev: List[float],
+              weights: Dict) -> Tuple[List[float], List[float]]:
+    """
+    Single LSTM cell forward pass.
+    
+    Args:
+        x_t: Input at time t
+        h_prev: Previous hidden state  
+        c_prev: Previous cell state
+        weights: {'Wf', 'Wi', 'Wo', 'Wc', 'bf', 'bi', 'bo', 'bc'}
+        
+    Returns:
+        (h_t, c_t): New hidden and cell states
+    """
+    pass
 
-Follow-ups:
-- Bidirectional LSTM
-- Multi-layer architecture
-- Gradient clipping for stability
+def lstm_sentiment(sequence: List[List[float]], weights: Dict) -> float:
+    """
+    Run LSTM over sequence and classify sentiment.
+    Return probability (0-1) of positive sentiment.
+    """
+    pass
+```
+
+**Requirements:**
+- Implement forget, input, output gates using sigmoid
+- Implement candidate cell state using tanh
+- Process sequence step by step
+- Final classification with sigmoid
+
+**Simplifications:** Use lists instead of matrices, single layer
+
+**Follow-up:** How would you handle variable-length sequences in practice?

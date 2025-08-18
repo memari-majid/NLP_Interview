@@ -1,21 +1,39 @@
-# Problem: Word2Vec Training and Analogy Solver
+# Problem: Word2Vec Skip-gram
 
-Implement Word2Vec training and use it for analogy tasks:
-1. `train_word2vec(sentences: List[List[str]], embedding_dim: int = 100) -> Word2VecModel`
-2. `solve_analogy(model, word_a: str, word_b: str, word_c: str) -> str`
-3. `find_similar_words(model, word: str, top_k: int = 5) -> List[Tuple[str, float]]`
+**Time: 20 minutes**
 
-Example:
-Analogy: "king" - "man" + "woman" = "queen"
-Similar to "python": [("java", 0.82), ("programming", 0.78), ("code", 0.75)]
+Implement the core Skip-gram training step for Word2Vec.
 
-Requirements:
-- Implement both CBOW and Skip-gram architectures
-- Handle out-of-vocabulary words
-- Visualize word embeddings using t-SNE/PCA
-- Compare with GloVe and fastText
+```python
+def skipgram_step(center_word: str, context_word: str, 
+                  embeddings: Dict[str, List[float]], 
+                  learning_rate: float = 0.01) -> None:
+    """
+    Perform one training step of Skip-gram Word2Vec.
+    
+    Update embeddings to make center_word and context_word more similar.
+    
+    Args:
+        center_word: "king" 
+        context_word: "queen"
+        embeddings: {"king": [0.1, 0.2], "queen": [0.3, 0.4], ...}
+        learning_rate: Step size for updates
+    """
+    pass
 
-Follow-ups:
-- Subword tokenization for OOV handling
-- Contextual embeddings comparison
-- Domain-specific word embeddings
+def word_similarity(word1: str, word2: str, 
+                   embeddings: Dict[str, List[float]]) -> float:
+    """
+    Calculate cosine similarity between two word embeddings.
+    Returns value between -1 and 1.
+    """
+    pass
+```
+
+**Requirements:**
+- Implement sigmoid function
+- Calculate gradients using dot product  
+- Update embeddings using gradient descent
+- Handle missing words gracefully
+
+**Follow-up:** How would you implement negative sampling to make this efficient?

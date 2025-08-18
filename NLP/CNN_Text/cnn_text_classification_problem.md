@@ -1,23 +1,35 @@
-# Problem: CNN for Text Classification
+# Problem: Text CNN for Classification
 
-Implement a 1D CNN for text classification:
-1. `build_cnn_model(vocab_size: int, embedding_dim: int, num_classes: int) -> Model`
-2. `train_cnn(model, texts: List[str], labels: List[int], epochs: int = 10) -> Model`
-3. `extract_features(model, text: str) -> np.ndarray`
-4. `visualize_filters(model) -> Dict[str, np.ndarray]`
+**Time: 25 minutes**
 
-Example:
-Text: "This movie is absolutely fantastic!"
-Prediction: "positive" (0.95 confidence)
-Extracted features: 128-dim vector from conv layers
+Implement a simple CNN for text classification using basic operations.
 
-Requirements:
-- Multiple filter sizes (3, 4, 5) for n-gram detection
-- Max pooling and dropout layers
-- Implement in PyTorch/TensorFlow
-- Handle variable length sequences
+```python
+def text_cnn_predict(text: str, vocab: Dict[str, int], 
+                    weights: Dict, max_len: int = 10) -> float:
+    """
+    Implement forward pass of a text CNN.
+    
+    Architecture: Embedding -> Conv1D -> MaxPool -> Dense -> Sigmoid
+    
+    Args:
+        text: Input text
+        vocab: Word to index mapping  
+        weights: {'embedding': [...], 'conv': [...], 'dense': [...]}
+        max_len: Maximum sequence length
+        
+    Returns:
+        Probability score (0-1)
+    """
+    pass
+```
 
-Follow-ups:
-- Character-level CNN
-- Multi-channel CNN (static + dynamic embeddings)
-- Attention over CNN features
+**Requirements:**
+- Convert text to padded integer sequence
+- Implement 1D convolution manually (kernel size 3)
+- Apply max pooling across sequence
+- Dense layer + sigmoid activation
+
+**Simplifications:** Use numpy only, single filter, binary classification
+
+**Follow-up:** How would you handle variable length sequences efficiently?

@@ -1,23 +1,37 @@
-# Problem: N-Gram Language Model
+# Problem: N-gram Language Model
 
-Implement an n-gram language model with the following functions:
-1. `build_ngram_model(texts: List[str], n: int = 3) -> NGramModel`
-2. `calculate_perplexity(model: NGramModel, text: str) -> float`
-3. `generate_text(model: NGramModel, seed: str, length: int = 50) -> str`
-4. `apply_smoothing(model: NGramModel, method: str = 'laplace') -> NGramModel`
+**Time: 25 minutes**
 
-Example:
-Training: ["The cat sat on the mat", "The dog sat on the log"]
-Generate from "The cat": "The cat sat on the mat"
-Perplexity: 2.34
+Implement a simple bigram language model with probability calculation.
 
-Requirements:
-- Handle different n values (unigram, bigram, trigram)
-- Implement Laplace/Good-Turing smoothing
-- Calculate probability distributions
-- Handle unseen n-grams gracefully
+```python
+def build_bigram_model(texts: List[str]) -> Dict[str, Dict[str, float]]:
+    """
+    Build bigram language model.
+    
+    Input: ["the cat sat", "the dog sat"]
+    Output: {
+        "the": {"cat": 0.5, "dog": 0.5},
+        "cat": {"sat": 1.0},
+        "dog": {"sat": 1.0}
+    }
+    
+    Returns: Dictionary mapping word -> {next_word: probability}
+    """
+    pass
 
-Follow-ups:
-- Kneser-Ney smoothing
-- Back-off models
-- Character-level n-grams for morphology
+def generate_text(model: Dict, start_word: str, length: int = 5) -> str:
+    """
+    Generate text using the bigram model.
+    Pick most probable next word at each step.
+    """
+    pass
+```
+
+**Requirements:**
+- Count bigram frequencies across all texts
+- Calculate conditional probabilities P(w2|w1)
+- Handle unseen bigrams (return empty dict)
+- Generate coherent text sequences
+
+**Follow-up:** How would you add smoothing for unseen n-grams?

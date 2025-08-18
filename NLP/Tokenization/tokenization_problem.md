@@ -1,18 +1,26 @@
-# Problem: Word Tokenization (Preserve Punctuation)
+# Problem: Text Tokenization
 
-Implement a function `tokenize_text(text: str) -> List[str]` that splits input text into word tokens while preserving punctuation as separate tokens.
+**Time: 15 minutes**
 
-Example
-Input: "Natural Language Processing is fascinating! Isn't it?"
-Output: ["Natural", "Language", "Processing", "is", "fascinating", "!", "Isn't", "it", "?"]
+Implement a function that tokenizes text into words while handling edge cases.
 
-Requirements
-- Treat contractions as single tokens (e.g., "Isn't").
-- Preserve punctuation as separate tokens.
-- Unicode friendly.
+```python
+def tokenize(text: str) -> List[str]:
+    """
+    Tokenize text into words.
+    Handle contractions, punctuation, and empty strings.
+    
+    Examples:
+    tokenize("Hello world!") -> ["Hello", "world", "!"]
+    tokenize("don't") -> ["don't"]  # Keep contractions intact
+    tokenize("") -> []
+    """
+    pass
+```
 
-Follow-ups
-- Add sentence tokenization.
-- Make tokenizer configurable (keep/remove punctuation).
+**Requirements:**
+- Split on whitespace and punctuation (except apostrophes in contractions)
+- Handle empty/None input
+- Preserve contractions like "don't", "I'm"
 
-
+**Follow-up:** How would you handle different languages or subword tokenization?
