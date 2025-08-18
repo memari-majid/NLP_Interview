@@ -1,6 +1,33 @@
-# NLP Coding Interview Bank — Fast Practice
+# NLP Interview Question Bank — Comprehensive Resource
 
-**Goal**: Implement and explain the most asked NLP coding questions in 15–30 minutes. Classic NLP + modern LLM topics. Heavily commented solutions. Interview-focused.
+**The most efficient NLP interview preparation system**: 26 topics, 117+ Anki cards, company-specific guides, and solution patterns.
+
+## 🚀 Quick Start Paths
+
+### By Time Available
+- **1 Week**: [Top 10 Problems](#top-10-must-practice) + [Company Guide](COMPANY_SPECIFIC_GUIDE.md)
+- **2 Weeks**: [Full Practice Plan](#review-plans) + [Solution Patterns](SOLUTION_PATTERNS.md)
+- **1 Month**: Complete all problems + [Anki Memorization](#anki-integration)
+
+### By Target Company
+- **OpenAI/Anthropic**: [LLM Track](COMPANY_SPECIFIC_GUIDE.md#-openai--anthropic-llm-focus)
+- **Google**: [Search & Scale Track](COMPANY_SPECIFIC_GUIDE.md#-google-search--scale)
+- **Meta**: [Applied ML Track](COMPANY_SPECIFIC_GUIDE.md#-meta-social--applied-ml)
+- **Amazon**: [Customer Focus Track](COMPANY_SPECIFIC_GUIDE.md#-amazon-product--customer-focus)
+
+### By Learning Style
+- **Visual Learner**: [Memory Palace](NLP_MEMORY_PALACE.md)
+- **Repetition-Based**: [Anki Decks](#anki-integration)
+- **Problem-Solver**: [Solution Patterns](SOLUTION_PATTERNS.md)
+
+## 📚 Comprehensive Resources
+
+| Resource | Description | Best For |
+|----------|-------------|----------|
+| [Question Bank Index](QUESTION_BANK_INDEX.md) | All problems by difficulty, company, topic | Finding specific problems |
+| [Company Guide](COMPANY_SPECIFIC_GUIDE.md) | What each company asks, prep strategies | Targeted preparation |
+| [Solution Patterns](SOLUTION_PATTERNS.md) | 10 reusable templates for NLP problems | Efficient problem-solving |
+| [Quick Reference](INTERVIEW_QUICK_REFERENCE.md) | Key formulas and talking points | Last-minute review |
 
 ## Table of Contents
 - **Vision**
@@ -15,10 +42,20 @@
 - **Success Metrics**
 
 ## Vision
-This repo is a fast-practice bank of NLP coding interview problems. Every directory contains:
-- **Problem** (concise prompt)
-- **Solution** (short, production-minded, heavily commented)
-- **Interview talking points** and common follow-ups embedded in code comments
+The most comprehensive and efficient NLP interview preparation system:
+- **26 Topics** covering classical NLP to modern LLMs
+- **Multiple Access Patterns**: By difficulty, company, topic, or time
+- **Efficient Learning**: Solution patterns, Anki cards, memory techniques
+- **Company-Specific**: Tailored guides for FAANG+ companies
+- **Interview-Ready**: Heavily commented solutions with follow-ups
+
+### 📊 Repository Statistics
+- **Total Problems**: 26 core problems + variations
+- **Difficulty Distribution**: 7 Easy (20min) • 9 Medium (30min) • 10 Hard (45min)
+- **Anki Cards**: 117+ bite-sized cards for memorization
+- **Solution Patterns**: 10 reusable templates
+- **Company Coverage**: OpenAI, Google, Meta, Amazon, Microsoft, Apple
+- **Time to Master**: 1 week (top 10) • 2 weeks (comprehensive) • 1 month (expert)
 
 ## 🎯 Top 10 Must-Practice (Asked in 90% of interviews)
 
@@ -196,12 +233,18 @@ Day of interview:
 ## ⚡ Quick Practice Commands
 
 ```bash
+# Interactive problem finder
+python problem_finder.py
+
 # Practice most important problems
 python NLP/TFIDF/tfidf_solution.py
 python NLP/Attention_Mechanisms/self_attention_solution.py
 python NLP/Text_Classification/text_classification_solution.py
 python NLP/Tokenization/tokenization_solution.py
 python NLP/Embeddings/word2vec_solution.py
+
+# Generate Anki deck
+python convert_to_anki_optimized.py
 ```
 
 ## 📊 Success Metrics
