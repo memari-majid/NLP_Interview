@@ -7,6 +7,7 @@
 - **Top 10 Must-Practice**
 - **Full Topic Map (Hyperlinked)**
 - **Review Plans: 7-Day and 14-Day**
+- **Phone Interview Memorization Plan**
 - **Company-Specific Focus**
 - **Common Interview Traps**
 - **Checklist and Quick Commands**
@@ -103,6 +104,10 @@ Direct links (Top 10):
 
 How to use each day:
 - Implement from memory (no peeking) → Compare with solution → Explain out loud → Note follow-ups.
+
+## ☎️ Phone Interview Memorization Plan
+Use the dedicated phone screen plan for fast recall, one‑minute scripts, and spaced repetition:
+- See: [PHONE_INTERVIEW_STUDY_PLAN.md](PHONE_INTERVIEW_STUDY_PLAN.md)
 
 ## 🏢 Company-Specific Questions
 
