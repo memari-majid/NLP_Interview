@@ -304,6 +304,11 @@ def create_anki_deck_optimized():
         "note_models": [{
             "__type__": "NoteModel",
             "crowdanki_uuid": "nlp-model-basic",
+            "sortf": 0,
+            "latexPre": "\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\\begin{document}\n",
+            "latexPost": "\\end{document}",
+            "tags": [],
+            "vers": [],
             "css": """
 .card {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
@@ -344,10 +349,10 @@ b {
 }
             """,
             "flds": [
-                {"name": "Front", "ord": 0},
-                {"name": "Back", "ord": 1},
-                {"name": "Topic", "ord": 2},
-                {"name": "Type", "ord": 3}
+                {"name": "Front", "ord": 0, "sticky": False, "rtl": False, "font": "Arial", "size": 20, "description": ""},
+                {"name": "Back", "ord": 1, "sticky": False, "rtl": False, "font": "Arial", "size": 20, "description": ""},
+                {"name": "Topic", "ord": 2, "sticky": False, "rtl": False, "font": "Arial", "size": 20, "description": ""},
+                {"name": "Type", "ord": 3, "sticky": False, "rtl": False, "font": "Arial", "size": 20, "description": ""}
             ],
             "name": "NLP Interview Card (Optimized)",
             "tmpls": [{

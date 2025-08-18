@@ -193,10 +193,10 @@ b {
 }
             """,
             "flds": [
-                {"name": "Front", "ord": 0},
-                {"name": "Back", "ord": 1},
-                {"name": "Topic", "ord": 2},
-                {"name": "Type", "ord": 3}
+                {"name": "Front", "ord": 0, "sticky": False, "rtl": False, "font": "Arial", "size": 20, "description": ""},
+                {"name": "Back", "ord": 1, "sticky": False, "rtl": False, "font": "Arial", "size": 20, "description": ""},
+                {"name": "Topic", "ord": 2, "sticky": False, "rtl": False, "font": "Arial", "size": 20, "description": ""},
+                {"name": "Type", "ord": 3, "sticky": False, "rtl": False, "font": "Arial", "size": 20, "description": ""}
             ],
             "name": "NLP Interview Card",
             "tmpls": [{
