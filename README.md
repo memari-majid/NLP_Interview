@@ -161,13 +161,16 @@ Use the dedicated phone screen plan for fast recall, one‑minute scripts, and s
 
 #### Option 2: Generate Locally
 ```bash
-# Generate optimized deck (123+ cards)
+# Generate improved deck with complete solutions (50+ focused cards)
+python scripts/convert_to_anki_improved.py
+
+# Generate optimized deck (123+ bite-sized cards)
 python scripts/convert_to_anki_optimized.py
 
 # Or generate standard deck (30+ cards)
 python scripts/convert_to_anki.py
 ```
-Then in Anki: `Tools → CrowdAnki → Import from disk` → select `anki_deck_optimized/` folder
+Then in Anki: `Tools → CrowdAnki → Import from disk` → select deck folder
 
 ### Features
 - **6 card types per problem**: Understanding, Implementation, Formulas, Complexity, Edge Cases, Insights
