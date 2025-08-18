@@ -1,429 +1,251 @@
 import numpy as np
-from typing import List, Dict, Tuple, Optional, Union
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.linear_model import LogisticRegression
-from sklearn.naive_bayes import MultinomialNB
-from sklearn.svm import LinearSVC
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import accuracy_score, precision_recall_fscore_support, confusion_matrix
-from sklearn.model_selection import train_test_split, cross_val_score
-from sklearn.preprocessing import LabelEncoder
-from sklearn.pipeline import Pipeline
-from sklearn.utils.class_weight import compute_class_weight
-import warnings
-warnings.filterwarnings('ignore')
+from typing import List, Dict, Tuple
+from collections import Counter
+import math
 
-
-class TextClassificationModel:
-    """Wrapper for text classification models."""
+def extract_features(texts: List[str], method: str = 'tfidf') -> Tuple[List[List[float]], List[str]]:
+    """
+    Extract features from texts for classification.
     
-    def __init__(self, vectorizer, classifier, label_encoder, confidence_threshold=0.7):
-        self.vectorizer = vectorizer
-        self.classifier = classifier
-        self.label_encoder = label_encoder
-        self.confidence_threshold = confidence_threshold
-        self.feature_names = None
+    This is the MOST IMPORTANT step in text classification.
+    Feature quality determines model performance more than algorithm choice.
+    """
     
-    def predict(self, texts: List[str]) -> List[str]:
-        """Predict labels for texts."""
-        X = self.vectorizer.transform(texts)
-        y_pred = self.classifier.predict(X)
-        return self.label_encoder.inverse_transform(y_pred).tolist()
+    # STEP 1: Build vocabulary from all texts
+    # This creates our feature space - each unique word becomes a dimension
+    vocab = set()
+    for text in texts:
+        words = text.lower().split()  # Simple tokenization
+        vocab.update(words)
+    vocab = sorted(list(vocab))  # Sort for consistency
     
-    def predict_proba(self, texts: List[str]) -> np.ndarray:
-        """Predict probabilities for each class."""
-        X = self.vectorizer.transform(texts)
-        if hasattr(self.classifier, 'predict_proba'):
-            return self.classifier.predict_proba(X)
-        else:
-            # For SVM, use decision function
-            decision = self.classifier.decision_function(X)
-            if len(self.label_encoder.classes_) == 2:
-                # Binary classification
-                proba = 1 / (1 + np.exp(-decision))
-                return np.column_stack([1 - proba, proba])
-            else:
-                # Multi-class: softmax on decision values
-                exp_decision = np.exp(decision)
-                return exp_decision / exp_decision.sum(axis=1, keepdims=True)
-    
-    def predict_with_confidence(self, texts: List[str]) -> List[Tuple[str, float]]:
-        """Predict with confidence scores."""
-        probas = self.predict_proba(texts)
-        predictions = []
+    if method == 'tfidf':
+        # STEP 2: Calculate document frequencies for IDF computation
+        # DF = number of documents containing each term
+        doc_freq = {}
+        for word in vocab:
+            doc_freq[word] = sum(1 for text in texts if word in text.lower())
         
-        for i, proba in enumerate(probas):
-            max_idx = np.argmax(proba)
-            label = self.label_encoder.inverse_transform([max_idx])[0]
-            confidence = proba[max_idx]
-            predictions.append((label, confidence))
-        
-        return predictions
-    
-    def get_uncertain_predictions(self, texts: List[str]) -> List[Tuple[int, str, float]]:
-        """Get predictions with low confidence for active learning."""
-        predictions_with_conf = self.predict_with_confidence(texts)
-        uncertain = []
-        
-        for i, (label, conf) in enumerate(predictions_with_conf):
-            if conf < self.confidence_threshold:
-                uncertain.append((i, texts[i], conf))
-        
-        return uncertain
-
-
-def train_classifier(texts: List[str], labels: List[str], 
-                    algorithm: str = 'logistic_regression',
-                    handle_imbalance: bool = True) -> TextClassificationModel:
-    """Train a text classifier."""
-    
-    # Encode labels
-    label_encoder = LabelEncoder()
-    y = label_encoder.fit_transform(labels)
-    
-    # Create vectorizer
-    vectorizer = TfidfVectorizer(max_features=5000, ngram_range=(1, 2))
-    
-    # Select classifier
-    if algorithm == 'logistic_regression':
-        if handle_imbalance:
-            classifier = LogisticRegression(class_weight='balanced', max_iter=1000)
-        else:
-            classifier = LogisticRegression(max_iter=1000)
-    elif algorithm == 'naive_bayes':
-        classifier = MultinomialNB(alpha=0.1)
-    elif algorithm == 'svm':
-        if handle_imbalance:
-            classifier = LinearSVC(class_weight='balanced', max_iter=1000)
-        else:
-            classifier = LinearSVC(max_iter=1000)
-    elif algorithm == 'random_forest':
-        if handle_imbalance:
-            classifier = RandomForestClassifier(n_estimators=100, class_weight='balanced')
-        else:
-            classifier = RandomForestClassifier(n_estimators=100)
-    else:
-        raise ValueError(f"Unknown algorithm: {algorithm}")
-    
-    # Create pipeline and train
-    X = vectorizer.fit_transform(texts)
-    classifier.fit(X, y)
-    
-    # Create model wrapper
-    model = TextClassificationModel(vectorizer, classifier, label_encoder)
-    model.feature_names = vectorizer.get_feature_names_out()
-    
-    return model
-
-
-def evaluate_classifier(y_true: List[str], y_pred: List[str]) -> Dict[str, float]:
-    """Evaluate classifier performance."""
-    # Overall accuracy
-    accuracy = accuracy_score(y_true, y_pred)
-    
-    # Per-class metrics
-    labels = sorted(set(y_true))
-    precision, recall, f1, support = precision_recall_fscore_support(
-        y_true, y_pred, labels=labels, average=None
-    )
-    
-    # Macro and weighted averages
-    macro_precision, macro_recall, macro_f1, _ = precision_recall_fscore_support(
-        y_true, y_pred, average='macro'
-    )
-    
-    weighted_precision, weighted_recall, weighted_f1, _ = precision_recall_fscore_support(
-        y_true, y_pred, average='weighted'
-    )
-    
-    # Confusion matrix
-    cm = confusion_matrix(y_true, y_pred, labels=labels)
-    
-    results = {
-        'accuracy': accuracy,
-        'macro_precision': macro_precision,
-        'macro_recall': macro_recall,
-        'macro_f1': macro_f1,
-        'weighted_precision': weighted_precision,
-        'weighted_recall': weighted_recall,
-        'weighted_f1': weighted_f1,
-        'per_class_metrics': {
-            label: {
-                'precision': precision[i],
-                'recall': recall[i],
-                'f1': f1[i],
-                'support': support[i]
-            } for i, label in enumerate(labels)
-        },
-        'confusion_matrix': cm.tolist(),
-        'labels': labels
-    }
-    
-    return results
-
-
-def get_feature_importance(model: TextClassificationModel, top_k: int = 10) -> Dict[str, List[Tuple[str, float]]]:
-    """Extract feature importance for interpretability."""
-    feature_importance = {}
-    
-    if hasattr(model.classifier, 'coef_'):  # Linear models
-        # For each class
-        for i, label in enumerate(model.label_encoder.classes_):
-            if len(model.label_encoder.classes_) == 2 and i > 0:
-                # Binary classification: only one set of coefficients
-                coef = model.classifier.coef_[0]
-            else:
-                coef = model.classifier.coef_[i]
+        # STEP 3: Convert each text to TF-IDF vector
+        feature_matrix = []
+        for text in texts:
+            words = text.lower().split()
+            word_counts = Counter(words)
+            doc_length = len(words)
             
-            # Get top positive and negative features
-            top_positive_idx = np.argsort(coef)[-top_k:][::-1]
-            top_negative_idx = np.argsort(coef)[:top_k]
+            # Calculate TF-IDF for each vocabulary word
+            tfidf_vector = []
+            for word in vocab:
+                # TF: How often word appears in this document (normalized)
+                tf = word_counts[word] / doc_length if doc_length > 0 else 0
+                
+                # IDF: How rare the word is across all documents
+                idf = math.log(len(texts) / doc_freq[word])
+                
+                # TF-IDF: Combines local importance (TF) with global rarity (IDF)
+                tfidf_score = tf * idf
+                tfidf_vector.append(tfidf_score)
             
-            positive_features = [(model.feature_names[idx], coef[idx]) 
-                               for idx in top_positive_idx]
-            negative_features = [(model.feature_names[idx], coef[idx]) 
-                               for idx in top_negative_idx]
-            
-            feature_importance[label] = {
-                'positive': positive_features,
-                'negative': negative_features
-            }
-    
-    elif hasattr(model.classifier, 'feature_importances_'):  # Tree-based models
-        importances = model.classifier.feature_importances_
-        top_idx = np.argsort(importances)[-top_k:][::-1]
+            feature_matrix.append(tfidf_vector)
         
-        feature_importance['overall'] = [
-            (model.feature_names[idx], importances[idx]) 
-            for idx in top_idx
-        ]
+        return feature_matrix, vocab
     
-    return feature_importance
+    else:  # Simple bag-of-words
+        feature_matrix = []
+        for text in texts:
+            word_counts = Counter(text.lower().split())
+            bow_vector = [word_counts[word] for word in vocab]
+            feature_matrix.append(bow_vector)
+        
+        return feature_matrix, vocab
 
+def train_logistic_regression(X: List[List[float]], y: List[int]) -> Dict:
+    """
+    Train logistic regression classifier from scratch.
+    
+    Logistic regression is linear classifier with sigmoid activation.
+    Good baseline for text classification - simple but effective.
+    """
+    # STEP 1: Convert to numpy arrays for easier math
+    X_np = np.array(X)
+    y_np = np.array(y)
+    
+    # STEP 2: Add bias term (intercept)
+    # This allows the decision boundary to not pass through origin
+    X_with_bias = np.column_stack([np.ones(len(X)), X_np])
+    
+    # STEP 3: Initialize weights randomly (small values)
+    # Small initialization prevents sigmoid saturation early in training
+    n_features = X_with_bias.shape[1]
+    weights = np.random.randn(n_features) * 0.01
+    
+    # STEP 4: Training loop using gradient descent
+    learning_rate = 0.01  # Step size for weight updates
+    epochs = 100          # Number of training iterations
+    
+    for epoch in range(epochs):
+        # FORWARD PASS: Compute predictions
+        # Linear combination followed by sigmoid activation
+        logits = X_with_bias @ weights           # Linear part: Xw + b
+        predictions = 1 / (1 + np.exp(-logits)) # Sigmoid: maps to [0,1]
+        
+        # BACKWARD PASS: Compute gradients
+        # Gradient of cross-entropy loss w.r.t. weights
+        errors = predictions - y_np              # Prediction errors
+        gradients = (X_with_bias.T @ errors) / len(X)  # Average gradient
+        
+        # UPDATE WEIGHTS: Move in opposite direction of gradient
+        weights -= learning_rate * gradients
+    
+    return {'weights': weights, 'type': 'logistic'}
 
-def cross_validate_classifier(texts: List[str], labels: List[str], 
-                            algorithms: List[str] = None,
-                            cv_folds: int = 5) -> Dict[str, Dict[str, float]]:
-    """Compare multiple classifiers using cross-validation."""
-    if algorithms is None:
-        algorithms = ['logistic_regression', 'naive_bayes', 'svm', 'random_forest']
+def predict_logistic(X: List[List[float]], model: Dict) -> List[int]:
+    """Make predictions with trained logistic regression model."""
+    X_np = np.array(X)
     
-    # Encode labels
-    label_encoder = LabelEncoder()
-    y = label_encoder.fit_transform(labels)
+    # Add bias term (same as training)
+    X_with_bias = np.column_stack([np.ones(len(X)), X_np])
     
-    # Vectorize texts
-    vectorizer = TfidfVectorizer(max_features=5000, ngram_range=(1, 2))
-    X = vectorizer.fit_transform(texts)
+    # Calculate probabilities
+    logits = X_with_bias @ model['weights']
+    probabilities = 1 / (1 + np.exp(-logits))
     
-    results = {}
+    # Convert to binary predictions (threshold = 0.5)
+    predictions = (probabilities > 0.5).astype(int)
     
-    for algo in algorithms:
-        # Create classifier
-        if algo == 'logistic_regression':
-            clf = LogisticRegression(class_weight='balanced', max_iter=1000)
-        elif algo == 'naive_bayes':
-            clf = MultinomialNB(alpha=0.1)
-        elif algo == 'svm':
-            clf = LinearSVC(class_weight='balanced', max_iter=1000)
-        elif algo == 'random_forest':
-            clf = RandomForestClassifier(n_estimators=100, class_weight='balanced')
+    return predictions.tolist()
+
+def evaluate_classifier(y_true: List[int], y_pred: List[int]) -> Dict[str, float]:
+    """
+    Calculate key evaluation metrics.
+    
+    These are what interviewers ask about most:
+    - Accuracy: Overall correctness
+    - Precision: Of predicted positives, how many are correct?
+    - Recall: Of actual positives, how many did we find?
+    - F1: Balanced measure combining precision and recall
+    """
+    # Basic accuracy calculation
+    correct = sum(1 for true, pred in zip(y_true, y_pred) if true == pred)
+    accuracy = correct / len(y_true) if y_true else 0.0
+    
+    # For binary classification, calculate detailed metrics
+    if set(y_true + y_pred) <= {0, 1}:
+        # Confusion matrix components
+        tp = sum(1 for true, pred in zip(y_true, y_pred) if true == 1 and pred == 1)  # True Positives
+        fp = sum(1 for true, pred in zip(y_true, y_pred) if true == 0 and pred == 1)  # False Positives
+        fn = sum(1 for true, pred in zip(y_true, y_pred) if true == 1 and pred == 0)  # False Negatives
         
-        # Cross-validation
-        scores = cross_val_score(clf, X, y, cv=cv_folds, scoring='f1_macro')
+        # Calculate metrics with zero-division protection
+        precision = tp / (tp + fp) if (tp + fp) > 0 else 0.0
+        recall = tp / (tp + fn) if (tp + fn) > 0 else 0.0
+        f1 = 2 * precision * recall / (precision + recall) if (precision + recall) > 0 else 0.0
         
-        results[algo] = {
-            'mean_f1': scores.mean(),
-            'std_f1': scores.std(),
-            'scores': scores.tolist()
+        return {
+            'accuracy': accuracy,
+            'precision': precision, 
+            'recall': recall,
+            'f1': f1
         }
     
-    return results
+    return {'accuracy': accuracy}
 
-
-class MultiLabelTextClassifier:
-    """Multi-label text classification (texts can have multiple labels)."""
-    
-    def __init__(self, algorithm='logistic_regression'):
-        self.algorithm = algorithm
-        self.vectorizer = TfidfVectorizer(max_features=5000, ngram_range=(1, 2))
-        self.classifiers = {}
-        self.labels = []
-    
-    def train(self, texts: List[str], labels_list: List[List[str]]):
-        """Train multi-label classifier.
-        
-        Args:
-            texts: List of texts
-            labels_list: List of label lists (each text can have multiple labels)
-        """
-        # Get unique labels
-        all_labels = set()
-        for labels in labels_list:
-            all_labels.update(labels)
-        self.labels = sorted(all_labels)
-        
-        # Vectorize texts
-        X = self.vectorizer.fit_transform(texts)
-        
-        # Train binary classifier for each label
-        for label in self.labels:
-            # Create binary labels
-            y_binary = np.array([1 if label in labels else 0 
-                               for labels in labels_list])
-            
-            # Train classifier
-            if self.algorithm == 'logistic_regression':
-                clf = LogisticRegression(class_weight='balanced', max_iter=1000)
-            else:
-                clf = LinearSVC(class_weight='balanced', max_iter=1000)
-            
-            clf.fit(X, y_binary)
-            self.classifiers[label] = clf
-    
-    def predict(self, texts: List[str], threshold: float = 0.5) -> List[List[str]]:
-        """Predict labels for texts."""
-        X = self.vectorizer.transform(texts)
-        predictions = []
-        
-        for i in range(X.shape[0]):
-            text_labels = []
-            
-            for label in self.labels:
-                clf = self.classifiers[label]
-                
-                if hasattr(clf, 'predict_proba'):
-                    prob = clf.predict_proba(X[i])[0][1]
-                else:
-                    # For SVM, use decision function
-                    decision = clf.decision_function(X[i])[0]
-                    prob = 1 / (1 + np.exp(-decision))
-                
-                if prob >= threshold:
-                    text_labels.append(label)
-            
-            predictions.append(text_labels)
-        
-        return predictions
-
-
+# COMPLETE INTERVIEW WALKTHROUGH
 if __name__ == "__main__":
-    # Example 1: Basic text classification
-    print("Example 1: Sentiment Classification")
+    print("TEXT CLASSIFICATION - Interview Walkthrough")
+    print("=" * 50)
     
-    # Training data
+    # Sample data for interview demo
     train_texts = [
-        "This movie is fantastic! Best I've seen all year.",
-        "Terrible experience, would not recommend to anyone.",
-        "It was okay, nothing special but not bad either.",
-        "Absolutely loved it! Amazing performances.",
-        "Waste of time and money. Very disappointing.",
-        "Average movie, some good parts but overall mediocre.",
-        "Outstanding! A masterpiece of cinema.",
-        "Boring and predictable. Fell asleep halfway through.",
-        "Not bad, worth watching once."
+        "This movie is great!",         # Positive
+        "Terrible film, hated it",      # Negative  
+        "Amazing acting and plot",      # Positive
+        "Boring and predictable",       # Negative
     ]
+    train_labels = [1, 0, 1, 0]  # Binary: 1=positive, 0=negative
     
-    train_labels = [
-        "positive", "negative", "neutral",
-        "positive", "negative", "neutral",
-        "positive", "negative", "neutral"
-    ]
+    print("TRAINING DATA:")
+    for text, label in zip(train_texts, train_labels):
+        sentiment = "POSITIVE" if label == 1 else "NEGATIVE"
+        print(f"  '{text}' -> {sentiment}")
     
-    # Train classifier
-    model = train_classifier(train_texts, train_labels)
+    print(f"\n" + "STEP 1: FEATURE EXTRACTION")
+    print("-" * 30)
     
-    # Test predictions
+    # Extract TF-IDF features
+    X_train, vocabulary = extract_features(train_texts, method='tfidf')
+    
+    print(f"Vocabulary: {vocabulary}")
+    print(f"Feature matrix: {len(X_train)} documents x {len(vocabulary)} features")
+    
+    # Show first document's features
+    print(f"\nDocument 0 ('{train_texts[0]}') TF-IDF features:")
+    for i, word in enumerate(vocabulary):
+        score = X_train[0][i]
+        if score > 0:
+            print(f"  '{word}': {score:.3f}")
+    
+    print(f"\n" + "STEP 2: MODEL TRAINING")
+    print("-" * 30)
+    
+    # Train model
+    model = train_logistic_regression(X_train, train_labels)
+    print("✓ Logistic regression trained")
+    print(f"Model weights shape: {len(model['weights'])}")
+    
+    print(f"\n" + "STEP 3: PREDICTION")
+    print("-" * 30)
+    
+    # Test on new examples
     test_texts = [
-        "Amazing film, loved every minute!",
-        "Complete disaster, worst movie ever.",
-        "It's fine, nothing to write home about."
+        "Excellent movie, loved every minute!",
+        "Waste of time, very disappointing"
     ]
     
-    predictions = model.predict(test_texts)
-    predictions_with_conf = model.predict_with_confidence(test_texts)
+    # Extract features for test data
+    # IMPORTANT: Use same vocabulary as training
+    all_texts = train_texts + test_texts
+    X_all, _ = extract_features(all_texts, method='tfidf')
+    X_test = X_all[-len(test_texts):]  # Get test features
     
-    print("\nPredictions:")
-    for text, pred, (_, conf) in zip(test_texts, predictions, predictions_with_conf):
-        print(f"Text: '{text}'")
-        print(f"Prediction: {pred} (confidence: {conf:.3f})\n")
+    # Make predictions
+    predictions = predict_logistic(X_test, model)
     
-    print("="*50 + "\n")
+    print("TEST RESULTS:")
+    for text, pred in zip(test_texts, predictions):
+        sentiment = "POSITIVE" if pred == 1 else "NEGATIVE"
+        print(f"  '{text}' -> {sentiment}")
     
-    # Example 2: Evaluate different algorithms
-    print("Example 2: Algorithm Comparison")
+    print(f"\n" + "STEP 4: EVALUATION")
+    print("-" * 30)
     
-    # More data for better comparison
-    from sklearn.datasets import fetch_20newsgroups
-    categories = ['alt.atheism', 'soc.religion.christian', 'comp.graphics', 'sci.med']
+    # Evaluate on training data (normally you'd use test set)
+    train_predictions = predict_logistic(X_train, model)
+    metrics = evaluate_classifier(train_labels, train_predictions)
     
-    try:
-        newsgroups = fetch_20newsgroups(subset='train', categories=categories, 
-                                       shuffle=True, random_state=42)
-        texts = newsgroups.data[:200]  # Use subset for speed
-        labels = [categories[i] for i in newsgroups.target[:200]]
-        
-        cv_results = cross_validate_classifier(texts, labels, cv_folds=3)
-        
-        print("\nCross-validation results:")
-        for algo, results in cv_results.items():
-            print(f"{algo}: F1={results['mean_f1']:.3f} (+/- {results['std_f1']:.3f})")
-        
-    except Exception as e:
-        print("Skipping newsgroups example:", e)
+    print("Performance metrics:")
+    for metric, value in metrics.items():
+        print(f"  {metric.capitalize()}: {value:.3f}")
     
-    print("\n" + "="*50 + "\n")
-    
-    # Example 3: Feature importance
-    print("Example 3: Feature Importance Analysis")
-    
-    feature_importance = get_feature_importance(model, top_k=5)
-    
-    if feature_importance:
-        for label, features in feature_importance.items():
-            if isinstance(features, dict):
-                print(f"\nClass '{label}':")
-                print("  Top positive features:", features['positive'][:3])
-                print("  Top negative features:", features['negative'][:3])
-    
-    print("\n" + "="*50 + "\n")
-    
-    # Example 4: Multi-label classification
-    print("Example 4: Multi-label Classification")
-    
-    # Multi-label training data
-    ml_texts = [
-        "Python is great for machine learning and web development",
-        "JavaScript is essential for frontend development",
-        "Machine learning requires good math skills",
-        "Web development with React and Node.js",
-        "Deep learning with TensorFlow and PyTorch",
-        "Data science involves statistics and programming"
-    ]
-    
-    ml_labels = [
-        ["programming", "machine learning", "web development"],
-        ["programming", "web development"],
-        ["machine learning", "education"],
-        ["web development", "programming"],
-        ["machine learning", "programming"],
-        ["data science", "programming", "education"]
-    ]
-    
-    # Train multi-label classifier
-    ml_classifier = MultiLabelTextClassifier()
-    ml_classifier.train(ml_texts, ml_labels)
-    
-    # Test
-    test_ml_texts = [
-        "Building neural networks with Python",
-        "Creating responsive websites with CSS",
-        "Statistical analysis and data visualization"
-    ]
-    
-    ml_predictions = ml_classifier.predict(test_ml_texts)
-    
-    print("\nMulti-label predictions:")
-    for text, labels in zip(test_ml_texts, ml_predictions):
-        print(f"Text: '{text}'")
-        print(f"Labels: {labels}\n")
+    print(f"\n" + "=" * 50)
+    print("KEY INTERVIEW INSIGHTS:")
+    print("=" * 50)
+    print("1. FEATURE ENGINEERING is crucial")
+    print("   • TF-IDF captures word importance better than raw counts")
+    print("   • Consider n-grams for phrase-level features")
+    print("   • Word embeddings for semantic similarity")
+    print()
+    print("2. ALGORITHM CHOICE matters less than features")
+    print("   • Logistic Regression: Fast, interpretable baseline")
+    print("   • Naive Bayes: Good for small datasets")
+    print("   • SVM: Good for high-dimensional sparse data")
+    print()
+    print("3. EVALUATION considerations")
+    print("   • Use F1 score for imbalanced classes")
+    print("   • Cross-validation for robust estimates")
+    print("   • Precision vs Recall trade-off depends on use case")
+    print()
+    print("4. PRODUCTION challenges")
+    print("   • Handle new vocabulary in test data")
+    print("   • Monitor for data drift over time")
+    print("   • Consider computational efficiency at scale")
