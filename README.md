@@ -1,6 +1,6 @@
-# NLP Coding Interview Question Bank
+# NLP & LLM Coding Interview Question Bank
 
-**19 interview-ready problems with concise Python solutions. Each problem designed for 15-30 minute coding sessions.**
+**24 interview-ready problems with concise Python solutions. Each problem designed for 15-30 minute coding sessions.**
 
 ## Quick Practice Format
 
@@ -42,47 +42,165 @@
 - **[LSTM](NLP/Sequence_Models/)** (25 min) - Gate mechanisms
 - **[BERT Fine-tuning](NLP/Transformers/)** (30 min) - Transfer learning
 
+### 🆕 Large Language Models (5 problems)
+- **[Self-Attention](NLP/Attention_Mechanisms/)** (25 min) - Scaled dot-product attention
+- **[BPE Tokenization](NLP/Tokenization_Advanced/)** (30 min) - Subword tokenization
+- **[GPT Block](NLP/GPT_Implementation/)** (30 min) - Transformer architecture
+- **[LLM Fine-tuning](NLP/Fine_Tuning/)** (25 min) - Classification heads, LoRA
+- **[Text Generation](NLP/LLM_Fundamentals/)** (25 min) - Sampling strategies
+- **[LLM Evaluation](NLP/Model_Evaluation/)** (20 min) - Perplexity, BLEU
+
+## 🎯 Interview Focus Areas
+
+### **Traditional NLP** (18 problems)
+Core preprocessing, classical ML approaches, feature engineering
+
+### **Modern LLMs** (6 problems) 🆕
+Attention mechanisms, transformer architecture, fine-tuning, generation
+
+## LLM Interview Concepts
+
+### **Architecture Understanding**
+- **Self-attention mechanism** - How does it work? Why is it powerful?
+- **Transformer blocks** - Layer norm, residual connections, feed-forward
+- **Positional encoding** - How do transformers handle sequence order?
+- **Causal masking** - Why mask future tokens in autoregressive models?
+
+### **Tokenization for LLMs**
+- **Subword tokenization** - BPE, WordPiece, SentencePiece
+- **Out-of-vocabulary handling** - How subwords solve OOV problem
+- **Special tokens** - [CLS], [SEP], [PAD], [UNK] usage
+- **Token efficiency** - Why character-level vs word-level trade-offs matter
+
+### **Training & Fine-tuning**
+- **Transfer learning** - How to adapt pretrained models
+- **Parameter-efficient fine-tuning** - LoRA, adapters, prefix tuning
+- **Learning rate scheduling** - Different rates for different layers
+- **Instruction tuning** - How to train models to follow instructions
+
+### **Text Generation**
+- **Autoregressive generation** - Next-token prediction approach
+- **Sampling strategies** - Greedy vs random vs top-k vs top-p
+- **Beam search** - Finding high-probability sequences
+- **Temperature scaling** - Controlling randomness vs quality
+
+### **Evaluation**
+- **Perplexity** - Core LLM metric for language modeling
+- **BLEU score** - N-gram overlap for generation tasks
+- **Human evaluation** - Why automated metrics aren't enough
+- **Task-specific metrics** - Classification accuracy, F1, etc.
+
 ## Interview Tips
 
-**Before coding:**
-- Clarify requirements and edge cases
-- Discuss algorithm choice and trade-offs
-- Start with simplest approach
+### **LLM-Specific Tips**
+- **Start with conceptual explanation** before coding
+- **Draw the architecture** if possible (transformer block diagram)
+- **Discuss trade-offs** (model size vs performance, efficiency vs quality)
+- **Mention current trends** (instruction tuning, RLHF, parameter efficiency)
 
-**During coding:**
-- Think out loud
-- Test with examples as you go
-- Handle empty/invalid inputs
+### **Common LLM Interview Questions**
+1. "Implement self-attention from scratch"
+2. "How would you fine-tune BERT for spam detection?"
+3. "Explain the difference between GPT and BERT architectures"
+4. "How do you handle very long sequences in transformers?"
+5. "What's the difference between greedy and beam search?"
 
-**Key concepts to explain:**
-- Time/space complexity
-- Why this approach over alternatives
-- Production considerations (scaling, edge cases)
+### **Before Coding**
+- Clarify model size constraints (parameters, memory)
+- Ask about evaluation metrics for the specific task
+- Discuss data requirements and preprocessing needs
+
+### **During Implementation**
+- Explain each step (attention → layer norm → FFN)
+- Handle edge cases (empty sequences, OOV tokens)
+- Mention optimization opportunities (caching, parallelization)
 
 ## Complexity Quick Reference
 
-| Algorithm | Time | Space |
-|-----------|------|-------|
-| Tokenization | O(n) | O(n) |
-| TF-IDF | O(d×v) | O(d×v) |
-| Word2Vec | O(T×K) | O(V×K) |
-| LSTM | O(t×h²) | O(h) |
+| Algorithm | Time | Space | Notes |
+|-----------|------|-------|-------|
+| Tokenization | O(n) | O(n) | n = text length |
+| TF-IDF | O(d×v) | O(d×v) | d = docs, v = vocab |
+| Word2Vec | O(T×K) | O(V×K) | T = training steps |
+| **Self-Attention** | **O(n²×d)** | **O(n²)** | **n = sequence length** |
+| **GPT Forward** | **O(L×n²×d)** | **O(n×d)** | **L = num layers** |
+| **Beam Search** | **O(k×n×V)** | **O(k×n)** | **k = beam width** |
 
-*n=text length, d=docs, v=vocab, T=training steps, K=embedding dim, t=sequence length, h=hidden size*
+## Company-Specific LLM Focus
+
+### **OpenAI/Anthropic**
+- GPT architecture deep-dive
+- Instruction tuning and RLHF
+- Safety and alignment techniques
+- Prompt engineering strategies
+
+### **Google/DeepMind**
+- BERT vs GPT trade-offs
+- Transformer optimizations
+- Multi-modal extensions
+- Efficiency improvements
+
+### **Meta/Hugging Face**
+- Model deployment and serving
+- Open-source model ecosystems
+- Multi-language support
+- Community model fine-tuning
+
+### **Microsoft/Amazon**
+- Enterprise LLM applications
+- Cost optimization strategies
+- Integration with existing systems
+- Responsible AI deployment
+
+## Study Plan
+
+### **Week 1: Foundations** (Traditional NLP)
+- Master text preprocessing and feature extraction
+- Implement classical ML approaches (TF-IDF, BoW)
+- Practice regex and string manipulation
+
+### **Week 2: Neural Networks**
+- Build neural networks from scratch
+- Understand CNNs and LSTMs for text
+- Practice sequence modeling concepts
+
+### **Week 3: Modern LLMs** 🆕
+- **Day 1-2**: Self-attention mechanism implementation
+- **Day 3-4**: GPT transformer block architecture  
+- **Day 5-6**: BPE tokenization and text generation
+- **Day 7**: Fine-tuning strategies and evaluation
+
+### **Week 4: Advanced Topics**
+- Instruction tuning and RLHF concepts
+- Parameter-efficient fine-tuning (LoRA)
+- Model evaluation and deployment considerations
+- Company-specific interview preparation
 
 ## Usage
 
 Each solution is self-contained and runs independently:
 
 ```bash
+# Traditional NLP
 python NLP/Tokenization/tokenization_solution.py
 python NLP/TFIDF/tfidf_solution.py
-python NLP/Embeddings/word2vec_solution.py
+
+# Modern LLMs
+python NLP/Attention_Mechanisms/self_attention_solution.py
+python NLP/GPT_Implementation/gpt_block_solution.py
+python NLP/LLM_Fundamentals/text_generation_solution.py
 ```
 
 **Dependencies**: Most solutions use only Python stdlib + numpy for algorithmic focus.
 
 ---
 
-**Total practice time**: ~8 hours to complete all problems  
-**Interview prep**: Practice 1-2 problems daily for 2 weeks
+## Repository Stats
+
+- **24 NLP & LLM Topics** covered
+- **48+ Files** with problems and solutions
+- **15-30 minutes** per problem  
+- **~10 hours** total practice time
+- **Interview-optimized** format for live coding
+
+**Perfect for 2024+ NLP interviews** covering both traditional methods and modern LLM techniques! 🚀
