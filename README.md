@@ -114,18 +114,26 @@ Use the dedicated phone screen plan for fast recall, one‑minute scripts, and s
 ## 🧠 Anki Integration (Spaced Repetition)
 **Automatically convert all problems/solutions to Anki flashcards!**
 
-- **30+ cards** auto-generated from this repo
-- **3 card types**: Implementation, Concepts, Complexity
-- **Syncs with GitHub** via CrowdAnki
-- **Mobile-friendly** for practice anywhere
-
-Quick setup:
+### Standard Deck (30+ cards)
 ```bash
-python convert_to_anki.py  # Generate deck
-# Then import in Anki via CrowdAnki addon
+python convert_to_anki.py  # Original converter
 ```
 
-Full guide: [ANKI_SETUP.md](ANKI_SETUP.md)
+### 🎯 **Optimized Deck (117+ bite-sized cards)**
+```bash
+python convert_to_anki_optimized.py  # Better for memorization!
+```
+
+**Features:**
+- **6 card types per problem**: Understanding, Implementation, Formulas, Complexity, Edge Cases, Insights
+- **Bite-sized chunks**: 5-15 lines per card (perfect for mobile)
+- **Mobile-optimized CSS**: Readable on any device
+- **Atomic concepts**: One idea per card for better retention
+
+**Guides:**
+- Full setup: [ANKI_SETUP.md](ANKI_SETUP.md)
+- Best practices: [ANKI_BEST_PRACTICES.md](ANKI_BEST_PRACTICES.md)
+- Example refactor: [Example_Anki_Refactor](NLP/Example_Anki_Refactor/)
 
 ## 🏢 Company-Specific Questions
 
