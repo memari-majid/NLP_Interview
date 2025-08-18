@@ -1,117 +1,168 @@
-# NLP Interview Questions - What Actually Gets Asked
+# NLP Coding Interview Bank — Fast Practice
 
-**Focus on the 15 most common NLP interview questions. Skip the rest.**
+**Goal**: Implement and explain the most asked NLP coding questions in 15–30 minutes. Classic NLP + modern LLM topics. Heavily commented solutions. Interview-focused.
 
-## 🎯 TOP 10 MUST-PRACTICE (Asked in 90% of interviews)
+## Table of Contents
+- **Vision**
+- **Top 10 Must-Practice**
+- **Full Topic Map (Hyperlinked)**
+- **Review Plans: 7-Day and 14-Day**
+- **Company-Specific Focus**
+- **Common Interview Traps**
+- **Checklist and Quick Commands**
+- **Success Metrics**
 
-| Rank | Question | File | Time | Why Asked |
-|------|----------|------|------|-----------|
-| 1 | **"Implement TF-IDF from scratch"** | [TFIDF](NLP/TFIDF/) | 30min | Tests fundamental understanding |
-| 2 | **"Build text classifier pipeline"** | [Classification](NLP/Text_Classification/) | 25min | Most practical NLP task |
-| 3 | **"Handle text tokenization edge cases"** | [Tokenization](NLP/Tokenization/) | 15min | Basic but essential |
-| 4 | **"Implement self-attention"** | [Attention](NLP/Attention_Mechanisms/) | 25min | Core of modern NLP |
-| 5 | **"Word2Vec training step"** | [Word2Vec](NLP/Embeddings/) | 20min | Classic embeddings |
-| 6 | **"Rule-based sentiment analysis"** | [Sentiment](NLP/Sentiment_Analysis/) | 20min | Business-relevant |
-| 7 | **"Calculate text similarity"** | [Similarity](NLP/Similarity/) | 25min | Search/recommendation |
-| 8 | **"BPE tokenization algorithm"** | [BPE](NLP/Tokenization_Advanced/) | 30min | Modern tokenization |
-| 9 | **"BERT fine-tuning setup"** | [BERT](NLP/Transformers/) | 30min | Transfer learning |
-| 10 | **"Extract entities with regex"** | [NER](NLP/NER/) | 25min | Information extraction |
+## Vision
+This repo is a fast-practice bank of NLP coding interview problems. Every directory contains:
+- **Problem** (concise prompt)
+- **Solution** (short, production-minded, heavily commented)
+- **Interview talking points** and common follow-ups embedded in code comments
+
+## 🎯 Top 10 Must-Practice (Asked in 90% of interviews)
+
+| Rank | Question | Directory | Time | Why Asked |
+|------|----------|-----------|------|-----------|
+| 1 | Implement TF-IDF from scratch | [TFIDF](NLP/TFIDF/) | 30min | Fundamental IR/NLP math |
+| 2 | Build text classifier pipeline | [Text Classification](NLP/Text_Classification/) | 25min | Most practical task |
+| 3 | Handle tokenization edge cases | [Tokenization](NLP/Tokenization/) | 15min | Always tested |
+| 4 | Implement self-attention | [Attention](NLP/Attention_Mechanisms/) | 25min | Core of transformers |
+| 5 | Word2Vec training step | [Embeddings](NLP/Embeddings/) | 20min | Classic representation |
+| 6 | Rule-based sentiment analysis | [Sentiment](NLP/Sentiment_Analysis/) | 20min | Business-relevant |
+| 7 | Calculate text similarity | [Similarity](NLP/Similarity/) | 25min | Search/recommendation |
+| 8 | BPE tokenization algorithm | [Tokenization Advanced](NLP/Tokenization_Advanced/) | 30min | Modern tokenization |
+| 9 | BERT fine-tuning setup | [Transformers](NLP/Transformers/) | 30min | Transfer learning |
+| 10 | Extract entities with regex | [NER](NLP/NER/) | 25min | Information extraction |
+
+Direct links (Top 10):
+- TF-IDF: [Problem](NLP/TFIDF/tfidf_problem.md) · [Solution](NLP/TFIDF/tfidf_solution.py)
+- Text Classification: [Problem](NLP/Text_Classification/text_classification_problem.md) · [Solution](NLP/Text_Classification/text_classification_solution.py)
+- Tokenization: [Problem](NLP/Tokenization/tokenization_problem.md) · [Solution](NLP/Tokenization/tokenization_solution.py)
+- Self-Attention: [Problem](NLP/Attention_Mechanisms/self_attention_problem.md) · [Solution](NLP/Attention_Mechanisms/self_attention_solution.py)
+- Word2Vec: [Problem](NLP/Embeddings/word2vec_problem.md) · [Solution](NLP/Embeddings/word2vec_solution.py)
+- Sentiment (VADER): [Problem](NLP/Sentiment_Analysis/vader_sentiment_problem.md) · [Solution](NLP/Sentiment_Analysis/vader_sentiment_solution.py)
+- Similarity: [Problem](NLP/Similarity/cosine_similarity_problem.md) · [Solution](NLP/Similarity/cosine_similarity_solution.py)
+- BPE: [Problem](NLP/Tokenization_Advanced/bpe_tokenization_problem.md) · [Solution](NLP/Tokenization_Advanced/bpe_tokenization_solution.py)
+- BERT Fine-tuning: [Problem](NLP/Transformers/bert_sentiment_problem.md) · [Solution](NLP/Transformers/bert_sentiment_solution.py)
+- Regex NER: [Problem](NLP/Regex_NLP/regex_patterns_problem.md) · [Solution](NLP/Regex_NLP/regex_patterns_solution.py)
+
+## 📚 Full Topic Map (Hyperlinked)
+
+- **Attention Mechanisms**: [Problem](NLP/Attention_Mechanisms/self_attention_problem.md) · [Solution](NLP/Attention_Mechanisms/self_attention_solution.py)
+- **Bag-of-Words Vectors**: [Problem](NLP/BoW_Vectors/bag_of_words_problem.md) · [Solution](NLP/BoW_Vectors/bag_of_words_solution.py)
+- **CNN for Text**: [Problem](NLP/CNN_Text/cnn_text_classification_problem.md) · [Solution](NLP/CNN_Text/cnn_text_classification_solution.py)
+- **Embeddings (Word2Vec)**: [Problem](NLP/Embeddings/word2vec_problem.md) · [Solution](NLP/Embeddings/word2vec_solution.py)
+- **Fine-Tuning (Classification)**: [Problem](NLP/Fine_Tuning/classification_finetuning_problem.md) · [Solution](NLP/Fine_Tuning/classification_finetuning_solution.py)
+- **GPT Block (Transformer Block)**: [Problem](NLP/GPT_Implementation/gpt_block_problem.md) · [Solution](NLP/GPT_Implementation/gpt_block_solution.py)
+- **Instruction Tuning**: [Problem](NLP/Instruction_Tuning/instruction_following_problem.md) · [Solution](NLP/Instruction_Tuning/instruction_following_solution.py)
+- **LLM Fundamentals (Text Generation)**: [Problem](NLP/LLM_Fundamentals/text_generation_problem.md) · [Solution](NLP/LLM_Fundamentals/text_generation_solution.py)
+- **Model Evaluation (LLMs)**: [Problem](NLP/Model_Evaluation/llm_evaluation_problem.md) · [Solution](NLP/Model_Evaluation/llm_evaluation_solution.py)
+- **NER**: [Problem](NLP/NER/ner_problem.md) · [Solution](NLP/NER/ner_solution.py)
+- **Neural Fundamentals (Perceptron)**: [Problem](NLP/Neural_Fundamentals/perceptron_neural_net_problem.md) · [Solution](NLP/Neural_Fundamentals/perceptron_neural_net_solution.py)
+- **N-grams**: [Problem](NLP/NGrams/ngrams_problem.md) · [Solution](NLP/NGrams/ngrams_solution.py)
+- **POS Tagging**: [Problem](NLP/POS_Tagging/pos_tagging_problem.md) · [Solution](NLP/POS_Tagging/pos_tagging_solution.py)
+- **Regex for NLP**: [Problem](NLP/Regex_NLP/regex_patterns_problem.md) · [Solution](NLP/Regex_NLP/regex_patterns_solution.py)
+- **Sentiment Analysis (VADER)**: [Problem](NLP/Sentiment_Analysis/vader_sentiment_problem.md) · [Solution](NLP/Sentiment_Analysis/vader_sentiment_solution.py)
+- **Sequence Models (LSTM Sentiment)**: [Problem](NLP/Sequence_Models/lstm_sentiment_problem.md) · [Solution](NLP/Sequence_Models/lstm_sentiment_solution.py)
+- **Text Similarity**: [Problem](NLP/Similarity/cosine_similarity_problem.md) · [Solution](NLP/Similarity/cosine_similarity_solution.py)
+- **Stemming & Lemmatization**: [Problem](NLP/Stemming_Lemmatization/stemming_lemmatization_problem.md) · [Solution](NLP/Stemming_Lemmatization/stemming_lemmatization_solution.py)
+- **Stop Word Removal**: [Problem](NLP/Stop_Word_Removal/stopword_removal_problem.md) · [Solution](NLP/Stop_Word_Removal/stopword_removal_solution.py)
+- **Text Classification**: [Problem](NLP/Text_Classification/text_classification_problem.md) · [Solution](NLP/Text_Classification/text_classification_solution.py)
+- **TF-IDF**: [Problem](NLP/TFIDF/tfidf_problem.md) · [Solution](NLP/TFIDF/tfidf_solution.py)
+- **Tokenization (Rule-based)**: [Problem](NLP/Tokenization/tokenization_problem.md) · [Solution](NLP/Tokenization/tokenization_solution.py)
+- **Tokenization (BPE)**: [Problem](NLP/Tokenization_Advanced/bpe_tokenization_problem.md) · [Solution](NLP/Tokenization_Advanced/bpe_tokenization_solution.py)
+- **Topic Modeling (LSA/LDA)**: [Problem](NLP/TopicModeling/lsa_lda_problem.md) · [Solution](NLP/TopicModeling/lsa_lda_solution.py)
+- **Transformers (BERT Fine-tuning)**: [Problem](NLP/Transformers/bert_sentiment_problem.md) · [Solution](NLP/Transformers/bert_sentiment_solution.py)
+- **Utilities (Text Normalization)**: [Problem](NLP/Utilities/text_normalization_problem.md) · [Solution](NLP/Utilities/text_normalization_solution.py)
+
+## 🗺️ Review Plans
+
+### 7-Day Crash (Interview in 1 week)
+- Day 1: [TF-IDF](NLP/TFIDF/tfidf_problem.md), [Text Similarity](NLP/Similarity/cosine_similarity_problem.md)
+- Day 2: [Text Classification](NLP/Text_Classification/text_classification_problem.md)
+- Day 3: [Tokenization](NLP/Tokenization/tokenization_problem.md), [Stop Words](NLP/Stop_Word_Removal/stopword_removal_problem.md)
+- Day 4: [Self-Attention](NLP/Attention_Mechanisms/self_attention_problem.md)
+- Day 5: [Word2Vec](NLP/Embeddings/word2vec_problem.md)
+- Day 6: [BPE](NLP/Tokenization_Advanced/bpe_tokenization_problem.md), [Regex NER](NLP/Regex_NLP/regex_patterns_problem.md)
+- Day 7: Mock interview + review weak spots
+
+### 14-Day Full Coverage (All problems)
+- Day 1: TF-IDF · Text Similarity
+- Day 2: Text Classification · Stop Words
+- Day 3: Tokenization · Stemming & Lemmatization
+- Day 4: POS Tagging · NER (Regex)
+- Day 5: NER (Statistical) · BoW Vectors
+- Day 6: N-grams · Word2Vec
+- Day 7: Self-Attention · Transformers (BERT)
+- Day 8: GPT Block · Text Generation
+- Day 9: Tokenization (BPE) · Utilities (Normalization)
+- Day 10: Sentiment (VADER) · CNN for Text
+- Day 11: Sequence Models (LSTM) · Neural Fundamentals (Perceptron)
+- Day 12: Topic Modeling (LSA/LDA) · Model Evaluation (LLMs)
+- Day 13: Fine-Tuning (Classification) · Instruction Tuning
+- Day 14: Mixed review + 2 mocks
+
+How to use each day:
+- Implement from memory (no peeking) → Compare with solution → Explain out loud → Note follow-ups.
 
 ## 🏢 Company-Specific Questions
 
-### **OpenAI/Anthropic** (LLM Companies)
-**Must practice**: Self-attention, GPT block, text generation
-- "Implement the transformer attention mechanism"
-- "How would you generate text with different sampling strategies?"
-- "Explain instruction tuning vs pre-training"
+### OpenAI/Anthropic (LLM companies)
+Must practice: Self-attention, GPT block, text generation
+- Implement the transformer attention mechanism
+- How would you generate text with different sampling strategies?
+- Explain instruction tuning vs pre-training
 
-**Focus**: [Attention](NLP/Attention_Mechanisms/), [GPT Block](NLP/GPT_Implementation/), [Text Generation](NLP/LLM_Fundamentals/)
+Focus: [Attention](NLP/Attention_Mechanisms/), [GPT Block](NLP/GPT_Implementation/), [Text Generation](NLP/LLM_Fundamentals/)
 
-### **Google/Meta** (Research + Scale)
-**Must practice**: BERT fine-tuning, text classification, embeddings
-- "Fine-tune BERT for spam detection"
-- "Build content moderation classifier"
-- "Compare word-level vs subword tokenization"
+### Google/Meta (Research + Scale)
+Must practice: BERT fine-tuning, text classification, embeddings
+- Fine-tune BERT for spam detection
+- Build content moderation classifier
+- Compare word-level vs subword tokenization
 
-**Focus**: [BERT](NLP/Transformers/), [Classification](NLP/Text_Classification/), [BPE](NLP/Tokenization_Advanced/)
+Focus: [BERT](NLP/Transformers/), [Classification](NLP/Text_Classification/), [BPE](NLP/Tokenization_Advanced/)
 
-### **Amazon/Microsoft** (Product-focused)
-**Must practice**: Search relevance, sentiment, practical NLP
-- "Rank search results by relevance" 
-- "Analyze customer review sentiment"
-- "Build autocomplete system"
+### Amazon/Microsoft (Product-focused)
+Must practice: Search relevance, sentiment, practical NLP
+- Rank search results by relevance
+- Analyze customer review sentiment
+- Build autocomplete system
 
-**Focus**: [TF-IDF](NLP/TFIDF/), [Sentiment](NLP/Sentiment_Analysis/), [Text Similarity](NLP/Similarity/)
+Focus: [TF-IDF](NLP/TFIDF/), [Sentiment](NLP/Sentiment_Analysis/), [Text Similarity](NLP/Similarity/)
 
-## ⚡ **1-Week Crash Course** (Interview in 1 week)
+## 🚨 Common Interview Traps
 
-**Day 1**: [TF-IDF](NLP/TFIDF/) - Most asked algorithm
-**Day 2**: [Text Classification](NLP/Text_Classification/) - Most practical 
-**Day 3**: [Tokenization](NLP/Tokenization/) - Always comes up
-**Day 4**: [Self-Attention](NLP/Attention_Mechanisms/) - Modern NLP core
-**Day 5**: [Word2Vec](NLP/Embeddings/) - Classic but still asked
-**Day 6**: [Text Similarity](NLP/Similarity/) - Search/recommendation
-**Day 7**: Review all + mock interview
-
-## 🚨 **Common Interview Traps**
-
-### **TF-IDF Questions**
-- ❌ "Use sklearn" → ✅ Implement from scratch
-- ❌ Skip IDF explanation → ✅ Explain why IDF matters
+### TF-IDF
+- ❌ Use sklearn → ✅ Implement from scratch
+- ❌ Skip IDF intuition → ✅ Explain why IDF matters
 - ❌ Forget edge cases → ✅ Handle empty documents
 
-### **Attention Questions**  
-- ❌ Mention "it's complex" → ✅ Implement step-by-step
+### Attention
+- ❌ "It's complex" → ✅ Implement step-by-step
 - ❌ Skip scaling factor → ✅ Explain why divide by √d_k
 - ❌ Forget causal mask → ✅ Handle autoregressive case
 
-### **Tokenization Questions**
+### Tokenization
 - ❌ "Just split on spaces" → ✅ Handle punctuation, contractions
 - ❌ Ignore Unicode → ✅ Discuss encoding issues
 - ❌ Miss subword benefits → ✅ Explain OOV handling
 
-## 🎪 **Real Interview Examples**
+## 📋 Checklist
 
-### **Google L4/L5**
-*"Implement a function that takes a document collection and a query, returns top-k most relevant documents."*
-→ Practice: [TF-IDF](NLP/TFIDF/) + [Text Similarity](NLP/Similarity/)
-
-### **OpenAI/Anthropic**
-*"Walk me through how self-attention works and implement the core computation."*
-→ Practice: [Self-Attention](NLP/Attention_Mechanisms/)
-
-### **Meta/Facebook**
-*"Build a content moderation system that classifies posts as toxic/non-toxic."*
-→ Practice: [Text Classification](NLP/Text_Classification/) + [BERT Fine-tuning](NLP/Transformers/)
-
-### **Amazon**
-*"How would you analyze customer review sentiment at scale?"*
-→ Practice: [Sentiment Analysis](NLP/Sentiment_Analysis/) + scaling discussion
-
-## 📋 **Interview Prep Checklist**
-
-### **Before the Interview**
-- [ ] Can implement TF-IDF in 30 minutes
-- [ ] Can explain self-attention mechanism clearly
-- [ ] Know when to use different tokenization approaches
-- [ ] Can build text classification pipeline end-to-end
+Before interview:
+- [ ] Implement TF-IDF in 30 minutes
+- [ ] Explain self-attention clearly
+- [ ] Know tokenization trade-offs
+- [ ] Build text classification pipeline end-to-end
 - [ ] Understand transformer vs RNN trade-offs
 
-### **Day of Interview**
+Day of interview:
 - [ ] Review complexity cheat sheet
-- [ ] Practice explaining attention mechanism out loud
-- [ ] Rehearse TF-IDF formula explanation
-- [ ] Know your edge case handling strategies
+- [ ] Explain attention out loud once
+- [ ] Rehearse TF-IDF formula
+- [ ] Review your edge-case playbook
 
-## 🎯 **What NOT to Study** (Waste of time for interviews)
-
-❌ **Complex topic modeling** (LDA implementation details)
-❌ **Advanced RNN variants** (GRU vs LSTM internals)  
-❌ **Speech processing** (rarely asked in NLP roles)
-❌ **Extensive regex patterns** (focus on basic entity extraction)
-❌ **Deep mathematical proofs** (focus on implementation)
-
-## ⚡ **Quick Practice Commands**
+## ⚡ Quick Practice Commands
 
 ```bash
 # Practice most important problems
@@ -122,28 +173,26 @@ python NLP/Tokenization/tokenization_solution.py
 python NLP/Embeddings/word2vec_solution.py
 ```
 
-## 📊 **Interview Success Metrics**
+## 📊 Success Metrics
 
-### **Minimum Viable Preparation** (1 week)
+Minimum (1 week)
 - ✅ Top 5 problems completed
 - ✅ Can explain transformer attention
 - ✅ Know TF-IDF formula by heart
 - ✅ Understand tokenization trade-offs
 
-### **Strong Preparation** (2 weeks)  
+Strong (2 weeks)
 - ✅ Top 10 problems mastered
 - ✅ Can implement any on whiteboard
 - ✅ Know scaling considerations
-- ✅ Ready for follow-up questions
+- ✅ Ready for follow-ups
 
-### **Exceptional Preparation** (1 month)
+Exceptional (1 month)
 - ✅ All 26 problems completed
 - ✅ Can teach concepts to others
-- ✅ Know cutting-edge developments
-- ✅ Ready for principal/staff level interviews
+- ✅ Up to date with LLM basics
+- ✅ Ready for senior interviews
 
 ---
 
-**Focus on what matters. Master the top 10. Skip the rest unless you have extra time.** 🎯
-
-**Expected interview success rate**: 90%+ with top 10 mastery
+Focus on what matters. Master the top 10 first, then cover the rest with the 14-day plan. 🎯
