@@ -5,10 +5,11 @@
 
 ### 1. **Import Flashcards** (5 minutes)
 ```bash
-# Import the optimized Anki deck
-📁 Go to: NLP_Interview_Flashcards/
-📥 Import: NLP_Interview_Flashcards.json
-🎯 Result: 438 research-optimized flashcards
+# Import Anki flashcards
+📁 Categorized: NLP_Fundamentals/, NLP_AttentionTransformers/, etc.
+📁 Single deck: NLP_Interview_Flashcards/
+📥 Import folder to Anki (CrowdAnki)
+🎯 Result: 17 research-optimized flashcards
 ```
 
 ### 2. **Browse Problems** (10 minutes)
@@ -30,8 +31,18 @@
 ## 📦 Repository Structure
 
 ### 🎯 **NLP Interview Flashcards** (Ready to Use)
-- **[NLP_Interview_Flashcards/](NLP_Interview_Flashcards/)** - **438 optimized flashcards**
-  - `NLP_Interview_Flashcards.json` - Main import file
+
+#### **Option 1: Categorized Decks** (Recommended)
+- **17 cards across 4 specialized decks** - each in its own directory
+  - **[NLP_Fundamentals/](NLP_Fundamentals/)** - Core NLP concepts (4 cards)
+  - **[NLP_AttentionTransformers/](NLP_AttentionTransformers/)** - Modern architectures (5 cards)
+  - **[NLP_EmbeddingsSimilarity/](NLP_EmbeddingsSimilarity/)** - Vector representations (4 cards)
+  - **[NLP_ClassicalMethods/](NLP_ClassicalMethods/)** - Traditional NLP (4 cards)
+  - **[NLP_Decks_README.md](NLP_Decks_README.md)** - Complete study guide
+
+#### **Option 2: Single Comprehensive Deck**
+- **[NLP_Interview_Flashcards/](NLP_Interview_Flashcards/)** - **16 optimized flashcards**
+  - `NLP_Interview_Flashcards.json` - All concepts in one deck
   - `README.md` - Import instructions
 
 ### 💻 **NLP Problems** (27 Topics)
@@ -106,4 +117,4 @@ python scripts/convert_to_anki_rules_optimized.py
 
 ---
 
-**🎯 Ready to ace your NLP interview? Start with `NLP_Interview_Flashcards/` and study consistently!**
+**🎯 Ready to ace your NLP interview? Start with `NLP_Fundamentals/` for organized study!**
