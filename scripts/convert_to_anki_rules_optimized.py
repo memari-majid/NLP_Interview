@@ -130,43 +130,63 @@ class AnkiCardOptimizer:
         return True
     
     def create_formula_cards(self, solution_content: str) -> List[Dict[str, str]]:
-        """Create complete, well-formatted formula cards."""
+        """Create complete, well-formatted formula cards from actual code."""
         formulas = []
         
-        # Enhanced patterns with context
-        formula_patterns = [
-            {
-                'pattern': r'(?:#.*?)?(?:TF-?IDF|tf.?idf).*?=.*?(?:tf|TF).*?\*.*?(?:idf|IDF|log).*?(?:\(.*?\))?',
-                'name': 'TF-IDF Formula',
-                'explanation': 'Term Frequency × Inverse Document Frequency'
-            },
-            {
-                'pattern': r'(?:#.*?)?(?:cosine|Cosine).*?(?:similarity|sim).*?=.*?(?:dot|np\.dot).*?/.*?(?:norm|magnitude)',
-                'name': 'Cosine Similarity',
-                'explanation': 'Dot product divided by magnitudes'
-            },
-            {
-                'pattern': r'(?:#.*?)?(?:attention|Attention).*?=.*?softmax.*?\(.*?QK.*?\).*?V',
-                'name': 'Attention Mechanism',
-                'explanation': 'Attention(Q,K,V) = softmax(QK^T/√d)V'
-            },
-            {
-                'pattern': r'(?:#.*?)?(?:precision|Precision).*?=.*?TP.*?/.*?\(.*?TP.*?\+.*?FP.*?\)',
-                'name': 'Precision Formula',
-                'explanation': 'True Positives / (True Positives + False Positives)'
-            }
-        ]
-        
-        for pattern_info in formula_patterns:
-            matches = re.findall(pattern_info['pattern'], solution_content, re.IGNORECASE | re.MULTILINE)
-            for match in matches:
-                clean_formula = re.sub(r'#.*?\n', '', match).strip()
-                formulas.append({
-                    'name': pattern_info['name'],
-                    'formula': clean_formula,
-                    'explanation': pattern_info['explanation'],
-                    'context': self._extract_formula_context(solution_content, match)
-                })
+        lines = solution_content.split('\n')
+        for i, line in enumerate(lines):
+            line_clean = line.strip()
+            
+            # Look for formula comments and docstrings
+            if any(formula_marker in line_clean for formula_marker in ['Formula:', 'Attention(', 'TF-IDF', 'cosine']):
+                formula_text = line_clean.replace('#', '').replace('Formula:', '').strip()
+                
+                # Try to extract the mathematical expression
+                if '=' in formula_text:
+                    parts = formula_text.split('=', 1)
+                    if len(parts) == 2:
+                        formula_name = parts[0].strip()
+                        formula_expr = parts[1].strip()
+                        
+                        # Get context from surrounding lines
+                        context_lines = []
+                        for j in range(max(0, i-2), min(len(lines), i+3)):
+                            if j != i and lines[j].strip():
+                                context_lines.append(lines[j].strip())
+                        
+                        # Determine explanation based on formula type
+                        explanation = ""
+                        if 'attention' in formula_text.lower():
+                            explanation = "Scaled dot-product attention: computes attention weights and applies them to values"
+                        elif 'cosine' in formula_text.lower():
+                            explanation = "Cosine similarity: measures angle between vectors (0=orthogonal, 1=identical)"
+                        elif 'tf' in formula_text.lower() and 'idf' in formula_text.lower():
+                            explanation = "TF-IDF: weights terms by frequency and rarity across documents"
+                        elif 'precision' in formula_text.lower():
+                            explanation = "Precision: proportion of predicted positives that are actually positive"
+                        
+                        formulas.append({
+                            'name': formula_name if formula_name else 'Mathematical Formula',
+                            'formula': formula_expr,
+                            'explanation': explanation,
+                            'context': ' | '.join(context_lines[:3])  # Limit context
+                        })
+            
+            # Also look for explicit mathematical expressions in comments
+            elif any(math_symbol in line_clean for math_symbol in ['√', 'softmax', 'log', '∑']) and '=' in line_clean:
+                # Extract mathematical expression
+                if '#' in line:
+                    formula_text = line.split('#', 1)[1].strip()
+                else:
+                    formula_text = line_clean
+                
+                if len(formula_text) > 10 and len(formula_text) < 80:  # Reasonable length
+                    formulas.append({
+                        'name': 'Key Formula',
+                        'formula': formula_text,
+                        'explanation': 'Mathematical relationship used in this algorithm',
+                        'context': ''
+                    })
         
         return formulas
     
@@ -417,31 +437,61 @@ class AnkiCardOptimizer:
         return insights
     
     def _generate_algorithmic_insights(self, solution_content: str, topic: str) -> List[Dict[str, str]]:
-        """Generate algorithmic talking points for interviews."""
+        """Extract actual algorithmic insights from solution code and comments."""
         insights = []
         
-        # Topic-specific insights
+        # Extract key insights from solution comments and docstrings
+        lines = solution_content.split('\n')
+        for line in lines:
+            line = line.strip()
+            
+            # Look for explanatory comments that teach concepts
+            if any(marker in line for marker in ['# This is the CORE', '# Why', '# Key insight', '# Interview:', 'Formula:']):
+                clean_insight = line.replace('#', '').replace('"""', '').strip()
+                if len(clean_insight) > 10 and len(clean_insight) < 100:
+                    insights.append({
+                        'insight': clean_insight,
+                        'topic': topic,
+                        'type': 'code_insight'
+                    })
+            
+            # Extract docstring explanations
+            if '"""' in line and any(keyword in line.lower() for keyword in ['core', 'key', 'important', 'why', 'because']):
+                clean_insight = line.replace('"""', '').strip()
+                if len(clean_insight) > 15:
+                    insights.append({
+                        'insight': clean_insight,
+                        'topic': topic, 
+                        'type': 'docstring_insight'
+                    })
+        
+        # Add topic-specific algorithmic insights as fallback
         topic_insights = {
             'attention_mechanisms': [
-                'Attention allows models to focus on relevant parts of input',
-                'Self-attention computes relationships between all positions',
-                'Scaled dot-product prevents vanishing gradients'
+                'Attention allows models to focus on relevant parts of input sequence',
+                'Self-attention computes relationships between all positions simultaneously',
+                'Scaling by √d_k prevents extremely large softmax gradients'
             ],
             'embeddings': [
-                'Embeddings map discrete tokens to continuous vector space', 
-                'Word2Vec uses skip-gram or CBOW for training',
-                'Contextual embeddings capture word meaning in context'
+                'Embeddings map discrete tokens to dense continuous vectors', 
+                'Similar words have similar embeddings in vector space',
+                'Context-dependent embeddings capture word meaning dynamically'
             ],
             'transformers': [
-                'Transformers replaced RNNs with parallel attention computation',
-                'Multi-head attention captures different types of relationships',
-                'Positional encoding adds sequence order information'
+                'Transformers enable parallel computation unlike RNNs',
+                'Multi-head attention captures different relationship types',
+                'Positional encoding provides sequence order information'
+            ],
+            'llm_fundamentals': [
+                'LLMs predict next token based on previous context',
+                'Temperature controls randomness in generation',
+                'Attention mechanism enables long-range dependencies'
             ]
         }
         
         topic_key = topic.lower().replace(' ', '_')
-        if topic_key in topic_insights:
-            for insight_text in topic_insights[topic_key]:
+        if topic_key in topic_insights and len(insights) < 2:
+            for insight_text in topic_insights[topic_key][:2]:
                 insights.append({
                     'insight': insight_text,
                     'topic': topic,
@@ -662,52 +712,97 @@ def process_all_problems():
 
 # Helper functions for card creation
 def create_problem_understanding_cards(problem_content: str, topic: str) -> List[Dict]:
-    """Create problem understanding cards."""
+    """Create meaningful problem understanding cards that teach actual concepts."""
     cards = []
     
-    # Extract problem title and description
     lines = problem_content.split('\n')
     title = ""
-    description = ""
+    main_task = ""
+    algorithm_hints = []
+    key_steps = []
     
-    for line in lines:
-        if line.startswith('# '):
-            title = line.replace('# ', '').strip()
-        elif line.strip() and not line.startswith('#'):
-            description = line.strip()
-            break
+    # Extract meaningful content
+    for i, line in enumerate(lines):
+        line = line.strip()
+        
+        if line.startswith('# Problem:'):
+            title = line.replace('# Problem:', '').strip()
+        elif line.startswith('Implement') or line.startswith('Create') or line.startswith('Build'):
+            main_task = line.strip()
+        elif 'Steps:' in line:
+            # Extract the steps that follow
+            for j in range(i+1, min(i+8, len(lines))):
+                step_line = lines[j].strip()
+                if step_line and (step_line.startswith(('1.', '2.', '3.', '4.', '-')) or 'Create' in step_line or 'Compute' in step_line):
+                    key_steps.append(step_line.replace('*', '').strip())
+        elif any(keyword in line.lower() for keyword in ['formula:', 'algorithm:', 'approach:', 'mechanism:', 'attention(']):
+            algorithm_hints.append(line.strip())
     
-    if title and description:
-        card = create_card(
-            front=f"<b>Problem: {title}</b><br>What's the key approach?",
-            back=f"<b>Approach:</b> {description}<br><br><i>Think about: What algorithm/data structure fits this problem?</i>",
-            topic=topic,
-            card_type="problem_understanding"
-        )
-        cards.append(card)
+    if title and (main_task or key_steps or algorithm_hints):
+        # Create approach card
+        approach_content = []
+        if main_task:
+            approach_content.append(f"<b>Task:</b> {main_task}")
+        
+        if algorithm_hints:
+            approach_content.append(f"<b>Key Formula/Concept:</b> {' | '.join(algorithm_hints[:2])}")
+        
+        if key_steps:
+            approach_content.append(f"<b>Steps:</b><br>{'<br>'.join(key_steps[:4])}")
+        
+        if approach_content:
+            back_text = '<br><br>'.join(approach_content)
+            
+            card = create_card(
+                front=f"<b>{topic}</b><br>How do you implement {title.lower()}?",
+                back=back_text,
+                topic=topic,
+                card_type="problem_understanding"
+            )
+            cards.append(card)
     
     return cards
 
 def create_implementation_card(func_info: Dict, topic: str) -> Dict:
-    """Create implementation card from function."""
+    """Create focused implementation card that teaches the core concept."""
     func_name = func_info['name']
     func_code = func_info['code']
+    
+    # Extract the main purpose from docstring
+    purpose = ""
+    if func_info.get('docstring'):
+        docstring = func_info['docstring']
+        # Get first meaningful sentence
+        sentences = docstring.split('.')
+        if sentences:
+            purpose = sentences[0].strip()
+            if len(purpose) > 100:
+                purpose = purpose[:100] + "..."
     
     # Format code for mobile viewing
     formatted_code = f"<pre><code>{func_code}</code></pre>"
     
-    # Add context if available
-    context_info = ""
+    # Create educational header
+    header_info = ""
+    if purpose:
+        header_info = f"<b>Purpose:</b> {purpose}<br><br>"
+    
+    # Add key learning points
+    learning_points = []
     if func_info.get('key_insights'):
-        context_info += f"<br><b>Key:</b> {'; '.join(func_info['key_insights'])}"
+        learning_points.extend([f"💡 {insight}" for insight in func_info['key_insights']])
     if func_info.get('edge_cases'):
-        context_info += f"<br><b>Edge:</b> {'; '.join(func_info['edge_cases'])}"
+        learning_points.extend([f"⚠️ {case}" for case in func_info['edge_cases']])
     if func_info.get('interview_tips'):
-        context_info += f"<br><b>Interview:</b> {'; '.join(func_info['interview_tips'])}"
+        learning_points.extend([f"🎯 {tip}" for tip in func_info['interview_tips']])
+    
+    learning_section = ""
+    if learning_points:
+        learning_section = f"<br><b>Key Points:</b><br>{'<br>'.join(learning_points[:3])}"
     
     return create_card(
-        front=f"<b>{topic}</b><br>Implement: <code>{func_name}()</code>",
-        back=formatted_code + context_info,
+        front=f"<b>{topic}</b><br>How do you implement <code>{func_name}()</code>?",
+        back=header_info + formatted_code + learning_section,
         topic=topic,
         card_type="implementation"
     )
