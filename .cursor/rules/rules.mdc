@@ -21,6 +21,13 @@ alwaysApply: true
 - **Cue-based triggers** - Use contextual hints that mirror interview scenarios
 - **Progressive disclosure** - Build from simple to complex concepts
 
+### **2.1 Interview Card Style (High-Level, No Code)**
+- **No code in questions/answers** - Cards teach concepts, not snippets
+- **One algorithm per card** - Do not split an algorithm into multiple QAs
+- **Include variable definitions** when formulas are shown
+- **Intuitive, short answers** - 2-4 bullet lines; plain language
+- **Define symbols inline** - e.g., Q=query, K=key, V=value, X=embeddings
+
 ### **3. Cognitive Load Management**
 - **7±2 rule** - Never exceed 9 discrete pieces of information per card
 - **Visual chunking** - Use formatting to group related elements
@@ -29,20 +36,18 @@ alwaysApply: true
 
 ## 📏 Technical Specifications for NLP Cards
 
-### **Code Snippet Cards**
+### **Concept-Only Cards (Default)**
 ```
 ✅ OPTIMAL:
-- 5-15 lines maximum
-- 1 function per card
-- Clear variable names (doc, vocab, sim)
-- Mobile-friendly formatting (70 chars/line)
-- Syntax highlighting preserved
+- No code; short, intuitive prose
+- 1 algorithm/concept per card
+- 2–4 lines total (headline + key insight + definition)
+- If formula shown, include symbol meanings
 
 ❌ AVOID:
-- Functions >20 lines
-- Multiple algorithms in one card
-- Long parameter lists
-- Complex nested logic
+- Splitting a single algorithm across multiple cards
+- Copying function signatures or code blocks
+- Vague prompts without definitions
 ```
 
 ### **Formula Cards**
@@ -56,6 +61,14 @@ ALWAYS INCLUDE:
 - Variable definitions
 - Edge case handling (e.g., df=0)
 - Intuitive explanation in plain English
+```
+
+### **Algorithm Cards (Interview Mode)**
+```
+Front: "What is self-attention?"
+Back: Weigh tokens by relevance to each other in a sequence.
+      Q=query, K=key, V=value, X=input embeddings.
+      Formula: softmax(QK^T/√d_k)V (scale prevents peaky softmax).
 ```
 
 ### **Concept Cards**

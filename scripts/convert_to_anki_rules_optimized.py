@@ -24,7 +24,7 @@ class AnkiCardOptimizer:
         self.mobile_line_width = 70  # characters
         
     def extract_atomic_functions(self, code: str) -> List[Dict[str, str]]:
-        """Extract individual functions following atomic learning principle."""
+        """Extract functions; do NOT chunk into parts. One function → one card."""
         functions = []
         
         try:
@@ -39,12 +39,8 @@ class AnkiCardOptimizer:
                     func_lines = lines[start_line:end_line]
                     func_code = '\n'.join(func_lines)
                     
-                    # Apply line limit rule
-                    if len(func_lines) > self.max_code_lines:
-                        chunks = self._chunk_large_function(func_lines, node.name)
-                        functions.extend(chunks)
-                    else:
-                        functions.append(self._create_function_card(node, func_code, func_lines))
+                    # Do not chunk long functions; keep a single conceptual card
+                    functions.append(self._create_function_card(node, func_code, func_lines))
                         
         except Exception as e:
             # Fallback: split by function definitions
@@ -712,97 +708,90 @@ def process_all_problems():
 
 # Helper functions for card creation
 def create_problem_understanding_cards(problem_content: str, topic: str) -> List[Dict]:
-    """Create meaningful problem understanding cards that teach actual concepts."""
+    """Create high-level, no-code interview cards with definitions and intuition."""
     cards = []
-    
+
     lines = problem_content.split('\n')
     title = ""
-    main_task = ""
-    algorithm_hints = []
-    key_steps = []
-    
-    # Extract meaningful content
-    for i, line in enumerate(lines):
-        line = line.strip()
-        
-        if line.startswith('# Problem:'):
-            title = line.replace('# Problem:', '').strip()
-        elif line.startswith('Implement') or line.startswith('Create') or line.startswith('Build'):
-            main_task = line.strip()
-        elif 'Steps:' in line:
-            # Extract the steps that follow
-            for j in range(i+1, min(i+8, len(lines))):
-                step_line = lines[j].strip()
-                if step_line and (step_line.startswith(('1.', '2.', '3.', '4.', '-')) or 'Create' in step_line or 'Compute' in step_line):
-                    key_steps.append(step_line.replace('*', '').strip())
-        elif any(keyword in line.lower() for keyword in ['formula:', 'algorithm:', 'approach:', 'mechanism:', 'attention(']):
-            algorithm_hints.append(line.strip())
-    
-    if title and (main_task or key_steps or algorithm_hints):
-        # Create approach card
-        approach_content = []
-        if main_task:
-            approach_content.append(f"<b>Task:</b> {main_task}")
-        
-        if algorithm_hints:
-            approach_content.append(f"<b>Key Formula/Concept:</b> {' | '.join(algorithm_hints[:2])}")
-        
-        if key_steps:
-            approach_content.append(f"<b>Steps:</b><br>{'<br>'.join(key_steps[:4])}")
-        
-        if approach_content:
-            back_text = '<br><br>'.join(approach_content)
-            
+    intuition = ""
+    formula = ""
+    defs: List[str] = []
+
+    for line in lines:
+        s = line.strip()
+        if s.startswith('# Problem:'):
+            title = s.replace('# Problem:', '').strip()
+        # Intuition
+        if 'mechanism' in s.lower() or 'approach' in s.lower() or 'why' in s.lower():
+            if len(s) < 140:
+                intuition = s.replace('Approach:', '').replace('Why:', '').strip()
+        # Formula
+        if 'Attention(' in s or 'TF-IDF' in s or 'cosine' in s.lower():
+            if '=' in s:
+                formula = s.split(':', 1)[-1].strip()
+        # Symbol definitions (Q/K/V/X etc.)
+        if any(sym in s for sym in ['Q', 'K', 'V', 'X', 'N', 'df']):
+            if '->' not in s and 'def ' not in s and len(s) < 120:
+                if any(word in s.lower() for word in ['query', 'key', 'value', 'embeddings', 'docs']):
+                    defs.append(s)
+
+    # Fallback definitions for common topics
+    if topic.lower().startswith('attention') and not defs:
+        defs = ['Q=query', 'K=key', 'V=value', 'X=input embeddings']
+        if not intuition:
+            intuition = 'Weigh tokens by how relevant they are to each other in the sequence.'
+        if not formula:
+            formula = 'softmax(QK^T/√d_k)V (scaling stabilizes softmax)'
+
+    if title:
+        back_bits = []
+        if intuition:
+            back_bits.append(f"<b>Intuition:</b> {intuition}")
+        if defs:
+            back_bits.append(f"<b>Symbols:</b> {', '.join(defs[:4])}")
+        if formula:
+            back_bits.append(f"<b>Formula:</b> {formula}")
+
+        if back_bits:
             card = create_card(
-                front=f"<b>{topic}</b><br>How do you implement {title.lower()}?",
-                back=back_text,
+                front=f"<b>{topic}</b><br>What is {title.lower()}?",
+                back='<br>'.join(back_bits),
                 topic=topic,
                 card_type="problem_understanding"
             )
             cards.append(card)
-    
+
     return cards
 
 def create_implementation_card(func_info: Dict, topic: str) -> Dict:
-    """Create focused implementation card that teaches the core concept."""
+    """Create high-level implementation card WITHOUT code (purpose + key points)."""
     func_name = func_info['name']
-    func_code = func_info['code']
-    
-    # Extract the main purpose from docstring
+
+    # Purpose from docstring
     purpose = ""
     if func_info.get('docstring'):
-        docstring = func_info['docstring']
-        # Get first meaningful sentence
-        sentences = docstring.split('.')
-        if sentences:
-            purpose = sentences[0].strip()
-            if len(purpose) > 100:
-                purpose = purpose[:100] + "..."
-    
-    # Format code for mobile viewing
-    formatted_code = f"<pre><code>{func_code}</code></pre>"
-    
-    # Create educational header
-    header_info = ""
+        doc = func_info['docstring'].strip().split('\n')[0]
+        purpose = doc[:140]
+
+    points = []
+    for kind, prefix in (
+        ('key_insights', 'Key'),
+        ('edge_cases', 'Edge'),
+        ('interview_tips', 'Interview')
+    ):
+        items = func_info.get(kind) or []
+        if items:
+            points.append(f"<b>{prefix}:</b> {items[0][:120]}")
+
+    back = ''
     if purpose:
-        header_info = f"<b>Purpose:</b> {purpose}<br><br>"
-    
-    # Add key learning points
-    learning_points = []
-    if func_info.get('key_insights'):
-        learning_points.extend([f"💡 {insight}" for insight in func_info['key_insights']])
-    if func_info.get('edge_cases'):
-        learning_points.extend([f"⚠️ {case}" for case in func_info['edge_cases']])
-    if func_info.get('interview_tips'):
-        learning_points.extend([f"🎯 {tip}" for tip in func_info['interview_tips']])
-    
-    learning_section = ""
-    if learning_points:
-        learning_section = f"<br><b>Key Points:</b><br>{'<br>'.join(learning_points[:3])}"
-    
+        back += f"<b>Purpose:</b> {purpose}"
+    if points:
+        back += '<br>' + '<br>'.join(points)
+
     return create_card(
-        front=f"<b>{topic}</b><br>How do you implement <code>{func_name}()</code>?",
-        back=header_info + formatted_code + learning_section,
+        front=f"<b>{topic}</b><br>What does <code>{func_name}()</code> do?",
+        back=back,
         topic=topic,
         card_type="implementation"
     )
