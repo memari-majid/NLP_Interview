@@ -1,7 +1,8 @@
 # 🎯 Anki Import Guide
 
 ## 📁 Import File
-**File to Import**: `NLP_Interview_Rules_Optimized.json`
+**File to Import**: `Anki_Import.json` (CrowdAnki naming convention)
+**Note**: This is the same content as `NLP_Interview_Rules_Optimized.json`, renamed for compatibility
 
 ## 📊 Deck Statistics
 - **Total Cards**: 438 optimized flashcards
@@ -16,10 +17,15 @@
 - Ensure you have CrowdAnki add-on installed ([Download here](https://ankiweb.net/shared/info/1788670778))
 
 ### Step 2: Import the Deck
-1. In Anki, go to `File` → `CrowdAnki: Import from disk`
-2. Navigate to this `Anki_Import` folder
-3. Select this entire folder (not just the JSON file)
-4. Click `Select Folder` to import
+**IMPORTANT**: Copy the `Anki_Import` folder to your Mac first!
+
+1. **Copy folder to Mac**: Move the entire `Anki_Import` folder to your Downloads folder on Mac
+2. **Open Anki** → `File` → `CrowdAnki: Import from disk`
+3. **Navigate to**: `/Users/majid/Downloads/Anki_Import/` folder  
+4. **Select the folder**: Choose the `Anki_Import` folder itself (not the JSON file)
+5. **Import**: Click `Select Folder` to import
+
+**✅ The file `Anki_Import.json` is now named correctly for CrowdAnki compatibility**
 
 ### Step 3: Verify Import
 - Check that "NLP Interview Prep (Rules Optimized)" deck appears
