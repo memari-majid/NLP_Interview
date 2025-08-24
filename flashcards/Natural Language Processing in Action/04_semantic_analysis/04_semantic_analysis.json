@@ -1,0 +1,463 @@
+{
+  "crowdanki_uuid": "deck-2217",
+  "deck_config_uuid": "default-config",
+  "deck_configurations": [
+    {
+      "crowdanki_uuid": "default-config",
+      "name": "Default",
+      "autoplay": true,
+      "dyn": false,
+      "lapse": {
+        "delays": [
+          10
+        ],
+        "leechAction": 0,
+        "leechFails": 8,
+        "minInt": 1,
+        "mult": 0
+      },
+      "maxTaken": 60,
+      "new": {
+        "bury": false,
+        "delays": [
+          1,
+          10
+        ],
+        "initialFactor": 2500,
+        "ints": [
+          1,
+          4,
+          0
+        ],
+        "order": 1,
+        "perDay": 20
+      },
+      "replayq": true,
+      "rev": {
+        "bury": false,
+        "ease4": 1.3,
+        "hardFactor": 1.2,
+        "ivlFct": 1,
+        "maxIvl": 36500,
+        "perDay": 200
+      },
+      "timer": 0
+    }
+  ],
+  "desc": "Comprehensive flashcards for 4 Finding meaning in word counts: Semantic analysis",
+  "dyn": false,
+  "extendNew": 10,
+  "extendRev": 50,
+  "media_files": [],
+  "name": "4 Finding meaning in word counts: Semantic analysis",
+  "note_models": [
+    {
+      "crowdanki_uuid": "nlp-comprehensive-note-model",
+      "css": ".card {\n font-family: arial;\n font-size: 20px;\n text-align: center;\n color: black;\n background-color: white;\n}\n\n.front {\n font-weight: bold;\n color: #2c3e50;\n}\n\n.back {\n text-align: left;\n padding: 20px;\n}\n\n.concept {\n font-weight: bold;\n color: #e74c3c;\n margin-bottom: 10px;\n}\n\n.intuition {\n color: #3498db;\n font-style: italic;\n margin-bottom: 10px;\n}\n\n.mechanics {\n color: #27ae60;\n margin-bottom: 10px;\n}\n\n.tradeoffs {\n color: #f39c12;\n margin-bottom: 10px;\n}\n\n.applications {\n color: #9b59b6;\n margin-bottom: 10px;\n}\n\n.memory-hook {\n background-color: #ecf0f1;\n padding: 10px;\n border-left: 4px solid #34495e;\n font-style: italic;\n color: #34495e;\n}",
+      "flds": [
+        {
+          "font": "Arial",
+          "media": [],
+          "name": "Front",
+          "ord": 0,
+          "rtl": false,
+          "size": 20,
+          "sticky": false
+        },
+        {
+          "font": "Arial",
+          "media": [],
+          "name": "Back",
+          "ord": 1,
+          "rtl": false,
+          "size": 20,
+          "sticky": false
+        },
+        {
+          "font": "Arial",
+          "media": [],
+          "name": "Tags",
+          "ord": 2,
+          "rtl": false,
+          "size": 20,
+          "sticky": false
+        },
+        {
+          "font": "Arial",
+          "media": [],
+          "name": "Difficulty",
+          "ord": 3,
+          "rtl": false,
+          "size": 20,
+          "sticky": false
+        }
+      ],
+      "latexPost": "\\end{document}",
+      "latexPre": "\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage[utf8]{inputenc}\n\\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\\begin{document}\n",
+      "name": "NLP Comprehensive",
+      "req": [
+        [
+          0,
+          "all"
+        ]
+      ],
+      "sortf": 0,
+      "tags": [],
+      "tmpls": [
+        {
+          "afmt": "{{FrontSide}}\n\n<hr id=answer>\n\n<div class=\"back\">\n{{Back}}\n</div>",
+          "bafmt": "",
+          "bqfmt": "",
+          "did": null,
+          "name": "Card 1",
+          "ord": 0,
+          "qfmt": "<div class=\"front\">{{Front}}</div>"
+        }
+      ],
+      "type": 0
+    }
+  ],
+  "notes": [
+    {
+      "crowdanki_uuid": "note--7107351939917629510-2217",
+      "fields": [
+        "What are the limitations of TF-IDF vectors in capturing meaning, and how do they relate to synonyms and polysemy?",
+        "<div class=\"concept\"><strong>Concept:</strong> TF-IDF vectors represent text based on term frequency and inverse document frequency, but they fail to capture semantic meaning beyond exact word matches.</div><br><br><div class=\"intuition\"><strong>Intuition:</strong> TF-IDF treats words as independent, so synonyms like 'beautiful' and 'pretty' are seen as unrelated, and polysemous words like 'band' (music group or hair accessory) are not disambiguated.</div><br><br><div class=\"mechanics\"><strong>Mechanics:</strong> TF-IDF computes importance as term frequency times inverse document frequency, but doesn't account for word co-occurrences or contextual meanings.</div><br><br><div class=\"tradeoffs\"><strong>Trade-offs:</strong> Effective for keyword search but poor for semantic similarity; lemmatization helps with word forms but not synonyms or antonyms.</div><br><br><div class=\"applications\"><strong>Applications:</strong> Used in basic search engines or document ranking where exact matches suffice.</div><br><br><div class=\"memory-hook\"><strong>Memory Hook:</strong> Imagine TF-IDF as a word counter in a dark room—it counts shadows but misses the shapes (meanings) behind them.</div>",
+        "TF-IDF Limitations Semantics",
+        "Easy"
+      ],
+      "flags": 0,
+      "guid": "guid--7107351939917629510-2217",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "TF-IDF",
+        "Limitations",
+        "Semantics"
+      ]
+    },
+    {
+      "crowdanki_uuid": "note-6759806957825186855-2217",
+      "fields": [
+        "Explain the intuition behind topic vectors and how they address TF-IDF's shortcomings.",
+        "<div class=\"concept\"><strong>Concept:</strong> Topic vectors are lower-dimensional representations that capture semantic meaning by grouping co-occurring words into topics.</div><br><br><div class=\"intuition\"><strong>Intuition:</strong> Like mixing colors to represent a painting's essence, topic vectors combine word frequencies to represent underlying themes, allowing synonyms to align in similar directions.</div><br><br><div class=\"mechanics\"><strong>Mechanics:</strong> Derived from TF-IDF or BOW matrices via methods like LSA or LDiA, resulting in vectors where dimensions are topics rather than individual words.</div><br><br><div class=\"tradeoffs\"><strong>Trade-offs:</strong> Reduces dimensionality and noise but may lose fine-grained details; computationally intensive for large corpora.</div><br><br><div class=\"applications\"><strong>Applications:</strong> Semantic search, document clustering, and similarity comparisons.</div><br><br><div class=\"memory-hook\"><strong>Memory Hook:</strong> Think of topic vectors as a compressed zip file of meaning—unzipping reveals themes, not just raw words.</div>",
+        "Topic Vectors Intuition Semantics",
+        "Easy"
+      ],
+      "flags": 0,
+      "guid": "guid-6759806957825186855-2217",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Topic Vectors",
+        "Intuition",
+        "Semantics"
+      ]
+    },
+    {
+      "crowdanki_uuid": "note--1568572186054844491-2217",
+      "fields": [
+        "Describe the mechanics of creating topic vectors in a thought experiment with words like 'cat', 'dog', and 'NYC'.",
+        "<div class=\"concept\"><strong>Concept:</strong> Manual assignment of word weights to topics to form vectors.</div><br><br><div class=\"intuition\"><strong>Intuition:</strong> Humans intuitively group related words (e.g., cat and dog for 'petness') and assign weights based on association.</div><br><br><div class=\"mechanics\"><strong>Mechanics:</strong> Define topics (e.g., petness, animalness, cityness); assign weights (positive/negative) to words; compute vector as weighted sum of TF-IDF values.</div><br><br><div class=\"tradeoffs\"><strong>Trade-offs:</strong> Intuitive but subjective and non-scalable; doesn't automate discovery.</div><br><br><div class=\"applications\"><strong>Applications:</strong> Illustrates how algorithms like LSA automate this process.</div><br><br><div class=\"memory-hook\"><strong>Memory Hook:</strong> Like baking a cake—words are ingredients, topics are flavors, weights are measurements for the mix.</div>",
+        "Topic Vectors Mechanics Thought Experiment",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid--1568572186054844491-2217",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Topic Vectors",
+        "Mechanics",
+        "Thought Experiment"
+      ]
+    },
+    {
+      "crowdanki_uuid": "note-8075025494518043682-2217",
+      "fields": [
+        "Compare the mathematical foundations of LSA and LDiA for topic modeling.",
+        "<div class=\"concept\"><strong>Concept:</strong> LSA uses linear algebra (SVD) on TF-IDF; LDiA uses probabilistic modeling assuming Dirichlet distributions.</div><br><br><div class=\"intuition\"><strong>Intuition:</strong> LSA spreads vectors to maximize variance; LDiA groups words probabilistically like drawing from topic 'bags'.</div><br><br><div class=\"mechanics\"><strong>Mechanics:</strong> LSA: Truncated SVD decomposes matrix into U, S, V; LDiA: Iterative allocation of words to topics via Gibbs sampling or variational inference.</div><br><br><div class=\"tradeoffs\"><strong>Trade-offs:</strong> LSA faster and scalable but topics less interpretable; LDiA slower but topics more coherent.</div><br><br><div class=\"applications\"><strong>Applications:</strong> LSA for classification; LDiA for summarization.</div><br><br><div class=\"memory-hook\"><strong>Memory Hook:</strong> LSA is a straight highway (linear); LDiA is a winding path through probabilities.</div>",
+        "LSA LDiA Math Comparison",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid-8075025494518043682-2217",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "LSA",
+        "LDiA",
+        "Math",
+        "Comparison"
+      ]
+    },
+    {
+      "crowdanki_uuid": "note-6571990827540260580-2217",
+      "fields": [
+        "What is the role of SVD in LSA, and how does truncated SVD differ from full SVD?",
+        "<div class=\"concept\"><strong>Concept:</strong> SVD decomposes a matrix into three factors for dimensionality reduction in LSA.</div><br><br><div class=\"intuition\"><strong>Intuition:</strong> Like factoring a number, SVD breaks down term-document relationships into principal components (topics).</div><br><br><div class=\"mechanics\"><strong>Mechanics:</strong> A = U Σ V^T; truncated keeps top k singular values for approximation.</div><br><br><div class=\"tradeoffs\"><strong>Trade-offs:</strong> Truncated is efficient for sparse matrices but approximate; full is precise but computationally expensive.</div><br><br><div class=\"applications\"><strong>Applications:</strong> Topic extraction from TF-IDF matrices.</div><br><br><div class=\"memory-hook\"><strong>Memory Hook:</strong> SVD as a matrix sandwich: U and V^T as bread, Σ as the filling—truncate to make it bite-sized.</div>",
+        "SVD LSA Theory",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-6571990827540260580-2217",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "SVD",
+        "LSA",
+        "Theory"
+      ]
+    },
+    {
+      "crowdanki_uuid": "note--8687490307376431366-2217",
+      "fields": [
+        "How does LDiA model document generation, and what assumptions does it make?",
+        "<div class=\"concept\"><strong>Concept:</strong> LDiA assumes documents are mixtures of topics, topics are distributions over words.</div><br><br><div class=\"intuition\"><strong>Intuition:</strong> Imagines a 'dice-rolling' machine generating words from topic distributions.</div><br><br><div class=\"mechanics\"><strong>Mechanics:</strong> Uses Dirichlet prior for topic mixtures; infers parameters via EM or sampling.</div><br><br><div class=\"tradeoffs\"><strong>Trade-offs:</strong> Captures word co-occurrences well but sensitive to hyperparameters like number of topics.</div><br><br><div class=\"applications\"><strong>Applications:</strong> Topic discovery in unlabeled corpora.</div><br><br><div class=\"memory-hook\"><strong>Memory Hook:</strong> LDiA as a topic lottery—draw topics, then words from those topic ' urns'.</div>",
+        "LDiA Mechanics Probabilistic",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid--8687490307376431366-2217",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "LDiA",
+        "Mechanics",
+        "Probabilistic"
+      ]
+    },
+    {
+      "crowdanki_uuid": "note-7417100029675027988-2217",
+      "fields": [
+        "In the toxicity detection challenge, why does LDA classifier overfit on TF-IDF but improve with LSA topics?",
+        "<div class=\"concept\"><strong>Concept:</strong> High-dimensional TF-IDF leads to overfitting; LSA reduces dimensions.</div><br><br><div class=\"intuition\"><strong>Intuition:</strong> TF-IDF has too many sparse features; LSA compresses to meaningful topics.</div><br><br><div class=\"mechanics\"><strong>Mechanics:</strong> Train LDA on TF-IDF vs. LSA vectors; evaluate with train/test split.</div><br><br><div class=\"tradeoffs\"><strong>Trade-offs:</strong> LSA improves generalization but may lose some specificity.</div><br><br><div class=\"applications\"><strong>Applications:</strong> Classifying toxic comments in imbalanced datasets.</div><br><br><div class=\"memory-hook\"><strong>Memory Hook:</strong> TF-IDF as a noisy crowd; LSA quiets it to a focused group discussion.</div>",
+        "Toxicity Detection Application Overfitting",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-7417100029675027988-2217",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Toxicity Detection",
+        "Application",
+        "Overfitting"
+      ]
+    },
+    {
+      "crowdanki_uuid": "note-7066930388441684764-2217",
+      "fields": [
+        "Explain precision, recall, and F1 score in the context of toxicity classification.",
+        "<div class=\"concept\"><strong>Concept:</strong> Metrics for binary classification: precision (positive predictive value), recall (sensitivity), F1 (harmonic mean).</div><br><br><div class=\"intuition\"><strong>Intuition:</strong> Precision: How many flagged toxic are truly toxic? Recall: How many toxic were caught?</div><br><br><div class=\"mechanics\"><strong>Mechanics:</strong> Precision = TP/(TP+FP); Recall = TP/(TP+FN); F1 = 2PR/(P+R).</div><br><br><div class=\"tradeoffs\"><strong>Trade-offs:</strong> Tradeoff between catching all toxic (high recall) vs. avoiding false alarms (high precision).</div><br><br><div class=\"applications\"><strong>Applications:</strong> Evaluating imbalanced classifiers like in spam/toxicity detection.</div><br><br><div class=\"memory-hook\"><strong>Memory Hook:</strong> Precision as a precise archer (hits what aims for); recall as a net (catches most fish).</div>",
+        "Metrics Classification Theory",
+        "Easy"
+      ],
+      "flags": 0,
+      "guid": "guid-7066930388441684764-2217",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Metrics",
+        "Classification",
+        "Theory"
+      ]
+    },
+    {
+      "crowdanki_uuid": "note-845854082267122280-2217",
+      "fields": [
+        "What is the curse of dimensionality, and how does it affect NLP tasks like topic modeling?",
+        "<div class=\"concept\"><strong>Concept:</strong> Data becomes sparse in high dimensions, making distances meaningless and models prone to overfitting.</div><br><br><div class=\"intuition\"><strong>Intuition:</strong> In high-D space, points are like isolated islands—hard to find neighbors.</div><br><br><div class=\"mechanics\"><strong>Mechanics:</strong> Volume grows exponentially; requires exponentially more data.</div><br><br><div class=\"tradeoffs\"><strong>Trade-offs:</strong> High dims capture nuance but increase computation and noise.</div><br><br><div class=\"applications\"><strong>Applications:</strong> TF-IDF vectors in large vocabularies; mitigated by dim reduction.</div><br><br><div class=\"memory-hook\"><strong>Memory Hook:</strong> Curse as a balloon inflating—surface area grows, but inside feels empty.</div>",
+        "Curse of Dimensionality Intuition NLP",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-845854082267122280-2217",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Curse of Dimensionality",
+        "Intuition",
+        "NLP"
+      ]
+    },
+    {
+      "crowdanki_uuid": "note-2549824766989118914-2217",
+      "fields": [
+        "Compare TruncatedSVD and PCA for dimensionality reduction in sparse NLP data.",
+        "<div class=\"concept\"><strong>Concept:</strong> Both use SVD; PCA centers data, TruncatedSVD does not.</div><br><br><div class=\"intuition\"><strong>Intuition:</strong> PCA adjusts for mean like leveling a table; TruncatedSVD skips for efficiency.</div><br><br><div class=\"mechanics\"><strong>Mechanics:</strong> PCA: Subtract mean then SVD; TruncatedSVD: Direct on sparse matrices.</div><br><br><div class=\"tradeoffs\"><strong>Trade-offs:</strong> TruncatedSVD faster on sparse data; PCA better for dense with mean variance.</div><br><br><div class=\"applications\"><strong>Applications:</strong> TruncatedSVD for TF-IDF in LSA; PCA for general dim reduction.</div><br><br><div class=\"memory-hook\"><strong>Memory Hook:</strong> TruncatedSVD as a quick sketch; PCA as a polished portrait.</div>",
+        "TruncatedSVD PCA Comparison",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid-2549824766989118914-2217",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "TruncatedSVD",
+        "PCA",
+        "Comparison"
+      ]
+    },
+    {
+      "crowdanki_uuid": "note--412134941483611528-2217",
+      "fields": [
+        "What are alternative dimensionality reduction methods to SVD, and their trade-offs in NLP?",
+        "<div class=\"concept\"><strong>Concept:</strong> Random Projection (RP) and Nonnegative Matrix Factorization (NMF).</div><br><br><div class=\"intuition\"><strong>Intuition:</strong> RP randomly projects; NMF enforces nonnegativity like positive word counts.</div><br><br><div class=\"mechanics\"><strong>Mechanics:</strong> RP: Stochastic projection; NMF: Factorizes into nonnegative matrices.</div><br><br><div class=\"tradeoffs\"><strong>Trade-offs:</strong> RP fast but less accurate; NMF interpretable but slower than SVD.</div><br><br><div class=\"applications\"><strong>Applications:</strong> RP for very high-D data; NMF for topic modeling with positivity.</div><br><br><div class=\"memory-hook\"><strong>Memory Hook:</strong> RP as a random dart throw; NMF as sorting positives only.</div>",
+        "Dim Reduction Alternatives Trade-offs",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid--412134941483611528-2217",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Dim Reduction",
+        "Alternatives",
+        "Trade-offs"
+      ]
+    },
+    {
+      "crowdanki_uuid": "note-3387919072356836412-2217",
+      "fields": [
+        "List and explain common distance metrics used in semantic vector spaces.",
+        "<div class=\"concept\"><strong>Concept:</strong> Measures like Euclidean (L2), Manhattan (L1), Cosine for vector similarity.</div><br><br><div class=\"intuition\"><strong>Intuition:</strong> Euclidean: straight-line distance; Cosine: angle ignoring magnitude.</div><br><br><div class=\"mechanics\"><strong>Mechanics:</strong> Cosine = dot product / (norms); Euclidean = sqrt(sum squared diffs).</div><br><br><div class=\"tradeoffs\"><strong>Trade-offs:</strong> Cosine robust to length; Euclidean sensitive to scale.</div><br><br><div class=\"applications\"><strong>Applications:</strong> Cosine in text similarity; Euclidean in clustering.</div><br><br><div class=\"memory-hook\"><strong>Memory Hook:</strong> Cosine as comparing directions on a compass; Euclidean as map miles.</div>",
+        "Distance Metrics Theory Semantics",
+        "Easy"
+      ],
+      "flags": 0,
+      "guid": "guid-3387919072356836412-2217",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Distance Metrics",
+        "Theory",
+        "Semantics"
+      ]
+    },
+    {
+      "crowdanki_uuid": "note-7833553660983466440-2217",
+      "fields": [
+        "How does steering with feedback improve topic vectors, and what's an example application?",
+        "<div class=\"concept\"><strong>Concept:</strong> Adjusts distances based on labeled similarities to minimize a cost function.</div><br><br><div class=\"intuition\"><strong>Intuition:</strong> Like nudging vectors closer if they should be similar, based on feedback.</div><br><br><div class=\"mechanics\"><strong>Mechanics:</strong> Compute mean differences (e.g., centroids) and add bias to vectors.</div><br><br><div class=\"tradeoffs\"><strong>Trade-offs:</strong> Improves relevance but requires labeled data; risk of bias amplification.</div><br><br><div class=\"applications\"><strong>Applications:</strong> Resume-job matching by steering good pairs closer.</div><br><br><div class=\"memory-hook\"><strong>Memory Hook:</strong> Steering as herding sheep—guide vectors to cluster meaningfully.</div>",
+        "Steering Feedback Application",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-7833553660983466440-2217",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Steering",
+        "Feedback",
+        "Application"
+      ]
+    },
+    {
+      "crowdanki_uuid": "note--7348633745311032014-2217",
+      "fields": [
+        "What is semantic search, and why is it challenging with topic vectors?",
+        "<div class=\"concept\"><strong>Concept:</strong> Search based on meaning, using topic vectors for similarity.</div><br><br><div class=\"intuition\"><strong>Intuition:</strong> Finds docs with similar semantics, not just keywords.</div><br><br><div class=\"mechanics\"><strong>Mechanics:</strong> Compute cosine similarity between query and doc vectors.</div><br><br><div class=\"tradeoffs\"><strong>Trade-offs:</strong> More accurate than keyword but O(N) exhaustive search.</div><br><br><div class=\"applications\"><strong>Applications:</strong> Advanced search engines like Google for intent matching.</div><br><br><div class=\"memory-hook\"><strong>Memory Hook:</strong> Semantic search as mind-reading—understands query intent.</div>",
+        "Semantic Search Intuition Challenges",
+        "Easy"
+      ],
+      "flags": 0,
+      "guid": "guid--7348633745311032014-2217",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Semantic Search",
+        "Intuition",
+        "Challenges"
+      ]
+    },
+    {
+      "crowdanki_uuid": "note-4577917022621451147-2217",
+      "fields": [
+        "Explain why exact indexing fails for high-D topic vectors and how approximate methods help.",
+        "<div class=\"concept\"><strong>Concept:</strong> Curse of dimensionality makes exact indexes inefficient.</div><br><br><div class=\"intuition\"><strong>Intuition:</strong> High-D spaces are vast; points sparse, distances uniform.</div><br><br><div class=\"mechanics\"><strong>Mechanics:</strong> Inverted indexes work for sparse; dense needs LSH for approx NN.</div><br><br><div class=\"tradeoffs\"><strong>Trade-offs:</strong> Approx (e.g., ANN) fast but may miss some matches.</div><br><br><div class=\"applications\"><strong>Applications:</strong> Large-scale semantic search with FAISS or Annoy.</div><br><br><div class=\"memory-hook\"><strong>Memory Hook:</strong> High-D as a haystack universe—approx as a magnet for needles.</div>",
+        "Indexing High-D Trade-offs",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid-4577917022621451147-2217",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Indexing",
+        "High-D",
+        "Trade-offs"
+      ]
+    },
+    {
+      "crowdanki_uuid": "note--46174162612765809-2217",
+      "fields": [
+        "How does using LSA improve a question-answering bot over TF-IDF alone?",
+        "<div class=\"concept\"><strong>Concept:</strong> LSA captures semantics, allowing synonym and concept matching.</div><br><br><div class=\"intuition\"><strong>Intuition:</strong> Handles variations like 'decrease' vs. 'reduce' overfitting.</div><br><br><div class=\"mechanics\"><strong>Mechanics:</strong> Transform TF-IDF to low-D topics; find max cosine similarity.</div><br><br><div class=\"tradeoffs\"><strong>Trade-offs:</strong> Better generalization but added computation for SVD.</div><br><br><div class=\"applications\"><strong>Applications:</strong> FAQ bots for robust query handling.</div><br><br><div class=\"memory-hook\"><strong>Memory Hook:</strong> LSA bot as a wise owl—sees beyond words to meaning.</div>",
+        "QA Bot LSA Application",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid--46174162612765809-2217",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "QA Bot",
+        "LSA",
+        "Application"
+      ]
+    },
+    {
+      "crowdanki_uuid": "note--4981864005006486480-2217",
+      "fields": [
+        "Discuss connections between topic modeling and other ML techniques like clustering.",
+        "<div class=\"concept\"><strong>Concept:</strong> Topic modeling as soft clustering of words/documents.</div><br><br><div class=\"intuition\"><strong>Intuition:</strong> Topics as clusters; words assigned probabilistically.</div><br><br><div class=\"mechanics\"><strong>Mechanics:</strong> LDiA similar to GMM; LSA to PCA-based clustering.</div><br><br><div class=\"tradeoffs\"><strong>Trade-offs:</strong> Soft assignments handle ambiguity; harder to interpret than hard clusters.</div><br><br><div class=\"applications\"><strong>Applications:</strong> Document grouping, anomaly detection.</div><br><br><div class=\"memory-hook\"><strong>Memory Hook:</strong> Topics as fuzzy clouds; clustering as sharp borders.</div>",
+        "Topic Modeling Connections Clustering",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid--4981864005006486480-2217",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Topic Modeling",
+        "Connections",
+        "Clustering"
+      ]
+    },
+    {
+      "crowdanki_uuid": "note--8086005496424954492-2217",
+      "fields": [
+        "What edge cases might cause LDiA to perform poorly, and how to mitigate?",
+        "<div class=\"concept\"><strong>Concept:</strong> Sensitive to short docs, imbalanced topics, or poor hyperparams.</div><br><br><div class=\"intuition\"><strong>Intuition:</strong> Short texts lack co-occurrences; wrong topic count distorts.</div><br><br><div class=\"mechanics\"><strong>Mechanics:</strong> Tune num_topics with coherence scores; preprocess for balance.</div><br><br><div class=\"tradeoffs\"><strong>Trade-offs:</strong> More topics capture nuance but increase noise/overfitting.</div><br><br><div class=\"applications\"><strong>Applications:</strong> Twitter analysis—use aggregation or alternatives like BERT.</div><br><br><div class=\"memory-hook\"><strong>Memory Hook:</strong> LDiA as a picky eater—needs balanced, meaty docs.</div>",
+        "LDiA Edge Cases Mitigation",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid--8086005496424954492-2217",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "LDiA",
+        "Edge Cases",
+        "Mitigation"
+      ]
+    },
+    {
+      "crowdanki_uuid": "note-256905777203979191-2217",
+      "fields": [
+        "How do polysemy and synonymy challenge TF-IDF, and how does LSA address them?",
+        "<div class=\"concept\"><strong>Concept:</strong> Polysemy: multiple meanings; Synonymy: different words same meaning.</div><br><br><div class=\"intuition\"><strong>Intuition:</strong> TF-IDF confuses 'band' meanings; ignores 'pretty/beautiful'.</div><br><br><div class=\"mechanics\"><strong>Mechanics:</strong> LSA groups via co-occurrences in latent space.</div><br><br><div class=\"tradeoffs\"><strong>Trade-offs:</strong> LSA resolves but may merge unrelated if co-occur.</div><br><br><div class=\"applications\"><strong>Applications:</strong> Improving search recall in ambiguous queries.</div><br><br><div class=\"memory-hook\"><strong>Memory Hook:</strong> TF-IDF as literal translator; LSA as context-savvy interpreter.</div>",
+        "Polysemy Synonymy LSA",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-256905777203979191-2217",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Polysemy",
+        "Synonymy",
+        "LSA"
+      ]
+    },
+    {
+      "crowdanki_uuid": "note-1391717383663867072-2217",
+      "fields": [
+        "What is a hyperparameter table, and why is it useful in NLP experiments?",
+        "<div class=\"concept\"><strong>Concept:</strong> Table recording model params and performance metrics.</div><br><br><div class=\"intuition\"><strong>Intuition:</strong> Tracks experiments like a lab notebook for comparison.</div><br><br><div class=\"mechanics\"><strong>Mechanics:</strong> Columns: features, accuracy, F1; rows: model variants.</div><br><br><div class=\"tradeoffs\"><strong>Trade-offs:</strong> Organizes but requires discipline to maintain.</div><br><br><div class=\"applications\"><strong>Applications:</strong> Tuning toxicity classifiers across vector types.</div><br><br><div class=\"memory-hook\"><strong>Memory Hook:</strong> Hyperparam table as a scorecard in a tournament of models.</div>",
+        "Hyperparameter Table Experimentation NLP",
+        "Easy"
+      ],
+      "flags": 0,
+      "guid": "guid-1391717383663867072-2217",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Hyperparameter Table",
+        "Experimentation",
+        "NLP"
+      ]
+    }
+  ]
+}
