@@ -1,0 +1,171 @@
+{
+  "__type__": "Deck",
+  "children": [],
+  "crowdanki_uuid": "ml-advanced-ml-topics-2024",
+  "deck_config_uuid": "ml-interview-config",
+  "deck_configurations": [
+    {
+      "__type__": "DeckConfig",
+      "autoplay": true,
+      "crowdanki_uuid": "ml-interview-config",
+      "dyn": false,
+      "name": "Advanced ML Topics",
+      "new": {
+        "bury": true,
+        "delays": [
+          1,
+          10
+        ],
+        "initialFactor": 2500,
+        "ints": [
+          1,
+          4,
+          7
+        ],
+        "order": 1,
+        "perDay": 20,
+        "separate": true
+      },
+      "rev": {
+        "bury": true,
+        "ease4": 1.3,
+        "fuzz": 0.05,
+        "ivlFct": 1.0,
+        "maxIvl": 36500,
+        "minSpace": 1,
+        "perDay": 150
+      }
+    }
+  ],
+  "desc": "GANs, reinforcement learning, and cutting-edge techniques",
+  "dyn": 0,
+  "extendNew": 10,
+  "extendRev": 50,
+  "media_files": [],
+  "name": "Advanced ML Topics",
+  "note_models": [
+    {
+      "__type__": "NoteModel",
+      "crowdanki_uuid": "ml-interview-model",
+      "css": "\n.card {\n    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n    font-size: 16px;\n    line-height: 1.5;\n    color: #333;\n    background-color: #fafafa;\n    padding: 20px;\n    max-width: 600px;\n    margin: 0 auto;\n}\n\n.front { \n    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n    color: white;\n    padding: 25px;\n    border-radius: 10px;\n}\n\n.back { \n    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);\n    color: white;\n    padding: 25px;\n    border-radius: 10px;\n}\n\nb { color: #ffeb3b; font-weight: 600; }\n.formula { \n    font-family: 'Courier New', monospace; \n    background: rgba(255,255,255,0.2); \n    padding: 3px 6px; \n    border-radius: 4px;\n    font-size: 14px;\n}\n.example { font-style: italic; opacity: 0.9; }\n                    ",
+      "flds": [
+        {
+          "__type__": "NoteModelField",
+          "name": "Front",
+          "ord": 0,
+          "sticky": false
+        },
+        {
+          "__type__": "NoteModelField",
+          "name": "Back",
+          "ord": 1,
+          "sticky": false
+        },
+        {
+          "__type__": "NoteModelField",
+          "name": "Topic",
+          "ord": 2,
+          "sticky": false
+        },
+        {
+          "__type__": "NoteModelField",
+          "name": "Type",
+          "ord": 3,
+          "sticky": false
+        }
+      ],
+      "name": "ML Interview Card",
+      "req": [
+        [
+          0,
+          "any",
+          [
+            0
+          ]
+        ]
+      ],
+      "sortf": 0,
+      "tags": [],
+      "tmpls": [
+        {
+          "__type__": "CardTemplate",
+          "afmt": "<div class=\"card back\">{{Front}}<hr>{{Back}}<br><br><small><i>{{Topic}} • {{Type}}</i></small></div>",
+          "bafmt": "",
+          "bqfmt": "",
+          "did": null,
+          "name": "Card",
+          "ord": 0,
+          "qfmt": "<div class=\"card front\">{{Front}}</div>"
+        }
+      ],
+      "type": 0,
+      "vers": []
+    }
+  ],
+  "notes": [
+    {
+      "__type__": "Note",
+      "fields": [
+        "How do Generative Adversarial Networks (GANs) work?",
+        "<b>Components:</b> Generator creates fake data, Discriminator distinguishes real vs fake<br>\n<b>Training:</b> Adversarial game - Generator tries to fool Discriminator<br>\n<b>Objective:</b> min_G max_D V(D,G) = E[log D(x)] + E[log(1-D(G(z)))]<br>\n<b>Applications:</b> Image generation, style transfer, data augmentation",
+        "Advanced ML Topics",
+        "interview_concept"
+      ],
+      "guid": "ml_418f39ff",
+      "note_model_uuid": "ml-interview-model",
+      "tags": [
+        "advanced_ml_topics",
+        "interview_concept",
+        "ml_interview"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "What is transfer learning and when would you use it?",
+        "<b>Concept:</b> Use pre-trained model knowledge for new related task<br>\n<b>Methods:</b> Feature extraction (freeze weights) or fine-tuning<br>\n<b>When to use:</b> Limited data, similar domains, computational constraints<br>\n<b>Examples:</b> ImageNet → medical images, BERT → text classification",
+        "Advanced ML Topics",
+        "interview_concept"
+      ],
+      "guid": "ml_4be61047",
+      "note_model_uuid": "ml-interview-model",
+      "tags": [
+        "advanced_ml_topics",
+        "interview_concept",
+        "ml_interview"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "What is the difference between policy-based and value-based reinforcement learning?",
+        "<b>Value-based:</b> Learn value function V(s) or Q(s,a), derive policy from values<br>\n<b>Policy-based:</b> Directly learn policy π(a|s) that maps states to actions<br>\n<b>Value examples:</b> Q-learning, DQN<br>\n<b>Policy examples:</b> REINFORCE, Actor-Critic",
+        "Advanced ML Topics",
+        "interview_concept"
+      ],
+      "guid": "ml_4e18a7d6",
+      "note_model_uuid": "ml-interview-model",
+      "tags": [
+        "advanced_ml_topics",
+        "interview_concept",
+        "ml_interview"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "What is few-shot learning and what approaches exist?",
+        "<b>Goal:</b> Learn new tasks with very few examples<br>\n<b>Meta-learning:</b> Learn how to learn from few examples<br>\n<b>Metric learning:</b> Learn similarity metrics for comparison<br>\n<b>Data augmentation:</b> Generate more training examples synthetically",
+        "Advanced ML Topics",
+        "interview_concept"
+      ],
+      "guid": "ml_4c58f225",
+      "note_model_uuid": "ml-interview-model",
+      "tags": [
+        "advanced_ml_topics",
+        "interview_concept",
+        "ml_interview"
+      ]
+    }
+  ]
+}

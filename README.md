@@ -1,15 +1,15 @@
-# 🧠 NLP Interview Preparation Hub
-*Complete study system with optimized Anki flashcards for maximum retention*
+# 🧠 NLP & ML Interview Preparation Hub
+*Complete study system with optimized Anki flashcards for NLP and Machine Learning interviews*
 
 ## 🚀 Quick Start
 
 ### 1. **Import Flashcards** (5 minutes)
 ```bash
 # Import Anki flashcards
-📁 Comprehensive: NLP_Fundamentals/, NLP_Preprocessing/, etc.
-📁 Single deck: NLP_Interview_Flashcards/
-📥 Import folder to Anki (CrowdAnki)
-🎯 Result: 48 comprehensive flashcards
+📁 NLP: NLP_Fundamentals/, NLP_Text_Preprocessing/, etc. (118 cards)
+📁 ML: ML_Fundamentals/, ML_Supervised_Learning/, etc. (35 cards)
+📥 Import each folder to Anki (CrowdAnki)
+🎯 Result: 153 comprehensive interview flashcards
 ```
 
 ### 2. **Browse Problems** (10 minutes)
@@ -30,46 +30,44 @@
 
 ## 📦 Repository Structure
 
-### 🎯 **NLP Interview Flashcards** (Ready to Use)
+### 🎯 **Interview Flashcard Collections** (Ready to Use)
 
-#### **Option 1: Comprehensive Collection** (Recommended)
-- **48 cards across 11 specialized decks** covering all major NLP topics
-  - **[NLP_Fundamentals/](NLP_Fundamentals/)** - Core concepts (4 cards)
-  - **[NLP_Preprocessing/](NLP_Preprocessing/)** - Text cleaning (5 cards)
-  - **[NLP_Language_Modeling/](NLP_Language_Modeling/)** - Language models (4 cards)
-  - **[NLP_Word_Representations/](NLP_Word_Representations/)** - Embeddings (6 cards)
-  - **[NLP_Similarity_Metrics/](NLP_Similarity_Metrics/)** - Similarity measures (4 cards)
-  - **[NLP_Syntax_Parsing/](NLP_Syntax_Parsing/)** - Grammar & parsing (3 cards)
-  - **[NLP_Semantic_Analysis/](NLP_Semantic_Analysis/)** - Meaning & context (3 cards)
-  - **[NLP_Nlp_Tasks/](NLP_Nlp_Tasks/)** - Core tasks (5 cards)
-  - **[NLP_Modern_Architectures/](NLP_Modern_Architectures/)** - Transformers (6 cards)
-  - **[NLP_Evaluation_Metrics/](NLP_Evaluation_Metrics/)** - Evaluation (4 cards)
-  - **[NLP_Advanced_Topics/](NLP_Advanced_Topics/)** - Advanced concepts (4 cards)
-  - **[Comprehensive_NLP_Flashcards_README.md](Comprehensive_NLP_Flashcards_README.md)** - Complete study guide
+#### **🔤 NLP Collection: 118 Cards Across 12 Specialized Decks**
+- **[NLP Master Guide](docs/guides/COMPREHENSIVE_NLP_COLLECTION_README.md)** - Complete study strategy
+- **Location**: `flashcards/nlp/` - Each deck ready for Anki import
 
-#### **Option 2: Single Comprehensive Deck**
-- **[NLP_Interview_Flashcards/](NLP_Interview_Flashcards/)** - **16 optimized flashcards**
-  - `NLP_Interview_Flashcards.json` - All concepts in one deck
-  - `README.md` - Import instructions
+**Foundation (32 cards):** Fundamentals, preprocessing, morphology & syntax  
+**Core Skills (50 cards):** Word representations, similarity metrics, language modeling, semantic analysis  
+**Modern Methods (30 cards):** Neural architectures, transformers, applications, parsing  
+**Advanced (16 cards):** Evaluation metrics, cutting-edge research  
 
-### 💻 **NLP Problems** (27 Topics)
-- **[NLP/](NLP/)** - Complete problem set with solutions
-  - Attention Mechanisms, Transformers, LLMs
-  - Classical NLP: TF-IDF, N-grams, Tokenization  
-  - Deep Learning: CNNs, RNNs, Embeddings
+#### **🤖 ML Collection: 35 Cards Across 8 Specialized Decks**
+- **[ML Master Guide](docs/guides/ML_INTERVIEW_COLLECTION_README.md)** - Complete study strategy
+- **[Complete Question Bank](docs/guides/ML_INTERVIEW_QUESTION_BANK.md)** - 200+ interview questions
+- **Location**: `flashcards/ml/` - Each deck ready for Anki import
+
+**Core ML (18 cards):** Fundamentals, supervised learning, unsupervised learning, evaluation  
+**Deep Learning (13 cards):** Neural networks, optimization, advanced topics  
+**Production (4 cards):** MLOps and deployment  
+
+**Ready to import**: Each deck is in its own directory with CrowdAnki-compatible structure
+
+### 📚 **Study Resources & Documentation**
+- **[Master Index](docs/guides/MASTER_INDEX.md)** - Complete resource overview
+- **[Study Plans](docs/study-plans/)** - Structured learning paths
+- **[Interview Guides](docs/interview-guides/)** - Tips and strategies
+- **[NLP Reference](docs/nlp_quick_reference.md)** - Quick lookup guide
   - Practical: NER, Sentiment, Classification
 
-### 📚 **Documentation**
-- **[docs/](docs/)** - Study guides and references
-  - [Anki Best Practices](docs/anki/ANKI_BEST_PRACTICES.md)
-  - [Interview Guides](docs/interview-guides/)
-  - [Study Plans](docs/study-plans/)
+### 🛠️ **Utilities & Scripts**
+- **[utilities/](utilities/)** - Helper scripts and tools
+- **[assets/](assets/)** - Supporting data and resources
 
-### 🛠️ **Scripts**  
-- **[scripts/](scripts/)** - Automation tools
-  - `convert_to_anki_rules_optimized.py` - Regenerate deck
-  - `problem_finder.py` - Find specific problems
-  - `clean_and_organize.py` - Repository maintenance
+### 🤝 **Community & Contributing**
+- **[CONTRIBUTING.md](CONTRIBUTING.md)** - Contribution guidelines
+- **[LICENSE](LICENSE)** - MIT License
+- **[REPOSITORY_STRUCTURE.md](REPOSITORY_STRUCTURE.md)** - Detailed organization guide
+- **[Issue Templates](.github/ISSUE_TEMPLATE/)** - Bug reports and feature requests
 
 ## 🎯 Features
 
@@ -80,14 +78,13 @@
 - **Mobile-First**: 70-character line limits
 - **Spaced Repetition**: Optimized intervals
 
-### 🚀 **438 Optimized Cards**
-- **Problem Understanding** (27 cards) - Algorithm selection
-- **Implementation** (377 cards) - Code writing practice  
-- **Formula** (5 cards) - Mathematical concepts
-- **Complexity** (8 cards) - Big-O analysis
-- **Edge Cases** (1 card) - Error handling
-- **Interview Insights** (13 cards) - Talking points
-- **Concepts** (7 cards) - Theoretical understanding
+### 🚀 **153 Comprehensive Interview Cards**
+- **NLP Collection** (118 cards) - Complete field coverage
+- **ML Collection** (35 cards) - Core interview topics
+- **High-level concepts** - No code, easy to remember
+- **Mathematical formulas** - With symbol definitions
+- **Interview-focused** - Real technical interview questions
+- **Mobile-optimized** - Study anywhere, anytime
 
 ### 📱 **Study Anywhere**
 - Mobile-optimized design
@@ -124,4 +121,4 @@ python scripts/convert_to_anki_rules_optimized.py
 
 ---
 
-**🎯 Ready to ace your NLP interview? Start with `NLP_Fundamentals/` for organized study!**
+**🎯 Ready to ace your NLP & ML interviews? Start with 153 comprehensive flashcards covering everything!**

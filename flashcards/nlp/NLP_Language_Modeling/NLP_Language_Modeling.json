@@ -1,0 +1,257 @@
+{
+  "__type__": "Deck",
+  "children": [],
+  "crowdanki_uuid": "nlp-language-modeling-2024",
+  "deck_config_uuid": "nlp-comprehensive-config",
+  "deck_configurations": [
+    {
+      "__type__": "DeckConfig",
+      "autoplay": true,
+      "crowdanki_uuid": "nlp-comprehensive-config",
+      "dyn": false,
+      "name": "Language Modeling",
+      "new": {
+        "bury": true,
+        "delays": [
+          1,
+          10
+        ],
+        "initialFactor": 2500,
+        "ints": [
+          1,
+          4,
+          7
+        ],
+        "order": 1,
+        "perDay": 15,
+        "separate": true
+      },
+      "rev": {
+        "bury": true,
+        "ease4": 1.3,
+        "fuzz": 0.05,
+        "ivlFct": 1.0,
+        "maxIvl": 36500,
+        "minSpace": 1,
+        "perDay": 100
+      }
+    }
+  ],
+  "desc": "Predicting and generating natural language sequences",
+  "dyn": 0,
+  "extendNew": 10,
+  "extendRev": 50,
+  "media_files": [],
+  "name": "Language Modeling",
+  "note_models": [
+    {
+      "__type__": "NoteModel",
+      "crowdanki_uuid": "nlp-comprehensive-model",
+      "css": "\n.card {\n    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n    font-size: 16px;\n    line-height: 1.4;\n    color: #333;\n    background-color: #fafafa;\n    padding: 20px;\n    max-width: 500px;\n    margin: 0 auto;\n}\n\n.front { background-color: #e3f2fd; }\n.back { background-color: #f3e5f5; }\n\nb { color: #1976d2; font-weight: 600; }\n.formula { font-family: 'Courier New', monospace; background: #f5f5f5; padding: 2px 4px; }\n.example { font-style: italic; color: #555; }\n                    ",
+      "flds": [
+        {
+          "__type__": "NoteModelField",
+          "name": "Front",
+          "ord": 0,
+          "sticky": false
+        },
+        {
+          "__type__": "NoteModelField",
+          "name": "Back",
+          "ord": 1,
+          "sticky": false
+        },
+        {
+          "__type__": "NoteModelField",
+          "name": "Topic",
+          "ord": 2,
+          "sticky": false
+        },
+        {
+          "__type__": "NoteModelField",
+          "name": "Type",
+          "ord": 3,
+          "sticky": false
+        }
+      ],
+      "name": "NLP Comprehensive",
+      "req": [
+        [
+          0,
+          "any",
+          [
+            0
+          ]
+        ]
+      ],
+      "sortf": 0,
+      "tags": [],
+      "tmpls": [
+        {
+          "__type__": "CardTemplate",
+          "afmt": "<div class=\"card back\">{{Front}}<hr>{{Back}}<br><br><small><i>{{Topic}} • {{Type}}</i></small></div>",
+          "bafmt": "",
+          "bqfmt": "",
+          "did": null,
+          "name": "Card",
+          "ord": 0,
+          "qfmt": "<div class=\"card front\">{{Front}}</div>"
+        }
+      ],
+      "type": 0,
+      "vers": []
+    }
+  ],
+  "notes": [
+    {
+      "__type__": "Note",
+      "fields": [
+        "What is a language model?",
+        "<b>Definition:</b> Probability distribution over sequences of words<br>\n<b>Goal:</b> P(w₁, w₂, ..., wₙ) for any word sequence<br>\n<b>Applications:</b> Speech recognition, machine translation, text generation<br>\n<b>Evaluation:</b> Perplexity measures how well model predicts test data",
+        "Language Modeling",
+        "concept"
+      ],
+      "guid": "nlp_9f50f090",
+      "note_model_uuid": "nlp-comprehensive-model",
+      "tags": [
+        "language_modeling",
+        "concept"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "What is an n-gram language model?",
+        "<b>Assumption:</b> P(wᵢ|w₁...wᵢ₋₁) ≈ P(wᵢ|wᵢ₋ₙ₊₁...wᵢ₋₁)<br>\n<b>Markov:</b> Current word depends only on previous n-1 words<br>\n<b>Examples:</b> Bigram (n=2), trigram (n=3)<br>\n<b>Trade-off:</b> Higher n captures more context but requires more data",
+        "Language Modeling",
+        "concept"
+      ],
+      "guid": "nlp_53289197",
+      "note_model_uuid": "nlp-comprehensive-model",
+      "tags": [
+        "language_modeling",
+        "concept"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "What is perplexity and how is it calculated?",
+        "<b>Formula:</b> PP(W) = P(w₁w₂...wₙ)^(-1/N)<br>\n<b>Intuition:</b> Average number of choices model thinks it has per word<br>\n<b>Lower is better:</b> PP=1 is perfect, higher PP means more uncertain<br>\n<b>Comparison:</b> Only meaningful when comparing models on same data",
+        "Language Modeling",
+        "concept"
+      ],
+      "guid": "nlp_c09b0abc",
+      "note_model_uuid": "nlp-comprehensive-model",
+      "tags": [
+        "language_modeling",
+        "concept"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "What is the sparse data problem in language modeling?",
+        "<b>Problem:</b> Many n-grams never seen in training data<br>\n<b>Consequence:</b> Zero probabilities cause issues<br>\n<b>Solutions:</b> Smoothing (add-k, Kneser-Ney), back-off to shorter n-grams<br>\n<b>Modern:</b> Neural models handle sparsity better than count-based models",
+        "Language Modeling",
+        "concept"
+      ],
+      "guid": "nlp_370f72de",
+      "note_model_uuid": "nlp-comprehensive-model",
+      "tags": [
+        "language_modeling",
+        "concept"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "What is smoothing in language models?",
+        "<b>Goal:</b> Assign non-zero probabilities to unseen n-grams<br>\n<b>Add-k:</b> Add small constant k to all counts<br>\n<b>Good-Turing:</b> Use frequency of frequencies to estimate<br>\n<b>Kneser-Ney:</b> Most effective, uses interpolation and continuation counts",
+        "Language Modeling",
+        "concept"
+      ],
+      "guid": "nlp_74fa7e6d",
+      "note_model_uuid": "nlp-comprehensive-model",
+      "tags": [
+        "language_modeling",
+        "concept"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "How do neural language models work?",
+        "<b>Architecture:</b> RNN/LSTM/Transformer takes word sequence as input<br>\n<b>Output:</b> Probability distribution over next word<br>\n<b>Training:</b> Maximize likelihood of training sequences<br>\n<b>Advantages:</b> Handle long dependencies, automatic smoothing, dense representations",
+        "Language Modeling",
+        "concept"
+      ],
+      "guid": "nlp_571fd8c3",
+      "note_model_uuid": "nlp-comprehensive-model",
+      "tags": [
+        "language_modeling",
+        "concept"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "What is the difference between autoregressive and autoencoding language models?",
+        "<b>Autoregressive:</b> Predict next token given previous tokens (GPT)<br>\n<b>Autoencoding:</b> Predict masked tokens from context (BERT)<br>\n<b>Generation:</b> Autoregressive naturally generates, autoencoding needs special training<br>\n<b>Understanding:</b> Autoencoding better for comprehension tasks",
+        "Language Modeling",
+        "concept"
+      ],
+      "guid": "nlp_60e9ab08",
+      "note_model_uuid": "nlp-comprehensive-model",
+      "tags": [
+        "language_modeling",
+        "concept"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "What is teacher forcing in language model training?",
+        "<b>Method:</b> Use ground truth previous tokens during training<br>\n<b>Problem:</b> Exposure bias - model never sees its own errors during training<br>\n<b>Alternative:</b> Scheduled sampling mixes ground truth and model predictions<br>\n<b>Use:</b> Speeds up training but can hurt generation quality",
+        "Language Modeling",
+        "concept"
+      ],
+      "guid": "nlp_88a28e99",
+      "note_model_uuid": "nlp-comprehensive-model",
+      "tags": [
+        "language_modeling",
+        "concept"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "What is the vocabulary problem in language modeling?",
+        "<b>Issue:</b> Large vocabularies make softmax computation expensive<br>\n<b>Solutions:</b> Hierarchical softmax, noise contrastive estimation, subword tokenization<br>\n<b>OOV handling:</b> Subword units (BPE, WordPiece) reduce unknown words<br>\n<b>Trade-off:</b> Larger vocab is more expressive but computationally costly",
+        "Language Modeling",
+        "concept"
+      ],
+      "guid": "nlp_8f5cd9f9",
+      "note_model_uuid": "nlp-comprehensive-model",
+      "tags": [
+        "language_modeling",
+        "concept"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "What is the difference between character-level and word-level language models?",
+        "<b>Character-level:</b> Predict next character, no OOV issues, longer sequences<br>\n<b>Word-level:</b> Predict next word, shorter sequences, vocabulary limitations<br>\n<b>Subword:</b> Middle ground, handles morphology and rare words<br>\n<b>Choice depends:</b> Language complexity, computational resources, target application",
+        "Language Modeling",
+        "concept"
+      ],
+      "guid": "nlp_9a75d7d0",
+      "note_model_uuid": "nlp-comprehensive-model",
+      "tags": [
+        "language_modeling",
+        "concept"
+      ]
+    }
+  ]
+}

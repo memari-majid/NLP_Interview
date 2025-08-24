@@ -1,0 +1,187 @@
+{
+  "__type__": "Deck",
+  "children": [],
+  "crowdanki_uuid": "ml-deep-learning-fundamentals-2024",
+  "deck_config_uuid": "ml-interview-config",
+  "deck_configurations": [
+    {
+      "__type__": "DeckConfig",
+      "autoplay": true,
+      "crowdanki_uuid": "ml-interview-config",
+      "dyn": false,
+      "name": "Deep Learning Fundamentals",
+      "new": {
+        "bury": true,
+        "delays": [
+          1,
+          10
+        ],
+        "initialFactor": 2500,
+        "ints": [
+          1,
+          4,
+          7
+        ],
+        "order": 1,
+        "perDay": 20,
+        "separate": true
+      },
+      "rev": {
+        "bury": true,
+        "ease4": 1.3,
+        "fuzz": 0.05,
+        "ivlFct": 1.0,
+        "maxIvl": 36500,
+        "minSpace": 1,
+        "perDay": 150
+      }
+    }
+  ],
+  "desc": "Neural networks, architectures, and training techniques",
+  "dyn": 0,
+  "extendNew": 10,
+  "extendRev": 50,
+  "media_files": [],
+  "name": "Deep Learning Fundamentals",
+  "note_models": [
+    {
+      "__type__": "NoteModel",
+      "crowdanki_uuid": "ml-interview-model",
+      "css": "\n.card {\n    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n    font-size: 16px;\n    line-height: 1.5;\n    color: #333;\n    background-color: #fafafa;\n    padding: 20px;\n    max-width: 600px;\n    margin: 0 auto;\n}\n\n.front { \n    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n    color: white;\n    padding: 25px;\n    border-radius: 10px;\n}\n\n.back { \n    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);\n    color: white;\n    padding: 25px;\n    border-radius: 10px;\n}\n\nb { color: #ffeb3b; font-weight: 600; }\n.formula { \n    font-family: 'Courier New', monospace; \n    background: rgba(255,255,255,0.2); \n    padding: 3px 6px; \n    border-radius: 4px;\n    font-size: 14px;\n}\n.example { font-style: italic; opacity: 0.9; }\n                    ",
+      "flds": [
+        {
+          "__type__": "NoteModelField",
+          "name": "Front",
+          "ord": 0,
+          "sticky": false
+        },
+        {
+          "__type__": "NoteModelField",
+          "name": "Back",
+          "ord": 1,
+          "sticky": false
+        },
+        {
+          "__type__": "NoteModelField",
+          "name": "Topic",
+          "ord": 2,
+          "sticky": false
+        },
+        {
+          "__type__": "NoteModelField",
+          "name": "Type",
+          "ord": 3,
+          "sticky": false
+        }
+      ],
+      "name": "ML Interview Card",
+      "req": [
+        [
+          0,
+          "any",
+          [
+            0
+          ]
+        ]
+      ],
+      "sortf": 0,
+      "tags": [],
+      "tmpls": [
+        {
+          "__type__": "CardTemplate",
+          "afmt": "<div class=\"card back\">{{Front}}<hr>{{Back}}<br><br><small><i>{{Topic}} • {{Type}}</i></small></div>",
+          "bafmt": "",
+          "bqfmt": "",
+          "did": null,
+          "name": "Card",
+          "ord": 0,
+          "qfmt": "<div class=\"card front\">{{Front}}</div>"
+        }
+      ],
+      "type": 0,
+      "vers": []
+    }
+  ],
+  "notes": [
+    {
+      "__type__": "Note",
+      "fields": [
+        "How does backpropagation work in neural networks?",
+        "<b>Forward pass:</b> Compute predictions and loss<br>\n<b>Backward pass:</b> Compute gradients using chain rule<br>\n<b>Chain rule:</b> ∂L/∂w = ∂L/∂y × ∂y/∂z × ∂z/∂w<br>\n<b>Update:</b> w = w - α × ∂L/∂w (gradient descent)",
+        "Deep Learning Fundamentals",
+        "interview_concept"
+      ],
+      "guid": "ml_5abb4c3f",
+      "note_model_uuid": "ml-interview-model",
+      "tags": [
+        "deep_learning_fundamentals",
+        "interview_concept",
+        "ml_interview"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "What is the vanishing gradient problem and how do ReLU activations help?",
+        "<b>Problem:</b> Gradients become exponentially small in deep networks<br>\n<b>Cause:</b> Repeated multiplication of small derivatives (sigmoid saturation)<br>\n<b>ReLU solution:</b> Gradient is 1 for positive inputs, 0 for negative<br>\n<b>Benefits:</b> No saturation for positive values, computationally efficient",
+        "Deep Learning Fundamentals",
+        "interview_concept"
+      ],
+      "guid": "ml_bb2a1888",
+      "note_model_uuid": "ml-interview-model",
+      "tags": [
+        "deep_learning_fundamentals",
+        "interview_concept",
+        "ml_interview"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "How do Convolutional Neural Networks (CNNs) work?",
+        "<b>Convolution:</b> Sliding filters detect local features<br>\n<b>Pooling:</b> Downsampling reduces spatial dimensions<br>\n<b>Parameter sharing:</b> Same filter applied across entire image<br>\n<b>Translation invariance:</b> Features detected regardless of position",
+        "Deep Learning Fundamentals",
+        "interview_concept"
+      ],
+      "guid": "ml_3663f808",
+      "note_model_uuid": "ml-interview-model",
+      "tags": [
+        "deep_learning_fundamentals",
+        "interview_concept",
+        "ml_interview"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "What is the difference between LSTM and GRU?",
+        "<b>LSTM:</b> 3 gates (forget, input, output) + cell state<br>\n<b>GRU:</b> 2 gates (reset, update) + hidden state<br>\n<b>LSTM:</b> More parameters, better for complex sequences<br>\n<b>GRU:</b> Fewer parameters, faster training, similar performance",
+        "Deep Learning Fundamentals",
+        "interview_concept"
+      ],
+      "guid": "ml_29159713",
+      "note_model_uuid": "ml-interview-model",
+      "tags": [
+        "deep_learning_fundamentals",
+        "interview_concept",
+        "ml_interview"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "What is dropout and how does it prevent overfitting?",
+        "<b>Method:</b> Randomly set fraction of neurons to zero during training<br>\n<b>Effect:</b> Prevents co-adaptation of neurons, acts as ensemble<br>\n<b>Test time:</b> Use all neurons but scale outputs by (1-dropout_rate)<br>\n<b>Benefits:</b> Regularization, improves generalization",
+        "Deep Learning Fundamentals",
+        "interview_concept"
+      ],
+      "guid": "ml_7785b9b4",
+      "note_model_uuid": "ml-interview-model",
+      "tags": [
+        "deep_learning_fundamentals",
+        "interview_concept",
+        "ml_interview"
+      ]
+    }
+  ]
+}

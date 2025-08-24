@@ -1,0 +1,227 @@
+{
+  "__type__": "Deck",
+  "children": [],
+  "crowdanki_uuid": "nlp-advanced-nlp-topics-2024",
+  "deck_config_uuid": "nlp-comprehensive-config",
+  "deck_configurations": [
+    {
+      "__type__": "DeckConfig",
+      "autoplay": true,
+      "crowdanki_uuid": "nlp-comprehensive-config",
+      "dyn": false,
+      "name": "Advanced NLP Topics",
+      "new": {
+        "bury": true,
+        "delays": [
+          1,
+          10
+        ],
+        "initialFactor": 2500,
+        "ints": [
+          1,
+          4,
+          7
+        ],
+        "order": 1,
+        "perDay": 15,
+        "separate": true
+      },
+      "rev": {
+        "bury": true,
+        "ease4": 1.3,
+        "fuzz": 0.05,
+        "ivlFct": 1.0,
+        "maxIvl": 36500,
+        "minSpace": 1,
+        "perDay": 100
+      }
+    }
+  ],
+  "desc": "Cutting-edge research and specialized techniques",
+  "dyn": 0,
+  "extendNew": 10,
+  "extendRev": 50,
+  "media_files": [],
+  "name": "Advanced NLP Topics",
+  "note_models": [
+    {
+      "__type__": "NoteModel",
+      "crowdanki_uuid": "nlp-comprehensive-model",
+      "css": "\n.card {\n    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n    font-size: 16px;\n    line-height: 1.4;\n    color: #333;\n    background-color: #fafafa;\n    padding: 20px;\n    max-width: 500px;\n    margin: 0 auto;\n}\n\n.front { background-color: #e3f2fd; }\n.back { background-color: #f3e5f5; }\n\nb { color: #1976d2; font-weight: 600; }\n.formula { font-family: 'Courier New', monospace; background: #f5f5f5; padding: 2px 4px; }\n.example { font-style: italic; color: #555; }\n                    ",
+      "flds": [
+        {
+          "__type__": "NoteModelField",
+          "name": "Front",
+          "ord": 0,
+          "sticky": false
+        },
+        {
+          "__type__": "NoteModelField",
+          "name": "Back",
+          "ord": 1,
+          "sticky": false
+        },
+        {
+          "__type__": "NoteModelField",
+          "name": "Topic",
+          "ord": 2,
+          "sticky": false
+        },
+        {
+          "__type__": "NoteModelField",
+          "name": "Type",
+          "ord": 3,
+          "sticky": false
+        }
+      ],
+      "name": "NLP Comprehensive",
+      "req": [
+        [
+          0,
+          "any",
+          [
+            0
+          ]
+        ]
+      ],
+      "sortf": 0,
+      "tags": [],
+      "tmpls": [
+        {
+          "__type__": "CardTemplate",
+          "afmt": "<div class=\"card back\">{{Front}}<hr>{{Back}}<br><br><small><i>{{Topic}} • {{Type}}</i></small></div>",
+          "bafmt": "",
+          "bqfmt": "",
+          "did": null,
+          "name": "Card",
+          "ord": 0,
+          "qfmt": "<div class=\"card front\">{{Front}}</div>"
+        }
+      ],
+      "type": 0,
+      "vers": []
+    }
+  ],
+  "notes": [
+    {
+      "__type__": "Note",
+      "fields": [
+        "What is few-shot learning in NLP?",
+        "<b>Goal:</b> Learn new tasks with only few examples<br>\n<b>Methods:</b> In-context learning (GPT), meta-learning, prompt engineering<br>\n<b>Example:</b> Show GPT-3 three examples, it performs new classification<br>\n<b>Advantage:</b> Reduces need for large labeled datasets",
+        "Advanced NLP Topics",
+        "concept"
+      ],
+      "guid": "nlp_a0c7926d",
+      "note_model_uuid": "nlp-comprehensive-model",
+      "tags": [
+        "advanced_nlp_topics",
+        "concept"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "What is prompt engineering?",
+        "<b>Definition:</b> Crafting input text to elicit desired behavior from language models<br>\n<b>Examples:</b> \"Translate to French:\", \"The sentiment of this text is\"<br>\n<b>Techniques:</b> Zero-shot, few-shot, chain-of-thought prompting<br>\n<b>Importance:</b> Critical for getting good performance from large LMs",
+        "Advanced NLP Topics",
+        "concept"
+      ],
+      "guid": "nlp_1fa00e6b",
+      "note_model_uuid": "nlp-comprehensive-model",
+      "tags": [
+        "advanced_nlp_topics",
+        "concept"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "What is domain adaptation in NLP?",
+        "<b>Problem:</b> Models trained on one domain perform poorly on another<br>\n<b>Solutions:</b> Fine-tuning, domain adversarial training, gradual unfreezing<br>\n<b>Example:</b> News model applied to social media text<br>\n<b>Challenge:</b> Limited labeled data in target domain",
+        "Advanced NLP Topics",
+        "concept"
+      ],
+      "guid": "nlp_204eff6d",
+      "note_model_uuid": "nlp-comprehensive-model",
+      "tags": [
+        "advanced_nlp_topics",
+        "concept"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "What are the main ethical concerns in NLP?",
+        "<b>Bias:</b> Models reflect training data biases (gender, race, religion)<br>\n<b>Privacy:</b> Models may memorize sensitive training information<br>\n<b>Misuse:</b> Deepfakes, propaganda, surveillance applications<br>\n<b>Fairness:</b> Equal performance across demographic groups",
+        "Advanced NLP Topics",
+        "concept"
+      ],
+      "guid": "nlp_f996dc10",
+      "note_model_uuid": "nlp-comprehensive-model",
+      "tags": [
+        "advanced_nlp_topics",
+        "concept"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "What is multilingual NLP and what are the main approaches?",
+        "<b>Goal:</b> Build models that work across multiple languages<br>\n<b>Approaches:</b> Multilingual embeddings, cross-lingual transfer, zero-shot<br>\n<b>Models:</b> mBERT, XLM-R, multilingual T5<br>\n<b>Challenges:</b> Low-resource languages, script differences, cultural context",
+        "Advanced NLP Topics",
+        "concept"
+      ],
+      "guid": "nlp_27ea82bf",
+      "note_model_uuid": "nlp-comprehensive-model",
+      "tags": [
+        "advanced_nlp_topics",
+        "concept"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "What is explainable AI in NLP?",
+        "<b>Goal:</b> Understand how models make decisions<br>\n<b>Methods:</b> Attention visualization, gradient-based attribution, probing<br>\n<b>Challenges:</b> Attention weights don't always indicate importance<br>\n<b>Applications:</b> Debugging, trust, regulatory compliance",
+        "Advanced NLP Topics",
+        "concept"
+      ],
+      "guid": "nlp_04b4a68b",
+      "note_model_uuid": "nlp-comprehensive-model",
+      "tags": [
+        "advanced_nlp_topics",
+        "concept"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "What is continual learning in NLP?",
+        "<b>Goal:</b> Learn new tasks without forgetting previous ones<br>\n<b>Problem:</b> Catastrophic forgetting when fine-tuning on new data<br>\n<b>Solutions:</b> Elastic Weight Consolidation, rehearsal, progressive networks<br>\n<b>Application:</b> Updating models with new domains/languages",
+        "Advanced NLP Topics",
+        "concept"
+      ],
+      "guid": "nlp_34a601ee",
+      "note_model_uuid": "nlp-comprehensive-model",
+      "tags": [
+        "advanced_nlp_topics",
+        "concept"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "What is knowledge distillation in NLP?",
+        "<b>Goal:</b> Transfer knowledge from large teacher to small student model<br>\n<b>Method:</b> Train student to match teacher's output distributions<br>\n<b>Benefits:</b> Smaller, faster models with similar performance<br>\n<b>Applications:</b> Model compression, edge deployment, efficiency",
+        "Advanced NLP Topics",
+        "concept"
+      ],
+      "guid": "nlp_456d8e75",
+      "note_model_uuid": "nlp-comprehensive-model",
+      "tags": [
+        "advanced_nlp_topics",
+        "concept"
+      ]
+    }
+  ]
+}

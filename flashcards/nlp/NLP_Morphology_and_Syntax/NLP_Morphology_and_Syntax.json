@@ -1,0 +1,257 @@
+{
+  "__type__": "Deck",
+  "children": [],
+  "crowdanki_uuid": "nlp-morphology-and-syntax-2024",
+  "deck_config_uuid": "nlp-comprehensive-config",
+  "deck_configurations": [
+    {
+      "__type__": "DeckConfig",
+      "autoplay": true,
+      "crowdanki_uuid": "nlp-comprehensive-config",
+      "dyn": false,
+      "name": "Morphology and Syntax",
+      "new": {
+        "bury": true,
+        "delays": [
+          1,
+          10
+        ],
+        "initialFactor": 2500,
+        "ints": [
+          1,
+          4,
+          7
+        ],
+        "order": 1,
+        "perDay": 15,
+        "separate": true
+      },
+      "rev": {
+        "bury": true,
+        "ease4": 1.3,
+        "fuzz": 0.05,
+        "ivlFct": 1.0,
+        "maxIvl": 36500,
+        "minSpace": 1,
+        "perDay": 100
+      }
+    }
+  ],
+  "desc": "Word structure and sentence grammar analysis",
+  "dyn": 0,
+  "extendNew": 10,
+  "extendRev": 50,
+  "media_files": [],
+  "name": "Morphology and Syntax",
+  "note_models": [
+    {
+      "__type__": "NoteModel",
+      "crowdanki_uuid": "nlp-comprehensive-model",
+      "css": "\n.card {\n    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n    font-size: 16px;\n    line-height: 1.4;\n    color: #333;\n    background-color: #fafafa;\n    padding: 20px;\n    max-width: 500px;\n    margin: 0 auto;\n}\n\n.front { background-color: #e3f2fd; }\n.back { background-color: #f3e5f5; }\n\nb { color: #1976d2; font-weight: 600; }\n.formula { font-family: 'Courier New', monospace; background: #f5f5f5; padding: 2px 4px; }\n.example { font-style: italic; color: #555; }\n                    ",
+      "flds": [
+        {
+          "__type__": "NoteModelField",
+          "name": "Front",
+          "ord": 0,
+          "sticky": false
+        },
+        {
+          "__type__": "NoteModelField",
+          "name": "Back",
+          "ord": 1,
+          "sticky": false
+        },
+        {
+          "__type__": "NoteModelField",
+          "name": "Topic",
+          "ord": 2,
+          "sticky": false
+        },
+        {
+          "__type__": "NoteModelField",
+          "name": "Type",
+          "ord": 3,
+          "sticky": false
+        }
+      ],
+      "name": "NLP Comprehensive",
+      "req": [
+        [
+          0,
+          "any",
+          [
+            0
+          ]
+        ]
+      ],
+      "sortf": 0,
+      "tags": [],
+      "tmpls": [
+        {
+          "__type__": "CardTemplate",
+          "afmt": "<div class=\"card back\">{{Front}}<hr>{{Back}}<br><br><small><i>{{Topic}} • {{Type}}</i></small></div>",
+          "bafmt": "",
+          "bqfmt": "",
+          "did": null,
+          "name": "Card",
+          "ord": 0,
+          "qfmt": "<div class=\"card front\">{{Front}}</div>"
+        }
+      ],
+      "type": 0,
+      "vers": []
+    }
+  ],
+  "notes": [
+    {
+      "__type__": "Note",
+      "fields": [
+        "What is Part-of-Speech (POS) tagging?",
+        "<b>Task:</b> Assign grammatical categories to each word<br>\n<b>Tags:</b> Noun, verb, adjective, adverb, preposition, etc.<br>\n<b>Challenges:</b> Ambiguity (\"book\" can be noun or verb)<br>\n<b>Applications:</b> Parsing, information extraction, text analysis",
+        "Morphology and Syntax",
+        "concept"
+      ],
+      "guid": "nlp_2b58c840",
+      "note_model_uuid": "nlp-comprehensive-model",
+      "tags": [
+        "morphology_and_syntax",
+        "concept"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "What is the difference between constituency and dependency parsing?",
+        "<b>Constituency:</b> Hierarchical phrase structure (noun phrase, verb phrase)<br>\n<b>Dependency:</b> Head-dependent relations between words<br>\n<b>Output:</b> Tree vs directed graph representation<br>\n<b>Use:</b> Constituency for syntax, dependency for semantic relations",
+        "Morphology and Syntax",
+        "concept"
+      ],
+      "guid": "nlp_11bbd1f9",
+      "note_model_uuid": "nlp-comprehensive-model",
+      "tags": [
+        "morphology_and_syntax",
+        "concept"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "What is morphological analysis?",
+        "<b>Goal:</b> Analyze internal structure of words<br>\n<b>Components:</b> Root + affixes (prefixes, suffixes, infixes)<br>\n<b>Example:</b> \"unhappiness\" = \"un-\" + \"happy\" + \"-ness\"<br>\n<b>Applications:</b> Machine translation, spell checking, information retrieval",
+        "Morphology and Syntax",
+        "concept"
+      ],
+      "guid": "nlp_8c641cab",
+      "note_model_uuid": "nlp-comprehensive-model",
+      "tags": [
+        "morphology_and_syntax",
+        "concept"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "What is syntactic ambiguity and how is it resolved?",
+        "<b>Problem:</b> Multiple valid parse trees for same sentence<br>\n<b>Example:</b> \"I saw the man with the telescope\" (who has telescope?)<br>\n<b>Resolution:</b> Statistical parsing, context, semantic preferences<br>\n<b>Methods:</b> Probabilistic CFG, neural parsers, disambiguation",
+        "Morphology and Syntax",
+        "concept"
+      ],
+      "guid": "nlp_376ee211",
+      "note_model_uuid": "nlp-comprehensive-model",
+      "tags": [
+        "morphology_and_syntax",
+        "concept"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "What is a Context-Free Grammar (CFG)?",
+        "<b>Definition:</b> Formal grammar with production rules<br>\n<b>Form:</b> A → α (non-terminal → sequence of terminals/non-terminals)<br>\n<b>Properties:</b> Can generate infinite sentences from finite rules<br>\n<b>Limitation:</b> Cannot capture all natural language phenomena",
+        "Morphology and Syntax",
+        "concept"
+      ],
+      "guid": "nlp_49c9d819",
+      "note_model_uuid": "nlp-comprehensive-model",
+      "tags": [
+        "morphology_and_syntax",
+        "concept"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "What is chunking in NLP?",
+        "<b>Task:</b> Group consecutive words into syntactic units<br>\n<b>Types:</b> Noun phrases (NP), verb phrases (VP), prepositional phrases<br>\n<b>Simpler:</b> Easier than full parsing, useful for information extraction<br>\n<b>Methods:</b> Regex patterns, sequence labeling, neural models",
+        "Morphology and Syntax",
+        "concept"
+      ],
+      "guid": "nlp_12c23eeb",
+      "note_model_uuid": "nlp-comprehensive-model",
+      "tags": [
+        "morphology_and_syntax",
+        "concept"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "What is the CKY parsing algorithm?",
+        "<b>Full name:</b> Cocke-Kasami-Younger algorithm<br>\n<b>Purpose:</b> Parse sentences using Context-Free Grammar in Chomsky Normal Form<br>\n<b>Method:</b> Dynamic programming, bottom-up chart parsing<br>\n<b>Complexity:</b> O(n³) time, O(n²) space for sentence length n",
+        "Morphology and Syntax",
+        "concept"
+      ],
+      "guid": "nlp_d3ff4bd2",
+      "note_model_uuid": "nlp-comprehensive-model",
+      "tags": [
+        "morphology_and_syntax",
+        "concept"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "What is morphological segmentation?",
+        "<b>Task:</b> Split words into morphemes (smallest meaningful units)<br>\n<b>Example:</b> \"books\" → \"book\" + \"s\", \"unhappy\" → \"un\" + \"happy\"<br>\n<b>Challenges:</b> Irregular forms, allomorphy, ambiguity<br>\n<b>Applications:</b> Machine translation, morphologically rich languages",
+        "Morphology and Syntax",
+        "concept"
+      ],
+      "guid": "nlp_953c6413",
+      "note_model_uuid": "nlp-comprehensive-model",
+      "tags": [
+        "morphology_and_syntax",
+        "concept"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "What is shallow parsing vs deep parsing?",
+        "<b>Shallow:</b> Partial parsing, identify phrases without full structure<br>\n<b>Deep:</b> Complete syntactic analysis with full parse tree<br>\n<b>Trade-off:</b> Shallow is faster/robust, deep provides more information<br>\n<b>Use cases:</b> Shallow for IE/NER, deep for semantic analysis",
+        "Morphology and Syntax",
+        "concept"
+      ],
+      "guid": "nlp_89141d79",
+      "note_model_uuid": "nlp-comprehensive-model",
+      "tags": [
+        "morphology_and_syntax",
+        "concept"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "What is agreement in linguistics?",
+        "<b>Definition:</b> Systematic correspondence between linguistic elements<br>\n<b>Types:</b> Subject-verb agreement, gender agreement, number agreement<br>\n<b>Example:</b> \"The cat runs\" vs \"The cats run\" (singular/plural)<br>\n<b>NLP relevance:</b> Grammar checking, generation, parsing constraints",
+        "Morphology and Syntax",
+        "concept"
+      ],
+      "guid": "nlp_e29330f2",
+      "note_model_uuid": "nlp-comprehensive-model",
+      "tags": [
+        "morphology_and_syntax",
+        "concept"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,257 @@
+{
+  "__type__": "Deck",
+  "children": [],
+  "crowdanki_uuid": "nlp-text-preprocessing-2024",
+  "deck_config_uuid": "nlp-comprehensive-config",
+  "deck_configurations": [
+    {
+      "__type__": "DeckConfig",
+      "autoplay": true,
+      "crowdanki_uuid": "nlp-comprehensive-config",
+      "dyn": false,
+      "name": "Text Preprocessing",
+      "new": {
+        "bury": true,
+        "delays": [
+          1,
+          10
+        ],
+        "initialFactor": 2500,
+        "ints": [
+          1,
+          4,
+          7
+        ],
+        "order": 1,
+        "perDay": 15,
+        "separate": true
+      },
+      "rev": {
+        "bury": true,
+        "ease4": 1.3,
+        "fuzz": 0.05,
+        "ivlFct": 1.0,
+        "maxIvl": 36500,
+        "minSpace": 1,
+        "perDay": 100
+      }
+    }
+  ],
+  "desc": "Essential text cleaning and preparation techniques",
+  "dyn": 0,
+  "extendNew": 10,
+  "extendRev": 50,
+  "media_files": [],
+  "name": "Text Preprocessing",
+  "note_models": [
+    {
+      "__type__": "NoteModel",
+      "crowdanki_uuid": "nlp-comprehensive-model",
+      "css": "\n.card {\n    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n    font-size: 16px;\n    line-height: 1.4;\n    color: #333;\n    background-color: #fafafa;\n    padding: 20px;\n    max-width: 500px;\n    margin: 0 auto;\n}\n\n.front { background-color: #e3f2fd; }\n.back { background-color: #f3e5f5; }\n\nb { color: #1976d2; font-weight: 600; }\n.formula { font-family: 'Courier New', monospace; background: #f5f5f5; padding: 2px 4px; }\n.example { font-style: italic; color: #555; }\n                    ",
+      "flds": [
+        {
+          "__type__": "NoteModelField",
+          "name": "Front",
+          "ord": 0,
+          "sticky": false
+        },
+        {
+          "__type__": "NoteModelField",
+          "name": "Back",
+          "ord": 1,
+          "sticky": false
+        },
+        {
+          "__type__": "NoteModelField",
+          "name": "Topic",
+          "ord": 2,
+          "sticky": false
+        },
+        {
+          "__type__": "NoteModelField",
+          "name": "Type",
+          "ord": 3,
+          "sticky": false
+        }
+      ],
+      "name": "NLP Comprehensive",
+      "req": [
+        [
+          0,
+          "any",
+          [
+            0
+          ]
+        ]
+      ],
+      "sortf": 0,
+      "tags": [],
+      "tmpls": [
+        {
+          "__type__": "CardTemplate",
+          "afmt": "<div class=\"card back\">{{Front}}<hr>{{Back}}<br><br><small><i>{{Topic}} • {{Type}}</i></small></div>",
+          "bafmt": "",
+          "bqfmt": "",
+          "did": null,
+          "name": "Card",
+          "ord": 0,
+          "qfmt": "<div class=\"card front\">{{Front}}</div>"
+        }
+      ],
+      "type": 0,
+      "vers": []
+    }
+  ],
+  "notes": [
+    {
+      "__type__": "Note",
+      "fields": [
+        "What is tokenization and why is it necessary?",
+        "<b>Definition:</b> Breaking text into smaller units (tokens) for processing<br>\n<b>Units:</b> Words, subwords, characters, sentences<br>\n<b>Necessity:</b> Computers need discrete units to analyze<br>\n<b>Challenges:</b> Contractions, punctuation, multiword expressions",
+        "Text Preprocessing",
+        "concept"
+      ],
+      "guid": "nlp_b7ae1cfd",
+      "note_model_uuid": "nlp-comprehensive-model",
+      "tags": [
+        "text_preprocessing",
+        "concept"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "What is the difference between stemming and lemmatization?",
+        "<b>Stemming:</b> Remove suffixes to get root form (running → run)<br>\n<b>Lemmatization:</b> Reduce to canonical form using dictionary (better → good)<br>\n<b>Trade-off:</b> Stemming faster but cruder, lemmatization more accurate<br>\n<b>When:</b> Use stemming for speed, lemmatization for accuracy",
+        "Text Preprocessing",
+        "concept"
+      ],
+      "guid": "nlp_daefe872",
+      "note_model_uuid": "nlp-comprehensive-model",
+      "tags": [
+        "text_preprocessing",
+        "concept"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "Why remove stop words and when should you keep them?",
+        "<b>Remove because:</b> High frequency, low information value<br>\n<b>Benefits:</b> Reduce noise, focus on content words, faster processing<br>\n<b>Keep when:</b> Syntax matters (parsing), negation analysis, authorship<br>\n<b>Examples:</b> \"the\", \"and\", \"is\" vs \"not\", \"should\", \"will\"",
+        "Text Preprocessing",
+        "concept"
+      ],
+      "guid": "nlp_bba891b2",
+      "note_model_uuid": "nlp-comprehensive-model",
+      "tags": [
+        "text_preprocessing",
+        "concept"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "What is subword tokenization and why is it important?",
+        "<b>Methods:</b> BPE (Byte Pair Encoding), WordPiece, SentencePiece<br>\n<b>Benefits:</b> Handle rare words, reduce vocabulary size, cross-lingual<br>\n<b>Principle:</b> Split rare words into frequent subword units<br>\n<b>Example:</b> \"unhappiness\" → [\"un\", \"happy\", \"ness\"]",
+        "Text Preprocessing",
+        "concept"
+      ],
+      "guid": "nlp_d80b4ad3",
+      "note_model_uuid": "nlp-comprehensive-model",
+      "tags": [
+        "text_preprocessing",
+        "concept"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "What challenges arise in tokenizing social media text?",
+        "<b>Issues:</b> Hashtags, @mentions, URLs, emojis, misspellings<br>\n<b>Informal:</b> Abbreviations (u→you), repeated chars (sooooo)<br>\n<b>Solutions:</b> Specialized tokenizers, normalization, regex patterns<br>\n<b>Tools:</b> TweetTokenizer, custom preprocessing pipelines",
+        "Text Preprocessing",
+        "concept"
+      ],
+      "guid": "nlp_f1a432f9",
+      "note_model_uuid": "nlp-comprehensive-model",
+      "tags": [
+        "text_preprocessing",
+        "concept"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "What is text normalization and what techniques are used?",
+        "<b>Goal:</b> Convert text to canonical form for consistent processing<br>\n<b>Techniques:</b> Lowercasing, accent removal, spelling correction<br>\n<b>Numbers:</b> \"2\" vs \"two\", dates, currencies standardization<br>\n<b>Trade-off:</b> Lose information vs gain consistency",
+        "Text Preprocessing",
+        "concept"
+      ],
+      "guid": "nlp_e745dc9e",
+      "note_model_uuid": "nlp-comprehensive-model",
+      "tags": [
+        "text_preprocessing",
+        "concept"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "How do you handle punctuation in text preprocessing?",
+        "<b>Options:</b> Remove all, keep some, separate from words<br>\n<b>Keep for:</b> Sentence boundaries, questions, emphasis<br>\n<b>Remove for:</b> Bag-of-words, topic modeling, sentiment<br>\n<b>Separate:</b> \"hello!\" → [\"hello\", \"!\"] preserves both",
+        "Text Preprocessing",
+        "concept"
+      ],
+      "guid": "nlp_2d9744c8",
+      "note_model_uuid": "nlp-comprehensive-model",
+      "tags": [
+        "text_preprocessing",
+        "concept"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "What is sentence segmentation and why is it challenging?",
+        "<b>Task:</b> Split text into individual sentences<br>\n<b>Challenges:</b> Abbreviations (Dr.), decimals (3.14), ellipsis (...)<br>\n<b>Methods:</b> Rule-based (regex), ML-based (neural models)<br>\n<b>Importance:</b> Many NLP tasks work at sentence level",
+        "Text Preprocessing",
+        "concept"
+      ],
+      "guid": "nlp_b023d83a",
+      "note_model_uuid": "nlp-comprehensive-model",
+      "tags": [
+        "text_preprocessing",
+        "concept"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "What is the difference between case folding and case normalization?",
+        "<b>Case folding:</b> Convert to lowercase for matching (THE → the)<br>\n<b>Normalization:</b> Preserve case where meaningful (names, acronyms)<br>\n<b>Trade-off:</b> Folding reduces sparsity, normalization keeps information<br>\n<b>Example:</b> \"US\" (country) vs \"us\" (pronoun) have different meanings",
+        "Text Preprocessing",
+        "concept"
+      ],
+      "guid": "nlp_aa6a50e7",
+      "note_model_uuid": "nlp-comprehensive-model",
+      "tags": [
+        "text_preprocessing",
+        "concept"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "How do you handle noise in real-world text data?",
+        "<b>Sources:</b> OCR errors, speech-to-text mistakes, user typos<br>\n<b>Detection:</b> Spell checkers, language models, statistical outliers<br>\n<b>Correction:</b> Edit distance, phonetic matching, context models<br>\n<b>Strategy:</b> Balance noise removal vs information preservation",
+        "Text Preprocessing",
+        "concept"
+      ],
+      "guid": "nlp_adb4d919",
+      "note_model_uuid": "nlp-comprehensive-model",
+      "tags": [
+        "text_preprocessing",
+        "concept"
+      ]
+    }
+  ]
+}

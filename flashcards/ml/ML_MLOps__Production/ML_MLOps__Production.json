@@ -1,0 +1,171 @@
+{
+  "__type__": "Deck",
+  "children": [],
+  "crowdanki_uuid": "ml-mlops--production-2024",
+  "deck_config_uuid": "ml-interview-config",
+  "deck_configurations": [
+    {
+      "__type__": "DeckConfig",
+      "autoplay": true,
+      "crowdanki_uuid": "ml-interview-config",
+      "dyn": false,
+      "name": "MLOps & Production",
+      "new": {
+        "bury": true,
+        "delays": [
+          1,
+          10
+        ],
+        "initialFactor": 2500,
+        "ints": [
+          1,
+          4,
+          7
+        ],
+        "order": 1,
+        "perDay": 20,
+        "separate": true
+      },
+      "rev": {
+        "bury": true,
+        "ease4": 1.3,
+        "fuzz": 0.05,
+        "ivlFct": 1.0,
+        "maxIvl": 36500,
+        "minSpace": 1,
+        "perDay": 150
+      }
+    }
+  ],
+  "desc": "Model deployment, monitoring, and production best practices",
+  "dyn": 0,
+  "extendNew": 10,
+  "extendRev": 50,
+  "media_files": [],
+  "name": "MLOps & Production",
+  "note_models": [
+    {
+      "__type__": "NoteModel",
+      "crowdanki_uuid": "ml-interview-model",
+      "css": "\n.card {\n    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n    font-size: 16px;\n    line-height: 1.5;\n    color: #333;\n    background-color: #fafafa;\n    padding: 20px;\n    max-width: 600px;\n    margin: 0 auto;\n}\n\n.front { \n    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n    color: white;\n    padding: 25px;\n    border-radius: 10px;\n}\n\n.back { \n    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);\n    color: white;\n    padding: 25px;\n    border-radius: 10px;\n}\n\nb { color: #ffeb3b; font-weight: 600; }\n.formula { \n    font-family: 'Courier New', monospace; \n    background: rgba(255,255,255,0.2); \n    padding: 3px 6px; \n    border-radius: 4px;\n    font-size: 14px;\n}\n.example { font-style: italic; opacity: 0.9; }\n                    ",
+      "flds": [
+        {
+          "__type__": "NoteModelField",
+          "name": "Front",
+          "ord": 0,
+          "sticky": false
+        },
+        {
+          "__type__": "NoteModelField",
+          "name": "Back",
+          "ord": 1,
+          "sticky": false
+        },
+        {
+          "__type__": "NoteModelField",
+          "name": "Topic",
+          "ord": 2,
+          "sticky": false
+        },
+        {
+          "__type__": "NoteModelField",
+          "name": "Type",
+          "ord": 3,
+          "sticky": false
+        }
+      ],
+      "name": "ML Interview Card",
+      "req": [
+        [
+          0,
+          "any",
+          [
+            0
+          ]
+        ]
+      ],
+      "sortf": 0,
+      "tags": [],
+      "tmpls": [
+        {
+          "__type__": "CardTemplate",
+          "afmt": "<div class=\"card back\">{{Front}}<hr>{{Back}}<br><br><small><i>{{Topic}} • {{Type}}</i></small></div>",
+          "bafmt": "",
+          "bqfmt": "",
+          "did": null,
+          "name": "Card",
+          "ord": 0,
+          "qfmt": "<div class=\"card front\">{{Front}}</div>"
+        }
+      ],
+      "type": 0,
+      "vers": []
+    }
+  ],
+  "notes": [
+    {
+      "__type__": "Note",
+      "fields": [
+        "What is data drift and concept drift? How do you detect them?",
+        "<b>Data drift:</b> Input feature distribution changes over time<br>\n<b>Concept drift:</b> Relationship between features and target changes<br>\n<b>Detection:</b> Statistical tests, model performance monitoring<br>\n<b>Solutions:</b> Retraining, adaptive models, ensemble methods",
+        "MLOps & Production",
+        "interview_concept"
+      ],
+      "guid": "ml_9abb4654",
+      "note_model_uuid": "ml-interview-model",
+      "tags": [
+        "mlops_&_production",
+        "interview_concept",
+        "ml_interview"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "What are the key considerations for model deployment?",
+        "<b>Latency:</b> Real-time vs batch inference requirements<br>\n<b>Scalability:</b> Handle traffic spikes and growth<br>\n<b>Monitoring:</b> Track performance, errors, and data quality<br>\n<b>Versioning:</b> Model rollbacks, A/B testing, gradual rollouts",
+        "MLOps & Production",
+        "interview_concept"
+      ],
+      "guid": "ml_7da46d96",
+      "note_model_uuid": "ml-interview-model",
+      "tags": [
+        "mlops_&_production",
+        "interview_concept",
+        "ml_interview"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "How do you handle model versioning and A/B testing?",
+        "<b>Versioning:</b> Track model artifacts, code, data, hyperparameters<br>\n<b>A/B testing:</b> Compare model performance with statistical significance<br>\n<b>Canary deployment:</b> Gradual rollout to subset of traffic<br>\n<b>Blue-green deployment:</b> Switch between old and new models",
+        "MLOps & Production",
+        "interview_concept"
+      ],
+      "guid": "ml_7b4ac26c",
+      "note_model_uuid": "ml-interview-model",
+      "tags": [
+        "mlops_&_production",
+        "interview_concept",
+        "ml_interview"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "What is feature store and why is it important?",
+        "<b>Purpose:</b> Centralized repository for ML features<br>\n<b>Benefits:</b> Feature reuse, consistency, versioning, monitoring<br>\n<b>Components:</b> Feature computation, storage, serving, monitoring<br>\n<b>Use cases:</b> Real-time features, feature sharing across teams",
+        "MLOps & Production",
+        "interview_concept"
+      ],
+      "guid": "ml_87081355",
+      "note_model_uuid": "ml-interview-model",
+      "tags": [
+        "mlops_&_production",
+        "interview_concept",
+        "ml_interview"
+      ]
+    }
+  ]
+}
