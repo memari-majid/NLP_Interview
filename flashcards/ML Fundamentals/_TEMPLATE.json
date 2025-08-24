@@ -1,0 +1,133 @@
+{
+  "__type__": "Deck",
+  "children": [],
+  "crowdanki_uuid": "deck-[unique-id]",
+  "deck_config_uuid": "default-config",
+  "deck_configurations": [
+    {
+      "__type__": "DeckConfig",
+      "crowdanki_uuid": "default-config",
+      "name": "Default",
+      "autoplay": true,
+      "dyn": false,
+      "lapse": {
+        "delays": [10],
+        "leechAction": 0,
+        "leechFails": 8,
+        "minInt": 1,
+        "mult": 0
+      },
+      "maxTaken": 60,
+      "new": {
+        "bury": false,
+        "delays": [1, 10],
+        "initialFactor": 2500,
+        "ints": [1, 4, 0],
+        "order": 1,
+        "perDay": 20
+      },
+      "replayq": true,
+      "rev": {
+        "bury": false,
+        "ease4": 1.3,
+        "hardFactor": 1.2,
+        "ivlFct": 1,
+        "maxIvl": 36500,
+        "perDay": 200
+      },
+      "timer": 0
+    }
+  ],
+  "desc": "Comprehensive flashcards for ML:[TOPIC]:XX [Chapter Name]",
+  "dyn": false,
+  "extendNew": 10,
+  "extendRev": 50,
+  "media_files": [],
+  "name": "ML:[TOPIC]:XX [Chapter Name]",
+  "note_models": [
+    {
+      "__type__": "NoteModel",
+      "crowdanki_uuid": "ml-interview-flashcard-model",
+      "css": ".card {\n font-family: arial;\n font-size: 20px;\n text-align: center;\n color: black;\n background-color: white;\n}\n\n.front {\n font-weight: bold;\n color: #2c3e50;\n}\n\n.back {\n text-align: left;\n padding: 20px;\n}\n\n.concept {\n font-weight: bold;\n color: #e74c3c;\n margin-bottom: 10px;\n}\n\n.intuition {\n color: #3498db;\n font-style: italic;\n margin-bottom: 10px;\n}\n\n.mechanics {\n color: #27ae60;\n margin-bottom: 10px;\n}\n\n.tradeoffs {\n color: #f39c12;\n margin-bottom: 10px;\n}\n\n.applications {\n color: #9b59b6;\n margin-bottom: 10px;\n}\n\n.memory-hook {\n background-color: #ecf0f1;\n padding: 10px;\n border-left: 4px solid #34495e;\n font-style: italic;\n color: #34495e;\n}",
+      "flds": [
+        {
+          "__type__": "NoteModelField",
+          "font": "Arial",
+          "media": [],
+          "name": "Front",
+          "ord": 0,
+          "rtl": false,
+          "size": 20,
+          "sticky": false
+        },
+        {
+          "__type__": "NoteModelField",
+          "font": "Arial",
+          "media": [],
+          "name": "Back",
+          "ord": 1,
+          "rtl": false,
+          "size": 20,
+          "sticky": false
+        },
+        {
+          "__type__": "NoteModelField",
+          "font": "Arial",
+          "media": [],
+          "name": "Tags",
+          "ord": 2,
+          "rtl": false,
+          "size": 20,
+          "sticky": false
+        },
+        {
+          "__type__": "NoteModelField",
+          "font": "Arial",
+          "media": [],
+          "name": "Difficulty",
+          "ord": 3,
+          "rtl": false,
+          "size": 20,
+          "sticky": false
+        }
+      ],
+      "latexPost": "\\end{document}",
+      "latexPre": "\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage[utf8]{inputenc}\n\\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\\begin{document}\n",
+      "name": "ML Interview Flashcard",
+      "req": [
+        [0, "all"]
+      ],
+      "sortf": 0,
+      "tags": [],
+      "tmpls": [
+        {
+          "__type__": "CardTemplate",
+          "afmt": "{{FrontSide}}\n\n<hr id=answer>\n\n<div class=\"back\">\n{{Back}}\n</div>",
+          "bafmt": "",
+          "bqfmt": "",
+          "did": null,
+          "name": "Card 1",
+          "ord": 0,
+          "qfmt": "<div class=\"front\">{{Front}}</div>"
+        }
+      ],
+      "type": 0
+    }
+  ],
+  "notes": [
+    {
+      "__type__": "Note",
+      "crowdanki_uuid": "note-example-1",
+      "fields": [
+        "What is supervised learning?",
+        "<div class=\"concept\"><strong>Concept:</strong> Machine learning where algorithms learn from labeled training data to make predictions on new data</div><br><br><div class=\"intuition\"><strong>Intuition:</strong> Like learning from a teacher - you're shown examples with correct answers first</div><br><br><div class=\"mechanics\"><strong>Mechanics:</strong> Algorithm finds patterns between input features X and target labels Y, then applies learned mapping to new inputs</div><br><br><div class=\"tradeoffs\"><strong>Trade-offs:</strong> Requires labeled data (expensive) but generally more accurate than unsupervised methods</div><br><br><div class=\"applications\"><strong>Applications:</strong> Image classification, spam detection, price prediction, medical diagnosis</div><br><br><div class=\"memory-hook\"><strong>Memory Hook:</strong> Supervised = Teacher supervision with labeled examples</div>",
+        "ML Supervised Easy",
+        "Easy"
+      ],
+      "flags": 0,
+      "guid": "guid-example-1",
+      "note_model_uuid": "ml-interview-flashcard-model",
+      "tags": ["ML", "Supervised", "Easy"]
+    }
+  ]
+}
