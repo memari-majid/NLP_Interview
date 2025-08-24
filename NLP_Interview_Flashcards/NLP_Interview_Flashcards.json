@@ -117,7 +117,7 @@
         "concept"
       ],
       "guid": "nlp_a1f4140e5bd06",
-      "note_model_uuid": "nlp-model-rules-optimized",
+      "note_model_uuid": "nlp-optimal-model",
       "tags": [
         "attention_mechanisms",
         "concept"
@@ -132,7 +132,7 @@
         "formula"
       ],
       "guid": "nlp_11e847e058bc6",
-      "note_model_uuid": "nlp-model-rules-optimized",
+      "note_model_uuid": "nlp-optimal-model",
       "tags": [
         "attention_mechanisms",
         "formula"
@@ -147,7 +147,7 @@
         "comparison"
       ],
       "guid": "nlp_1462479a37b26",
-      "note_model_uuid": "nlp-model-rules-optimized",
+      "note_model_uuid": "nlp-optimal-model",
       "tags": [
         "attention_mechanisms",
         "comparison"
@@ -162,7 +162,7 @@
         "concept"
       ],
       "guid": "nlp_a157a3fc41b6c",
-      "note_model_uuid": "nlp-model-rules-optimized",
+      "note_model_uuid": "nlp-optimal-model",
       "tags": [
         "tf-idf",
         "concept"
@@ -177,7 +177,7 @@
         "formula"
       ],
       "guid": "nlp_9e5503c53d8d9",
-      "note_model_uuid": "nlp-model-rules-optimized",
+      "note_model_uuid": "nlp-optimal-model",
       "tags": [
         "tf-idf",
         "formula"
@@ -192,7 +192,7 @@
         "edge_case"
       ],
       "guid": "nlp_9da18271c6424",
-      "note_model_uuid": "nlp-model-rules-optimized",
+      "note_model_uuid": "nlp-optimal-model",
       "tags": [
         "tf-idf",
         "edge_case"
@@ -207,7 +207,7 @@
         "concept"
       ],
       "guid": "nlp_758b782f3d10b",
-      "note_model_uuid": "nlp-model-rules-optimized",
+      "note_model_uuid": "nlp-optimal-model",
       "tags": [
         "embeddings",
         "concept"
@@ -222,7 +222,7 @@
         "comparison"
       ],
       "guid": "nlp_4eaf56e3219f4",
-      "note_model_uuid": "nlp-model-rules-optimized",
+      "note_model_uuid": "nlp-optimal-model",
       "tags": [
         "embeddings",
         "comparison"
@@ -237,7 +237,7 @@
         "concept"
       ],
       "guid": "nlp_b53c77db0a3b5",
-      "note_model_uuid": "nlp-model-rules-optimized",
+      "note_model_uuid": "nlp-optimal-model",
       "tags": [
         "transformers",
         "concept"
@@ -252,7 +252,7 @@
         "architecture"
       ],
       "guid": "nlp_19be557e22714",
-      "note_model_uuid": "nlp-model-rules-optimized",
+      "note_model_uuid": "nlp-optimal-model",
       "tags": [
         "transformers",
         "architecture"
@@ -267,7 +267,7 @@
         "concept"
       ],
       "guid": "nlp_f745833893aaa",
-      "note_model_uuid": "nlp-model-rules-optimized",
+      "note_model_uuid": "nlp-optimal-model",
       "tags": [
         "similarity",
         "concept"
@@ -282,7 +282,7 @@
         "comparison"
       ],
       "guid": "nlp_9438a4be44c24",
-      "note_model_uuid": "nlp-model-rules-optimized",
+      "note_model_uuid": "nlp-optimal-model",
       "tags": [
         "similarity",
         "comparison"
@@ -297,7 +297,7 @@
         "concept"
       ],
       "guid": "nlp_89bcf7fa724ea",
-      "note_model_uuid": "nlp-model-rules-optimized",
+      "note_model_uuid": "nlp-optimal-model",
       "tags": [
         "sequence_models",
         "concept"
@@ -312,7 +312,7 @@
         "concept"
       ],
       "guid": "nlp_e9482b82a4d6e",
-      "note_model_uuid": "nlp-model-rules-optimized",
+      "note_model_uuid": "nlp-optimal-model",
       "tags": [
         "nlp_fundamentals",
         "concept"
@@ -327,7 +327,7 @@
         "concept"
       ],
       "guid": "nlp_94ccec6358cd0",
-      "note_model_uuid": "nlp-model-rules-optimized",
+      "note_model_uuid": "nlp-optimal-model",
       "tags": [
         "tokenization",
         "concept"
@@ -342,7 +342,7 @@
         "concept"
       ],
       "guid": "nlp_74a3c6e971e06",
-      "note_model_uuid": "nlp-model-rules-optimized",
+      "note_model_uuid": "nlp-optimal-model",
       "tags": [
         "evaluation",
         "concept"

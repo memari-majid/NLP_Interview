@@ -132,7 +132,7 @@ class OptimalAnkiGenerator:
             "__type__": "Note",
             "fields": [front, back, topic, card_type],
             "guid": f"nlp_{content_hash}",
-            "note_model_uuid": "nlp-model-rules-optimized",
+            "note_model_uuid": "nlp-optimal-model",
             "tags": [topic.lower().replace(' ', '_'), card_type]
         }
     
