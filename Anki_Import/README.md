@@ -1,0 +1,67 @@
+# 🎯 Anki Import Guide
+
+## 📁 Import File
+**File to Import**: `NLP_Interview_Rules_Optimized.json`
+
+## 📊 Deck Statistics
+- **Total Cards**: 438 optimized flashcards
+- **Topics Covered**: 27 comprehensive NLP areas  
+- **Card Types**: 7 different types for complete learning
+- **Optimization**: Research-backed design for maximum retention
+
+## 🚀 How to Import
+
+### Step 1: Open Anki
+- Launch Anki on your computer
+- Ensure you have CrowdAnki add-on installed ([Download here](https://ankiweb.net/shared/info/1788670778))
+
+### Step 2: Import the Deck
+1. In Anki, go to `File` → `CrowdAnki: Import from disk`
+2. Navigate to this `Anki_Import` folder
+3. Select this entire folder (not just the JSON file)
+4. Click `Select Folder` to import
+
+### Step 3: Verify Import
+- Check that "NLP Interview Prep (Rules Optimized)" deck appears
+- Confirm 438 cards were imported
+- Test a few cards to ensure proper formatting
+
+## 📱 Optimized Study Settings
+
+### Recommended Daily Schedule
+- **New cards**: 25 per day (research-optimized)
+- **Review cards**: 100 per day
+- **Study sessions**: 15-30 minutes, 2-3 times daily
+
+### Spaced Repetition Settings
+- **New card steps**: 1 min → 10 min → 1 day
+- **Graduation interval**: 4 days
+- **Easy interval**: 7 days
+- **Starting ease**: 250%
+
+## 🎨 Features
+- ✅ **Mobile-optimized**: Perfect for phone study
+- ✅ **70-char lines**: No horizontal scrolling
+- ✅ **15-30 second reviews**: Quick, focused sessions
+- ✅ **Complete formulas**: Context and explanations included
+- ✅ **Interview insights**: Talking points for every topic
+- ✅ **Edge case coverage**: Error handling practice
+
+## 🧠 Card Types
+1. **Problem Understanding** (27 cards) - Algorithm selection
+2. **Implementation** (377 cards) - Code writing practice
+3. **Formula** (5 cards) - Mathematical concepts
+4. **Complexity** (8 cards) - Big-O analysis
+5. **Edge Cases** (1 card) - Error handling
+6. **Interview Insights** (13 cards) - Talking points
+7. **Concepts** (7 cards) - Theoretical understanding
+
+## 💡 Study Tips
+- **Morning routine**: Review on commute/coffee break
+- **Mobile practice**: Use phone for quick sessions
+- **Pre-interview**: Focus on company-specific topics
+- **Consistency**: Daily practice beats cramming
+
+---
+
+**🎯 Success Target**: 90%+ retention rate for interview readiness!

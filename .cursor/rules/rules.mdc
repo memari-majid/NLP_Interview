@@ -1,0 +1,258 @@
+---
+description: Comprehensive rules for designing effective, memorable NLP interview flashcards optimized for Anki spaced repetition
+globs: ["**/*.py", "**/*.md", "**/*.json"]
+alwaysApply: true
+---
+
+# 🧠 NLP Interview Flashcard Design Rules
+*Research-backed principles for maximum retention and rapid recall*
+
+## 🎯 Core Memory Optimization Principles
+
+### **1. Atomic Learning Principle**
+- **One concept per card** - Never combine multiple ideas
+- **Single question focus** - Each card tests exactly one piece of knowledge
+- **Minimum effective dose** - Include only essential information
+- **Clear learning objective** - Every card should have obvious success criteria
+
+### **2. Active Recall Design**
+- **Question format over statements** - "What is X?" not "X is..."
+- **Fill-in-the-blank prompts** - Force reconstruction from memory
+- **Cue-based triggers** - Use contextual hints that mirror interview scenarios
+- **Progressive disclosure** - Build from simple to complex concepts
+
+### **3. Cognitive Load Management**
+- **7±2 rule** - Never exceed 9 discrete pieces of information per card
+- **Visual chunking** - Use formatting to group related elements
+- **Concise language** - Eliminate unnecessary words and complexity
+- **Immediate comprehension** - Card should be understood within 5 seconds
+
+## 📏 Technical Specifications for NLP Cards
+
+### **Code Snippet Cards**
+```
+✅ OPTIMAL:
+- 5-15 lines maximum
+- 1 function per card
+- Clear variable names (doc, vocab, sim)
+- Mobile-friendly formatting (70 chars/line)
+- Syntax highlighting preserved
+
+❌ AVOID:
+- Functions >20 lines
+- Multiple algorithms in one card
+- Long parameter lists
+- Complex nested logic
+```
+
+### **Formula Cards**
+```
+Front: "Write the TF-IDF formula"
+Back: TF × log(N/df)
+      Where: N = total docs, df = docs with term
+
+ALWAYS INCLUDE:
+- Mathematical notation
+- Variable definitions
+- Edge case handling (e.g., df=0)
+- Intuitive explanation in plain English
+```
+
+### **Concept Cards**
+```
+✅ STRUCTURE:
+- Main concept (1 line)
+- Key insight (1 line) 
+- Practical application (1 line)
+- Interview relevance (1 line)
+
+TOTAL: 4 lines maximum
+```
+
+## 🎪 Mobile-First Design Standards
+
+### **Screen Optimization**
+- **Viewport width**: Assume 375px (iPhone standard)
+- **Font size**: Minimum 16px for readability
+- **Line spacing**: 1.4x for comfortable reading
+- **Touch targets**: Minimum 44px for buttons
+
+### **Code Formatting**
+```python
+# ✅ GOOD: Mobile-readable
+def cosine_sim(a, b):
+    dot = sum(x*y for x,y in zip(a,b))
+    norm_a = sum(x**2 for x in a)**0.5
+    norm_b = sum(x**2 for x in b)**0.5
+    return dot / (norm_a * norm_b)
+
+# ❌ BAD: Requires horizontal scrolling
+def cosine_similarity(vector_a, vector_b): return sum(a*b for a,b in zip(vector_a, vector_b)) / (sum(a**2 for a in vector_a)**0.5 * sum(b**2 for b in vector_b)**0.5)
+```
+
+## 🧪 Spaced Repetition Optimization
+
+### **Difficulty Calibration**
+Target success rates:
+- **Again**: <15% (cards not too hard)
+- **Hard**: <25% (appropriate challenge)
+- **Good**: 50-60% (optimal difficulty)
+- **Easy**: <10% (not too simple)
+
+### **Review Time Targets**
+- **New cards**: 15-30 seconds
+- **Review cards**: 5-15 seconds
+- **Failed cards**: 30-45 seconds (with explanation)
+
+### **Interval Progression**
+```
+New card schedule:
+1 min → 10 min → 1 day → 4 days → 7 days → 2 weeks → 1 month
+
+Review multipliers:
+- Again: Reset to 1 minute
+- Hard: 1.2x previous interval
+- Good: 2.5x previous interval  
+- Easy: 1.3x good interval
+```
+
+## 🏗️ NLP-Specific Card Architecture
+
+### **Card Type Taxonomy**
+1. **Problem Recognition** - "What algorithm for text similarity?"
+2. **Implementation** - "Code the cosine similarity function"
+3. **Mathematical Formula** - "Write the attention mechanism formula"
+4. **Complexity Analysis** - "Time/space complexity of BERT fine-tuning?"
+5. **Edge Case Handling** - "Handle empty documents in TF-IDF"
+6. **Interview Insight** - "Why use attention over RNNs?"
+
+### **Template Structure**
+```python
+"""
+ANKI CARD: [Card Type] - [NLP Topic]
+DIFFICULTY: [Easy/Medium/Hard]
+REVIEW TIME: [Target seconds]
+"""
+
+def atomic_function():
+    """
+    FRONT: Clear, specific question
+    BACK: Precise, complete answer
+    
+    KEY: Main insight in one sentence
+    EDGE: Critical edge case to remember
+    INTERVIEW: Why this matters in interviews
+    """
+    pass
+```
+
+### **Content Hierarchy**
+```
+Level 1: Core algorithm name/concept
+Level 2: Key mathematical relationship  
+Level 3: Implementation details
+Level 4: Edge cases and optimizations
+Level 5: Interview talking points
+```
+
+## 🎨 Visual Design Standards
+
+### **Typography Hierarchy**
+- **H1**: Topic title (24px, bold)
+- **H2**: Subtopic (20px, bold)
+- **Body**: Code/text (16px, mono for code)
+- **Caption**: Metadata (14px, italic)
+
+### **Color Coding System**
+- **Blue**: Concepts and definitions
+- **Green**: Correct implementations
+- **Orange**: Formulas and math
+- **Red**: Edge cases and warnings
+- **Purple**: Interview insights
+
+### **Code Syntax Rules**
+```python
+# REQUIRED ELEMENTS:
+- Docstring with purpose
+- Type hints where helpful
+- Inline comments for KEY insights
+- Edge case handling
+- Complexity notation
+
+# FORMATTING:
+- 4-space indentation
+- 79 character line limit
+- PEP 8 compliance
+- Descriptive variable names
+```
+
+## 📊 Quality Assurance Metrics
+
+### **Card Validation Checklist**
+- [ ] Single concept per card
+- [ ] 5-30 second review time
+- [ ] Mobile-readable formatting
+- [ ] Clear success criteria
+- [ ] Relevant to interviews
+- [ ] Proper difficulty calibration
+
+### **Deck Health Indicators**
+- **Card count**: 5-8 cards per NLP topic
+- **Success rate**: 80-90% on mature cards
+- **Daily reviews**: 50-100 cards
+- **New cards**: 15-25 per day
+- **Retention rate**: >90% after 1 month
+
+### **Performance Testing**
+```bash
+# Run before committing new cards:
+python convert_to_anki_optimized.py
+# Import to Anki and test:
+# 1. Review time <30 seconds per card
+# 2. Clear pass/fail on first attempt  
+# 3. Readable on mobile device
+# 4. Logical difficulty progression
+```
+
+## 🚀 Implementation Workflow
+
+### **Creating New Cards**
+1. **Identify atomic concept** - What's the smallest testable unit?
+2. **Write question first** - How would interviewer ask this?
+3. **Craft minimal answer** - Include only essential information
+4. **Add context markers** - KEY/EDGE/INTERVIEW annotations
+5. **Test on mobile** - Ensure readability and timing
+6. **Validate difficulty** - Aim for 75-85% success rate
+
+### **Optimizing Existing Cards**
+1. **Measure current performance** - Check success rates
+2. **Identify problem cards** - >40% failure rate or >45s review time
+3. **Split complex cards** - Break into atomic components
+4. **Simplify language** - Remove unnecessary complexity
+5. **Add visual cues** - Use formatting for rapid recognition
+
+### **Deck Maintenance Schedule**
+- **Daily**: Review performance metrics
+- **Weekly**: Update low-performing cards
+- **Monthly**: Analyze learning patterns
+- **Pre-interview**: Generate focused review sets
+
+## 💡 Research-Backed Best Practices
+
+### **Memory Science Applications**
+- **Testing effect**: Active recall beats passive review
+- **Spacing effect**: Distributed practice improves retention
+- **Generation effect**: Creating answers improves memory
+- **Picture superiority**: Visual elements enhance recall
+- **Elaborative rehearsal**: Connecting concepts aids memory
+
+### **Interview-Specific Optimizations**
+- **Stress testing**: Practice under time pressure
+- **Explanation practice**: Cards that require verbal description
+- **Code writing**: Hand-coded solutions without IDE
+- **Edge case recognition**: Rapid identification of corner cases
+- **Pattern matching**: Quick algorithm selection for problems
+
+---
+
+**Remember**: The goal is not just memorization, but rapid, confident recall under interview pressure. Every card should pass the "3 AM on phone while tired" test - if you can't understand and answer it quickly in that state, it needs simplification.
