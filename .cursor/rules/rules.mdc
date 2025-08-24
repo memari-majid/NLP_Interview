@@ -216,6 +216,31 @@ Level 5: Interview talking points
 - **New cards**: 15-25 per day
 - **Retention rate**: >90% after 1 month
 
+## 🎓 ML/AI Interview Flashcard Best Practices (Deep Research Summary)
+
+### Question Patterns (Do This)
+- **What/Why/When/How** single-target prompts with a short scenario cue
+  - e.g., “In transformers, what is self-attention?”
+- **Contrast cards**: “When prefer X over Y?” (1 decision rule + 1 caveat)
+- **Formula prompt**: “Write [formula] and define symbols.”
+- **Edge/failure**: “Common failure of X and a fix?”
+
+### Answer Blueprint (2–4 lines)
+- **Line 1 (Gist)**: 1 plain-English intuition
+- **Line 2 (Formula/Rule)**: single line if applicable
+- **Line 3 (Symbols)**: short comma-separated defs (Q=query, …)
+- **Line 4 (When/Edge)**: optional, 1 line only
+
+### Hard Constraints
+- **No code** in questions/answers
+- **One algorithm per card** (no splitting across multiple cards)
+- **Immediate comprehension** (<5s to parse)
+- **Review time**: 10–20s (new ≤30s)
+
+### Examples (Style Reference)
+- Self-attention: “Weigh tokens by relevance; Formula: softmax(QK^T/√d_k)V; Symbols: Q/K/V/X; Edge: scale by √d_k to avoid peaky softmax.”
+- BCE: “L = −[y log p + (1−y) log(1−p)]; y∈{0,1}, p=P(y=1|x); Intuition: penalize confident wrongs.”
+
 ### **Performance Testing**
 ```bash
 # Run before committing new cards:

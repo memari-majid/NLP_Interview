@@ -6,10 +6,10 @@
 **Deck Name**: "NLP Interview Flashcards"
 
 ## 📊 Deck Statistics
-- **Total Cards**: 438 optimized flashcards
-- **Topics Covered**: 27 comprehensive NLP areas  
-- **Card Types**: 7 different types for complete learning
-- **Optimization**: Research-backed design for maximum retention
+- **Total Cards**: 16 research-optimized flashcards
+- **Topics Covered**: Core NLP concepts for interviews
+- **Quality Focus**: High-level concepts, no code, clear explanations
+- **Review Time**: 15-20 seconds per card (optimal for retention)
 
 ## 🚀 How to Import
 
@@ -29,9 +29,9 @@
 **✅ Semantic naming: Folder and file names clearly indicate this is for NLP interview flashcards**
 
 ### Step 3: Verify Import
-- Check that "NLP Interview Flashcards" deck appears
-- Confirm 438 cards were imported
-- Test a few cards to ensure proper formatting
+- Check that "NLP Interview Flashcards (Optimal)" deck appears
+- Confirm 16 high-quality cards were imported
+- Test a few cards - they should be concise and educational
 
 ## 📱 Optimized Study Settings
 

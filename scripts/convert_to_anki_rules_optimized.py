@@ -901,7 +901,7 @@ def create_anki_deck_structure(cards: List[Dict]) -> Dict:
                 "autoplay": True,
                 "crowdanki_uuid": "nlp-deck-config-rules-optimized",
                 "dyn": False,
-                "name": "NLP Interview Prep (Rules Optimized)",
+                "name": "NLP Interview Flashcards",
                 "new": {
                     "delays": [1, 10],  # 1 min, 10 min
                     "initialFactor": 2500,
@@ -918,12 +918,12 @@ def create_anki_deck_structure(cards: List[Dict]) -> Dict:
                 }
             }
         ],
-        "desc": "Rules-optimized NLP interview cards following research-backed design principles for maximum memorization effectiveness and rapid recall under interview pressure.",
+        "desc": "High-level, no-code NLP/ML interview flashcards. 2–4 line answers with formulas and symbol definitions for rapid recall.",
         "dyn": 0,
         "extendNew": 10,
         "extendRev": 50,
         "media_files": [],
-        "name": "NLP Interview Prep (Rules Optimized)",
+        "name": "NLP Interview Flashcards",
         "note_models": [
             {
                 "__type__": "NoteModel",
