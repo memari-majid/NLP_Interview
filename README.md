@@ -6,8 +6,8 @@
 ### 1. **Import Flashcards** (5 minutes)
 ```bash
 # Import the optimized Anki deck
-📁 Go to: Anki_Import/
-📥 Import: NLP_Interview_Rules_Optimized.json
+📁 Go to: NLP_Interview_Flashcards/
+📥 Import: NLP_Interview_Flashcards.json
 🎯 Result: 438 research-optimized flashcards
 ```
 
@@ -29,9 +29,9 @@
 
 ## 📦 Repository Structure
 
-### 🎯 **Anki Import** (Ready to Use)
-- **[Anki_Import/](Anki_Import/)** - **438 optimized flashcards**
-  - `NLP_Interview_Rules_Optimized.json` - Main import file
+### 🎯 **NLP Interview Flashcards** (Ready to Use)
+- **[NLP_Interview_Flashcards/](NLP_Interview_Flashcards/)** - **438 optimized flashcards**
+  - `NLP_Interview_Flashcards.json` - Main import file
   - `README.md` - Import instructions
 
 ### 💻 **NLP Problems** (27 Topics)
@@ -94,7 +94,7 @@
 ```bash
 # Update flashcards with new problems
 python scripts/convert_to_anki_rules_optimized.py
-# Import updated deck from Anki_Import/
+# Import updated deck from NLP_Interview_Flashcards/
 ```
 
 ## 📊 Success Metrics
@@ -106,4 +106,4 @@ python scripts/convert_to_anki_rules_optimized.py
 
 ---
 
-**🎯 Ready to ace your NLP interview? Start with `Anki_Import/` and study consistently!**
+**🎯 Ready to ace your NLP interview? Start with `NLP_Interview_Flashcards/` and study consistently!**

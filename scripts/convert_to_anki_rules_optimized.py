@@ -627,16 +627,16 @@ def process_all_problems():
     deck_data = create_anki_deck_structure(all_cards)
     
     # Save optimized deck
-    output_dir = Path('anki_deck_rules_optimized')
+    output_dir = Path('NLP_Interview_Flashcards')
     output_dir.mkdir(exist_ok=True)
     
-    output_file = output_dir / 'NLP_Interview_Rules_Optimized.json'
+    output_file = output_dir / 'NLP_Interview_Flashcards.json'
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(deck_data, f, indent=2, ensure_ascii=False)
     
     # Print comprehensive stats
     total_cards = len(all_cards)
-    print(f"\n✅ Rules-Optimized Deck Created: {output_file}")
+    print(f"\n✅ NLP Interview Flashcards Created: {output_file}")
     print(f"📊 Total Cards: {total_cards}")
     print(f"📁 Topics Processed: {valid_problems}")
     

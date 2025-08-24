@@ -9,7 +9,7 @@
       "autoplay": true,
       "crowdanki_uuid": "nlp-deck-config-rules-optimized",
       "dyn": false,
-      "name": "NLP Interview Prep (Rules Optimized)",
+      "name": "NLP Interview Flashcards",
       "new": {
         "delays": [
           1,
@@ -38,7 +38,7 @@
   "extendNew": 10,
   "extendRev": 50,
   "media_files": [],
-  "name": "NLP Interview Prep (Rules Optimized)",
+  "name": "NLP Interview Flashcards",
   "note_models": [
     {
       "__type__": "NoteModel",

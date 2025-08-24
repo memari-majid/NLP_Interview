@@ -1,8 +1,9 @@
-# 🎯 Anki Import Guide
+# 🎯 NLP Interview Flashcards - Import Guide
 
 ## 📁 Import File
-**File to Import**: `Anki_Import.json` (CrowdAnki naming convention)
-**Note**: This is the same content as `NLP_Interview_Rules_Optimized.json`, renamed for compatibility
+**File to Import**: `NLP_Interview_Flashcards.json`
+**Folder Name**: `NLP_Interview_Flashcards`
+**Deck Name**: "NLP Interview Flashcards"
 
 ## 📊 Deck Statistics
 - **Total Cards**: 438 optimized flashcards
@@ -17,18 +18,18 @@
 - Ensure you have CrowdAnki add-on installed ([Download here](https://ankiweb.net/shared/info/1788670778))
 
 ### Step 2: Import the Deck
-**IMPORTANT**: Copy the `Anki_Import` folder to your Mac first!
+**IMPORTANT**: Copy the `NLP_Interview_Flashcards` folder to your Mac first!
 
-1. **Copy folder to Mac**: Move the entire `Anki_Import` folder to your Downloads folder on Mac
+1. **Copy folder to Mac**: Move the entire `NLP_Interview_Flashcards` folder to your Downloads folder on Mac
 2. **Open Anki** → `File` → `CrowdAnki: Import from disk`
-3. **Navigate to**: `/Users/majid/Downloads/Anki_Import/` folder  
-4. **Select the folder**: Choose the `Anki_Import` folder itself (not the JSON file)
+3. **Navigate to**: `/Users/majid/Downloads/NLP_Interview_Flashcards/` folder  
+4. **Select the folder**: Choose the `NLP_Interview_Flashcards` folder itself (not the JSON file)
 5. **Import**: Click `Select Folder` to import
 
-**✅ The file `Anki_Import.json` is now named correctly for CrowdAnki compatibility**
+**✅ Semantic naming: Folder and file names clearly indicate this is for NLP interview flashcards**
 
 ### Step 3: Verify Import
-- Check that "NLP Interview Prep (Rules Optimized)" deck appears
+- Check that "NLP Interview Flashcards" deck appears
 - Confirm 438 cards were imported
 - Test a few cards to ensure proper formatting
 
