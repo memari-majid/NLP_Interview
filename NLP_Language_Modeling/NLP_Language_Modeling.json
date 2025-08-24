@@ -1,15 +1,15 @@
 {
   "__type__": "Deck",
   "children": [],
-  "crowdanki_uuid": "nlp-fundamentals-deck",
-  "deck_config_uuid": "nlp-fundamentals-config",
+  "crowdanki_uuid": "nlp-language_modeling-deck",
+  "deck_config_uuid": "nlp-language_modeling-config",
   "deck_configurations": [
     {
       "__type__": "DeckConfig",
       "autoplay": true,
-      "crowdanki_uuid": "nlp-fundamentals-config",
+      "crowdanki_uuid": "nlp-language_modeling-config",
       "dyn": false,
-      "name": "NLP Fundamentals",
+      "name": "Language Modeling",
       "new": {
         "delays": [
           1,
@@ -33,16 +33,16 @@
       }
     }
   ],
-  "desc": "Core concepts and foundations of Natural Language Processing",
+  "desc": "Statistical and neural approaches to language modeling",
   "dyn": 0,
   "extendNew": 10,
   "extendRev": 50,
   "media_files": [],
-  "name": "NLP Fundamentals",
+  "name": "Language Modeling",
   "note_models": [
     {
       "__type__": "NoteModel",
-      "crowdanki_uuid": "nlp-fundamentals-model",
+      "crowdanki_uuid": "nlp-language_modeling-model",
       "css": "\n.card {\n    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\n    font-size: 18px;\n    line-height: 1.5;\n    color: #2c3e50;\n    background: #f8f9fa;\n    text-align: left;\n    padding: 20px;\n    border-radius: 8px;\n    max-width: 100%;\n    margin: 0 auto;\n}\n\n@media (max-width: 480px) {\n    .card {\n        font-size: 16px;\n        padding: 15px;\n        line-height: 1.4;\n    }\n}\n\nb, strong {\n    color: #2980b9;\n    font-weight: 600;\n}\n\n.metadata {\n    margin-top: 15px;\n    padding-top: 10px;\n    border-top: 1px solid #bdc3c7;\n    font-size: 12px;\n    color: #7f8c8d;\n    text-align: center;\n}\n",
       "flds": [
         {
@@ -80,7 +80,7 @@
       ],
       "latexPost": "\\end{document}",
       "latexPre": "\\documentclass[12pt]{article}\\special{papersize=3in,5in}\\usepackage{amssymb,amsmath}\\pagestyle{empty}\\setlength{\\parindent}{0in}\\begin{document}",
-      "name": "NLP NLP Fundamentals",
+      "name": "NLP Language Modeling",
       "req": [
         [
           0,
@@ -111,60 +111,60 @@
     {
       "__type__": "Note",
       "fields": [
-        "What is Natural Language Processing (NLP)?",
-        "<b>Definition:</b> Field of AI that enables computers to understand, interpret, and generate human language<br>\n<b>Goal:</b> Bridge gap between human communication and computer understanding<br>\n<b>Applications:</b> Translation, chatbots, sentiment analysis, search<br>\n<b>Challenges:</b> Ambiguity, context, cultural nuances, grammar variations",
-        "NLP Fundamentals",
+        "What are n-grams and why are they useful?",
+        "<b>Definition:</b> Contiguous sequences of n tokens<br>\n<b>Examples:</b> Unigrams (words), bigrams (word pairs), trigrams<br>\n<b>Use:</b> Language modeling, feature extraction<br>\n<b>Trade-off:</b> Higher n captures more context but increases sparsity",
+        "Language Modeling",
         "concept"
       ],
-      "guid": "nlp_ef52fe48d96a4",
-      "note_model_uuid": "nlp-fundamentals-model",
+      "guid": "nlp_e19faf077dc8e",
+      "note_model_uuid": "nlp-language_modeling-model",
       "tags": [
-        "nlp_fundamentals",
+        "language_modeling",
         "concept"
       ]
     },
     {
       "__type__": "Note",
       "fields": [
-        "What are the main challenges in NLP?",
-        "<b>Ambiguity:</b> Words/sentences with multiple meanings<br>\n<b>Context dependency:</b> Meaning changes based on context<br>\n<b>Grammar variations:</b> Informal language, typos, dialects<br>\n<b>Cultural nuances:</b> Idioms, sarcasm, cultural references",
-        "NLP Fundamentals",
+        "What is the problem with n-gram language models?",
+        "<b>Sparsity:</b> Many n-grams never seen in training<br>\n<b>Smoothing needed:</b> Assign probability to unseen sequences<br>\n<b>Limited context:</b> Fixed window size<br>\n<b>Curse of dimensionality:</b> Exponential growth with vocabulary",
+        "Language Modeling",
         "concept"
       ],
-      "guid": "nlp_13e3464308ea0",
-      "note_model_uuid": "nlp-fundamentals-model",
+      "guid": "nlp_4ed8dcc17ad60",
+      "note_model_uuid": "nlp-language_modeling-model",
       "tags": [
-        "nlp_fundamentals",
+        "language_modeling",
         "concept"
       ]
     },
     {
       "__type__": "Note",
       "fields": [
-        "What is the curse of dimensionality in NLP?",
-        "<b>Problem:</b> Sparse data in high-dimensional spaces<br>\n<b>Effect:</b> Most vectors are nearly orthogonal<br>\n<b>Solution:</b> Embeddings reduce to dense, lower dimensions<br>\n<b>Example:</b> One-hot vectors vs 300d word embeddings",
-        "NLP Fundamentals",
+        "What is perplexity in language modeling?",
+        "<b>Definition:</b> Measure of how well a model predicts text<br>\n<b>Formula:</b> PP = exp(-1/N × Σlog P(wᵢ))<br>\n<b>Interpretation:</b> Average branching factor<br>\n<b>Lower is better:</b> Model is less \"perplexed\" by the text",
+        "Language Modeling",
         "concept"
       ],
-      "guid": "nlp_e9482b82a4d6e",
-      "note_model_uuid": "nlp-fundamentals-model",
+      "guid": "nlp_05c32ce48e9dd",
+      "note_model_uuid": "nlp-language_modeling-model",
       "tags": [
-        "nlp_fundamentals",
+        "language_modeling",
         "concept"
       ]
     },
     {
       "__type__": "Note",
       "fields": [
-        "What are the levels of NLP analysis?",
-        "<b>Lexical:</b> Words, morphemes, character analysis<br>\n<b>Syntactic:</b> Grammar, parsing, sentence structure<br>\n<b>Semantic:</b> Meaning, word sense, relationships<br>\n<b>Pragmatic:</b> Context, intent, discourse analysis",
-        "NLP Fundamentals",
+        "How do neural language models work?",
+        "<b>Approach:</b> Use neural networks to predict next word<br>\n<b>Advantages:</b> Continuous representations, longer context<br>\n<b>Architectures:</b> RNN, LSTM, Transformer<br>\n<b>Training:</b> Maximize likelihood of next word prediction",
+        "Language Modeling",
         "concept"
       ],
-      "guid": "nlp_3e71879519fd1",
-      "note_model_uuid": "nlp-fundamentals-model",
+      "guid": "nlp_1d8774231df11",
+      "note_model_uuid": "nlp-language_modeling-model",
       "tags": [
-        "nlp_fundamentals",
+        "language_modeling",
         "concept"
       ]
     }

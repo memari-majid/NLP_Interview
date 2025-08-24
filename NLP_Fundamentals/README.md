@@ -1,13 +1,7 @@
 # 🎯 NLP Fundamentals Flashcards
 
 ## 📚 Overview
-Core NLP concepts every engineer should know. **4 essential cards** covering foundational knowledge.
-
-## 📊 Deck Contents
-- **Curse of dimensionality** in NLP
-- **Tokenization** necessity and challenges
-- **Precision vs Recall** with trade-offs
-- **N-grams** definition and applications
+Core concepts and foundations of Natural Language Processing. **4 essential cards** covering comprehensive knowledge in this area.
 
 ## 🚀 Import to Anki
 1. **Copy this entire folder** to your computer
@@ -16,9 +10,9 @@ Core NLP concepts every engineer should know. **4 essential cards** covering fou
 4. **Import** - deck will appear as "NLP Fundamentals"
 
 ## 📱 Study Settings
-- **New cards**: 10-15 per day
-- **Review time**: ~15 seconds per card
-- **Total study**: 5-10 minutes daily
+- **New cards**: 15-20 per day
+- **Review time**: ~20 seconds per card
+- **Total study**: 10-15 minutes daily
 
 ## 🎯 Learning Focus
-Start here if you're new to NLP or need to solidify basic concepts. These cards cover the essential knowledge that interviewers expect you to know fluently.
+Master the essential concepts in nlp fundamentals that are commonly tested in NLP interviews.

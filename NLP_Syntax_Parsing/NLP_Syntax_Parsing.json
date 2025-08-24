@@ -1,15 +1,15 @@
 {
   "__type__": "Deck",
   "children": [],
-  "crowdanki_uuid": "nlp-attention_transformers-deck",
-  "deck_config_uuid": "nlp-attention_transformers-config",
+  "crowdanki_uuid": "nlp-syntax_parsing-deck",
+  "deck_config_uuid": "nlp-syntax_parsing-config",
   "deck_configurations": [
     {
       "__type__": "DeckConfig",
       "autoplay": true,
-      "crowdanki_uuid": "nlp-attention_transformers-config",
+      "crowdanki_uuid": "nlp-syntax_parsing-config",
       "dyn": false,
-      "name": "Attention & Transformers",
+      "name": "Syntactic Analysis",
       "new": {
         "delays": [
           1,
@@ -22,27 +22,27 @@
           7
         ],
         "order": 1,
-        "perDay": 15
+        "perDay": 20
       },
       "rev": {
         "ease4": 1.3,
         "hardFactor": 1.2,
         "ivlFct": 1.0,
         "maxIvl": 36500,
-        "perDay": 50
+        "perDay": 100
       }
     }
   ],
-  "desc": "Modern neural architectures powering current NLP",
+  "desc": "Grammar, parsing, and sentence structure analysis",
   "dyn": 0,
   "extendNew": 10,
   "extendRev": 50,
   "media_files": [],
-  "name": "Attention & Transformers",
+  "name": "Syntactic Analysis",
   "note_models": [
     {
       "__type__": "NoteModel",
-      "crowdanki_uuid": "nlp-attention_transformers-model",
+      "crowdanki_uuid": "nlp-syntax_parsing-model",
       "css": "\n.card {\n    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\n    font-size: 18px;\n    line-height: 1.5;\n    color: #2c3e50;\n    background: #f8f9fa;\n    text-align: left;\n    padding: 20px;\n    border-radius: 8px;\n    max-width: 100%;\n    margin: 0 auto;\n}\n\n@media (max-width: 480px) {\n    .card {\n        font-size: 16px;\n        padding: 15px;\n        line-height: 1.4;\n    }\n}\n\nb, strong {\n    color: #2980b9;\n    font-weight: 600;\n}\n\n.metadata {\n    margin-top: 15px;\n    padding-top: 10px;\n    border-top: 1px solid #bdc3c7;\n    font-size: 12px;\n    color: #7f8c8d;\n    text-align: center;\n}\n",
       "flds": [
         {
@@ -80,7 +80,7 @@
       ],
       "latexPost": "\\end{document}",
       "latexPre": "\\documentclass[12pt]{article}\\special{papersize=3in,5in}\\usepackage{amssymb,amsmath}\\pagestyle{empty}\\setlength{\\parindent}{0in}\\begin{document}",
-      "name": "NLP Attention & Transformers",
+      "name": "NLP Syntactic Analysis",
       "req": [
         [
           0,
@@ -111,75 +111,45 @@
     {
       "__type__": "Note",
       "fields": [
-        "What is self-attention?",
-        "<b>Intuition:</b> Weigh tokens by relevance to each other in sequence<br>\n<b>Formula:</b> Attention(Q,K,V) = softmax(QK^T/√d_k)V<br>\n<b>Symbols:</b> Q=query, K=key, V=value, d_k=key dimension<br>\n<b>Why:</b> Enables parallel computation and long-range dependencies",
-        "Attention & Transformers",
+        "What is dependency parsing?",
+        "<b>Definition:</b> Analyze grammatical dependencies between words<br>\n<b>Structure:</b> Directed graph with head-dependent relations<br>\n<b>Relations:</b> subject, object, modifier, etc.<br>\n<b>Applications:</b> Information extraction, question answering",
+        "Syntactic Analysis",
         "concept"
       ],
-      "guid": "nlp_a1f4140e5bd06",
-      "note_model_uuid": "nlp-attention_transformers-model",
+      "guid": "nlp_1279ac7ff5666",
+      "note_model_uuid": "nlp-syntax_parsing-model",
       "tags": [
-        "attention_&_transformers",
+        "syntactic_analysis",
         "concept"
       ]
     },
     {
       "__type__": "Note",
       "fields": [
-        "Write the attention formula with scaling",
-        "<b>Formula:</b> softmax(QK^T/√d_k)V<br>\n<b>Symbols:</b> Q=query matrix, K=key matrix, V=value matrix<br>\n<b>Scaling:</b> √d_k prevents vanishing gradients in softmax<br>\n<b>Output:</b> Weighted sum of values based on attention scores",
-        "Attention & Transformers",
+        "What is constituency parsing?",
+        "<b>Definition:</b> Break sentences into nested constituents<br>\n<b>Structure:</b> Tree with phrases as internal nodes<br>\n<b>Phrases:</b> Noun phrase (NP), verb phrase (VP), etc.<br>\n<b>Grammar:</b> Context-free grammar rules",
+        "Syntactic Analysis",
         "concept"
       ],
-      "guid": "nlp_11e847e058bc6",
-      "note_model_uuid": "nlp-attention_transformers-model",
+      "guid": "nlp_98f1364e23ada",
+      "note_model_uuid": "nlp-syntax_parsing-model",
       "tags": [
-        "attention_&_transformers",
+        "syntactic_analysis",
         "concept"
       ]
     },
     {
       "__type__": "Note",
       "fields": [
-        "Why use attention over RNNs?",
-        "<b>Parallelization:</b> All positions computed simultaneously<br>\n<b>Long-range:</b> Direct connections between any two positions<br>\n<b>Interpretability:</b> Attention weights show model focus<br>\n<b>Performance:</b> Better at capturing dependencies in long sequences",
-        "Attention & Transformers",
+        "Dependency vs constituency parsing?",
+        "<b>Dependency:</b> Word-to-word relations, more flexible<br>\n<b>Constituency:</b> Phrase structure, hierarchical<br>\n<b>Use cases:</b> Dependency for IE, constituency for syntax<br>\n<b>Complexity:</b> Dependency often simpler to implement",
+        "Syntactic Analysis",
         "concept"
       ],
-      "guid": "nlp_1462479a37b26",
-      "note_model_uuid": "nlp-attention_transformers-model",
+      "guid": "nlp_c01b369300d85",
+      "note_model_uuid": "nlp-syntax_parsing-model",
       "tags": [
-        "attention_&_transformers",
-        "concept"
-      ]
-    },
-    {
-      "__type__": "Note",
-      "fields": [
-        "Why do transformers work so well?",
-        "<b>Parallelization:</b> No sequential bottleneck like RNNs<br>\n<b>Attention:</b> Direct connections between all positions<br>\n<b>Scalability:</b> Performance improves with more data/compute<br>\n<b>Transfer:</b> Pre-trained models adapt well to new tasks",
-        "Attention & Transformers",
-        "concept"
-      ],
-      "guid": "nlp_b53c77db0a3b5",
-      "note_model_uuid": "nlp-attention_transformers-model",
-      "tags": [
-        "attention_&_transformers",
-        "concept"
-      ]
-    },
-    {
-      "__type__": "Note",
-      "fields": [
-        "Key components of transformer architecture?",
-        "<b>Multi-head attention:</b> Parallel attention mechanisms<br>\n<b>Position encoding:</b> Inject sequence order information<br>\n<b>Layer norm + residual:</b> Training stability<br>\n<b>Feed-forward:</b> Non-linear transformations per position",
-        "Attention & Transformers",
-        "concept"
-      ],
-      "guid": "nlp_19be557e22714",
-      "note_model_uuid": "nlp-attention_transformers-model",
-      "tags": [
-        "attention_&_transformers",
+        "syntactic_analysis",
         "concept"
       ]
     }

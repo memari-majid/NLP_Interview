@@ -1,15 +1,15 @@
 {
   "__type__": "Deck",
   "children": [],
-  "crowdanki_uuid": "nlp-fundamentals-deck",
-  "deck_config_uuid": "nlp-fundamentals-config",
+  "crowdanki_uuid": "nlp-word_representations-deck",
+  "deck_config_uuid": "nlp-word_representations-config",
   "deck_configurations": [
     {
       "__type__": "DeckConfig",
       "autoplay": true,
-      "crowdanki_uuid": "nlp-fundamentals-config",
+      "crowdanki_uuid": "nlp-word_representations-config",
       "dyn": false,
-      "name": "NLP Fundamentals",
+      "name": "Word Representations",
       "new": {
         "delays": [
           1,
@@ -33,16 +33,16 @@
       }
     }
   ],
-  "desc": "Core concepts and foundations of Natural Language Processing",
+  "desc": "From one-hot vectors to contextual embeddings",
   "dyn": 0,
   "extendNew": 10,
   "extendRev": 50,
   "media_files": [],
-  "name": "NLP Fundamentals",
+  "name": "Word Representations",
   "note_models": [
     {
       "__type__": "NoteModel",
-      "crowdanki_uuid": "nlp-fundamentals-model",
+      "crowdanki_uuid": "nlp-word_representations-model",
       "css": "\n.card {\n    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\n    font-size: 18px;\n    line-height: 1.5;\n    color: #2c3e50;\n    background: #f8f9fa;\n    text-align: left;\n    padding: 20px;\n    border-radius: 8px;\n    max-width: 100%;\n    margin: 0 auto;\n}\n\n@media (max-width: 480px) {\n    .card {\n        font-size: 16px;\n        padding: 15px;\n        line-height: 1.4;\n    }\n}\n\nb, strong {\n    color: #2980b9;\n    font-weight: 600;\n}\n\n.metadata {\n    margin-top: 15px;\n    padding-top: 10px;\n    border-top: 1px solid #bdc3c7;\n    font-size: 12px;\n    color: #7f8c8d;\n    text-align: center;\n}\n",
       "flds": [
         {
@@ -80,7 +80,7 @@
       ],
       "latexPost": "\\end{document}",
       "latexPre": "\\documentclass[12pt]{article}\\special{papersize=3in,5in}\\usepackage{amssymb,amsmath}\\pagestyle{empty}\\setlength{\\parindent}{0in}\\begin{document}",
-      "name": "NLP NLP Fundamentals",
+      "name": "NLP Word Representations",
       "req": [
         [
           0,
@@ -111,60 +111,90 @@
     {
       "__type__": "Note",
       "fields": [
-        "What is Natural Language Processing (NLP)?",
-        "<b>Definition:</b> Field of AI that enables computers to understand, interpret, and generate human language<br>\n<b>Goal:</b> Bridge gap between human communication and computer understanding<br>\n<b>Applications:</b> Translation, chatbots, sentiment analysis, search<br>\n<b>Challenges:</b> Ambiguity, context, cultural nuances, grammar variations",
-        "NLP Fundamentals",
+        "What is TF-IDF?",
+        "<b>Intuition:</b> Weight terms by frequency and rarity across documents<br>\n<b>Formula:</b> TF-IDF = TF × log(N/df)<br>\n<b>Symbols:</b> TF=term freq, N=total docs, df=docs with term<br>\n<b>Use:</b> Information retrieval and document similarity",
+        "Word Representations",
         "concept"
       ],
-      "guid": "nlp_ef52fe48d96a4",
-      "note_model_uuid": "nlp-fundamentals-model",
+      "guid": "nlp_a157a3fc41b6c",
+      "note_model_uuid": "nlp-word_representations-model",
       "tags": [
-        "nlp_fundamentals",
+        "word_representations",
         "concept"
       ]
     },
     {
       "__type__": "Note",
       "fields": [
-        "What are the main challenges in NLP?",
-        "<b>Ambiguity:</b> Words/sentences with multiple meanings<br>\n<b>Context dependency:</b> Meaning changes based on context<br>\n<b>Grammar variations:</b> Informal language, typos, dialects<br>\n<b>Cultural nuances:</b> Idioms, sarcasm, cultural references",
-        "NLP Fundamentals",
+        "What are word embeddings?",
+        "<b>Intuition:</b> Map discrete tokens to dense continuous vectors<br>\n<b>Property:</b> Similar words have similar vectors<br>\n<b>Training:</b> Word2Vec (skip-gram/CBOW) or context prediction<br>\n<b>Benefit:</b> Captures semantic relationships in vector space",
+        "Word Representations",
         "concept"
       ],
-      "guid": "nlp_13e3464308ea0",
-      "note_model_uuid": "nlp-fundamentals-model",
+      "guid": "nlp_758b782f3d10b",
+      "note_model_uuid": "nlp-word_representations-model",
       "tags": [
-        "nlp_fundamentals",
+        "word_representations",
         "concept"
       ]
     },
     {
       "__type__": "Note",
       "fields": [
-        "What is the curse of dimensionality in NLP?",
-        "<b>Problem:</b> Sparse data in high-dimensional spaces<br>\n<b>Effect:</b> Most vectors are nearly orthogonal<br>\n<b>Solution:</b> Embeddings reduce to dense, lower dimensions<br>\n<b>Example:</b> One-hot vectors vs 300d word embeddings",
-        "NLP Fundamentals",
+        "How does Word2Vec work?",
+        "<b>Skip-gram:</b> Predict context words from target word<br>\n<b>CBOW:</b> Predict target word from context words<br>\n<b>Training:</b> Negative sampling or hierarchical softmax<br>\n<b>Result:</b> Dense vectors where similar words cluster together",
+        "Word Representations",
         "concept"
       ],
-      "guid": "nlp_e9482b82a4d6e",
-      "note_model_uuid": "nlp-fundamentals-model",
+      "guid": "nlp_8351e73351c62",
+      "note_model_uuid": "nlp-word_representations-model",
       "tags": [
-        "nlp_fundamentals",
+        "word_representations",
         "concept"
       ]
     },
     {
       "__type__": "Note",
       "fields": [
-        "What are the levels of NLP analysis?",
-        "<b>Lexical:</b> Words, morphemes, character analysis<br>\n<b>Syntactic:</b> Grammar, parsing, sentence structure<br>\n<b>Semantic:</b> Meaning, word sense, relationships<br>\n<b>Pragmatic:</b> Context, intent, discourse analysis",
-        "NLP Fundamentals",
+        "What is the difference between Word2Vec and GloVe?",
+        "<b>Word2Vec:</b> Local context window, predictive model<br>\n<b>GloVe:</b> Global co-occurrence statistics, count-based<br>\n<b>Training:</b> Word2Vec uses SGD, GloVe uses matrix factorization<br>\n<b>Performance:</b> Often similar, GloVe more interpretable",
+        "Word Representations",
         "concept"
       ],
-      "guid": "nlp_3e71879519fd1",
-      "note_model_uuid": "nlp-fundamentals-model",
+      "guid": "nlp_c5c3c21c75d10",
+      "note_model_uuid": "nlp-word_representations-model",
       "tags": [
-        "nlp_fundamentals",
+        "word_representations",
+        "concept"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "Word2Vec vs contextual embeddings?",
+        "<b>Word2Vec:</b> One vector per word type (fast, fixed)<br>\n<b>Contextual:</b> Different vectors per word occurrence<br>\n<b>Example:</b> \"bank\" (river) vs \"bank\" (money)<br>\n<b>Trade-off:</b> Contextual more accurate but computationally expensive",
+        "Word Representations",
+        "concept"
+      ],
+      "guid": "nlp_4eaf56e3219f4",
+      "note_model_uuid": "nlp-word_representations-model",
+      "tags": [
+        "word_representations",
+        "concept"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "What is FastText and how does it differ from Word2Vec?",
+        "<b>Innovation:</b> Learns representations for character n-grams<br>\n<b>Advantage:</b> Handles out-of-vocabulary words<br>\n<b>Subword info:</b> \"unhappy\" = \"un\" + \"happy\" + word<br>\n<b>Use case:</b> Morphologically rich languages, rare words",
+        "Word Representations",
+        "concept"
+      ],
+      "guid": "nlp_a67bc129cebce",
+      "note_model_uuid": "nlp-word_representations-model",
+      "tags": [
+        "word_representations",
         "concept"
       ]
     }

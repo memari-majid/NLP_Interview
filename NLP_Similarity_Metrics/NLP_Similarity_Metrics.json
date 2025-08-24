@@ -1,15 +1,15 @@
 {
   "__type__": "Deck",
   "children": [],
-  "crowdanki_uuid": "nlp-fundamentals-deck",
-  "deck_config_uuid": "nlp-fundamentals-config",
+  "crowdanki_uuid": "nlp-similarity_metrics-deck",
+  "deck_config_uuid": "nlp-similarity_metrics-config",
   "deck_configurations": [
     {
       "__type__": "DeckConfig",
       "autoplay": true,
-      "crowdanki_uuid": "nlp-fundamentals-config",
+      "crowdanki_uuid": "nlp-similarity_metrics-config",
       "dyn": false,
-      "name": "NLP Fundamentals",
+      "name": "Similarity & Distance Metrics",
       "new": {
         "delays": [
           1,
@@ -33,16 +33,16 @@
       }
     }
   ],
-  "desc": "Core concepts and foundations of Natural Language Processing",
+  "desc": "Measuring semantic and syntactic similarity between texts",
   "dyn": 0,
   "extendNew": 10,
   "extendRev": 50,
   "media_files": [],
-  "name": "NLP Fundamentals",
+  "name": "Similarity & Distance Metrics",
   "note_models": [
     {
       "__type__": "NoteModel",
-      "crowdanki_uuid": "nlp-fundamentals-model",
+      "crowdanki_uuid": "nlp-similarity_metrics-model",
       "css": "\n.card {\n    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\n    font-size: 18px;\n    line-height: 1.5;\n    color: #2c3e50;\n    background: #f8f9fa;\n    text-align: left;\n    padding: 20px;\n    border-radius: 8px;\n    max-width: 100%;\n    margin: 0 auto;\n}\n\n@media (max-width: 480px) {\n    .card {\n        font-size: 16px;\n        padding: 15px;\n        line-height: 1.4;\n    }\n}\n\nb, strong {\n    color: #2980b9;\n    font-weight: 600;\n}\n\n.metadata {\n    margin-top: 15px;\n    padding-top: 10px;\n    border-top: 1px solid #bdc3c7;\n    font-size: 12px;\n    color: #7f8c8d;\n    text-align: center;\n}\n",
       "flds": [
         {
@@ -80,7 +80,7 @@
       ],
       "latexPost": "\\end{document}",
       "latexPre": "\\documentclass[12pt]{article}\\special{papersize=3in,5in}\\usepackage{amssymb,amsmath}\\pagestyle{empty}\\setlength{\\parindent}{0in}\\begin{document}",
-      "name": "NLP NLP Fundamentals",
+      "name": "NLP Similarity & Distance Metrics",
       "req": [
         [
           0,
@@ -111,60 +111,60 @@
     {
       "__type__": "Note",
       "fields": [
-        "What is Natural Language Processing (NLP)?",
-        "<b>Definition:</b> Field of AI that enables computers to understand, interpret, and generate human language<br>\n<b>Goal:</b> Bridge gap between human communication and computer understanding<br>\n<b>Applications:</b> Translation, chatbots, sentiment analysis, search<br>\n<b>Challenges:</b> Ambiguity, context, cultural nuances, grammar variations",
-        "NLP Fundamentals",
+        "What is cosine similarity?",
+        "<b>Intuition:</b> Measure angle between vectors (direction, not magnitude)<br>\n<b>Formula:</b> cos(θ) = A·B / (||A|| × ||B||)<br>\n<b>Range:</b> [-1,1] where 1=same direction, 0=orthogonal<br>\n<b>Use:</b> Document similarity, recommendation systems",
+        "Similarity & Distance Metrics",
         "concept"
       ],
-      "guid": "nlp_ef52fe48d96a4",
-      "note_model_uuid": "nlp-fundamentals-model",
+      "guid": "nlp_f745833893aaa",
+      "note_model_uuid": "nlp-similarity_metrics-model",
       "tags": [
-        "nlp_fundamentals",
+        "similarity__distance_metrics",
         "concept"
       ]
     },
     {
       "__type__": "Note",
       "fields": [
-        "What are the main challenges in NLP?",
-        "<b>Ambiguity:</b> Words/sentences with multiple meanings<br>\n<b>Context dependency:</b> Meaning changes based on context<br>\n<b>Grammar variations:</b> Informal language, typos, dialects<br>\n<b>Cultural nuances:</b> Idioms, sarcasm, cultural references",
-        "NLP Fundamentals",
+        "Cosine vs Euclidean similarity?",
+        "<b>Cosine:</b> Measures direction (angle) - length independent<br>\n<b>Euclidean:</b> Measures distance - sensitive to magnitude<br>\n<b>Text:</b> Cosine better (document length varies)<br>\n<b>Images:</b> Euclidean often used (pixel intensities matter)",
+        "Similarity & Distance Metrics",
         "concept"
       ],
-      "guid": "nlp_13e3464308ea0",
-      "note_model_uuid": "nlp-fundamentals-model",
+      "guid": "nlp_9438a4be44c24",
+      "note_model_uuid": "nlp-similarity_metrics-model",
       "tags": [
-        "nlp_fundamentals",
+        "similarity__distance_metrics",
         "concept"
       ]
     },
     {
       "__type__": "Note",
       "fields": [
-        "What is the curse of dimensionality in NLP?",
-        "<b>Problem:</b> Sparse data in high-dimensional spaces<br>\n<b>Effect:</b> Most vectors are nearly orthogonal<br>\n<b>Solution:</b> Embeddings reduce to dense, lower dimensions<br>\n<b>Example:</b> One-hot vectors vs 300d word embeddings",
-        "NLP Fundamentals",
+        "What is Jaccard similarity?",
+        "<b>Formula:</b> |A ∩ B| / |A ∪ B|<br>\n<b>Interpretation:</b> Overlap divided by union<br>\n<b>Range:</b> [0,1] where 1=identical sets<br>\n<b>Use:</b> Set similarity, document deduplication",
+        "Similarity & Distance Metrics",
         "concept"
       ],
-      "guid": "nlp_e9482b82a4d6e",
-      "note_model_uuid": "nlp-fundamentals-model",
+      "guid": "nlp_38490434aa8b4",
+      "note_model_uuid": "nlp-similarity_metrics-model",
       "tags": [
-        "nlp_fundamentals",
+        "similarity__distance_metrics",
         "concept"
       ]
     },
     {
       "__type__": "Note",
       "fields": [
-        "What are the levels of NLP analysis?",
-        "<b>Lexical:</b> Words, morphemes, character analysis<br>\n<b>Syntactic:</b> Grammar, parsing, sentence structure<br>\n<b>Semantic:</b> Meaning, word sense, relationships<br>\n<b>Pragmatic:</b> Context, intent, discourse analysis",
-        "NLP Fundamentals",
+        "What is edit distance (Levenshtein)?",
+        "<b>Definition:</b> Minimum edits to transform one string to another<br>\n<b>Operations:</b> Insert, delete, substitute<br>\n<b>Algorithm:</b> Dynamic programming O(mn)<br>\n<b>Applications:</b> Spell correction, fuzzy matching",
+        "Similarity & Distance Metrics",
         "concept"
       ],
-      "guid": "nlp_3e71879519fd1",
-      "note_model_uuid": "nlp-fundamentals-model",
+      "guid": "nlp_2a4fde1f85dbc",
+      "note_model_uuid": "nlp-similarity_metrics-model",
       "tags": [
-        "nlp_fundamentals",
+        "similarity__distance_metrics",
         "concept"
       ]
     }

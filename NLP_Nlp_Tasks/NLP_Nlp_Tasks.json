@@ -1,15 +1,15 @@
 {
   "__type__": "Deck",
   "children": [],
-  "crowdanki_uuid": "nlp-classical_methods-deck",
-  "deck_config_uuid": "nlp-classical_methods-config",
+  "crowdanki_uuid": "nlp-nlp_tasks-deck",
+  "deck_config_uuid": "nlp-nlp_tasks-config",
   "deck_configurations": [
     {
       "__type__": "DeckConfig",
       "autoplay": true,
-      "crowdanki_uuid": "nlp-classical_methods-config",
+      "crowdanki_uuid": "nlp-nlp_tasks-config",
       "dyn": false,
-      "name": "Classical NLP Methods",
+      "name": "Core NLP Tasks",
       "new": {
         "delays": [
           1,
@@ -22,27 +22,27 @@
           7
         ],
         "order": 1,
-        "perDay": 15
+        "perDay": 20
       },
       "rev": {
         "ease4": 1.3,
         "hardFactor": 1.2,
         "ivlFct": 1.0,
         "maxIvl": 36500,
-        "perDay": 50
+        "perDay": 100
       }
     }
   ],
-  "desc": "Traditional approaches still used in production",
+  "desc": "Text classification, sentiment analysis, and applications",
   "dyn": 0,
   "extendNew": 10,
   "extendRev": 50,
   "media_files": [],
-  "name": "Classical NLP Methods",
+  "name": "Core NLP Tasks",
   "note_models": [
     {
       "__type__": "NoteModel",
-      "crowdanki_uuid": "nlp-classical_methods-model",
+      "crowdanki_uuid": "nlp-nlp_tasks-model",
       "css": "\n.card {\n    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\n    font-size: 18px;\n    line-height: 1.5;\n    color: #2c3e50;\n    background: #f8f9fa;\n    text-align: left;\n    padding: 20px;\n    border-radius: 8px;\n    max-width: 100%;\n    margin: 0 auto;\n}\n\n@media (max-width: 480px) {\n    .card {\n        font-size: 16px;\n        padding: 15px;\n        line-height: 1.4;\n    }\n}\n\nb, strong {\n    color: #2980b9;\n    font-weight: 600;\n}\n\n.metadata {\n    margin-top: 15px;\n    padding-top: 10px;\n    border-top: 1px solid #bdc3c7;\n    font-size: 12px;\n    color: #7f8c8d;\n    text-align: center;\n}\n",
       "flds": [
         {
@@ -80,7 +80,7 @@
       ],
       "latexPost": "\\end{document}",
       "latexPre": "\\documentclass[12pt]{article}\\special{papersize=3in,5in}\\usepackage{amssymb,amsmath}\\pagestyle{empty}\\setlength{\\parindent}{0in}\\begin{document}",
-      "name": "NLP Classical NLP Methods",
+      "name": "NLP Core NLP Tasks",
       "req": [
         [
           0,
@@ -111,60 +111,75 @@
     {
       "__type__": "Note",
       "fields": [
-        "What is TF-IDF?",
-        "<b>Intuition:</b> Weight terms by frequency and rarity across documents<br>\n<b>Formula:</b> TF-IDF = TF × log(N/df)<br>\n<b>Symbols:</b> TF=term freq, N=total docs, df=docs with term<br>\n<b>Use:</b> Information retrieval and document similarity",
-        "Classical NLP Methods",
+        "What is text classification?",
+        "<b>Definition:</b> Assign predefined categories to text documents<br>\n<b>Types:</b> Binary, multi-class, multi-label<br>\n<b>Approaches:</b> Naive Bayes, SVM, neural networks<br>\n<b>Applications:</b> Spam detection, topic classification, intent",
+        "Core NLP Tasks",
         "concept"
       ],
-      "guid": "nlp_a157a3fc41b6c",
-      "note_model_uuid": "nlp-classical_methods-model",
+      "guid": "nlp_2a5cc0ce12200",
+      "note_model_uuid": "nlp-nlp_tasks-model",
       "tags": [
-        "classical_nlp_methods",
+        "core_nlp_tasks",
         "concept"
       ]
     },
     {
       "__type__": "Note",
       "fields": [
-        "Write the TF-IDF formula and explain components",
-        "<b>Formula:</b> TF(t,d) × IDF(t,D) = (count/|d|) × log(N/df)<br>\n<b>TF:</b> Term frequency in document (normalized by doc length)<br>\n<b>IDF:</b> Inverse document frequency (rarity measure)<br>\n<b>Result:</b> High for frequent terms in few documents",
-        "Classical NLP Methods",
+        "What is sentiment analysis?",
+        "<b>Definition:</b> Determine emotional tone or opinion in text<br>\n<b>Levels:</b> Document, sentence, aspect-based<br>\n<b>Approaches:</b> Lexicon-based, ML, deep learning<br>\n<b>Challenges:</b> Sarcasm, context, domain adaptation",
+        "Core NLP Tasks",
         "concept"
       ],
-      "guid": "nlp_9e5503c53d8d9",
-      "note_model_uuid": "nlp-classical_methods-model",
+      "guid": "nlp_0f7b98111f3e5",
+      "note_model_uuid": "nlp-nlp_tasks-model",
       "tags": [
-        "classical_nlp_methods",
+        "core_nlp_tasks",
         "concept"
       ]
     },
     {
       "__type__": "Note",
       "fields": [
-        "Common TF-IDF edge case and fix?",
-        "<b>Problem:</b> Division by zero when df=0<br>\n<b>Fix:</b> Add smoothing: log(N/(df+1))<br>\n<b>Alternative:</b> Filter out terms not in vocabulary<br>\n<b>Impact:</b> Prevents runtime errors in production",
-        "Classical NLP Methods",
+        "What are the main approaches to machine translation?",
+        "<b>Rule-based:</b> Linguistic rules and dictionaries<br>\n<b>Statistical:</b> Phrase-based, alignment models<br>\n<b>Neural:</b> Seq2seq, attention, transformer<br>\n<b>Current:</b> Transformer-based models dominate",
+        "Core NLP Tasks",
         "concept"
       ],
-      "guid": "nlp_9da18271c6424",
-      "note_model_uuid": "nlp-classical_methods-model",
+      "guid": "nlp_0d5059e22473f",
+      "note_model_uuid": "nlp-nlp_tasks-model",
       "tags": [
-        "classical_nlp_methods",
+        "core_nlp_tasks",
         "concept"
       ]
     },
     {
       "__type__": "Note",
       "fields": [
-        "What are the gates in LSTM?",
-        "<b>Forget:</b> What to discard from cell state<br>\n<b>Input:</b> What new information to store<br>\n<b>Output:</b> What parts of cell state to output<br>\n<b>Purpose:</b> Control information flow and prevent vanishing gradients",
-        "Classical NLP Methods",
+        "What is text summarization?",
+        "<b>Extractive:</b> Select important sentences from original<br>\n<b>Abstractive:</b> Generate new sentences expressing key ideas<br>\n<b>Evaluation:</b> ROUGE scores, human evaluation<br>\n<b>Challenges:</b> Coherence, factual accuracy, length control",
+        "Core NLP Tasks",
         "concept"
       ],
-      "guid": "nlp_89bcf7fa724ea",
-      "note_model_uuid": "nlp-classical_methods-model",
+      "guid": "nlp_82530c6f3c676",
+      "note_model_uuid": "nlp-nlp_tasks-model",
       "tags": [
-        "classical_nlp_methods",
+        "core_nlp_tasks",
+        "concept"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "What is question answering (QA)?",
+        "<b>Types:</b> Extractive, generative, knowledge-based<br>\n<b>Extractive:</b> Find answer span in given passage<br>\n<b>Generative:</b> Generate answer from understanding<br>\n<b>Datasets:</b> SQuAD, Natural Questions, MS MARCO",
+        "Core NLP Tasks",
+        "concept"
+      ],
+      "guid": "nlp_c6fd89eae6393",
+      "note_model_uuid": "nlp-nlp_tasks-model",
+      "tags": [
+        "core_nlp_tasks",
         "concept"
       ]
     }

@@ -6,10 +6,10 @@
 ### 1. **Import Flashcards** (5 minutes)
 ```bash
 # Import Anki flashcards
-📁 Categorized: NLP_Fundamentals/, NLP_AttentionTransformers/, etc.
+📁 Comprehensive: NLP_Fundamentals/, NLP_Preprocessing/, etc.
 📁 Single deck: NLP_Interview_Flashcards/
 📥 Import folder to Anki (CrowdAnki)
-🎯 Result: 17 research-optimized flashcards
+🎯 Result: 48 comprehensive flashcards
 ```
 
 ### 2. **Browse Problems** (10 minutes)
@@ -32,13 +32,20 @@
 
 ### 🎯 **NLP Interview Flashcards** (Ready to Use)
 
-#### **Option 1: Categorized Decks** (Recommended)
-- **17 cards across 4 specialized decks** - each in its own directory
-  - **[NLP_Fundamentals/](NLP_Fundamentals/)** - Core NLP concepts (4 cards)
-  - **[NLP_AttentionTransformers/](NLP_AttentionTransformers/)** - Modern architectures (5 cards)
-  - **[NLP_EmbeddingsSimilarity/](NLP_EmbeddingsSimilarity/)** - Vector representations (4 cards)
-  - **[NLP_ClassicalMethods/](NLP_ClassicalMethods/)** - Traditional NLP (4 cards)
-  - **[NLP_Decks_README.md](NLP_Decks_README.md)** - Complete study guide
+#### **Option 1: Comprehensive Collection** (Recommended)
+- **48 cards across 11 specialized decks** covering all major NLP topics
+  - **[NLP_Fundamentals/](NLP_Fundamentals/)** - Core concepts (4 cards)
+  - **[NLP_Preprocessing/](NLP_Preprocessing/)** - Text cleaning (5 cards)
+  - **[NLP_Language_Modeling/](NLP_Language_Modeling/)** - Language models (4 cards)
+  - **[NLP_Word_Representations/](NLP_Word_Representations/)** - Embeddings (6 cards)
+  - **[NLP_Similarity_Metrics/](NLP_Similarity_Metrics/)** - Similarity measures (4 cards)
+  - **[NLP_Syntax_Parsing/](NLP_Syntax_Parsing/)** - Grammar & parsing (3 cards)
+  - **[NLP_Semantic_Analysis/](NLP_Semantic_Analysis/)** - Meaning & context (3 cards)
+  - **[NLP_Nlp_Tasks/](NLP_Nlp_Tasks/)** - Core tasks (5 cards)
+  - **[NLP_Modern_Architectures/](NLP_Modern_Architectures/)** - Transformers (6 cards)
+  - **[NLP_Evaluation_Metrics/](NLP_Evaluation_Metrics/)** - Evaluation (4 cards)
+  - **[NLP_Advanced_Topics/](NLP_Advanced_Topics/)** - Advanced concepts (4 cards)
+  - **[Comprehensive_NLP_Flashcards_README.md](Comprehensive_NLP_Flashcards_README.md)** - Complete study guide
 
 #### **Option 2: Single Comprehensive Deck**
 - **[NLP_Interview_Flashcards/](NLP_Interview_Flashcards/)** - **16 optimized flashcards**
