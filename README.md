@@ -17,7 +17,7 @@ data/output/apkg_files/NLP-Complete-Collection.apkg  # 226 NLP cards ready!
 # 3. Get complete JSON output
 # 4. Save in appropriate directory
 # 5. Generate APKG files
-python generate_apkg.py
+python tools/scripts/generate_apkg.py
 ```
 
 ## 📂 Repository Structure
@@ -133,18 +133,11 @@ data/source/flashcards/LLM/
 - **Hierarchical naming**: Creates organized folder structure in Anki
 - **Batch conversion**: Generate all APKG files at once with one command
 
-## 🎯 Success Story
-
-**✅ Proven Workflow**: 226 NLP flashcards successfully created and imported
-- **Zero friction**: From scattered concepts to organized Anki deck in minutes
-- **Professional quality**: Interview-ready questions with structured answers
-- **Universal compatibility**: Works on all Anki versions and platforms
-
 ## 📝 Quick Commands
 
 ```bash
 # Generate APKG files from all JSON sources
-python generate_apkg.py
+python tools/scripts/generate_apkg.py
 
 # View current structure
 find data/source/flashcards -name "*.json" | sort

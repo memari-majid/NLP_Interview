@@ -112,10 +112,19 @@ def create_note_model():
     )
 
 def convert_json_to_deck(json_file_path, note_model):
-    """Convert a single JSON file to genanki deck"""
+    """Convert a single JSON file to genanki deck with validation"""
     
-    with open(json_file_path, 'r', encoding='utf-8') as f:
-        data = json.load(f)
+    try:
+        with open(json_file_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+    except json.JSONDecodeError as e:
+        print(f"❌ JSON Error in {json_file_path}")
+        print(f"   Line {e.lineno}, Column {e.colno}: {e.msg}")
+        print(f"   Skipping this file...")
+        return None
+    except Exception as e:
+        print(f"❌ Error reading {json_file_path}: {e}")
+        return None
     
     deck_name = data.get('name', 'NLP Deck')
     notes_data = data.get('notes', [])
@@ -177,6 +186,9 @@ def create_individual_apkg_files():
         
         json_file = json_files[0]
         deck = convert_json_to_deck(json_file, note_model)
+        
+        if deck is None:
+            continue
         
         # Create clean filename
         safe_name = chapter_dir.name.replace('_', '-')
@@ -272,6 +284,179 @@ def create_master_apkg():
     print(f"📊 Total cards: {total_cards}")
     print(f"🏷️ Tags: Each card tagged with chapter number for organization")
 
+def create_llm_master_apkg():
+    """Create a single APKG file containing all LLM chapters"""
+    base_path = Path('../../data/source/flashcards/LLM')
+    output_path = Path('../../data/output/apkg_files')
+    output_path.mkdir(exist_ok=True)
+    
+    if not base_path.exists():
+        print(f"❌ Path {base_path} not found!")
+        return
+    
+    note_model = create_note_model()
+    
+    # Create master deck
+    master_deck = genanki.Deck(
+        deck_id=random.randrange(1 << 30, 1 << 31),
+        name="ML:LLM:Complete Collection"
+    )
+    
+    print("🔄 Creating LLM master APKG with all chapters...")
+    print("=" * 60)
+    
+    # Get all JSON files (1.json through 7.json)
+    json_files = sorted([f for f in base_path.glob("*.json") if f.name.replace('.json', '').isdigit()])
+    
+    total_cards = 0
+    
+    for json_file in json_files:
+        print(f"Processing {json_file.name}...")
+        
+        with open(json_file, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        
+        notes_data = data.get('notes', [])
+        chapter_name = data.get('name', f"LLM Chapter {json_file.stem}")
+        
+        print(f"Adding {chapter_name}: {len(notes_data)} cards")
+        
+        for note_data in notes_data:
+            fields = note_data.get('fields', [])
+            tags = note_data.get('tags', [])
+            
+            if len(fields) >= 4:
+                # Clean tags and add chapter tag to distinguish cards
+                clean_tags = []
+                for tag in tags:
+                    clean_tag = str(tag).replace(' ', '_').replace('-', '_')
+                    clean_tags.append(clean_tag)
+                
+                # Add chapter tag based on file number
+                chapter_tag = f"LLM_Chapter_{json_file.stem}"
+                tags_with_chapter = clean_tags + [chapter_tag]
+                
+                note = genanki.Note(
+                    model=note_model,
+                    fields=fields,
+                    tags=tags_with_chapter
+                )
+                master_deck.add_note(note)
+                total_cards += 1
+    
+    # Create master APKG file
+    output_file = output_path / "LLM-Complete-Collection.apkg"
+    genanki.Package(master_deck).write_to_file(str(output_file))
+    
+    print("=" * 60)
+    print(f"🎯 LLM Master APKG created!")
+    print(f"📁 File: {output_file.absolute()}")
+    print(f"📊 Total cards: {total_cards}")
+    print(f"🏷️ Tags: Each card tagged with chapter number for organization")
+
+def create_directory_apkg(directory_name, collection_name):
+    """Create a single APKG file from any directory containing JSON files"""
+    base_path = Path(f'../../data/source/flashcards/{directory_name}')
+    output_path = Path('../../data/output/apkg_files')
+    output_path.mkdir(exist_ok=True)
+    
+    if not base_path.exists():
+        print(f"❌ Path {base_path} not found!")
+        return
+    
+    note_model = create_note_model()
+    
+    # Create master deck
+    master_deck = genanki.Deck(
+        deck_id=random.randrange(1 << 30, 1 << 31),
+        name=f"ML:{collection_name}:Complete Collection"
+    )
+    
+    print(f"🔄 Creating {collection_name} master APKG with all files...")
+    print("=" * 60)
+    
+    # Get all JSON files in the directory
+    json_files = sorted(list(base_path.glob("*.json")))
+    
+    if not json_files:
+        print(f"❌ No JSON files found in {directory_name}")
+        return
+    
+    total_cards = 0
+    
+    for json_file in json_files:
+        print(f"Processing {json_file.name}...")
+        
+        try:
+            with open(json_file, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+        except json.JSONDecodeError as e:
+            print(f"❌ JSON Error in {json_file.name}")
+            print(f"   Line {e.lineno}, Column {e.colno}: {e.msg}")
+            print(f"   Skipping this file...")
+            continue
+        except Exception as e:
+            print(f"❌ Error reading {json_file.name}: {e}")
+            continue
+        
+        notes_data = data.get('notes', [])
+        chapter_name = data.get('name', f"{collection_name} {json_file.stem}")
+        
+        print(f"Adding {chapter_name}: {len(notes_data)} cards")
+        
+        for note_data in notes_data:
+            fields = note_data.get('fields', [])
+            tags = note_data.get('tags', [])
+            
+            if len(fields) >= 4:
+                # Clean tags and add file tag to distinguish cards
+                clean_tags = []
+                for tag in tags:
+                    clean_tag = str(tag).replace(' ', '_').replace('-', '_')
+                    clean_tags.append(clean_tag)
+                
+                # Add file tag based on filename
+                file_tag = f"{collection_name}_{json_file.stem}"
+                tags_with_file = clean_tags + [file_tag]
+                
+                note = genanki.Note(
+                    model=note_model,
+                    fields=fields,
+                    tags=tags_with_file
+                )
+                master_deck.add_note(note)
+                total_cards += 1
+    
+    if total_cards == 0:
+        print("❌ No valid cards found!")
+        return
+    
+    # Create master APKG file
+    output_file = output_path / f"{collection_name}-Complete-Collection.apkg"
+    genanki.Package(master_deck).write_to_file(str(output_file))
+    
+    print("=" * 60)
+    print(f"🎯 {collection_name} Master APKG created!")
+    print(f"📁 File: {output_file.absolute()}")
+    print(f"📊 Total cards: {total_cards}")
+    print(f"🏷️ Tags: Each card tagged with filename for organization")
+
+def list_available_directories():
+    """List all available directories with JSON files"""
+    flashcards_path = Path('../../data/source/flashcards')
+    if not flashcards_path.exists():
+        print("❌ Flashcards directory not found!")
+        return []
+    
+    directories = []
+    for item in flashcards_path.iterdir():
+        if item.is_dir():
+            json_files = list(item.glob("*.json"))
+            if json_files:
+                directories.append(item.name)
+    
+    return directories
+
 if __name__ == "__main__":
     try:
         import genanki
@@ -279,14 +464,39 @@ if __name__ == "__main__":
         
         print("Choose conversion option:")
         print("1. Individual APKG files (one per chapter) - Recommended")
-        print("2. Master APKG file (all chapters combined)")
+        print("2. Master APKG file (all NLP chapters combined)")
+        print("3. Master APKG file (all LLM chapters combined)")
+        print("4. Auto-detect and convert any directory")
         
-        choice = input("Enter choice (1 or 2): ").strip()
+        choice = input("Enter choice (1, 2, 3, or 4): ").strip()
         
         if choice == "1":
             create_individual_apkg_files()
         elif choice == "2":
             create_master_apkg()
+        elif choice == "3":
+            create_llm_master_apkg()
+        elif choice == "4":
+            directories = list_available_directories()
+            if not directories:
+                print("❌ No directories with JSON files found!")
+            else:
+                print("\n📁 Available directories:")
+                for i, dir_name in enumerate(directories, 1):
+                    print(f"   {i}. {dir_name}")
+                
+                try:
+                    dir_choice = int(input(f"\nSelect directory (1-{len(directories)}): ").strip())
+                    if 1 <= dir_choice <= len(directories):
+                        selected_dir = directories[dir_choice - 1]
+                        collection_name = input(f"Collection name for '{selected_dir}' (default: {selected_dir}): ").strip()
+                        if not collection_name:
+                            collection_name = selected_dir
+                        create_directory_apkg(selected_dir, collection_name)
+                    else:
+                        print("❌ Invalid selection!")
+                except ValueError:
+                    print("❌ Invalid input!")
         else:
             print("Invalid choice. Running individual files conversion...")
             create_individual_apkg_files()
