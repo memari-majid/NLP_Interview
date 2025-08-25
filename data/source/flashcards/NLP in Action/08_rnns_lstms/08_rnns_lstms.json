@@ -1,0 +1,512 @@
+{
+  "__type__": "Deck",
+  "children": [],
+  "crowdanki_uuid": "deck-2040",
+  "deck_config_uuid": "default-config",
+  "deck_configurations": [
+    {
+      "crowdanki_uuid": "default-config",
+      "name": "Default",
+      "autoplay": true,
+      "dyn": false,
+      "lapse": {
+        "delays": [
+          10
+        ],
+        "leechAction": 0,
+        "leechFails": 8,
+        "minInt": 1,
+        "mult": 0
+      },
+      "maxTaken": 60,
+      "new": {
+        "bury": false,
+        "delays": [
+          1,
+          10
+        ],
+        "initialFactor": 2500,
+        "ints": [
+          1,
+          4,
+          0
+        ],
+        "order": 1,
+        "perDay": 20
+      },
+      "replayq": true,
+      "rev": {
+        "bury": false,
+        "ease4": 1.3,
+        "hardFactor": 1.2,
+        "ivlFct": 1,
+        "maxIvl": 36500,
+        "perDay": 200
+      },
+      "timer": 0,
+      "__type__": "DeckConfig"
+    }
+  ],
+  "desc": "Comprehensive flashcards for 08 RNNs & LSTMs",
+  "dyn": false,
+  "extendNew": 10,
+  "extendRev": 50,
+  "media_files": [],
+  "name": "ML:NLP:08 RNNs & LSTMs",
+  "note_models": [
+    {
+      "crowdanki_uuid": "nlp-comprehensive-note-model",
+      "css": ".card {\n font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;\n font-size: 18px;\n text-align: center;\n color: #2c3e50;\n background-color: #fdfdfd;\n line-height: 1.5;\n}\n\n.front {\n font-weight: 600;\n color: #2c3e50;\n font-size: 20px;\n padding: 15px;\n}\n\n.back {\n text-align: left;\n padding: 25px;\n max-width: 800px;\n margin: 0 auto;\n}\n\n.concept {\n color: #e74c3c;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.concept strong {\n font-weight: 500;\n}\n\n.intuition {\n color: #3498db;\n font-style: italic;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.intuition strong {\n font-weight: 500;\n font-style: normal;\n}\n\n.mechanics {\n color: #27ae60;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.mechanics strong {\n font-weight: 500;\n}\n\n.tradeoffs {\n color: #e67e22;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.tradeoffs strong {\n font-weight: 500;\n}\n\n.applications {\n color: #8e44ad;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.applications strong {\n font-weight: 500;\n}\n\n.memory-hook {\n background-color: #f8f9fa;\n padding: 15px;\n border-radius: 6px;\n border-left: 4px solid #6c757d;\n font-style: italic;\n color: #495057;\n margin-top: 15px;\n font-size: 15px;\n}\n\n.memory-hook strong {\n font-weight: 500;\n font-style: normal;\n color: #343a40;\n}\n\n@media (max-width: 768px) {\n .back {\n   padding: 20px 15px;\n }\n \n .card {\n   font-size: 16px;\n }\n \n .front {\n   font-size: 18px;\n   padding: 12px;\n }\n}",
+      "flds": [
+        {
+          "font": "Arial",
+          "media": [],
+          "name": "Front",
+          "ord": 0,
+          "rtl": false,
+          "size": 20,
+          "sticky": false,
+          "__type__": "NoteModelField"
+        },
+        {
+          "font": "Arial",
+          "media": [],
+          "name": "Back",
+          "ord": 1,
+          "rtl": false,
+          "size": 20,
+          "sticky": false,
+          "__type__": "NoteModelField"
+        },
+        {
+          "font": "Arial",
+          "media": [],
+          "name": "Tags",
+          "ord": 2,
+          "rtl": false,
+          "size": 20,
+          "sticky": false,
+          "__type__": "NoteModelField"
+        },
+        {
+          "font": "Arial",
+          "media": [],
+          "name": "Difficulty",
+          "ord": 3,
+          "rtl": false,
+          "size": 20,
+          "sticky": false,
+          "__type__": "NoteModelField"
+        }
+      ],
+      "latexPost": "\\end{document}",
+      "latexPre": "\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage[utf8]{inputenc}\n\\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\\begin{document}\n",
+      "name": "NLP Comprehensive",
+      "req": [
+        [
+          0,
+          "all"
+        ]
+      ],
+      "sortf": 0,
+      "tags": [],
+      "tmpls": [
+        {
+          "afmt": "{{FrontSide}}\n\n<hr id=answer>\n\n<div class=\"back\">\n{{Back}}\n</div>",
+          "bafmt": "",
+          "bqfmt": "",
+          "did": null,
+          "name": "Card 1",
+          "ord": 0,
+          "qfmt": "<div class=\"front\">{{Front}}</div>",
+          "__type__": "CardTemplate"
+        }
+      ],
+      "type": 0,
+      "__type__": "NoteModel"
+    }
+  ],
+  "notes": [
+    {
+      "crowdanki_uuid": "note-4704564189098261864-2040",
+      "fields": [
+        "What is a Recurrent Neural Network (RNN) in the context of NLP?",
+        "<div class=\"concept\">Concept: A Recurrent Neural Network (RNN) is a type of neural network designed to handle sequential data by maintaining a hidden state that captures information from previous inputs.</div><div class=\"intuition\">Intuition: RNNs 'recycle' previous computations, like reusing understanding from prior words to process the next, allowing them to remember context over sequences.</div><div class=\"mechanics\">Mechanics: RNNs process inputs one token at a time, updating a hidden state h_t = tanh(W_{xh} x_t + W_{hh} h_{t-1} + b), and output y_t based on h_t.</div><div class=\"tradeoffs\">Trade-offs: Efficient for variable-length sequences but suffers from vanishing/exploding gradients over long sequences.</div><div class=\"applications\">Applications: Text generation, translation, sentiment analysis.</div><div class=\"memory-hook\">Memory Hook: Think of RNNs as a paint roller smearing words together, building a compact 'smudge' of meaning that evolves over time.</div>",
+        "RNN Definition Intuition Easy",
+        "Easy"
+      ],
+      "flags": 0,
+      "guid": "guid-4704564189098261864-2040",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "RNN",
+        "Definition",
+        "Intuition",
+        "Easy"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--9090143777972863611-2040",
+      "fields": [
+        "Explain the intuition behind using RNNs for NLP tasks involving sequences.",
+        "<div class=\"concept\">Concept: RNNs handle sequences by reusing outputs as inputs, enabling memory of prior tokens.</div><div class=\"intuition\">Intuition: Like reading a book, where understanding each word builds on previous ones, RNNs accumulate context to predict or classify.</div><div class=\"mechanics\">Mechanics: The hidden state acts as memory, updated recurrently: h_t depends on h_{t-1} and x_t.</div><div class=\"tradeoffs\">Trade-offs: Better than CNNs for unbounded sequences but computationally serial, slower for long texts.</div><div class=\"applications\">Applications: Predicting next word in a sentence or classifying long documents.</div><div class=\"memory-hook\">Memory Hook: RNNs are like a storyteller who remembers the plot so far to continue the tale coherently.</div>",
+        "RNN Intuition Sequences Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid--9090143777972863611-2040",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "RNN",
+        "Intuition",
+        "Sequences",
+        "Medium"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-2489115396705077536-2040",
+      "fields": [
+        "What are the mathematical steps to compute the forward pass in a basic RNN?",
+        "<div class=\"concept\">Concept: Forward pass in RNN involves updating hidden state and producing output for each time step.</div><div class=\"intuition\">Intuition: Each step blends new input with past memory to refine understanding.</div><div class=\"mechanics\">Mechanics: For input x_t: combined = cat(x_t, h_{t-1}); h_t = tanh(W_{c2h} * combined); y_t = softmax(W_{c2y} * combined). Repeat for each t.</div><div class=\"tradeoffs\">Trade-offs: Simple but gradients vanish over time, limiting long-range dependencies.</div><div class=\"applications\">Applications: Language modeling: predict y_t as next token probabilities.</div><div class=\"memory-hook\">Memory Hook: Unroll the loop: like a chain where each link (time step) passes strengthened memory forward.</div>",
+        "RNN Math Forward Pass Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-2489115396705077536-2040",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "RNN",
+        "Math",
+        "Forward Pass",
+        "Medium"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-9039832761841735444-2040",
+      "fields": [
+        "Compare RNNs to CNNs for processing text sequences: when to use each?",
+        "<div class=\"concept\">Concept: RNNs process sequences recurrently; CNNs use fixed windows (kernels).</div><div class=\"intuition\">Intuition: RNNs remember everything (in theory); CNNs scan local patterns efficiently.</div><div class=\"mechanics\">Mechanics: RNN: serial updates over time; CNN: parallel convolutions over n-grams.</div><div class=\"tradeoffs\">Trade-offs: RNNs handle variable lengths better but slower; CNNs faster but fixed context window.</div><div class=\"applications\">Applications: RNN for generation/translation; CNN for classification on short texts.</div><div class=\"memory-hook\">Memory Hook: RNNs are marathon runners building endurance; CNNs are sprinters spotting quick patterns.</div>",
+        "RNN CNN Comparison Trade-offs Hard",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid-9039832761841735444-2040",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "RNN",
+        "CNN",
+        "Comparison",
+        "Trade-offs",
+        "Hard"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--677323456048151694-2040",
+      "fields": [
+        "What is backpropagation through time (BPTT) in RNNs?",
+        "<div class=\"concept\">Concept: BPTT is the algorithm to compute gradients in RNNs by unrolling the network over time steps.</div><div class=\"intuition\">Intuition: Error flows backward through the sequence, adjusting weights for each past decision.</div><div class=\"mechanics\">Mechanics: Unroll RNN into a deep feedforward net; apply chain rule: δh_t / δW = sum over paths from output to t.</div><div class=\"tradeoffs\">Trade-offs: Captures temporal dependencies but prone to vanishing gradients; truncated BPTT limits computation.</div><div class=\"applications\">Applications: Training RNNs for sequence prediction.</div><div class=\"memory-hook\">Memory Hook: Like rewinding a movie to fix plot holes, frame by frame.</div>",
+        "RNN BPTT Math Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid--677323456048151694-2040",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "RNN",
+        "BPTT",
+        "Math",
+        "Medium"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-8794677524380584028-2040",
+      "fields": [
+        "How do RNNs handle one-to-many, many-to-one, and many-to-many mappings in NLP?",
+        "<div class=\"concept\">Concept: RNNs adapt to input/output sequence lengths: one input to sequence output, sequence to one, or sequence to sequence.</div><div class=\"intuition\">Intuition: Flexible for varying data shapes, like generating text from a seed or tagging each word.</div><div class=\"mechanics\">Mechanics: One-to-many: repeat input hidden; many-to-one: pool final hidden; many-to-many: output per step.</div><div class=\"tradeoffs\">Trade-offs: Versatile but requires careful handling of variable lengths (padding).</div><div class=\"applications\">Applications: One-to-many: image captioning; many-to-one: sentiment; many-to-many: translation.</div><div class=\"memory-hook\">Memory Hook: RNNs as transformers: shrink/expand sequences like an accordion.</div>",
+        "RNN Applications Mappings Easy",
+        "Easy"
+      ],
+      "flags": 0,
+      "guid": "guid-8794677524380584028-2040",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "RNN",
+        "Applications",
+        "Mappings",
+        "Easy"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--1540675312389236635-2040",
+      "fields": [
+        "Describe the hidden state in RNNs and its role in memory.",
+        "<div class=\"concept\">Concept: Hidden state is a vector that encodes cumulative information from the sequence so far.</div><div class=\"intuition\">Intuition: It's the RNN's 'memory bank,' updating with each new token.</div><div class=\"mechanics\">Mechanics: h_t = activation(W_xh x_t + W_hh h_{t-1} + b_h).</div><div class=\"tradeoffs\">Trade-offs: Compact representation but forgets distant info due to vanishing gradients.</div><div class=\"applications\">Applications: Used for final classification or intermediate predictions.</div><div class=\"memory-hook\">Memory Hook: Like a snowball rolling, gathering mass (meaning) but melting old layers.</div>",
+        "RNN Hidden State Intuition Easy",
+        "Easy"
+      ],
+      "flags": 0,
+      "guid": "guid--1540675312389236635-2040",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "RNN",
+        "Hidden State",
+        "Intuition",
+        "Easy"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-4624114796697230412-2040",
+      "fields": [
+        "How would you implement a basic RNN in PyTorch from scratch?",
+        "<div class=\"concept\">Concept: Custom RNN module using linear layers for recurrence.</div><div class=\"intuition\">Intuition: Build a loop that reuses hidden state without built-in RNN class.</div><div class=\"mechanics\">Mechanics: class RNN(nn.Module): init Linear for input+hidden to hidden/output; forward: cat(input, hidden), compute new hidden/output.</div><div class=\"tradeoffs\">Trade-offs: Educational but less efficient than torch.nn.RNN.</div><div class=\"applications\">Applications: Character-level prediction, like surname nationality.</div><div class=\"memory-hook\">Memory Hook: DIY RNN: like building a bicycle chain link by link.</div>",
+        "RNN PyTorch Implementation Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-4624114796697230412-2040",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "RNN",
+        "PyTorch",
+        "Implementation",
+        "Medium"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-3425413144370656834-2040",
+      "fields": [
+        "In predicting nationality from surnames, what challenges arise and how does an RNN address them?",
+        "<div class=\"concept\">Concept: Character-level RNN classifies sequences based on patterns.</div><div class=\"intuition\">Intuition: Learns letter patterns unique to cultures, despite overlaps.</div><div class=\"mechanics\">Mechanics: Process name char-by-char, final hidden to softmax for nationality.</div><div class=\"tradeoffs\">Trade-offs: Handles ambiguity but accuracy limited by dataset overlaps/duplicates.</div><div class=\"applications\">Applications: Anonymization, name generation.</div><div class=\"memory-hook\">Memory Hook: RNN as a cultural detective, piecing clues from letters.</div>",
+        "RNN Application Surname Prediction Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-3425413144370656834-2040",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "RNN",
+        "Application",
+        "Surname Prediction",
+        "Medium"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-4713377810924885076-2040",
+      "fields": [
+        "Explain vanishing/exploding gradients in RNNs and connections to long sequences.",
+        "<div class=\"concept\">Concept: Gradients diminish (vanish) or amplify (explode) during BPTT over long sequences.</div><div class=\"intuition\">Intuition: Memory fades or overwhelms, like whispers in a long tunnel.</div><div class=\"mechanics\">Mechanics: Repeated multiplication by |W_hh| <1 (vanish) or >1 (explode).</div><div class=\"tradeoffs\">Trade-offs: Limits long-term dependencies; mitigated by LSTMs/GRUs.</div><div class=\"applications\">Applications: Affects training on paragraphs vs. sentences.</div><div class=\"memory-hook\">Memory Hook: Gradients as echoes: too quiet or too loud in a cave.</div>",
+        "RNN Gradients Theory Hard",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid-4713377810924885076-2040",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "RNN",
+        "Gradients",
+        "Theory",
+        "Hard"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--6297545636295500089-2040",
+      "fields": [
+        "What are Gated Recurrent Units (GRUs) and how do they improve RNNs?",
+        "<div class=\"concept\">Concept: GRUs are RNN variants with reset/update gates to manage memory.</div><div class=\"intuition\">Intuition: Gates decide what to forget/update, preserving relevant info longer.</div><div class=\"mechanics\">Mechanics: r = sig(Wxr x + Whr h); z = sig(Wxz x + Whz h); n = tanh(Wxn x + r*(Whn h)); h' = (1-z)*n + z*h.</div><div class=\"tradeoffs\">Trade-offs: Simpler than LSTMs, fewer params, but may underperform on very complex tasks.</div><div class=\"applications\">Applications: Efficient language modeling, sequence prediction.</div><div class=\"memory-hook\">Memory Hook: GRUs as smart filters: reset junk, update essentials.</div>",
+        "GRU Gates Improvement Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid--6297545636295500089-2040",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "GRU",
+        "Gates",
+        "Improvement",
+        "Medium"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-8494021760874386989-2040",
+      "fields": [
+        "Derive the update equations for an LSTM cell.",
+        "<div class=\"concept\">Concept: LSTM uses forget/input/output gates and cell state for long-term memory.</div><div class=\"intuition\">Intuition: Separate short (hidden) and long (cell) memory, with gates controlling flow.</div><div class=\"mechanics\">Mechanics: f = sig(Wf x + Uf h); i = sig(Wi x + Ui h); o = sig(Wo x + Uo h); c~ = tanh(Wc x + Uc h); c = f*c + i*c~; h = o*tanh(c).</div><div class=\"tradeoffs\">Trade-offs: More params than GRUs, slower but better at long dependencies.</div><div class=\"applications\">Applications: Advanced translation, summarization.</div><div class=\"memory-hook\">Memory Hook: LSTMs as vaults: forget old, input new, output wisely.</div>",
+        "LSTM Math Equations Hard",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid-8494021760874386989-2040",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "LSTM",
+        "Math",
+        "Equations",
+        "Hard"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-8184987535805595560-2040",
+      "fields": [
+        "How do LSTMs and GRUs connect to vanilla RNNs in terms of architecture?",
+        "<div class=\"concept\">Concept: LSTMs/GRUs extend RNNs with gates to handle long-term dependencies.</div><div class=\"intuition\">Intuition: Add 'smarts' to memory management, preventing fade-out.</div><div class=\"mechanics\">Mechanics: Both use hidden state recurrence; gates modulate updates.</div><div class=\"tradeoffs\">Trade-offs: Increased complexity/capacity vs. vanilla RNN simplicity.</div><div class=\"applications\">Applications: Use LSTMs for deep reasoning; RNNs for short sequences.</div><div class=\"memory-hook\">Memory Hook: Vanilla RNN as basic phone; LSTMs as smartphone with apps (gates).</div>",
+        "LSTM GRU RNN Connections Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-8184987535805595560-2040",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "LSTM",
+        "GRU",
+        "RNN",
+        "Connections",
+        "Medium"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-1116751510755474689-2040",
+      "fields": [
+        "What trade-offs exist between RNN types (vanilla, GRU, LSTM) for NLP tasks?",
+        "<div class=\"concept\">Concept: Vanilla RNNs are basic; GRUs/LSTMs add gates for better memory.</div><div class=\"intuition\">Intuition: Balance simplicity/speed with memory depth.</div><div class=\"mechanics\">Mechanics: Vanilla: ~n params; GRU: ~3n; LSTM: ~4n per unit.</div><div class=\"tradeoffs\">Trade-offs: Vanilla fastest but forgets; LSTM best memory but slowest.</div><div class=\"applications\">Applications: Vanilla for chars; LSTM for paragraphs.</div><div class=\"memory-hook\">Memory Hook: Cars: vanilla as bicycle (simple), GRU as sedan, LSTM as SUV (more capacity).</div>",
+        "RNN Variants Trade-offs Hard",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid-1116751510755474689-2040",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "RNN Variants",
+        "Trade-offs",
+        "Hard"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--4415043790276039319-2040",
+      "fields": [
+        "How can RNNs be used for text generation?",
+        "<div class=\"concept\">Concept: Sample from predicted probabilities to generate sequences.</div><div class=\"intuition\">Intuition: Predict next token repeatedly, building text from a prompt.</div><div class=\"mechanics\">Mechanics: Start with seed; feed output as next input; use temperature for randomness.</div><div class=\"tradeoffs\">Trade-offs: Creative but may loop or nonsensical without tuning.</div><div class=\"applications\">Applications: Chatbots, story writing.</div><div class=\"memory-hook\">Memory Hook: RNN as improv actor: continues the scene based on cues.</div>",
+        "RNN Generation Application Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid--4415043790276039319-2040",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "RNN",
+        "Generation",
+        "Application",
+        "Medium"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--3403996807622304140-2040",
+      "fields": [
+        "What is the difference between multiclass classification and multi-label tagging in RNNs?",
+        "<div class=\"concept\">Concept: Multiclass: one exclusive label; multi-label: multiple independent labels.</div><div class=\"intuition\">Intuition: One answer vs. multiple tags, like single vs. multiple checkboxes.</div><div class=\"mechanics\">Mechanics: Multiclass: softmax; multi-label: sigmoid per label.</div><div class=\"tradeoffs\">Trade-offs: Multi-label handles ambiguity but needs threshold tuning.</div><div class=\"applications\">Applications: Multiclass: sentiment; multi-label: topic tagging.</div><div class=\"memory-hook\">Memory Hook: Multiclass as radio buttons; multi-label as checkboxes.</div>",
+        "Classification Tagging RNN Easy",
+        "Easy"
+      ],
+      "flags": 0,
+      "guid": "guid--3403996807622304140-2040",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Classification",
+        "Tagging",
+        "RNN",
+        "Easy"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--8873177999457929605-2040",
+      "fields": [
+        "How does hyperparameter tuning affect RNN performance in language modeling?",
+        "<div class=\"concept\">Concept: Tune layers, hidden size, LR, dropout for optimal loss.</div><div class=\"intuition\">Intuition: Balance capacity and regularization to avoid over/underfitting.</div><div class=\"mechanics\">Mechanics: Grid search: e.g., more layers increase depth but time; dropout reduces overfitting.</div><div class=\"tradeoffs\">Trade-offs: Deeper models better but slower; high LR speeds but unstable.</div><div class=\"applications\">Applications: WikiText-2 benchmarking.</div><div class=\"memory-hook\">Memory Hook: Tuning as cooking: right spices (params) for perfect flavor (accuracy).</div>",
+        "Hyperparameters Tuning RNN Hard",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid--8873177999457929605-2040",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Hyperparameters",
+        "Tuning",
+        "RNN",
+        "Hard"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-5845195329254527885-2040",
+      "fields": [
+        "Explain batchification for training word-level RNNs.",
+        "<div class=\"concept\">Concept: Split long sequence into parallel batches for efficient training.</div><div class=\"intuition\">Intuition: Process multiple subsequences simultaneously, like reading columns.</div><div class=\"mechanics\">Mechanics: Divide corpus into batch_size columns; train on slices.</div><div class=\"tradeoffs\">Trade-offs: Speeds GPU use but assumes independent batches.</div><div class=\"applications\">Applications: Large corpora like WikiText-2.</div><div class=\"memory-hook\">Memory Hook: Batchify as slicing a long rope into parallel strands.</div>",
+        "RNN Batchification Mechanics Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-5845195329254527885-2040",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "RNN",
+        "Batchification",
+        "Mechanics",
+        "Medium"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-2178765048029081342-2040",
+      "fields": [
+        "What ethical considerations arise from using RNNs for name nationality prediction?",
+        "<div class=\"concept\">Concept: Models can perpetuate biases or enable discrimination.</div><div class=\"intuition\">Intuition: Names carry cultural signals; misusing predicts harm.</div><div class=\"mechanics\">Mechanics: Train on diverse data; anonymize outputs.</div><div class=\"tradeoffs\">Trade-offs: Useful for anonymization but risky for profiling.</div><div class=\"applications\">Applications: Ethical: dataset debiasing; unethical: targeted ads/discrimination.</div><div class=\"memory-hook\">Memory Hook: RNN as a mirror: reflects dataset biases, so clean the glass.</div>",
+        "Ethics RNN Application Hard",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid-2178765048029081342-2040",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Ethics",
+        "RNN",
+        "Application",
+        "Hard"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--2376545962876058830-2040",
+      "fields": [
+        "How do RNNs connect to neuromorphic computing in NLP?",
+        "<div class=\"concept\">Concept: RNNs mimic brain-like recurrence for processing sequences.</div><div class=\"intuition\">Intuition: Brains recycle thoughts; RNNs recycle states for text understanding.</div><div class=\"mechanics\">Mechanics: Hidden state as neural memory, updated over time.</div><div class=\"tradeoffs\">Trade-offs: Brain-inspired efficiency but not fully biological.</div><div class=\"applications\">Applications: Real-time transcription, inspired by human reading.</div><div class=\"memory-hook\">Memory Hook: RNNs as mini-brains: recurrent loops like thought cycles.</div>",
+        "RNN Neuromorphic Connections Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid--2376545962876058830-2040",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "RNN",
+        "Neuromorphic",
+        "Connections",
+        "Medium"
+      ],
+      "__type__": "Note"
+    }
+  ]
+}

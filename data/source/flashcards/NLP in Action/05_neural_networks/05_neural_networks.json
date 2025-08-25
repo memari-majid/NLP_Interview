@@ -1,0 +1,582 @@
+{
+  "__type__": "Deck",
+  "children": [],
+  "crowdanki_uuid": "deck-3314",
+  "deck_config_uuid": "default-config",
+  "deck_configurations": [
+    {
+      "crowdanki_uuid": "default-config",
+      "name": "Default",
+      "autoplay": true,
+      "dyn": false,
+      "lapse": {
+        "delays": [
+          10
+        ],
+        "leechAction": 0,
+        "leechFails": 8,
+        "minInt": 1,
+        "mult": 0
+      },
+      "maxTaken": 60,
+      "new": {
+        "bury": false,
+        "delays": [
+          1,
+          10
+        ],
+        "initialFactor": 2500,
+        "ints": [
+          1,
+          4,
+          0
+        ],
+        "order": 1,
+        "perDay": 20
+      },
+      "replayq": true,
+      "rev": {
+        "bury": false,
+        "ease4": 1.3,
+        "hardFactor": 1.2,
+        "ivlFct": 1,
+        "maxIvl": 36500,
+        "perDay": 200
+      },
+      "timer": 0,
+      "__type__": "DeckConfig"
+    }
+  ],
+  "desc": "Comprehensive flashcards for 05 Neural Networks",
+  "dyn": false,
+  "extendNew": 10,
+  "extendRev": 50,
+  "media_files": [],
+  "name": "ML:NLP:05 Neural Networks",
+  "note_models": [
+    {
+      "crowdanki_uuid": "nlp-comprehensive-note-model",
+      "css": ".card {\n font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;\n font-size: 18px;\n text-align: center;\n color: #2c3e50;\n background-color: #fdfdfd;\n line-height: 1.5;\n}\n\n.front {\n font-weight: 600;\n color: #2c3e50;\n font-size: 20px;\n padding: 15px;\n}\n\n.back {\n text-align: left;\n padding: 25px;\n max-width: 800px;\n margin: 0 auto;\n}\n\n.concept {\n color: #e74c3c;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.concept strong {\n font-weight: 500;\n}\n\n.intuition {\n color: #3498db;\n font-style: italic;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.intuition strong {\n font-weight: 500;\n font-style: normal;\n}\n\n.mechanics {\n color: #27ae60;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.mechanics strong {\n font-weight: 500;\n}\n\n.tradeoffs {\n color: #e67e22;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.tradeoffs strong {\n font-weight: 500;\n}\n\n.applications {\n color: #8e44ad;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.applications strong {\n font-weight: 500;\n}\n\n.memory-hook {\n background-color: #f8f9fa;\n padding: 15px;\n border-radius: 6px;\n border-left: 4px solid #6c757d;\n font-style: italic;\n color: #495057;\n margin-top: 15px;\n font-size: 15px;\n}\n\n.memory-hook strong {\n font-weight: 500;\n font-style: normal;\n color: #343a40;\n}\n\n@media (max-width: 768px) {\n .back {\n   padding: 20px 15px;\n }\n \n .card {\n   font-size: 16px;\n }\n \n .front {\n   font-size: 18px;\n   padding: 12px;\n }\n}",
+      "flds": [
+        {
+          "font": "Arial",
+          "media": [],
+          "name": "Front",
+          "ord": 0,
+          "rtl": false,
+          "size": 20,
+          "sticky": false,
+          "__type__": "NoteModelField"
+        },
+        {
+          "font": "Arial",
+          "media": [],
+          "name": "Back",
+          "ord": 1,
+          "rtl": false,
+          "size": 20,
+          "sticky": false,
+          "__type__": "NoteModelField"
+        },
+        {
+          "font": "Arial",
+          "media": [],
+          "name": "Tags",
+          "ord": 2,
+          "rtl": false,
+          "size": 20,
+          "sticky": false,
+          "__type__": "NoteModelField"
+        },
+        {
+          "font": "Arial",
+          "media": [],
+          "name": "Difficulty",
+          "ord": 3,
+          "rtl": false,
+          "size": 20,
+          "sticky": false,
+          "__type__": "NoteModelField"
+        }
+      ],
+      "latexPost": "\\end{document}",
+      "latexPre": "\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage[utf8]{inputenc}\n\\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\\begin{document}\n",
+      "name": "NLP Comprehensive",
+      "req": [
+        [
+          0,
+          "all"
+        ]
+      ],
+      "sortf": 0,
+      "tags": [],
+      "tmpls": [
+        {
+          "afmt": "{{FrontSide}}\n\n<hr id=answer>\n\n<div class=\"back\">\n{{Back}}\n</div>",
+          "bafmt": "",
+          "bqfmt": "",
+          "did": null,
+          "name": "Card 1",
+          "ord": 0,
+          "qfmt": "<div class=\"front\">{{Front}}</div>",
+          "__type__": "CardTemplate"
+        }
+      ],
+      "type": 0,
+      "__type__": "NoteModel"
+    }
+  ],
+  "notes": [
+    {
+      "crowdanki_uuid": "note--5347775305428609894-3314",
+      "fields": [
+        "What is a neural network in the context of machine learning?",
+        "<div class=\"concept\">Concept: A neural network is a machine learning model inspired by biological brains, consisting of interconnected nodes (neurons) that process data in layers.</div><div class=\"intuition\">Intuition: Think of it as a mini-brain that learns patterns from data by adjusting connections, much like how your brain forms memories.</div><div class=\"mechanics\">Mechanics: It processes inputs through weighted connections, applies activation functions, and outputs predictions; trained via backpropagation to minimize error.</div><div class=\"tradeoffs\">Trade-offs: Powerful for complex patterns but computationally intensive and prone to overfitting without proper regularization.</div><div class=\"applications\">Applications: Used in NLP for tasks like question answering, summarization, and natural language inference.</div><div class=\"memory-hook\">Memory Hook: Neural nets: Brains in code, firing signals to learn words.</div>",
+        "Neural Networks Definition Easy",
+        "Easy"
+      ],
+      "flags": 0,
+      "guid": "guid--5347775305428609894-3314",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Neural Networks",
+        "Definition",
+        "Easy"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-5664908433389600125-3314",
+      "fields": [
+        "Why are neural networks particularly useful for NLP tasks?",
+        "<div class=\"concept\">Concept: Neural networks excel in NLP because they automatically engineer features from raw text data.</div><div class=\"intuition\">Intuition: They act like a 'word brain' that understands meaning from statistics, without needing manual preprocessing like stemming.</div><div class=\"mechanics\">Mechanics: They learn representations based on word relationships and targets, optimizing features via backpropagation.</div><div class=\"tradeoffs\">Trade-offs: Avoid over-reliance on them for explainable models; they can be black boxes compared to traditional ML.</div><div class=\"applications\">Applications: Question answering, reading comprehension, summarization, and even code generation for NLP.</div><div class=\"memory-hook\">Memory Hook: NNs for NLP: Auto-feature magic, ditching stems for stats.</div>",
+        "NLP Neural Networks Application Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-5664908433389600125-3314",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "NLP",
+        "Neural Networks",
+        "Application",
+        "Medium"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-8491639523810441160-3314",
+      "fields": [
+        "Explain the intuition behind why neural networks generalize better from few examples compared to traditional ML.",
+        "<div class=\"concept\">Concept: Neural networks generalize by learning hierarchical representations and features automatically.</div><div class=\"intuition\">Intuition: Like a brain connecting dots with limited info, NNs build deep patterns that apply broadly.</div><div class=\"mechanics\">Mechanics: Through layered transformations, they capture abstract features optimized for the task.</div><div class=\"tradeoffs\">Trade-offs: Require more data overall; with too few, they overfit unless regularized.</div><div class=\"applications\">Applications: In NLP, predicting meanings of rare words or names based on character patterns.</div><div class=\"memory-hook\">Memory Hook: Generalization: NNs as pattern detectives with a few clues.</div>",
+        "Neural Networks Intuition Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-8491639523810441160-3314",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Neural Networks",
+        "Intuition",
+        "Medium"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--4006200999827126877-3314",
+      "fields": [
+        "What mathematical theory underpins how neural networks approximate functions, and what are its limitations?",
+        "<div class=\"concept\">Concept: The Universal Approximation Theorem states that neural networks can approximate any continuous function.</div><div class=\"intuition\">Intuition: NNs are flexible shape-shifters for data curves, but not magic—they need depth and data.</div><div class=\"mechanics\">Mechanics: With sufficient neurons and layers, they model complex mappings via weights and activations.</div><div class=\"tradeoffs\">Trade-offs: Doesn't guarantee learning the function; prone to local minima and requires large compute.</div><div class=\"applications\">Applications: Approximating nonlinear relationships in NLP like word embeddings.</div><div class=\"memory-hook\">Memory Hook: UAT: NNs as universal function mimics, but training's the trick.</div>",
+        "Neural Networks Math Hard",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid--4006200999827126877-3314",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Neural Networks",
+        "Math",
+        "Hard"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-6824438697138052999-3314",
+      "fields": [
+        "Compare neural networks to traditional feature engineering methods in NLP.",
+        "<div class=\"concept\">Concept: Neural networks automate feature engineering, unlike manual methods like TF-IDF or stemming.</div><div class=\"intuition\">Intuition: Manual is guessing tools; NNs learn the best tools from data itself.</div><div class=\"mechanics\">Mechanics: NNs optimize representations through gradients; traditional uses fixed transformations like PCA.</div><div class=\"tradeoffs\">Trade-offs: NNs are data-hungry and less interpretable; traditional is faster but suboptimal.</div><div class=\"applications\">Applications: NNs for end-to-end NLP pipelines; traditional for quick IR tasks.</div><div class=\"memory-hook\">Memory Hook: NN vs. old school: Auto vs. handcraft, depth over guesswork.</div>",
+        "Neural Networks Comparison Hard",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid-6824438697138052999-3314",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Neural Networks",
+        "Comparison",
+        "Hard"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--4311672126738063265-3314",
+      "fields": [
+        "What is backpropagation and why is it essential for training neural networks?",
+        "<div class=\"concept\">Concept: Backpropagation is an algorithm to compute gradients of the loss with respect to weights.</div><div class=\"intuition\">Intuition: It's like error feedback rippling back, telling each neuron how to adjust.</div><div class=\"mechanics\">Mechanics: Uses chain rule to propagate derivatives backward through layers.</div><div class=\"tradeoffs\">Trade-offs: Efficient but can suffer from vanishing/exploding gradients in deep nets.</div><div class=\"applications\">Applications: Training NNs for NLP tasks like name sex prediction.</div><div class=\"memory-hook\">Memory Hook: Backprop: Error echoes fixing weights layer by layer.</div>",
+        "Backpropagation Mechanics Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid--4311672126738063265-3314",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Backpropagation",
+        "Mechanics",
+        "Medium"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--6027783099025974660-3314",
+      "fields": [
+        "Describe the biological inspiration behind artificial neurons.",
+        "<div class=\"concept\">Concept: Artificial neurons mimic biological ones with inputs (dendrites), processing (nucleus), and outputs (axon).</div><div class=\"intuition\">Intuition: Like brain cells firing on signals, artificial ones activate on weighted sums.</div><div class=\"mechanics\">Mechanics: Weights as sensitivities; threshold via activation functions.</div><div class=\"tradeoffs\">Trade-offs: Simplified model; doesn't capture full brain complexity like plasticity.</div><div class=\"applications\">Applications: Basis for perceptrons in NLP classification.</div><div class=\"memory-hook\">Memory Hook: Bio neurons: Dendrites in, axon out, weights as sensitivity knobs.</div>",
+        "Neurons Intuition Easy",
+        "Easy"
+      ],
+      "flags": 0,
+      "guid": "guid--6027783099025974660-3314",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Neurons",
+        "Intuition",
+        "Easy"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-5464118806663367377-3314",
+      "fields": [
+        "How does a perceptron work mathematically?",
+        "<div class=\"concept\">Concept: A perceptron is a single artificial neuron with weighted sum and threshold activation.</div><div class=\"intuition\">Intuition: Sums inputs like votes, fires if over threshold.</div><div class=\"mechanics\">Mechanics: Output = step(sum(w_i * x_i) + b), where b is bias.</div><div class=\"tradeoffs\">Trade-offs: Linearly separable only; can't handle XOR without layers.</div><div class=\"applications\">Applications: Basic binary classification, e.g., spam detection.</div><div class=\"memory-hook\">Memory Hook: Perceptron: Weighted vote, step to decide.</div>",
+        "Perceptron Math Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-5464118806663367377-3314",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Perceptron",
+        "Math",
+        "Medium"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-6513642701222972157-3314",
+      "fields": [
+        "What is the role of the bias term in a neuron?",
+        "<div class=\"concept\">Concept: The bias term shifts the activation threshold, like an intercept in regression.</div><div class=\"intuition\">Intuition: It's the 'always on' input ensuring output even with zero features.</div><div class=\"mechanics\">Mechanics: Added as w0 * 1 in the weighted sum.</div><div class=\"tradeoffs\">Trade-offs: Essential for flexibility; without it, zero inputs always output zero.</div><div class=\"applications\">Applications: In logistic neurons for shifting decision boundaries.</div><div class=\"memory-hook\">Memory Hook: Bias: The constant nudge in neuron decisions.</div>",
+        "Neurons Mechanics Easy",
+        "Easy"
+      ],
+      "flags": 0,
+      "guid": "guid-6513642701222972157-3314",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Neurons",
+        "Mechanics",
+        "Easy"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-1076240157498574763-3314",
+      "fields": [
+        "Explain how a single neuron relates to logistic regression.",
+        "<div class=\"concept\">Concept: A neuron with sigmoid activation is equivalent to logistic regression.</div><div class=\"intuition\">Intuition: Both model probabilities with a soft threshold.</div><div class=\"mechanics\">Mechanics: Output = sigmoid(w · x + b); trained similarly but via backprop in nets.</div><div class=\"tradeoffs\">Trade-offs: Neuron scalable in networks; logistic simpler for single-layer.</div><div class=\"applications\">Applications: Sex prediction from names using character n-grams.</div><div class=\"memory-hook\">Memory Hook: Neuron = logistic: Sigmoid slopes for binary bets.</div>",
+        "Neurons Comparison Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-1076240157498574763-3314",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Neurons",
+        "Comparison",
+        "Medium"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-7495109560889856173-3314",
+      "fields": [
+        "What are the trade-offs of using stemming or lemmatization in deep learning NLP pipelines?",
+        "<div class=\"concept\">Concept: Stemming/lemmatization reduces words to roots, but in DL, it's often unnecessary.</div><div class=\"intuition\">Intuition: They 'rob' raw info; NNs learn better from full forms.</div><div class=\"mechanics\">Mechanics: Traditional preprocessing; NNs auto-learn from chars/words.</div><div class=\"tradeoffs\">Trade-offs: May help small data but hurts generalization; test without them.</div><div class=\"applications\">Applications: Avoid in modern NLP for tasks like sentiment analysis.</div><div class=\"memory-hook\">Memory Hook: Stemmers: Old hats stealing NN's learning feast.</div>",
+        "NLP Trade-offs Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-7495109560889856173-3314",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "NLP",
+        "Trade-offs",
+        "Medium"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-5345542093427100113-3314",
+      "fields": [
+        "Describe the mechanics of gradient descent in neural network training.",
+        "<div class=\"concept\">Concept: Gradient descent minimizes loss by updating weights opposite to gradients.</div><div class=\"intuition\">Intuition: Skiing down error slopes to the lowest point.</div><div class=\"mechanics\">Mechanics: w_new = w_old - lr * ∇loss; iterate over epochs.</div><div class=\"tradeoffs\">Trade-offs: Can stuck in local minima; slow for large data.</div><div class=\"applications\">Applications: Optimizing weights in NLP models.</div><div class=\"memory-hook\">Memory Hook: GD: Downhill ski on error hills.</div>",
+        "Optimization Mechanics Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-5345542093427100113-3314",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Optimization",
+        "Mechanics",
+        "Medium"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--7285359424451064111-3314",
+      "fields": [
+        "What is stochastic gradient descent (SGD) and how does it differ from standard GD?",
+        "<div class=\"concept\">Concept: SGD uses single or mini-batch samples for gradient estimates.</div><div class=\"intuition\">Intuition: Shaky skiing to escape pits, exploring more terrain.</div><div class=\"mechanics\">Mechanics: Updates per sample/batch; adds noise to avoid local minima.</div><div class=\"tradeoffs\">Trade-offs: Faster, escapes locals but noisier convergence.</div><div class=\"applications\">Applications: Standard for large NLP datasets in PyTorch.</div><div class=\"memory-hook\">Memory Hook: SGD: Jittery descent shaking off traps.</div>",
+        "Optimization Comparison Hard",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid--7285359424451064111-3314",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Optimization",
+        "Comparison",
+        "Hard"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-4442220625448602797-3314",
+      "fields": [
+        "Why use mini-batch learning in neural networks?",
+        "<div class=\"concept\">Concept: Mini-batch balances full batch and stochastic learning.</div><div class=\"intuition\">Intuition: Group ski: Steady progress with some shake.</div><div class=\"mechanics\">Mechanics: Batch size 16-64; averages gradients for stability.</div><div class=\"tradeoffs\">Trade-offs: Optimal for GPU; too small noisy, too large slow.</div><div class=\"applications\">Applications: Training transformers on text corpora.</div><div class=\"memory-hook\">Memory Hook: Mini-batch: Sweet spot squad for slope surfing.</div>",
+        "Optimization Application Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-4442220625448602797-3314",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Optimization",
+        "Application",
+        "Medium"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-2155739231972823591-3314",
+      "fields": [
+        "What is the polynomial feature explosion and how do neural networks address it?",
+        "<div class=\"concept\">Concept: Explosion: Exponential growth of features in polynomial expansions.</div><div class=\"intuition\">Intuition: Too many combos blow up dims; NNs smartly select.</div><div class=\"mechanics\">Mechanics: NNs learn nonlinear combos via layers, avoiding explicit polys.</div><div class=\"tradeoffs\">Trade-offs: NNs implicit but black-box; polys explicit but infeasible.</div><div class=\"applications\">Applications: In NLP, handling word interactions without manual polys.</div><div class=\"memory-hook\">Memory Hook: Poly boom: NNs defuse with layered learning.</div>",
+        "Feature Engineering Trade-offs Hard",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid-2155739231972823591-3314",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Feature Engineering",
+        "Trade-offs",
+        "Hard"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-582345569941861349-3314",
+      "fields": [
+        "How do you implement a basic perceptron in Python?",
+        "<div class=\"concept\">Concept: A simple function computing weighted sum and step activation.</div><div class=\"intuition\">Intuition: Dot product decides: Fire or not.</div><div class=\"mechanics\">Mechanics: def perceptron(x, w): return sum(xi*wi for xi,wi in zip(x,w)) > 0</div><div class=\"tradeoffs\">Trade-offs: Basic; add sigmoid for probabilities.</div><div class=\"applications\">Applications: Toy binary classifiers.</div><div class=\"memory-hook\">Memory Hook: Python perc: Zip, sum, threshold—done.</div>",
+        "Implementation Mechanics Easy",
+        "Easy"
+      ],
+      "flags": 0,
+      "guid": "guid-582345569941861349-3314",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Implementation",
+        "Mechanics",
+        "Easy"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-692402801267722579-3314",
+      "fields": [
+        "Explain the sigmoid activation function mathematically and its use.",
+        "<div class=\"concept\">Concept: Sigmoid: σ(x) = 1 / (1 + e^{-x}), maps to (0,1).</div><div class=\"intuition\">Intuition: Soft switch for probabilities.</div><div class=\"mechanics\">Mechanics: Compresses linear combo to prob; derivative for backprop.</div><div class=\"tradeoffs\">Trade-offs: Vanishing gradients; prefer ReLU for deep nets.</div><div class=\"applications\">Applications: Binary classification outputs.</div><div class=\"memory-hook\">Memory Hook: Sigmoid: S-curve squishing to probs.</div>",
+        "Activation Math Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-692402801267722579-3314",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Activation",
+        "Math",
+        "Medium"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-1634856270673245043-3314",
+      "fields": [
+        "What is binary cross-entropy loss and when to use it?",
+        "<div class=\"concept\">Concept: BCE: - (y log(p) + (1-y) log(1-p)), measures binary prediction error.</div><div class=\"intuition\">Intuition: Penalizes confident wrongs heavily.</div><div class=\"mechanics\">Mechanics: Averages over samples; weights for imbalance.</div><div class=\"tradeoffs\">Trade-offs: For binary; multi-class use categorical CE.</div><div class=\"applications\">Applications: Sex classification in names.</div><div class=\"memory-hook\">Memory Hook: BCE: Log penalty for prob mismatches.</div>",
+        "Loss Functions Application Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-1634856270673245043-3314",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Loss Functions",
+        "Application",
+        "Medium"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-7682160349256587849-3314",
+      "fields": [
+        "How does PyTorch facilitate building a logistic regression neuron?",
+        "<div class=\"concept\">Concept: PyTorch uses nn.Module for models, with Linear and sigmoid.</div><div class=\"intuition\">Intuition: Lego-like: Build layers, forward prop.</div><div class=\"mechanics\">Mechanics: class LogisticNN(nn.Module): linear = nn.Linear(in, out); forward: sigmoid(linear(X))</div><div class=\"tradeoffs\">Trade-offs: Flexible but manual; vs. scikit-learn's simplicity.</div><div class=\"applications\">Applications: Scalable NLP models.</div><div class=\"memory-hook\">Memory Hook: PyTorch neuron: Linear + sigmoid in Module.</div>",
+        "PyTorch Implementation Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-7682160349256587849-3314",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "PyTorch",
+        "Implementation",
+        "Medium"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-4907503354037111896-3314",
+      "fields": [
+        "Discuss connections between neural networks and biological brains in NLP.",
+        "<div class=\"concept\">Concept: NNs inspired by neurons but abstract; process language statistically.</div><div class=\"intuition\">Intuition: Brains predict words; NNs do too via patterns.</div><div class=\"mechanics\">Mechanics: Weights as synapses; backprop as learning.</div><div class=\"tradeoffs\">Trade-offs: NNs efficient but lack true understanding.</div><div class=\"applications\">Applications: Word prediction, AGI paths.</div><div class=\"memory-hook\">Memory Hook: NN-brain link: Synaptic stats for word wisdom.</div>",
+        "Neural Networks Connections Hard",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid-4907503354037111896-3314",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Neural Networks",
+        "Connections",
+        "Hard"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--7193089003509740270-3314",
+      "fields": [
+        "What are local minima in optimization and how to mitigate them?",
+        "<div class=\"concept\">Concept: Local minima: Suboptimal low points in error surface.</div><div class=\"intuition\">Intuition: Stuck in divots missing the valley bottom.</div><div class=\"mechanics\">Mechanics: Nonconvex surfaces; SGD noise helps escape.</div><div class=\"tradeoffs\">Trade-offs: Momentum accelerates; but no guarantee.</div><div class=\"applications\">Applications: Deep NLP training.</div><div class=\"memory-hook\">Memory Hook: Local mins: Divot traps, SGD shakes free.</div>",
+        "Optimization Trade-offs Hard",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid--7193089003509740270-3314",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Optimization",
+        "Trade-offs",
+        "Hard"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--4933841532059020127-3314",
+      "fields": [
+        "How to prepare name data for sex prediction in NLP?",
+        "<div class=\"concept\">Concept: Use TF-IDF on character n-grams as features.</div><div class=\"intuition\">Intuition: Break names into char patterns for generalization.</div><div class=\"mechanics\">Mechanics: TfidfVectorizer(analyzer='char', ngram_range=(1,3)); aggregate counts.</div><div class=\"tradeoffs\">Trade-offs: Handles OOV but binary labels oversimplify.</div><div class=\"applications\">Applications: Gender inference in text.</div><div class=\"memory-hook\">Memory Hook: Names to vecs: Char n-grams TF-IDF sex guess.</div>",
+        "NLP Application Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid--4933841532059020127-3314",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "NLP",
+        "Application",
+        "Medium"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--1797895239973757015-3314",
+      "fields": [
+        "What is the Universal Approximation Theorem's relevance to NLP?",
+        "<div class=\"concept\">Concept: UAT: NNs can approximate any function with enough neurons.</div><div class=\"intuition\">Intuition: NNs flexible for language's complexity.</div><div class=\"mechanics\">Mechanics: Multi-layer for nonlinearities in word relations.</div><div class=\"tradeoffs\">Trade-offs: Practical limits: Data, compute, overfitting.</div><div class=\"applications\">Applications: Modeling ambiguous word meanings.</div><div class=\"memory-hook\">Memory Hook: UAT in NLP: NNs bend to language twists.</div>",
+        "Neural Networks Theory Hard",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid--1797895239973757015-3314",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Neural Networks",
+        "Theory",
+        "Hard"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-354921508147267587-3314",
+      "fields": [
+        "Explain momentum in SGD optimizers.",
+        "<div class=\"concept\">Concept: Momentum accelerates updates in consistent directions.</div><div class=\"intuition\">Intuition: Build speed downhill, slow on turns.</div><div class=\"mechanics\">Mechanics: v = μ v + ∇; w -= lr v.</div><div class=\"tradeoffs\">Trade-offs: Helps escape saddles but can overshoot.</div><div class=\"applications\">Applications: Faster convergence in NLP training.</div><div class=\"memory-hook\">Memory Hook: Momentum: Optimizer's speedup snowball.</div>",
+        "Optimization Mechanics Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-354921508147267587-3314",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Optimization",
+        "Mechanics",
+        "Medium"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-4498475118243905738-3314",
+      "fields": [
+        "Why avoid polynomial features in favor of neural networks?",
+        "<div class=\"concept\">Concept: Polys explode dims; NNs learn equivalents implicitly.</div><div class=\"intuition\">Intuition: Manual boom vs. auto nonlinear magic.</div><div class=\"mechanics\">Mechanics: Layers create interactions without explicit multiplication.</div><div class=\"tradeoffs\">Trade-offs: NNs less interpretable but scalable.</div><div class=\"applications\">Applications: High-dim NLP without feature explosion.</div><div class=\"memory-hook\">Memory Hook: Polys: Boom avoided by NN layers.</div>",
+        "Feature Engineering Trade-offs Hard",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid-4498475118243905738-3314",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Feature Engineering",
+        "Trade-offs",
+        "Hard"
+      ],
+      "__type__": "Note"
+    }
+  ]
+}

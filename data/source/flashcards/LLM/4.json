@@ -1,0 +1,399 @@
+{
+    "__type__": "Deck",
+    "children": [],
+    "crowdanki_uuid": "deck-llm-ch4",
+    "deck_config_uuid": "default-config",
+    "deck_configurations": [
+      {
+        "__type__": "DeckConfig",
+        "crowdanki_uuid": "default-config",
+        "name": "Default",
+        "autoplay": true,
+        "dyn": false,
+        "lapse": {
+          "delays": [10],
+          "leechAction": 0,
+          "leechFails": 8,
+          "minInt": 1,
+          "mult": 0
+        },
+        "maxTaken": 60,
+        "new": {
+          "bury": false,
+          "delays": [1, 10],
+          "initialFactor": 2500,
+          "ints": [1, 4, 0],
+          "order": 1,
+          "perDay": 20
+        },
+        "replayq": true,
+        "rev": {
+          "bury": false,
+          "ease4": 1.3,
+          "hardFactor": 1.2,
+          "ivlFct": 1,
+          "maxIvl": 36500,
+          "perDay": 200
+        },
+        "timer": 0
+      }
+    ],
+    "desc": "Comprehensive flashcards for ML:LLM:04 Implementing a GPT model from scratch to generate text",
+    "dyn": false,
+    "extendNew": 10,
+    "extendRev": 50,
+    "media_files": [],
+    "name": "ML:LLM:04 Implementing a GPT model from scratch to generate text",
+    "note_models": [
+      {
+        "__type__": "NoteModel",
+        "crowdanki_uuid": "ml-interview-flashcard-model",
+        "css": ".card {\n font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;\n font-size: 18px;\n text-align: center;\n color: #2c3e50;\n background-color: #fdfdfd;\n line-height: 1.5;\n}\n\n.front {\n font-weight: 600;\n color: #2c3e50;\n font-size: 20px;\n padding: 15px;\n}\n\n.back {\n text-align: left;\n padding: 25px;\n max-width: 800px;\n margin: 0 auto;\n}\n\n.concept {\n color: #e74c3c;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.concept strong {\n font-weight: 500;\n}\n\n.intuition {\n color: #3498db;\n font-style: italic;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.intuition strong {\n font-weight: 500;\n font-style: normal;\n}\n\n.mechanics {\n color: #27ae60;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.mechanics strong {\n font-weight: 500;\n}\n\n.tradeoffs {\n color: #e67e22;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.tradeoffs strong {\n font-weight: 500;\n}\n\n.applications {\n color: #8e44ad;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.applications strong {\n font-weight: 500;\n}\n\n.memory-hook {\n background-color: #f8f9fa;\n padding: 15px;\n border-radius: 6px;\n border-left: 4px solid #6c757d;\n font-style: italic;\n color: #495057;\n margin-top: 15px;\n font-size: 15px;\n}\n\n.memory-hook strong {\n font-weight: 500;\n font-style: normal;\n color: #343a40;\n}\n\n@media (max-width: 768px) {\n .back {\n   padding: 20px 15px;\n }\n \n .card {\n   font-size: 16px;\n }\n \n .front {\n   font-size: 18px;\n   padding: 12px;\n }\n}",
+        "flds": [
+          {
+            "__type__": "NoteModelField",
+            "font": "Arial",
+            "media": [],
+            "name": "Front",
+            "ord": 0,
+            "rtl": false,
+            "size": 20,
+            "sticky": false
+          },
+          {
+            "__type__": "NoteModelField",
+            "font": "Arial",
+            "media": [],
+            "name": "Back",
+            "ord": 1,
+            "rtl": false,
+            "size": 20,
+            "sticky": false
+          },
+          {
+            "__type__": "NoteModelField",
+            "font": "Arial",
+            "media": [],
+            "name": "Tags",
+            "ord": 2,
+            "rtl": false,
+            "size": 20,
+            "sticky": false
+          },
+          {
+            "__type__": "NoteModelField",
+            "font": "Arial",
+            "media": [],
+            "name": "Difficulty",
+            "ord": 3,
+            "rtl": false,
+            "size": 20,
+            "sticky": false
+          }
+        ],
+        "latexPost": "\\end{document}",
+        "latexPre": "\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage[utf8]{inputenc}\n\\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\\begin{document}\n",
+        "name": "ML Interview Flashcard",
+        "req": [
+          [0, "all"]
+        ],
+        "sortf": 0,
+        "tags": [],
+        "tmpls": [
+          {
+            "__type__": "CardTemplate",
+            "afmt": "{{FrontSide}}\n\n<hr id=answer>\n\n<div class=\"back\">\n{{Back}}\n</div>",
+            "bafmt": "",
+            "bqfmt": "",
+            "did": null,
+            "name": "Card 1",
+            "ord": 0,
+            "qfmt": "<div class=\"front\">{{Front}}</div>"
+          }
+        ],
+        "type": 0
+      }
+    ],
+    "notes": [
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-001",
+        "fields": [
+          "What is the GPT model architecture?",
+          "<div class=\"concept\">Concept: A generative pretrained transformer model consisting of embedding layers, repeated transformer blocks, and an output layer for text generation.</div><div class=\"intuition\">Intuition: Like a deep neural network that processes text tokens sequentially, building context through attention and transformations to predict the next token.</div><div class=\"mechanics\">Mechanics: Starts with token and positional embeddings, passes through multiple transformer blocks (each with attention and feed forward), applies final normalization, and uses a linear head to output logits over vocabulary.</div><div class=\"tradeoffs\">Trade-offs: High parameter count enables complex patterns but requires significant compute; weight tying reduces parameters but may limit flexibility.</div><div class=\"applications\">Applications: Text generation, chatbots, code completion as in GPT-2/3 models.</div><div class=\"memory-hook\">Memory Hook: GPT = Giant Pyramid of Transformers stacking blocks to 'generate' text.</div>",
+          "ML LLM Architecture Easy",
+          "Easy"
+        ],
+        "flags": 0,
+        "guid": "guid-001",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Architecture", "Easy"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-002",
+        "fields": [
+          "What is layer normalization in LLMs?",
+          "<div class=\"concept\">Concept: A technique to normalize activations across the feature dimension to have zero mean and unit variance.</div><div class=\"intuition\">Intuition: Stabilizes training by keeping layer outputs in a consistent scale, preventing extreme values from disrupting gradients.</div><div class=\"mechanics\">Mechanics: Compute mean and variance over last dimension, subtract mean, divide by sqrt(variance + eps), then apply learnable scale and shift.</div><div class=\"tradeoffs\">Trade-offs: Adds computation but improves convergence; unlike batch norm, independent of batch size for flexibility.</div><div class=\"applications\">Applications: Applied before/after attention and feed forward in transformers like GPT-2.</div><div class=\"memory-hook\">Memory Hook: Layer Norm = 'Leveling' the playing field for activations per layer.</div>",
+          "ML LLM Normalization Easy",
+          "Easy"
+        ],
+        "flags": 0,
+        "guid": "guid-002",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Normalization", "Easy"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-003",
+        "fields": [
+          "What is the GELU activation function?",
+          "<div class=\"concept\">Concept: Gaussian Error Linear Unit, a smooth activation function used in transformers.</div><div class=\"intuition\">Intuition: Blends ReLU's linearity for positives with a gentle curve for negatives, allowing subtle negative contributions.</div><div class=\"mechanics\">Mechanics: Approximate as 0.5x(1 + tanh(sqrt(2/pi)(x + 0.044715x^3))).</div><div class=\"tradeoffs\">Trade-offs: Smoother than ReLU for better optimization but slightly more compute-intensive.</div><div class=\"applications\">Applications: In feed forward networks of GPT models for nonlinearity.</div><div class=\"memory-hook\">Memory Hook: GELU = 'Gel' smoothing out ReLU's sharp edges.</div>",
+          "ML LLM Activation Easy",
+          "Easy"
+        ],
+        "flags": 0,
+        "guid": "guid-003",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Activation", "Easy"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-004",
+        "fields": [
+          "How does layer normalization differ from batch normalization in LLMs?",
+          "<div class=\"concept\">Concept: Layer norm normalizes across features per sample; batch norm across batch per feature.</div><div class=\"intuition\">Intuition: Layer norm treats each input independently, ideal for varying batch sizes in LLMs.</div><div class=\"mechanics\">Mechanics: Layer norm: mean/var over emb_dim; batch norm: over batch_dim.</div><div class=\"tradeoffs\">Trade-offs: Layer norm more stable for small/variable batches but no batch statistics for regularization.</div><div class=\"applications\">Applications: Layer norm in transformers for seq data; batch norm in conv nets.</div><div class=\"memory-hook\">Memory Hook: Layer vs Batch = Individual layers 'normalize' alone vs in a 'batch' group.</div>",
+          "ML LLM Normalization Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-004",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Normalization", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-005",
+        "fields": [
+          "Explain the mechanics of shortcut connections in deep networks.",
+          "<div class=\"concept\">Concept: Skip connections adding input to output of layers to aid gradient flow.</div><div class=\"intuition\">Intuition: Provides 'shortcuts' for gradients to bypass layers, preventing vanishing in deep nets.</div><div class=\"mechanics\">Mechanics: In forward: x = layer(x) + x; during backprop, gradients add directly via identity path.</div><div class=\"tradeoffs\">Trade-offs: Enables deeper models but increases memory for activations.</div><div class=\"applications\">Applications: Residual blocks in ResNets and transformers like GPT.</div><div class=\"memory-hook\">Memory Hook: Shortcuts = 'Skip' the traffic jam in deep network highways.</div>",
+          "ML LLM Shortcuts Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-005",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Shortcuts", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-006",
+        "fields": [
+          "Describe the structure and function of a feed forward network in GPT.",
+          "<div class=\"concept\">Concept: A small MLP within transformer blocks for position-wise transformations.</div><div class=\"intuition\">Intuition: Expands features to richer space then projects back, adding nonlinearity per token.</div><div class=\"mechanics\">Mechanics: Linear(emb_dim -> 4*emb_dim), GELU, Linear(4*emb_dim -> emb_dim).</div><div class=\"tradeoffs\">Trade-offs: Increases capacity but adds parameters/compute; expansion factor balances expressivity vs efficiency.</div><div class=\"applications\">Applications: Processing attention outputs in each transformer block.</div><div class=\"memory-hook\">Memory Hook: Feed Forward = 'Feeding' tokens through a wide-then-narrow funnel.</div>",
+          "ML LLM FeedForward Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-006",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "FeedForward", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-007",
+        "fields": [
+          "What are the trade-offs of using GELU vs ReLU in LLMs?",
+          "<div class=\"concept\">Concept: GELU is smoother, probabilistic; ReLU is piecewise linear.</div><div class=\"intuition\">Intuition: GELU allows negative values subtly, aiding learning; ReLU kills negatives abruptly.</div><div class=\"mechanics\">Mechanics: GELU: x * Φ(x); ReLU: max(0,x).</div><div class=\"tradeoffs\">Trade-offs: GELU better for deep nets/gradients but slower; ReLU simpler/faster but prone to dead neurons.</div><div class=\"applications\">Applications: GELU in GPT for better performance; ReLU in older nets.</div><div class=\"memory-hook\">Memory Hook: GELU vs ReLU = Gentle curve vs Rigid Line Unit.</div>",
+          "ML LLM Activation Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-007",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Activation", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-008",
+        "fields": [
+          "How does a transformer block integrate attention and feed forward layers?",
+          "<div class=\"concept\">Concept: Core unit combining self-attention, feed forward, norms, and shortcuts.</div><div class=\"intuition\">Intuition: Attention captures relationships; feed forward refines per position; norms/shortcuts stabilize.</div><div class=\"mechanics\">Mechanics: Norm -> Attention -> Dropout -> +Shortcut -> Norm -> FF -> Dropout -> +Shortcut.</div><div class=\"tradeoffs\">Trade-offs: Powerful but parameter-heavy; pre-norm vs post-norm affects stability.</div><div class=\"applications\">Applications: Stacked in GPT for sequential processing.</div><div class=\"memory-hook\">Memory Hook: Transformer Block = 'Block' building with attention windows and feed forward rooms.</div>",
+          "ML LLM TransformerBlock Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-008",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "TransformerBlock", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-009",
+        "fields": [
+          "Explain the text generation process in GPT models.",
+          "<div class=\"concept\">Concept: Autoregressive generation predicting one token at a time.</div><div class=\"intuition\">Intuition: Builds text incrementally, appending predictions to context like a growing chain.</div><div class=\"mechanics\">Mechanics: Input tokens -> Model -> Logits for last position -> Softmax -> Argmax -> Append token ID -> Repeat.</div><div class=\"tradeoffs\">Trade-offs: Simple/greedy but repetitive; sampling adds diversity but risks incoherence.</div><div class=\"applications\">Applications: Chat, story generation in GPT.</div><div class=\"memory-hook\">Memory Hook: Generation = 'Generate' one link at a time in a text chain.</div>",
+          "ML LLM Generation Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-009",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Generation", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-010",
+        "fields": [
+          "What is weight tying in GPT models and its implications?",
+          "<div class=\"concept\">Concept: Sharing weights between token embedding and output linear layers.</div><div class=\"intuition\">Intuition: Reuses embeddings as output projections, assuming symmetry reduces redundancy.</div><div class=\"mechanics\">Mechanics: Output weight = transpose(embedding weight), reducing params by vocab_size * emb_dim.</div><div class=\"tradeoffs\">Trade-offs: Saves memory/parameters but may hurt performance if layers need independence.</div><div class=\"applications\">Applications: Used in original GPT-2; modern LLMs often separate for better results.</div><div class=\"memory-hook\">Memory Hook: Weight Tying = 'Tie' embedding shoes to output laces to save space.</div>",
+          "ML LLM Parameters Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-010",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Parameters", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-011",
+        "fields": [
+          "Compare pre-LayerNorm and post-LayerNorm in transformer blocks.",
+          "<div class=\"concept\">Concept: Pre: Norm before sublayers; Post: After.</div><div class=\"intuition\">Intuition: Pre stabilizes inputs to sublayers; post normalizes outputs.</div><div class=\"mechanics\">Mechanics: Pre: Norm(x) -> sublayer -> +x; Post: sublayer(norm(x)) + x, but often unstable.</div><div class=\"tradeoffs\">Trade-offs: Pre better for deep model stability; post was original but led to issues.</div><div class=\"applications\">Applications: Pre in modern GPT; post in original transformer.</div><div class=\"memory-hook\">Memory Hook: Pre vs Post = Normalize 'pre' party or 'post' cleanup.</div>",
+          "ML LLM Normalization Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-011",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Normalization", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-012",
+        "fields": [
+          "How do shortcut connections mitigate vanishing gradients mathematically?",
+          "<div class=\"concept\">Concept: Add identity path to preserve gradient magnitude.</div><div class=\"intuition\">Intuition: Gradients flow directly, avoiding multiplication through many small weights.</div><div class=\"mechanics\">Mechanics: dL/dx = dL/dy * (dy/dx) + dL/dy * 1, where y = layer(x) + x; identity adds 1.</div><div class=\"tradeoffs\">Trade-offs: Effective for depth but requires shape matching; can lead to redundancy.</div><div class=\"applications\">Applications: Enabling 100+ layer nets in vision and LLMs.</div><div class=\"memory-hook\">Memory Hook: Shortcuts = Mathematical 'bypass' valve for gradient pressure.</div>",
+          "ML LLM Shortcuts Hard",
+          "Hard"
+        ],
+        "flags": 0,
+        "guid": "guid-012",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Shortcuts", "Hard"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-013",
+        "fields": [
+          "Derive the parameter count for a GPT-2 small model.",
+          "<div class=\"concept\">Concept: Sum of weights in embeddings, attention, feed forward, etc.</div><div class=\"intuition\">Intuition: Dominated by large matrices in attention and FF; embeddings scale with vocab.</div><div class=\"mechanics\">Mechanics: Embed: vocab*emb; Pos: ctx*emb; Per block: Attn 3*emb^2 (qkv) + emb^2 (out), FF 2*emb*4emb; x layers + output.</div><div class=\"tradeoffs\">Trade-offs: More params better capacity but higher memory/inference cost.</div><div class=\"applications\">Applications: Scaling laws guide model sizes like 124M to 1.5B.</div><div class=\"memory-hook\">Memory Hook: Params = 'Pile' of matrices, count rows*cols each.</div>",
+          "ML LLM Parameters Hard",
+          "Hard"
+        ],
+        "flags": 0,
+        "guid": "guid-013",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Parameters", "Hard"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-014",
+        "fields": [
+          "What are edge cases in text generation for untrained GPT models?",
+          "<div class=\"concept\">Concept: Generation without learned weights produces random/incoherent text.</div><div class=\"intuition\">Intuition: Random params mean uniform logits, leading to gibberish tokens.</div><div class=\"mechanics\">Mechanics: Logits random -> argmax picks arbitrary IDs -> decode to nonsense.</div><div class=\"tradeoffs\">Trade-offs: Highlights need for training; pretraining mitigates but finetuning required for tasks.</div><div class=\"applications\">Applications: Debugging init; contrast with trained models.</div><div class=\"memory-hook\">Memory Hook: Untrained = 'Untaught' kid babbling random words.</div>",
+          "ML LLM Generation Hard",
+          "Hard"
+        ],
+        "flags": 0,
+        "guid": "guid-014",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Generation", "Hard"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-015",
+        "fields": [
+          "How does the expansion factor in feed forward networks affect optimization?",
+          "<div class=\"concept\">Concept: Multiplier (e.g., 4x) for hidden dim in FF.</div><div class=\"intuition\">Intuition: Wider hidden layer explores richer features before projection.</div><div class=\"mechanics\">Mechanics: Increases non-linearity/capacity; gradients flow through larger matrices.</div><div class=\"tradeoffs\">Trade-offs: Better expressivity vs more params/compute; optimal ~4x in practice.</div><div class=\"applications\">Applications: Tuning in GPT variants for balance.</div><div class=\"memory-hook\">Memory Hook: Expansion = 'Expand' balloon then deflate for shape.</div>",
+          "ML LLM FeedForward Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-015",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "FeedForward", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-016",
+        "fields": [
+          "Connect shortcut connections to attention mechanisms in transformers.",
+          "<div class=\"concept\">Concept: Both facilitate information flow; shortcuts across layers, attention across positions.</div><div class=\"intuition\">Intuition: Shortcuts preserve local info; attention aggregates global.</div><div class=\"mechanics\">Mechanics: Shortcuts add pre-attn to post; attention weights sum values.</div><div class=\"tradeoffs\">Trade-offs: Combined enable deep, context-aware models.</div><div class=\"applications\">Applications: Essential in GPT for long-range dependencies.</div><div class=\"memory-hook\">Memory Hook: Shortcuts + Attention = Vertical skips + Horizontal glances.</div>",
+          "ML LLM Connections Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-016",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Connections", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-017",
+        "fields": [
+          "What is the role of dropout in GPT transformer blocks?",
+          "<div class=\"concept\">Concept: Randomly zeros elements during training to prevent overfitting.</div><div class=\"intuition\">Intuition: Forces model to learn robust features without relying on specifics.</div><div class=\"mechanics\">Mechanics: Applied after embeddings, attention, FF; rate ~0.1.</div><div class=\"tradeoffs\">Trade-offs: Improves generalization but slows convergence; disabled in eval.</div><div class=\"applications\">Applications: Regularization in large models like GPT.</div><div class=\"memory-hook\">Memory Hook: Dropout = 'Drop' some friends to learn independence.</div>",
+          "ML LLM Dropout Easy",
+          "Easy"
+        ],
+        "flags": 0,
+        "guid": "guid-017",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Dropout", "Easy"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-018",
+        "fields": [
+          "How to compute memory requirements for GPT models?",
+          "<div class=\"concept\">Concept: Total params * bytes per param + activations etc.</div><div class=\"intuition\">Intuition: Params dominate; float32=4 bytes each.</div><div class=\"mechanics\">Mechanics: Sum p.numel() * 4 / 1e6 MB; for 124M ~500MB.</div><div class=\"tradeoffs\">Trade-offs: Larger models better but need more VRAM; quantization reduces.</div><div class=\"applications\">Applications: Hardware planning for training/inference.</div><div class=\"memory-hook\">Memory Hook: Memory = 'Mega' bytes per million params ~4MB.</div>",
+          "ML LLM Memory Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-018",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Memory", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-019",
+        "fields": [
+          "Why does GPT use masked multi-head attention?",
+          "<div class=\"concept\">Concept: Prevents future tokens from influencing past in autoregressive setup.</div><div class=\"intuition\">Intuition: Ensures causal generation, like reading left-to-right.</div><div class=\"mechanics\">Mechanics: Mask upper triangle in attention scores before softmax.</div><div class=\"tradeoffs\">Trade-offs: Enables training on sequences but limits bidirectional context.</div><div class=\"applications\">Applications: Text generation in GPT vs BERT's bidirectional.</div><div class=\"memory-hook\">Memory Hook: Masked = 'Mask' future to predict step-by-step.</div>",
+          "ML LLM Attention Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-019",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Attention", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-020",
+        "fields": [
+          "What are connections between GELU and probabilistic interpretations?",
+          "<div class=\"concept\">Concept: GELU(x) = x * Φ(x), where Φ is Gaussian CDF.</div><div class=\"intuition\">Intuition: Multiplies input by probability it's positive under Gaussian noise.</div><div class=\"mechanics\">Mechanics: Derives from stochastic gating; approx for efficiency.</div><div class=\"tradeoffs\">Trade-offs: Probabilistic smoothness aids gradients vs deterministic ReLU.</div><div class=\"applications\">Applications: Modern activations in LLMs for better uncertainty handling.</div><div class=\"memory-hook\">Memory Hook: GELU = Gaussian 'Error' in linear units probabilistically.</div>",
+          "ML LLM Activation Hard",
+          "Hard"
+        ],
+        "flags": 0,
+        "guid": "guid-020",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Activation", "Hard"]
+      }
+    ]
+  }

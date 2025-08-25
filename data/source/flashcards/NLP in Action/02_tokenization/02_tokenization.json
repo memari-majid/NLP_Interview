@@ -1,0 +1,502 @@
+{
+  "__type__": "Deck",
+  "children": [],
+  "crowdanki_uuid": "deck-2848",
+  "deck_config_uuid": "default-config",
+  "deck_configurations": [
+    {
+      "crowdanki_uuid": "default-config",
+      "name": "Default",
+      "autoplay": true,
+      "dyn": false,
+      "lapse": {
+        "delays": [
+          10
+        ],
+        "leechAction": 0,
+        "leechFails": 8,
+        "minInt": 1,
+        "mult": 0
+      },
+      "maxTaken": 60,
+      "new": {
+        "bury": false,
+        "delays": [
+          1,
+          10
+        ],
+        "initialFactor": 2500,
+        "ints": [
+          1,
+          4,
+          0
+        ],
+        "order": 1,
+        "perDay": 20
+      },
+      "replayq": true,
+      "rev": {
+        "bury": false,
+        "ease4": 1.3,
+        "hardFactor": 1.2,
+        "ivlFct": 1,
+        "maxIvl": 36500,
+        "perDay": 200
+      },
+      "timer": 0,
+      "__type__": "DeckConfig"
+    }
+  ],
+  "desc": "Comprehensive flashcards for 02 Tokenization",
+  "dyn": false,
+  "extendNew": 10,
+  "extendRev": 50,
+  "media_files": [],
+  "name": "ML:NLP:02 Tokenization",
+  "note_models": [
+    {
+      "crowdanki_uuid": "nlp-comprehensive-note-model",
+      "css": ".card {\n font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;\n font-size: 18px;\n text-align: center;\n color: #2c3e50;\n background-color: #fdfdfd;\n line-height: 1.5;\n}\n\n.front {\n font-weight: 600;\n color: #2c3e50;\n font-size: 20px;\n padding: 15px;\n}\n\n.back {\n text-align: left;\n padding: 25px;\n max-width: 800px;\n margin: 0 auto;\n}\n\n.concept {\n color: #e74c3c;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.concept strong {\n font-weight: 500;\n}\n\n.intuition {\n color: #3498db;\n font-style: italic;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.intuition strong {\n font-weight: 500;\n font-style: normal;\n}\n\n.mechanics {\n color: #27ae60;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.mechanics strong {\n font-weight: 500;\n}\n\n.tradeoffs {\n color: #e67e22;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.tradeoffs strong {\n font-weight: 500;\n}\n\n.applications {\n color: #8e44ad;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.applications strong {\n font-weight: 500;\n}\n\n.memory-hook {\n background-color: #f8f9fa;\n padding: 15px;\n border-radius: 6px;\n border-left: 4px solid #6c757d;\n font-style: italic;\n color: #495057;\n margin-top: 15px;\n font-size: 15px;\n}\n\n.memory-hook strong {\n font-weight: 500;\n font-style: normal;\n color: #343a40;\n}\n\n@media (max-width: 768px) {\n .back {\n   padding: 20px 15px;\n }\n \n .card {\n   font-size: 16px;\n }\n \n .front {\n   font-size: 18px;\n   padding: 12px;\n }\n}",
+      "flds": [
+        {
+          "font": "Arial",
+          "media": [],
+          "name": "Front",
+          "ord": 0,
+          "rtl": false,
+          "size": 20,
+          "sticky": false,
+          "__type__": "NoteModelField"
+        },
+        {
+          "font": "Arial",
+          "media": [],
+          "name": "Back",
+          "ord": 1,
+          "rtl": false,
+          "size": 20,
+          "sticky": false,
+          "__type__": "NoteModelField"
+        },
+        {
+          "font": "Arial",
+          "media": [],
+          "name": "Tags",
+          "ord": 2,
+          "rtl": false,
+          "size": 20,
+          "sticky": false,
+          "__type__": "NoteModelField"
+        },
+        {
+          "font": "Arial",
+          "media": [],
+          "name": "Difficulty",
+          "ord": 3,
+          "rtl": false,
+          "size": 20,
+          "sticky": false,
+          "__type__": "NoteModelField"
+        }
+      ],
+      "latexPost": "\\end{document}",
+      "latexPre": "\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage[utf8]{inputenc}\n\\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\\begin{document}\n",
+      "name": "NLP Comprehensive",
+      "req": [
+        [
+          0,
+          "all"
+        ]
+      ],
+      "sortf": 0,
+      "tags": [],
+      "tmpls": [
+        {
+          "afmt": "{{FrontSide}}\n\n<hr id=answer>\n\n<div class=\"back\">\n{{Back}}\n</div>",
+          "bafmt": "",
+          "bqfmt": "",
+          "did": null,
+          "name": "Card 1",
+          "ord": 0,
+          "qfmt": "<div class=\"front\">{{Front}}</div>",
+          "__type__": "CardTemplate"
+        }
+      ],
+      "type": 0,
+      "__type__": "NoteModel"
+    }
+  ],
+  "notes": [
+    {
+      "crowdanki_uuid": "note-2345456388112084668-2848",
+      "fields": [
+        "What is tokenization in NLP?",
+        "<div class=\"concept\">Concept: Tokenization is the process of breaking unstructured natural language text into smaller units called tokens, which can be words, punctuation, or other meaningful elements.</div><div class=\"intuition\">Intuition: Imagine chopping a sentence into bite-sized pieces like words or symbols, making it easier for a computer to process language like counting ingredients in a recipe.</div><div class=\"mechanics\">Mechanics: A tokenizer segments text based on rules, such as splitting on whitespace or using regular expressions to handle punctuation.</div><div class=\"tradeoffs\">Trade-offs: Simple tokenizers are fast but may mishandle punctuation or complex cases; advanced ones are accurate but slower.</div><div class=\"applications\">Applications: Used in search engines, chatbots, and machine learning pipelines to convert text into numerical data.</div><div class=\"memory-hook\">Memory Hook: Tokenization is like 'token'izing a ticket—breaking text into tickets (tokens) for the NLP ride.</div>",
+        "Tokenization Basics Easy",
+        "Easy"
+      ],
+      "flags": 0,
+      "guid": "guid-2345456388112084668-2848",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Tokenization",
+        "Basics",
+        "Easy"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--2010130301652350521-2848",
+      "fields": [
+        "Why is tokenization the foundation of NLP pipelines?",
+        "<div class=\"concept\">Concept: Tokenization converts raw text into discrete units (tokens) that can be numerically represented for further processing.</div><div class=\"intuition\">Intuition: Without breaking text into tokens, computers can't 'count' or analyze language, like trying to bake without measuring ingredients.</div><div class=\"mechanics\">Mechanics: It segments text into words, n-grams, or subwords, enabling vectorization and statistical analysis.</div><div class=\"tradeoffs\">Trade-offs: Retains structure but loses some raw information like exact whitespace; essential for efficiency in large models.</div><div class=\"applications\">Applications: Powers LLMs like ChatGPT by predicting next tokens; used in sentiment analysis and search.</div><div class=\"memory-hook\">Memory Hook: Tokenization is the 'first cut'—like slicing bread before making a sandwich in NLP.</div>",
+        "Tokenization Intuition Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid--2010130301652350521-2848",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Tokenization",
+        "Intuition",
+        "Medium"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--3572727522048097349-2848",
+      "fields": [
+        "Compare simple whitespace tokenization with rule-based tokenization using regular expressions.",
+        "<div class=\"concept\">Concept: Whitespace tokenization splits on spaces; rule-based uses regex to handle punctuation and contractions.</div><div class=\"intuition\">Intuition: Whitespace is quick but clumsy with commas; regex is smarter, keeping 'There's' intact like a precise surgeon.</div><div class=\"mechanics\">Mechanics: Whitespace: text.split(); Regex: re.findall(r'\\w+(?:\\'\\w+)?|[^\\w\\s]', text) to manage apostrophes.</div><div class=\"tradeoffs\">Trade-offs: Whitespace is faster but error-prone; regex is accurate but requires crafting patterns, potentially missing edge cases.</div><div class=\"applications\">Applications: Whitespace for quick prototypes; regex for handling English contractions in sentiment analysis.</div><div class=\"memory-hook\">Memory Hook: Whitespace is a blunt axe; regex a sharp scalpel for token surgery.</div>",
+        "Tokenization Comparison Hard",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid--3572727522048097349-2848",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Tokenization",
+        "Comparison",
+        "Hard"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--2381062065712765712-2848",
+      "fields": [
+        "What are the advantages of using SpaCy for tokenization?",
+        "<div class=\"concept\">Concept: SpaCy provides fast, production-ready tokenization with additional linguistic features like POS tagging and lemmatization.</div><div class=\"intuition\">Intuition: It's like a Swiss Army knife—tokens plus grammar insights, speeding up pipeline development.</div><div class=\"mechanics\">Mechanics: Load model: nlp = spacy.load('en_core_web_sm'); Process: doc = nlp(text); Tokens: [tok.text for tok in doc].</div><div class=\"tradeoffs\">Trade-offs: Accurate and feature-rich but slower than regex; requires model downloads.</div><div class=\"applications\">Applications: In chatbots for intent recognition or NER in legal texts.</div><div class=\"memory-hook\">Memory Hook: SpaCy is 'spacey'—expansive features orbiting around tokens.</div>",
+        "Tokenization SpaCy Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid--2381062065712765712-2848",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Tokenization",
+        "SpaCy",
+        "Medium"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-9126635698890621045-2848",
+      "fields": [
+        "Explain Byte Pair Encoding (BPE) and its use in subword tokenization.",
+        "<div class=\"concept\">Concept: BPE is a subword tokenization method that merges frequent character pairs into tokens, building a vocabulary from data.</div><div class=\"intuition\">Intuition: Like matchmaking letters that hang out together, creating efficient 'word pieces' for unknown words.</div><div class=\"mechanics\">Mechanics: Start with characters; iteratively merge most frequent pairs until vocabulary size limit; uses counts from corpus.</div><div class=\"tradeoffs\">Trade-offs: Handles OOV words well but requires training on corpus; larger vocab than characters but smaller than words.</div><div class=\"applications\">Applications: In transformers like GPT for multilingual robustness and handling misspellings.</div><div class=\"memory-hook\">Memory Hook: BPE: 'Byte Pairs Engage'—characters pair up like dancers at a byte ball.</div>",
+        "Subword Tokenization BPE Theory Hard",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid-9126635698890621045-2848",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Subword Tokenization",
+        "BPE",
+        "Theory",
+        "Hard"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--3553826004294695929-2848",
+      "fields": [
+        "How do n-grams improve upon single-word tokens?",
+        "<div class=\"concept\">Concept: n-grams are sequences of n tokens, capturing context and order lost in bag-of-words.</div><div class=\"intuition\">Intuition: Single words are isolated notes; n-grams are chords, preserving phrases like 'ice cream'.</div><div class=\"mechanics\">Mechanics: Generate sequences: 2-grams from 'I scream for ice cream' include 'I scream', 'scream for'.</div><div class=\"tradeoffs\">Trade-offs: Retains order but explodes vocabulary size; useful for negation like 'not good'.</div><div class=\"applications\">Applications: In search for phrase matching or sentiment to handle 'not bad'.</div><div class=\"memory-hook\">Memory Hook: n-grams: 'n' neighbors grouping words like friends in a chain.</div>",
+        "n-grams Application Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid--3553826004294695929-2848",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "n-grams",
+        "Application",
+        "Medium"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--2931142686645909444-2848",
+      "fields": [
+        "What are stop words and when should they be removed?",
+        "<div class=\"concept\">Concept: Stop words are common words like 'the', 'and' with low information value.</div><div class=\"intuition\">Intuition: They're the glue in sentences but often noise; remove to focus on content words.</div><div class=\"mechanics\">Mechanics: Filter using lists from NLTK or SpaCy: [word for word in tokens if word not in stop_words].</div><div class=\"tradeoffs\">Trade-offs: Reduces dimensionality but loses relational info like in 'reported to the CEO'.</div><div class=\"applications\">Applications: In keyword search to speed up; avoid in n-grams for context.</div><div class=\"memory-hook\">Memory Hook: Stop words: 'Stop' the filler traffic in your word highway.</div>",
+        "Stop Words Trade-offs Easy",
+        "Easy"
+      ],
+      "flags": 0,
+      "guid": "guid--2931142686645909444-2848",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Stop Words",
+        "Trade-offs",
+        "Easy"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--1315166507552900421-2848",
+      "fields": [
+        "Describe case folding and its impact on NLP pipelines.",
+        "<div class=\"concept\">Concept: Case folding normalizes text by converting to lowercase, consolidating 'House' and 'house'.</div><div class=\"intuition\">Intuition: Ignores shouting (caps) to treat words equally, like ignoring accents in speech.</div><div class=\"mechanics\">Mechanics: text.lower() or selective on sentence starts to preserve proper nouns.</div><div class=\"tradeoffs\">Trade-offs: Reduces vocabulary but loses proper noun info; improves recall, reduces precision.</div><div class=\"applications\">Applications: In search engines for broader matches; avoid in NER.</div><div class=\"memory-hook\">Memory Hook: Case folding: Folding paper to make capitals small, like origami for text.</div>",
+        "Normalization Case Folding Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid--1315166507552900421-2848",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Normalization",
+        "Case Folding",
+        "Medium"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-4501976400282047235-2848",
+      "fields": [
+        "Compare stemming and lemmatization in terms of accuracy and use cases.",
+        "<div class=\"concept\">Concept: Stemming chops suffixes (e.g., Porter stemmer); lemmatization uses dictionaries for root forms.</div><div class=\"intuition\">Intuition: Stemming is rough axe; lemmatization precise knife, considering meaning.</div><div class=\"mechanics\">Mechanics: Stem: stemmer.stem('better') -> 'bett'; Lemma: lemmatizer.lemmatize('better', pos='a') -> 'good'.</div><div class=\"tradeoffs\">Trade-offs: Stemming faster, more aggressive (errors like 'betting' to 'bett'); Lemmatization accurate but needs POS.</div><div class=\"applications\">Applications: Stemming for search recall; Lemmatization for chatbots needing precision.</div><div class=\"memory-hook\">Memory Hook: Stemming stems from rules; Lemmatization lemmas from knowledge—like stem vs. full fruit.</div>",
+        "Stemming Lemmatization Comparison Hard",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid-4501976400282047235-2848",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Stemming",
+        "Lemmatization",
+        "Comparison",
+        "Hard"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-1225588349399029214-2848",
+      "fields": [
+        "How does tokenization differ for logographic languages like Chinese?",
+        "<div class=\"concept\">Concept: No spaces between words; uses segmentation tools like Jieba to split into meaningful units.</div><div class=\"intuition\">Intuition: Chinese text is a continuous stream; tokenization carves words from the flow.</div><div class=\"mechanics\">Mechanics: Jieba modes: accurate (minimal splits), full (all possible), search (for engines).</div><div class=\"tradeoffs\">Trade-offs: No stemming easy; radicals exist but splitting changes meaning drastically.</div><div class=\"applications\">Applications: In translation or search for Chinese; Jieba for accurate segmentation.</div><div class=\"memory-hook\">Memory Hook: Chinese tokens: Carving jade—precise cuts for beautiful words.</div>",
+        "Logographic Languages Chinese Application Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-1225588349399029214-2848",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Logographic Languages",
+        "Chinese",
+        "Application",
+        "Medium"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-2219697511616317270-2848",
+      "fields": [
+        "What is a one-hot vector in NLP?",
+        "<div class=\"concept\">Concept: A binary vector where one position is 1 (hot) indicating a token's presence, others 0.</div><div class=\"intuition\">Intuition: Like a light switch: only one on for each word in vocabulary.</div><div class=\"mechanics\">Mechanics: For vocab size V, vector length V; index i=1 if token i present.</div><div class=\"tradeoffs\">Trade-offs: Lossless but sparse and high-dimensional; retains order in sequences.</div><div class=\"applications\">Applications: Input to neural nets; sequence models like RNNs.</div><div class=\"memory-hook\">Memory Hook: One-hot: One spotlight in a dark room highlighting a word.</div>",
+        "Vectors One-hot Easy",
+        "Easy"
+      ],
+      "flags": 0,
+      "guid": "guid-2219697511616317270-2848",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Vectors",
+        "One-hot",
+        "Easy"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--2879108278126717736-2848",
+      "fields": [
+        "Explain bag-of-words (BOW) vectors and their advantages.",
+        "<div class=\"concept\">Concept: A vector counting token occurrences in a document, ignoring order.</div><div class=\"intuition\">Intuition: Jumble words in a bag and count them—summarizes content without sequence.</div><div class=\"mechanics\">Mechanics: Use Counter on tokens; vector per document with vocab dimensions.</div><div class=\"tradeoffs\">Trade-offs: Compresses info, fast for search; loses order and grammar.</div><div class=\"applications\">Applications: Search indexes, similarity via distance; basis for TF-IDF.</div><div class=\"memory-hook\">Memory Hook: BOW: Bag of popcorn words—count kernels, ignore plot.</div>",
+        "Vectors BOW Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid--2879108278126717736-2848",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Vectors",
+        "BOW",
+        "Medium"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--3692864881778815117-2848",
+      "fields": [
+        "How does VADER perform rule-based sentiment analysis?",
+        "<div class=\"concept\">Concept: VADER uses a lexicon of words/emojis with sentiment scores, adjusted for rules like negation.</div><div class=\"intuition\">Intuition: Scores words like a mood ring; boosts for emphasis, handles emoticons.</div><div class=\"mechanics\">Mechanics: Lexicon dict; polarity_scores computes neg/neu/pos/compound.</div><div class=\"tradeoffs\">Trade-offs: Fast, no training; limited to known 7500 tokens, English-focused.</div><div class=\"applications\">Applications: Social media analysis; quick sentiment on short texts.</div><div class=\"memory-hook\">Memory Hook: VADER: Darth Vader judging text's dark (negative) side.</div>",
+        "Sentiment VADER Mechanics Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid--3692864881778815117-2848",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Sentiment",
+        "VADER",
+        "Mechanics",
+        "Medium"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--3482573859813434659-2848",
+      "fields": [
+        "Describe how Naive Bayes is used for sentiment analysis.",
+        "<div class=\"concept\">Concept: Naive Bayes classifies text based on word probabilities given sentiment labels.</div><div class=\"intuition\">Intuition: Learns which words predict positive/negative from labeled data, like a word detective.</div><div class=\"mechanics\">Mechanics: Train on BOW; predict_proba for scores; assumes independence.</div><div class=\"tradeoffs\">Trade-offs: Simple, interpretable; poor on negation without n-grams, domain-specific.</div><div class=\"applications\">Applications: Movie/product reviews; spam detection.</div><div class=\"memory-hook\">Memory Hook: Naive Bayes: 'Naive' assumes words independent, like kids playing alone.</div>",
+        "Sentiment Naive Bayes Hard",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid--3482573859813434659-2848",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Sentiment",
+        "Naive Bayes",
+        "Hard"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--3752076634109946451-2848",
+      "fields": [
+        "What are the trade-offs of using synonym substitution in NLP?",
+        "<div class=\"concept\">Concept: Replaces words with synonyms to normalize vocabulary, like typo correction or expansion.</div><div class=\"intuition\">Intuition: Swaps similar words to broaden understanding, but risks changing nuance.</div><div class=\"mechanics\">Mechanics: Use dictionaries or models like WordNet; apply post-tokenization.</div><div class=\"tradeoffs\">Trade-offs: Reduces vocab, aids data augmentation; can invert meaning (e.g., 'heart broken').</div><div class=\"applications\">Applications: Search recall, adversarial testing; avoid in precise fields like medicine.</div><div class=\"memory-hook\">Memory Hook: Synonyms: Swapping twins—looks same, but one might be evil.</div>",
+        "Normalization Synonym Substitution Trade-offs Hard",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid--3752076634109946451-2848",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Normalization",
+        "Synonym Substitution",
+        "Trade-offs",
+        "Hard"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--5821555077926676649-2848",
+      "fields": [
+        "How do radicals in Chinese relate to stemming in English?",
+        "<div class=\"concept\">Concept: Radicals are building blocks of Chinese characters; stemming reduces English words to roots.</div><div class=\"intuition\">Intuition: Radicals hint at meaning like prefixes; but splitting Chinese often alters semantics drastically.</div><div class=\"mechanics\">Mechanics: Chinese: No direct stemming; radicals in phono-semantic compounds. English: Porter strips suffixes.</div><div class=\"tradeoffs\">Trade-offs: Chinese harder to stem without meaning loss; English stemming aggressive but useful.</div><div class=\"applications\">Applications: Chinese segmentation with Jieba; English for IR recall.</div><div class=\"memory-hook\">Memory Hook: Radicals: Roots of Chinese trees; stemming prunes English branches.</div>",
+        "Logographic Languages Stemming Comparison Hard",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid--5821555077926676649-2848",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Logographic Languages",
+        "Stemming",
+        "Comparison",
+        "Hard"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-6831502505305338127-2848",
+      "fields": [
+        "Why might BOW vectors be preferred over one-hot sequences for search engines?",
+        "<div class=\"concept\">Concept: BOW compresses documents to count vectors; one-hot retains sequence but is sparse.</div><div class=\"intuition\">Intuition: BOW is a summary snapshot; one-hot a full movie—search needs quick overviews.</div><div class=\"mechanics\">Mechanics: BOW: Sum occurrences; one-hot: Matrix per document with rows as words.</div><div class=\"tradeoffs\">Trade-offs: BOW faster, constant time similarity; loses order, less for generation.</div><div class=\"applications\">Applications: Indexing in Elasticsearch; similarity with cosine distance.</div><div class=\"memory-hook\">Memory Hook: BOW: Bag vs. piano roll—one compact, one unwound.</div>",
+        "Vectors BOW One-hot Application Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-6831502505305338127-2848",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Vectors",
+        "BOW",
+        "One-hot",
+        "Application",
+        "Medium"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--6889868466118391619-2848",
+      "fields": [
+        "In what scenarios is lemmatization preferred over stemming for improving search precision?",
+        "<div class=\"concept\">Concept: Lemmatization returns valid words considering context; stemming may produce non-words.</div><div class=\"intuition\">Intuition: Lemmatization keeps meaning intact; stemming roughly groups, risking irrelevant matches.</div><div class=\"mechanics\">Mechanics: Lemmatization uses POS; stemming rules-based like Snowball.</div><div class=\"tradeoffs\">Trade-offs: Lemmatization slower, needs resources; improves precision by avoiding errors.</div><div class=\"applications\">Applications: Chatbots for accurate responses; search where false positives costly.</div><div class=\"memory-hook\">Memory Hook: Lemmatization: Lemonade from lemmas—refined; stemming: Stems left after juicing.</div>",
+        "Lemmatization Stemming Precision Hard",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid--6889868466118391619-2848",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Lemmatization",
+        "Stemming",
+        "Precision",
+        "Hard"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-8360174733859265133-2848",
+      "fields": [
+        "How can n-grams help in handling negation in sentiment analysis?",
+        "<div class=\"concept\">Concept: n-grams capture phrases like 'not good', preserving negation context.</div><div class=\"intuition\">Intuition: Single words miss 'not'; pairs glue negation to adjectives for true sentiment.</div><div class=\"mechanics\">Mechanics: Tokenize into 2-grams; include in BOW or model features.</div><div class=\"tradeoffs\">Trade-offs: Increases vocab size; better accuracy for nuances like sarcasm.</div><div class=\"applications\">Applications: In VADER or Naive Bayes to differentiate 'good' vs. 'not good'.</div><div class=\"memory-hook\">Memory Hook: n-grams: 'Not' sticking to 'good' like Velcro in sentiment.</div>",
+        "n-grams Sentiment Negation Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-8360174733859265133-2848",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "n-grams",
+        "Sentiment",
+        "Negation",
+        "Medium"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--7397195572626962683-2848",
+      "fields": [
+        "What mathematical issues arise from large vocabularies in one-hot encoding?",
+        "<div class=\"concept\">Concept: One-hot creates high-dimensional sparse vectors, leading to curse of dimensionality.</div><div class=\"intuition\">Intuition: Huge space with mostly zeros; hard to compute distances meaningfully.</div><div class=\"mechanics\">Mechanics: Vector length = vocab size; similarity via dot product or cosine.</div><div class=\"tradeoffs\">Trade-offs: Exact representation but memory-intensive; prone to overfitting.</div><div class=\"applications\">Applications: Neural inputs; mitigated by embeddings in deep learning.</div><div class=\"memory-hook\">Memory Hook: One-hot: Vast empty stadium with one fan cheering per word.</div>",
+        "Vectors One-hot Math Hard",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid--7397195572626962683-2848",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Vectors",
+        "One-hot",
+        "Math",
+        "Hard"
+      ],
+      "__type__": "Note"
+    }
+  ]
+}

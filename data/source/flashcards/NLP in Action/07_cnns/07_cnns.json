@@ -1,0 +1,492 @@
+{
+  "__type__": "Deck",
+  "children": [],
+  "crowdanki_uuid": "deck-436",
+  "deck_config_uuid": "default-config",
+  "deck_configurations": [
+    {
+      "crowdanki_uuid": "default-config",
+      "name": "Default",
+      "autoplay": true,
+      "dyn": false,
+      "lapse": {
+        "delays": [
+          10
+        ],
+        "leechAction": 0,
+        "leechFails": 8,
+        "minInt": 1,
+        "mult": 0
+      },
+      "maxTaken": 60,
+      "new": {
+        "bury": false,
+        "delays": [
+          1,
+          10
+        ],
+        "initialFactor": 2500,
+        "ints": [
+          1,
+          4,
+          0
+        ],
+        "order": 1,
+        "perDay": 20
+      },
+      "replayq": true,
+      "rev": {
+        "bury": false,
+        "ease4": 1.3,
+        "hardFactor": 1.2,
+        "ivlFct": 1,
+        "maxIvl": 36500,
+        "perDay": 200
+      },
+      "timer": 0,
+      "__type__": "DeckConfig"
+    }
+  ],
+  "desc": "Comprehensive flashcards for 07 CNNs",
+  "dyn": false,
+  "extendNew": 10,
+  "extendRev": 50,
+  "media_files": [],
+  "name": "ML:NLP:07 CNNs",
+  "note_models": [
+    {
+      "crowdanki_uuid": "nlp-comprehensive-note-model",
+      "css": ".card {\n font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;\n font-size: 18px;\n text-align: center;\n color: #2c3e50;\n background-color: #fdfdfd;\n line-height: 1.5;\n}\n\n.front {\n font-weight: 600;\n color: #2c3e50;\n font-size: 20px;\n padding: 15px;\n}\n\n.back {\n text-align: left;\n padding: 25px;\n max-width: 800px;\n margin: 0 auto;\n}\n\n.concept {\n color: #e74c3c;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.concept strong {\n font-weight: 500;\n}\n\n.intuition {\n color: #3498db;\n font-style: italic;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.intuition strong {\n font-weight: 500;\n font-style: normal;\n}\n\n.mechanics {\n color: #27ae60;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.mechanics strong {\n font-weight: 500;\n}\n\n.tradeoffs {\n color: #e67e22;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.tradeoffs strong {\n font-weight: 500;\n}\n\n.applications {\n color: #8e44ad;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.applications strong {\n font-weight: 500;\n}\n\n.memory-hook {\n background-color: #f8f9fa;\n padding: 15px;\n border-radius: 6px;\n border-left: 4px solid #6c757d;\n font-style: italic;\n color: #495057;\n margin-top: 15px;\n font-size: 15px;\n}\n\n.memory-hook strong {\n font-weight: 500;\n font-style: normal;\n color: #343a40;\n}\n\n@media (max-width: 768px) {\n .back {\n   padding: 20px 15px;\n }\n \n .card {\n   font-size: 16px;\n }\n \n .front {\n   font-size: 18px;\n   padding: 12px;\n }\n}",
+      "flds": [
+        {
+          "font": "Arial",
+          "media": [],
+          "name": "Front",
+          "ord": 0,
+          "rtl": false,
+          "size": 20,
+          "sticky": false,
+          "__type__": "NoteModelField"
+        },
+        {
+          "font": "Arial",
+          "media": [],
+          "name": "Back",
+          "ord": 1,
+          "rtl": false,
+          "size": 20,
+          "sticky": false,
+          "__type__": "NoteModelField"
+        },
+        {
+          "font": "Arial",
+          "media": [],
+          "name": "Tags",
+          "ord": 2,
+          "rtl": false,
+          "size": 20,
+          "sticky": false,
+          "__type__": "NoteModelField"
+        },
+        {
+          "font": "Arial",
+          "media": [],
+          "name": "Difficulty",
+          "ord": 3,
+          "rtl": false,
+          "size": 20,
+          "sticky": false,
+          "__type__": "NoteModelField"
+        }
+      ],
+      "latexPost": "\\end{document}",
+      "latexPre": "\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage[utf8]{inputenc}\n\\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\\begin{document}\n",
+      "name": "NLP Comprehensive",
+      "req": [
+        [
+          0,
+          "all"
+        ]
+      ],
+      "sortf": 0,
+      "tags": [],
+      "tmpls": [
+        {
+          "afmt": "{{FrontSide}}\n\n<hr id=answer>\n\n<div class=\"back\">\n{{Back}}\n</div>",
+          "bafmt": "",
+          "bqfmt": "",
+          "did": null,
+          "name": "Card 1",
+          "ord": 0,
+          "qfmt": "<div class=\"front\">{{Front}}</div>",
+          "__type__": "CardTemplate"
+        }
+      ],
+      "type": 0,
+      "__type__": "NoteModel"
+    }
+  ],
+  "notes": [
+    {
+      "crowdanki_uuid": "note--2217076771146375297-436",
+      "fields": [
+        "What is a Convolutional Neural Network (CNN) in the context of NLP?",
+        "<div class=\"concept\">Concept: A Convolutional Neural Network (CNN) is a type of neural network that uses convolution operations to detect patterns in sequences, commonly used in NLP for tasks like text classification.</div><div class=\"intuition\">Intuition: CNNs slide 'filters' over text sequences to capture local patterns, similar to how eyes scan words in a sentence.</div><div class=\"mechanics\">Mechanics: It involves layers like embedding, convolution, pooling, and linear layers to process tokenized text into predictions.</div><div class=\"tradeoffs\">Trade-offs: Efficient with less data than transformers but may miss long-range dependencies.</div><div class=\"applications\">Applications: Text classification, sentiment analysis, named entity recognition.</div><div class=\"memory-hook\">Memory Hook: CNNs 'convolve' like a stencil sliding over text, revealing hidden patterns.</div>",
+        "NLP CNN Definition",
+        "Easy"
+      ],
+      "flags": 0,
+      "guid": "guid--2217076771146375297-436",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "NLP",
+        "CNN",
+        "Definition"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--4661182753753799384-436",
+      "fields": [
+        "Why are CNNs underappreciated in NLP compared to computer vision?",
+        "<div class=\"concept\">Concept: CNNs are efficient for NLP but overlooked because they don't require massive data/compute, unlike transformers favored by big tech.</div><div class=\"intuition\">Intuition: Big tech prefers scalable models; CNNs are 'too good' for small setups, like a fast car in traffic.</div><div class=\"mechanics\">Mechanics: CNNs use 1D convolutions on word sequences, learning patterns via backpropagation.</div><div class=\"tradeoffs\">Trade-offs: Efficient and performant on laptops but harder to find proper implementations; less hype than transformers.</div><div class=\"applications\">Applications: Automating business decisions, classifying text with few parameters.</div><div class=\"memory-hook\">Memory Hook: CNNs: the efficient underdog, crushing NLP with <200k params vs. billions in transformers.</div>",
+        "NLP CNN Trade-offs",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid--4661182753753799384-436",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "NLP",
+        "CNN",
+        "Trade-offs"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--3499827021183278196-436",
+      "fields": [
+        "Explain the intuition behind detecting patterns in word sequences using convolution.",
+        "<div class=\"concept\">Concept: Convolution detects patterns in sequences by sliding a kernel over word embeddings to match local structures.</div><div class=\"intuition\">Intuition: Like using a stencil to find matching shapes in text, ignoring position (translation invariance) and scale.</div><div class=\"mechanics\">Mechanics: Kernel multiplies with windowed input, sums for match score; max pooling finds strongest signals.</div><div class=\"tradeoffs\">Trade-offs: Captures order better than bag-of-words but may require multiple kernel sizes for varied patterns.</div><div class=\"applications\">Applications: Identifying n-grams like adjective-noun pairs in sentences.</div><div class=\"memory-hook\">Memory Hook: Convolution: sliding stencil spotting 'right order' in Tom Stoppard's quote.</div>",
+        "NLP Convolution Intuition",
+        "Easy"
+      ],
+      "flags": 0,
+      "guid": "guid--3499827021183278196-436",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "NLP",
+        "Convolution",
+        "Intuition"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-2304543455923455819-436",
+      "fields": [
+        "What is the mathematical difference between correlation and convolution?",
+        "<div class=\"concept\">Concept: Correlation measures similarity between equal-length sequences; convolution extends it to unequal lengths by sliding windows.</div><div class=\"intuition\">Intuition: Correlation is a fixed match; convolution is correlation on moving parts, like scanning a barcode.</div><div class=\"mechanics\">Mechanics: Convolution: sum over sliding dot products; formula involves flipping one sequence (though often omitted in DL).</div><div class=\"tradeoffs\">Trade-offs: Convolution handles variable lengths but loses edge info without padding.</div><div class=\"applications\">Applications: Pattern detection in time series or text where patterns shift positions.</div><div class=\"memory-hook\">Memory Hook: Correlation: perfect overlap check; Convolution: sliding search party.</div>",
+        "Math Convolution Theory",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-2304543455923455819-436",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Math",
+        "Convolution",
+        "Theory"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--1216208800261807273-436",
+      "fields": [
+        "How does max pooling work in a CNN for NLP, and why is it useful?",
+        "<div class=\"concept\">Concept: Max pooling reduces convolution output by taking the maximum value in each window, compressing features.</div><div class=\"intuition\">Intuition: Picks the 'loudest' signal in a region, focusing on key patterns like peaks in audio.</div><div class=\"mechanics\">Mechanics: For a convolution output sequence, select max per kernel window; global max pooling reduces to one value per filter.</div><div class=\"tradeoffs\">Trade-offs: Reduces dimensionality and overfitting but may lose subtle information compared to average pooling.</div><div class=\"applications\">Applications: Text classification: captures strongest n-gram matches regardless of position.</div><div class=\"memory-hook\">Memory Hook: Max pooling: the talent scout picking the star performer from the crowd.</div>",
+        "NLP Pooling Mechanics",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid--1216208800261807273-436",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "NLP",
+        "Pooling",
+        "Mechanics"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-6789757504177467350-436",
+      "fields": [
+        "Describe the process of building a 1D CNN in PyTorch for text classification.",
+        "<div class=\"concept\">Concept: Involves embedding layer, 1D convolution, activation, pooling, dropout, and linear output.</div><div class=\"intuition\">Intuition: Transforms words to vectors, slides filters for patterns, pools peaks, then classifies.</div><div class=\"mechanics\">Mechanics: Use nn.Embedding, nn.Conv1d (transpose embeddings), ReLU, nn.MaxPool1d, nn.Dropout, nn.Linear.</div><div class=\"tradeoffs\">Trade-offs: Fast training but needs careful shape management; transpose avoids convolving embeddings wrongly.</div><div class=\"applications\">Applications: Classifying disaster tweets with GloVe embeddings.</div><div class=\"memory-hook\">Memory Hook: PyTorch CNN: Embed, Convolve (1D), Pool max, Drop some, Linear predict.</div>",
+        "PyTorch CNN Application",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid-6789757504177467350-436",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "PyTorch",
+        "CNN",
+        "Application"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--4710661360688749293-436",
+      "fields": [
+        "What are the trade-offs of using CNNs versus transformers in NLP?",
+        "<div class=\"concept\">Concept: CNNs use local convolutions; transformers use attention for global dependencies.</div><div class=\"intuition\">Intuition: CNNs are quick scouts for nearby patterns; transformers see the whole battlefield.</div><div class=\"mechanics\">Mechanics: CNNs: O(n) per layer; transformers: O(n^2) but parallelizable.</div><div class=\"tradeoffs\">Trade-offs: CNNs: efficient, less data needed, but miss long contexts; transformers: powerful but compute-heavy.</div><div class=\"applications\">Applications: CNNs for edge devices; transformers for complex tasks like translation.</div><div class=\"memory-hook\">Memory Hook: CNNs: laptop-friendly sprinter; Transformers: data-guzzling marathoner.</div>",
+        "NLP CNN Transformers Trade-offs",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid--4710661360688749293-436",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "NLP",
+        "CNN",
+        "Transformers",
+        "Trade-offs"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--7083256889428519747-436",
+      "fields": [
+        "How does padding and clipping ensure translation invariance in CNNs for text?",
+        "<div class=\"concept\">Concept: Padding adds filler tokens; clipping trims excess to fixed length.</div><div class=\"intuition\">Intuition: Makes all texts 'same size' so patterns are detectable anywhere, like framing a picture.</div><div class=\"mechanics\">Mechanics: Use <PAD> token (index 0), pad to max seq_len; clip longer sequences.</div><div class=\"tradeoffs\">Trade-offs: Preserves invariance but <PAD> dilutes meaning if overused; clipping loses info.</div><div class=\"applications\">Applications: Uniform input for batch processing in tweet classification.</div><div class=\"memory-hook\">Memory Hook: Padding: stuffing socks in shoes; Clipping: trimming overgrown hedges.</div>",
+        "NLP CNN Mechanics",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid--7083256889428519747-436",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "NLP",
+        "CNN",
+        "Mechanics"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-5757263340491084219-436",
+      "fields": [
+        "Explain transfer learning with word embeddings in CNNs.",
+        "<div class=\"concept\">Concept: Preload embeddings like GloVe into nn.Embedding for knowledge transfer.</div><div class=\"intuition\">Intuition: Borrow general word meanings, fine-tune for specific task, like using a dictionary starter.</div><div class=\"mechanics\">Mechanics: Load vectors matching vocab; set freeze=False for fine-tuning.</div><div class=\"tradeoffs\">Trade-offs: Boosts performance with less data but may introduce irrelevant biases.</div><div class=\"applications\">Applications: Disaster tweet classification using GloVe-50D.</div><div class=\"memory-hook\">Memory Hook: Transfer: importing wisdom from Wikipedia to tweet-savvy CNN.</div>",
+        "Embeddings Transfer Learning Application",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-5757263340491084219-436",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Embeddings",
+        "Transfer Learning",
+        "Application"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-6893755654826976001-436",
+      "fields": [
+        "What is dropout in CNNs, and how does it improve robustness?",
+        "<div class=\"concept\">Concept: Randomly ignores neuron outputs during training to prevent over-reliance.</div><div class=\"intuition\">Intuition: Forces network to 'team up' diversely, like rotating players in a game.</div><div class=\"mechanics\">Mechanics: nn.Dropout(p=0.2-0.5) after pooling; zeros fraction p of inputs.</div><div class=\"tradeoffs\">Trade-offs: Reduces overfitting but slows training; ineffective if too high/low.</div><div class=\"applications\">Applications: Making models robust to noisy text like misspellings.</div><div class=\"memory-hook\">Memory Hook: Dropout: randomly benching neurons to build a versatile team.</div>",
+        "CNN Dropout Robustness",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-6893755654826976001-436",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "CNN",
+        "Dropout",
+        "Robustness"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--7866063636452388670-436",
+      "fields": [
+        "Derive the output length formula for 1D convolution and discuss edge cases.",
+        "<div class=\"concept\">Concept: Output length = floor((input_len + 2*pad - dil*(k-1) -1)/stride) +1.</div><div class=\"intuition\">Intuition: Accounts for kernel overlap and steps; padding mitigates shortening.</div><div class=\"mechanics\">Mechanics: For input 8, kernel 3, stride 1, no pad: output 6; with pad 1: output 8.</div><div class=\"tradeoffs\">Trade-offs: Larger stride reduces output size/compute but loses resolution.</div><div class=\"applications\">Applications: Sizing layers in text CNNs; edge: zero input len yields zero.</div><div class=\"memory-hook\">Memory Hook: Conv output: shrinking sequence unless padded like a bordered rug.</div>",
+        "Math Convolution Edge Cases",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid--7866063636452388670-436",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Math",
+        "Convolution",
+        "Edge Cases"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--8949328610381010872-436",
+      "fields": [
+        "How do CNNs connect to biological vision and language processing?",
+        "<div class=\"concept\">Concept: Inspired by brain's convolutional structures in visual/auditory cortices.</div><div class=\"intuition\">Intuition: Brains use layered filters for patterns; humans have up to 3 convolution layers in Heschl’s gyrus for speech.</div><div class=\"mechanics\">Mechanics: Similar to Laplacian/Sobel filters but learned via backprop.</div><div class=\"tradeoffs\">Trade-offs: Biologically plausible efficiency but simplified vs. real neurons.</div><div class=\"applications\">Applications: NLP parallels voice recognition; explains human scale/translation invariance.</div><div class=\"memory-hook\">Memory Hook: CNNs: artificial brains convolving like zebras' stripes confusing predators.</div>",
+        "CNN Biology Connections",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid--8949328610381010872-436",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "CNN",
+        "Biology",
+        "Connections"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-3193906563579156108-436",
+      "fields": [
+        "Compare handcrafted kernels vs. learned kernels in CNNs for NLP.",
+        "<div class=\"concept\">Concept: Handcrafted: predefined weights; Learned: optimized via backprop.</div><div class=\"intuition\">Intuition: Handcrafted like custom regex; learned auto-adapts like evolution.</div><div class=\"mechanics\">Mechanics: Hand: fixed e.g., [.5,.5] for average; Learned: gradient descent on loss.</div><div class=\"tradeoffs\">Trade-offs: Hand: explainable but tedious; Learned: powerful but black-box.</div><div class=\"applications\">Applications: Hand for Morse code; Learned for tweet classification.</div><div class=\"memory-hook\">Memory Hook: Handcrafted: quill on clay; Learned: AI winter thaw via backprop.</div>",
+        "Kernels CNN Comparisons",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid-3193906563579156108-436",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Kernels",
+        "CNN",
+        "Comparisons"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-8604963358273585790-436",
+      "fields": [
+        "What role does RMSprop play in training CNNs for NLP?",
+        "<div class=\"concept\">Concept: Optimizer using RMS of gradients for adaptive learning rates.</div><div class=\"intuition\">Intuition: Smooths bumpy gradients like shock absorbers on a road.</div><div class=\"mechanics\">Mechanics: Divides learning rate by exponentially decaying average of squared gradients.</div><div class=\"tradeoffs\">Trade-offs: Handles varying gradients better than SGD but may need momentum.</div><div class=\"applications\">Applications: Faster convergence in text CNN training.</div><div class=\"memory-hook\">Memory Hook: RMSprop: root mean square propulsion for gradient descent.</div>",
+        "Optimization CNN Mechanics",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-8604963358273585790-436",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Optimization",
+        "CNN",
+        "Mechanics"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-4455039764079566041-436",
+      "fields": [
+        "How can hyperparameter tuning improve a CNN for disaster tweet classification?",
+        "<div class=\"concept\">Concept: Adjust params like kernel sizes, dropout, learning rate for better performance.</div><div class=\"intuition\">Intuition: Tuning dials to find sweet spot, like seasoning a dish.</div><div class=\"mechanics\">Mechanics: Grid/random search or Bayesian; track accuracy/overfitting.</div><div class=\"tradeoffs\">Trade-offs: Time-consuming but reduces overfitting; e.g., dropout 0.35 yields 79% test acc.</div><div class=\"applications\">Applications: Achieving 80%+ on Kaggle disaster tweets.</div><div class=\"memory-hook\">Memory Hook: Hyperparams: lottery tickets; win with seeds and tweaks.</div>",
+        "Hyperparameters Tuning Application",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid-4455039764079566041-436",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Hyperparameters",
+        "Tuning",
+        "Application"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--4216374377876899865-436",
+      "fields": [
+        "Describe the Morse code decoding example using convolution.",
+        "<div class=\"concept\">Concept: Handcrafted kernel detects dots/dashes in audio signal.</div><div class=\"intuition\">Intuition: Kernel matches low-high-low for dots, like a pattern scanner.</div><div class=\"mechanics\">Mechanics: Normalize audio, convolve with [-1]*24 + [1]*24 + [-1]*24, plot peaks.</div><div class=\"tradeoffs\">Trade-offs: Simple for fixed patterns but inflexible; learned better for variable.</div><div class=\"applications\">Applications: Signal processing; extends to NLP pattern detection.</div><div class=\"memory-hook\">Memory Hook: Morse: beeps convolved to reveal SOS in secret waves.</div>",
+        "Convolution Morse Code Example",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid--4216374377876899865-436",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Convolution",
+        "Morse Code",
+        "Example"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-2631399009034859720-436",
+      "fields": [
+        "Why transpose embeddings before 1D convolution in NLP CNNs?",
+        "<div class=\"concept\">Concept: Aligns sequence dimension for time-based convolution, not embedding dims.</div><div class=\"intuition\">Intuition: Treat embeddings as channels (like RGB in images), convolve over words.</div><div class=\"mechanics\">Mechanics: Embedding output (batch, seq, embed) -> transpose to (batch, embed, seq) for Conv1d.</div><div class=\"tradeoffs\">Trade-offs: Corrects common blog errors; avoids wrong-dimensional patterns.</div><div class=\"applications\">Applications: Proper feature extraction in text sequences.</div><div class=\"memory-hook\">Memory Hook: Transpose: flipping matrix to slide over time, not meanings.</div>",
+        "CNN Embeddings Mechanics",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid-2631399009034859720-436",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "CNN",
+        "Embeddings",
+        "Mechanics"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-3693707747347152672-436",
+      "fields": [
+        "What are the connections between CNNs and traditional signal processing?",
+        "<div class=\"concept\">Concept: CNNs generalize handcrafted filters like Laplacian/Sobel for images or low-pass for signals.</div><div class=\"intuition\">Intuition: From quill-designed to auto-learned patterns.</div><div class=\"mechanics\">Mechanics: Convolution math shared; CNNs use backprop to optimize kernels.</div><div class=\"tradeoffs\">Trade-offs: Learned more adaptive but less interpretable.</div><div class=\"applications\">Applications: Time series, audio (Morse), text as sequences.</div><div class=\"memory-hook\">Memory Hook: CNNs: evolved from clay tablet filters to deep learning dynamos.</div>",
+        "CNN Signal Processing Connections",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid-3693707747347152672-436",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "CNN",
+        "Signal Processing",
+        "Connections"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-2178133417993429554-436",
+      "fields": [
+        "How does a CNN achieve scale and translation invariance in text?",
+        "<div class=\"concept\">Concept: Invariance: patterns detected regardless of position or spread.</div><div class=\"intuition\">Intuition: Understands 'slow speech' or shifted phrases like praise sandwiches.</div><div class=\"mechanics\">Mechanics: Convolution slides kernels; pooling aggregates positions.</div><div class=\"tradeoffs\">Trade-offs: Robust to variations but may ignore order in pooling.</div><div class=\"applications\">Applications: Sentiment analysis ignoring filler words.</div><div class=\"memory-hook\">Memory Hook: Invariance: spotting zebras stripes through moving fence.</div>",
+        "CNN Invariance Theory",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-2178133417993429554-436",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "CNN",
+        "Invariance",
+        "Theory"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--5483247298786473494-436",
+      "fields": [
+        "What is the lottery ticket hypothesis in the context of CNN training?",
+        "<div class=\"concept\">Concept: Some random initializations are 'winning tickets' leading to better models.</div><div class=\"intuition\">Intuition: Lucky starting weights converge faster, like a jackpot seed.</div><div class=\"mechanics\">Mechanics: Reproduce with fixed random seeds; prune networks post-training.</div><div class=\"tradeoffs\">Trade-offs: Explains variability; searching tickets adds compute.</div><div class=\"applications\">Applications: Hyperparam tuning with seeds for reproducible wins.</div><div class=\"memory-hook\">Memory Hook: Lottery: random init as ticket; win big with right numbers.</div>",
+        "CNN Training Hypothesis",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid--5483247298786473494-436",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "CNN",
+        "Training",
+        "Hypothesis"
+      ],
+      "__type__": "Note"
+    }
+  ]
+}

@@ -1,0 +1,401 @@
+{
+  "__type__": "Deck",
+  "children": [],
+  "crowdanki_uuid": "deck-11-info-extraction-kg",
+  "deck_config_uuid": "default-config",
+  "deck_configurations": [
+    {
+      "__type__": "DeckConfig",
+      "crowdanki_uuid": "default-config",
+      "name": "Default",
+      "autoplay": true,
+      "dyn": false,
+      "lapse": {
+        "delays": [
+          10
+        ],
+        "leechAction": 0,
+        "leechFails": 8,
+        "minInt": 1,
+        "mult": 0
+      },
+      "maxTaken": 60,
+      "new": {
+        "bury": false,
+        "delays": [
+          1,
+          10
+        ],
+        "initialFactor": 2500,
+        "ints": [
+          1,
+          4,
+          0
+        ],
+        "order": 1,
+        "perDay": 20
+      },
+      "replayq": true,
+      "rev": {
+        "bury": false,
+        "ease4": 1.3,
+        "hardFactor": 1.2,
+        "ivlFct": 1,
+        "maxIvl": 36500,
+        "perDay": 200
+      },
+      "timer": 0
+    }
+  ],
+  "desc": "Comprehensive flashcards for 11 Knowledge Graphs",
+  "dyn": false,
+  "extendNew": 10,
+  "extendRev": 50,
+  "media_files": [],
+  "name": "ML:NLP:11 Knowledge Graphs",
+  "note_models": [
+    {
+      "__type__": "NoteModel",
+      "crowdanki_uuid": "ml-nlp-interview-model",
+      "css": ".card {\n font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;\n font-size: 18px;\n text-align: center;\n color: #2c3e50;\n background-color: #fdfdfd;\n line-height: 1.5;\n}\n\n.front {\n font-weight: 600;\n color: #2c3e50;\n font-size: 20px;\n padding: 15px;\n}\n\n.back {\n text-align: left;\n padding: 25px;\n max-width: 800px;\n margin: 0 auto;\n}\n\n.concept {\n color: #e74c3c;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.concept strong {\n font-weight: 500;\n}\n\n.intuition {\n color: #3498db;\n font-style: italic;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.intuition strong {\n font-weight: 500;\n font-style: normal;\n}\n\n.mechanics {\n color: #27ae60;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.mechanics strong {\n font-weight: 500;\n}\n\n.tradeoffs {\n color: #e67e22;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.tradeoffs strong {\n font-weight: 500;\n}\n\n.applications {\n color: #8e44ad;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.applications strong {\n font-weight: 500;\n}\n\n.memory-hook {\n background-color: #f8f9fa;\n padding: 15px;\n border-radius: 6px;\n border-left: 4px solid #6c757d;\n font-style: italic;\n color: #495057;\n margin-top: 15px;\n font-size: 15px;\n}\n\n.memory-hook strong {\n font-weight: 500;\n font-style: normal;\n color: #343a40;\n}\n\n@media (max-width: 768px) {\n .back {\n   padding: 20px 15px;\n }\n \n .card {\n   font-size: 16px;\n }\n \n .front {\n   font-size: 18px;\n   padding: 12px;\n }\n}",
+      "flds": [
+        {
+          "__type__": "NoteModelField",
+          "font": "Arial",
+          "media": [],
+          "name": "Front",
+          "ord": 0,
+          "rtl": false,
+          "size": 20,
+          "sticky": false
+        },
+        {
+          "__type__": "NoteModelField",
+          "font": "Arial",
+          "media": [],
+          "name": "Back",
+          "ord": 1,
+          "rtl": false,
+          "size": 20,
+          "sticky": false
+        },
+        {
+          "__type__": "NoteModelField",
+          "font": "Arial",
+          "media": [],
+          "name": "Tags",
+          "ord": 2,
+          "rtl": false,
+          "size": 20,
+          "sticky": false
+        },
+        {
+          "__type__": "NoteModelField",
+          "font": "Arial",
+          "media": [],
+          "name": "Difficulty",
+          "ord": 3,
+          "rtl": false,
+          "size": 20,
+          "sticky": false
+        }
+      ],
+      "latexPost": "\\end{document}",
+      "latexPre": "\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage[utf8]{inputenc}\n\\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\\begin{document}\n",
+      "name": "ML/NLP Interview",
+      "req": [
+        [
+          0,
+          "all"
+        ]
+      ],
+      "sortf": 0,
+      "tags": [],
+      "tmpls": [
+        {
+          "__type__": "CardTemplate",
+          "afmt": "{{FrontSide}}\n\n<hr id=answer>\n\n<div class=\"back\">\n{{Back}}\n</div>",
+          "bafmt": "",
+          "bqfmt": "",
+          "did": null,
+          "name": "Card 1",
+          "ord": 0,
+          "qfmt": "<div class=\"front\">{{Front}}</div>"
+        }
+      ],
+      "type": 0
+    }
+  ],
+  "notes": [
+    {
+      "__type__": "Note",
+      "crowdanki_uuid": "note-11-1",
+      "fields": [
+        "What is a knowledge graph in the context of NLP?",
+        "<div class=\"concept\">Concept: A knowledge graph is a database that stores knowledge as relationships between concepts, often using nodes for entities and edges for relations.</div><div class=\"intuition\">Intuition: It's like a web of facts connecting things in the world, allowing machines to reason about relationships.</div><div class=\"mechanics\">Mechanics: Built from extracted entities and relations from text, stored as triples (subject, relation, object).</div><div class=\"tradeoffs\">Trade-offs: Flexible for complex queries but can be computationally intensive to build and query compared to relational databases.</div><div class=\"applications\">Applications: Fact-checking, grounding LLMs, question answering.</div><div class=\"memory-hook\">Memory Hook: Imagine a spider web where each intersection is an entity and threads are relations – pulling one reveals connected facts.</div>",
+        "NLP Intuition Easy",
+        "Easy"
+      ],
+      "flags": 0,
+      "guid": "guid-11-1",
+      "note_model_uuid": "ml-nlp-interview-model",
+      "tags": [
+        "NLP",
+        "Intuition",
+        "Easy"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "crowdanki_uuid": "note-11-2",
+      "fields": [
+        "Explain the process of grounding LLMs using knowledge graphs.",
+        "<div class=\"concept\">Concept: Grounding anchors LLM responses in real-world knowledge via facts from a knowledge graph.</div><div class=\"intuition\">Intuition: Prevents hallucinations by fact-checking generated text against structured knowledge.</div><div class=\"mechanics\">Mechanics: Extract facts from LLM output, query KG for verification, use symbolic reasoning.</div><div class=\"tradeoffs\">Trade-offs: Adds reliability but increases complexity and computation; separates reasoning from generation.</div><div class=\"applications\">Applications: Reliable chatbots, explainable AI decisions.</div><div class=\"memory-hook\">Memory Hook: Like checking a map before telling a story about a journey – ensures the path is real.</div>",
+        "NLP Theory Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-11-2",
+      "note_model_uuid": "ml-nlp-interview-model",
+      "tags": [
+        "NLP",
+        "Theory",
+        "Medium"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "crowdanki_uuid": "note-11-3",
+      "fields": [
+        "How does sentence segmentation work, and why is it important for IE?",
+        "<div class=\"concept\">Concept: Breaking text into sentences for processing in IE pipelines.</div><div class=\"intuition\">Intuition: Sentences are self-contained units of meaning, ideal for extracting facts.</div><div class=\"mechanics\">Mechanics: Use regex for simple cases or spaCy models for accuracy, handling punctuation ambiguities.</div><div class=\"tradeoffs\">Trade-offs: Regex is fast but inaccurate; neural models are accurate but slower.</div><div class=\"applications\">Applications: Preprocessing for NER, relation extraction in documents.</div><div class=\"memory-hook\">Memory Hook: Like cutting a rope into usable lengths – too long, it's unwieldy; sentences are the right chunks.</div>",
+        "NLP Application Easy",
+        "Easy"
+      ],
+      "flags": 0,
+      "guid": "guid-11-3",
+      "note_model_uuid": "ml-nlp-interview-model",
+      "tags": [
+        "NLP",
+        "Application",
+        "Easy"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "crowdanki_uuid": "note-11-4",
+      "fields": [
+        "Describe named entity recognition (NER) and its challenges.",
+        "<div class=\"concept\">Concept: Identifying and categorizing named entities like persons, organizations in text.</div><div class=\"intuition\">Intuition: Pinpointing specific 'things' in text to build knowledge.</div><div class=\"mechanics\">Mechanics: Use regex for patterns (e.g., GPS) or neural models like spaCy with BiLSTM+CRF.</div><div class=\"tradeoffs\">Trade-offs: Pattern-based is precise for known formats but inflexible; neural is general but requires training data.</div><div class=\"applications\">Applications: Extracting entities for KG nodes.</div><div class=\"memory-hook\">Memory Hook: Like highlighting names in a phonebook – NER tags the important 'whos' and 'wheres'.</div>",
+        "NLP Theory Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-11-4",
+      "note_model_uuid": "ml-nlp-interview-model",
+      "tags": [
+        "NLP",
+        "Theory",
+        "Medium"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "crowdanki_uuid": "note-11-5",
+      "fields": [
+        "What is coreference resolution, and why is it necessary?",
+        "<div class=\"concept\">Concept: Identifying mentions referring to the same entity (e.g., pronouns to names).</div><div class=\"intuition\">Intuition: Connects 'she' back to 'Gebru' to avoid redundant KG nodes.</div><div class=\"mechanics\">Mechanics: Use transformer-based models like Coreferee in spaCy.</div><div class=\"tradeoffs\">Trade-offs: Handles ambiguity but computationally heavy; errors lead to incorrect relations.</div><div class=\"applications\">Applications: Consolidating entity mentions in long texts.</div><div class=\"memory-hook\">Memory Hook: Like following aliases in a spy novel – corefs link the disguises to the real identity.</div>",
+        "NLP Intuition Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-11-5",
+      "note_model_uuid": "ml-nlp-interview-model",
+      "tags": [
+        "NLP",
+        "Intuition",
+        "Medium"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "crowdanki_uuid": "note-11-6",
+      "fields": [
+        "Explain dependency parsing and its role in relation extraction.",
+        "<div class=\"concept\">Concept: Building a tree of grammatical dependencies between words.</div><div class=\"intuition\">Intuition: Shows how words rely on each other to form meaning, like sentence diagrams.</div><div class=\"mechanics\">Mechanics: SpaCy uses neural models to tag deps like nsubj, dobj; root is main verb.</div><div class=\"tradeoffs\">Trade-offs: Captures logic but can miss nuanced constituency; vs. constituency parsing which is more detailed but slower.</div><div class=\"applications\">Applications: Extracting subject-verb-object triples for KG edges.</div><div class=\"memory-hook\">Memory Hook: Like a family tree for words – dependencies show who's the boss (root) and kids (children).</div>",
+        "NLP Theory Hard",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid-11-6",
+      "note_model_uuid": "ml-nlp-interview-model",
+      "tags": [
+        "NLP",
+        "Theory",
+        "Hard"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "crowdanki_uuid": "note-11-7",
+      "fields": [
+        "How does pattern-based relation extraction work?",
+        "<div class=\"concept\">Concept: Using rules or patterns to find relations between entities.</div><div class=\"intuition\">Intuition: Matches linguistic patterns like 'X met Y' for 'has-met' relation.</div><div class=\"mechanics\">Mechanics: SpaCy Matcher with POS patterns; seed sentences expand to similar ones.</div><div class=\"tradeoffs\">Trade-offs: Precise for specific domains but suffers semantic drift; less general than neural.</div><div class=\"applications\">Applications: Extracting meetings from historical texts.</div><div class=\"memory-hook\">Memory Hook: Like fishing with a specific lure – patterns catch exact relation 'fish' but miss others.</div>",
+        "NLP Application Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-11-7",
+      "note_model_uuid": "ml-nlp-interview-model",
+      "tags": [
+        "NLP",
+        "Application",
+        "Medium"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "crowdanki_uuid": "note-11-8",
+      "fields": [
+        "What are neural methods for relation extraction?",
+        "<div class=\"concept\">Concept: Using NNs to identify relations, closed (fixed labels) or open (generated labels).</div><div class=\"intuition\">Intuition: Models learn relation patterns from data, beyond rules.</div><div class=\"mechanics\">Mechanics: Models like LUKE use entity-aware attention; train on datasets like DocRED.</div><div class=\"tradeoffs\">Trade-offs: Handles variety but needs large labeled data; open risks bizarre labels.</div><div class=\"applications\">Applications: Drug interactions from pharma texts.</div><div class=\"memory-hook\">Memory Hook: Like a detective learning clues – neural RE infers hidden relations from evidence.</div>",
+        "NLP Theory Hard",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid-11-8",
+      "note_model_uuid": "ml-nlp-interview-model",
+      "tags": [
+        "NLP",
+        "Theory",
+        "Hard"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "crowdanki_uuid": "note-11-9",
+      "fields": [
+        "Describe building a knowledge base from extracted relations.",
+        "<div class=\"concept\">Concept: Storing triples as graph with nodes (entities) and edges (relations).</div><div class=\"intuition\">Intuition: Organizes facts for inference and multi-hop queries.</div><div class=\"mechanics\">Mechanics: Use RDF triples; normalize entities; add to graphs like NELL or Wikidata.</div><div class=\"tradeoffs\">Trade-offs: Enables complex reasoning vs. tables but queries can be slower without optimization.</div><div class=\"applications\">Applications: Commonsense KB, fact-checking.</div><div class=\"memory-hook\">Memory Hook: Like building a Lego city – entities are blocks, relations connect them into a functional world.</div>",
+        "NLP Application Hard",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid-11-9",
+      "note_model_uuid": "ml-nlp-interview-model",
+      "tags": [
+        "NLP",
+        "Application",
+        "Hard"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "crowdanki_uuid": "note-11-10",
+      "fields": [
+        "How do you query a knowledge graph, e.g., with SPARQL on Wikidata?",
+        "<div class=\"concept\">Concept: Using query languages to retrieve facts from KGs.</div><div class=\"intuition\">Intuition: Translates questions into graph traversals for answers.</div><div class=\"mechanics\">Mechanics: SPARQL with SELECT, WHERE; use Q-ids, P-ids; nest for complex queries.</div><div class=\"tradeoffs\">Trade-offs: Powerful for inference but requires knowing IDs; vs. SQL for relational DBs.</div><div class=\"applications\">Applications: Finding coauthors from notable works.</div><div class=\"memory-hook\">Memory Hook: Like asking a librarian for books – SPARQL navigates the KG library shelves.</div>",
+        "NLP Connections Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-11-10",
+      "note_model_uuid": "ml-nlp-interview-model",
+      "tags": [
+        "NLP",
+        "Connections",
+        "Medium"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "crowdanki_uuid": "note-11-11",
+      "fields": [
+        "Compare knowledge graphs to relational databases for QA.",
+        "<div class=\"concept\">Concept: KGs store relations as graphs, enabling multi-hop inference.</div><div class=\"intuition\">Intuition: Graphs handle interconnected facts better than tables for reasoning.</div><div class=\"mechanics\">Mechanics: Query with SPARQL vs. SQL; graphs allow recursive relations easily.</div><div class=\"tradeoffs\">Trade-offs: KGs better for unstructured inference; RDBs for structured, fast joins.</div><div class=\"applications\">Applications: Answering 'military rank' via inference.</div><div class=\"memory-hook\">Memory Hook: Tables are flat maps; graphs are 3D globes – better for navigating relations.</div>",
+        "NLP Trade-offs Hard",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid-11-11",
+      "note_model_uuid": "ml-nlp-interview-model",
+      "tags": [
+        "NLP",
+        "Trade-offs",
+        "Hard"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "crowdanki_uuid": "note-11-12",
+      "fields": [
+        "What is the role of GOFAI in modern NLP pipelines?",
+        "<div class=\"concept\">Concept: Good Old-Fashioned AI: symbolic reasoning for logic-based systems.</div><div class=\"intuition\">Intuition: Combines with neural for reliable, explainable AI.</div><div class=\"mechanics\">Mechanics: Use for inference in KGs, grounding probabilistic models.</div><div class=\"tradeoffs\">Trade-offs: Deterministic but limited without data; hybrid with DL overcomes this.</div><div class=\"applications\">Applications: Fact-checking LLM outputs.</div><div class=\"memory-hook\">Memory Hook: Like blending old wisdom (GOFAI) with new tech (DL) for balanced AI.</div>",
+        "NLP Connections Easy",
+        "Easy"
+      ],
+      "flags": 0,
+      "guid": "guid-11-12",
+      "note_model_uuid": "ml-nlp-interview-model",
+      "tags": [
+        "NLP",
+        "Connections",
+        "Easy"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "crowdanki_uuid": "note-11-13",
+      "fields": [
+        "How can semantic heatmaps aid in understanding text structure?",
+        "<div class=\"concept\">Concept: Visualizing similarity of sentence embeddings.</div><div class=\"intuition\">Intuition: Shows redundant or unique parts in documents.</div><div class=\"mechanics\">Mechanics: Use BERT/MiniLM embeddings, cosine similarity matrix, seaborn heatmap.</div><div class=\"tradeoffs\">Trade-offs: Reveals structure but compute-heavy for long docs.</div><div class=\"applications\">Applications: Editing books, analyzing redundancy.</div><div class=\"memory-hook\">Memory Hook: Like a heat signature map – hot spots show similar ideas clustering.</div>",
+        "NLP Application Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-11-13",
+      "note_model_uuid": "ml-nlp-interview-model",
+      "tags": [
+        "NLP",
+        "Application",
+        "Medium"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "crowdanki_uuid": "note-11-14",
+      "fields": [
+        "Discuss entity name normalization in KGs.",
+        "<div class=\"concept\">Concept: Standardizing entity representations (e.g., dates to ISO).</div><div class=\"intuition\">Intuition: Ensures unique, consistent entity IDs to avoid duplicates.</div><div class=\"mechanics\">Mechanics: Resolve synonyms, correct spellings, link to unique IDs.</div><div class=\"tradeoffs\">Trade-offs: Prevents pollution but requires migration on changes.</div><div class=\"applications\">Applications: Connecting events on same date.</div><div class=\"memory-hook\">Memory Hook: Like standardizing addresses – normalization ensures mail (queries) reaches the right place.</div>",
+        "NLP Trade-offs Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-11-14",
+      "note_model_uuid": "ml-nlp-interview-model",
+      "tags": [
+        "NLP",
+        "Trade-offs",
+        "Medium"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "crowdanki_uuid": "note-11-15",
+      "fields": [
+        "What datasets are used for benchmarking relation extraction?",
+        "<div class=\"concept\">Concept: Labeled datasets for training/evaluating RE models.</div><div class=\"intuition\">Intuition: Provide ground truth for learning relations.</div><div class=\"mechanics\">Mechanics: TACRED (41 types), DocRED (document-level).</div><div class=\"tradeoffs\">Trade-offs: Large for generality but labeling is expensive.</div><div class=\"applications\">Applications: Fine-tuning models like LUKE.</div><div class=\"memory-hook\">Memory Hook: Like recipe books for chefs – datasets guide models in cooking up relations.</div>",
+        "NLP Connections Hard",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid-11-15",
+      "note_model_uuid": "ml-nlp-interview-model",
+      "tags": [
+        "NLP",
+        "Connections",
+        "Hard"
+      ]
+    }
+  ]
+}

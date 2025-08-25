@@ -1,0 +1,399 @@
+{
+    "__type__": "Deck",
+    "children": [],
+    "crowdanki_uuid": "deck-llm-attention-03",
+    "deck_config_uuid": "default-config",
+    "deck_configurations": [
+      {
+        "__type__": "DeckConfig",
+        "crowdanki_uuid": "default-config",
+        "name": "Default",
+        "autoplay": true,
+        "dyn": false,
+        "lapse": {
+          "delays": [10],
+          "leechAction": 0,
+          "leechFails": 8,
+          "minInt": 1,
+          "mult": 0
+        },
+        "maxTaken": 60,
+        "new": {
+          "bury": false,
+          "delays": [1, 10],
+          "initialFactor": 2500,
+          "ints": [1, 4, 0],
+          "order": 1,
+          "perDay": 20
+        },
+        "replayq": true,
+        "rev": {
+          "bury": false,
+          "ease4": 1.3,
+          "hardFactor": 1.2,
+          "ivlFct": 1,
+          "maxIvl": 36500,
+          "perDay": 200
+        },
+        "timer": 0
+      }
+    ],
+    "desc": "Comprehensive flashcards for ML:LLM:03 Coding attention mechanisms",
+    "dyn": false,
+    "extendNew": 10,
+    "extendRev": 50,
+    "media_files": [],
+    "name": "ML:LLM:03 Coding attention mechanisms",
+    "note_models": [
+      {
+        "__type__": "NoteModel",
+        "crowdanki_uuid": "ml-interview-flashcard-model",
+        "css": ".card {\n font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;\n font-size: 18px;\n text-align: center;\n color: #2c3e50;\n background-color: #fdfdfd;\n line-height: 1.5;\n}\n\n.front {\n font-weight: 600;\n color: #2c3e50;\n font-size: 20px;\n padding: 15px;\n}\n\n.back {\n text-align: left;\n padding: 25px;\n max-width: 800px;\n margin: 0 auto;\n}\n\n.concept {\n color: #e74c3c;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.concept strong {\n font-weight: 500;\n}\n\n.intuition {\n color: #3498db;\n font-style: italic;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.intuition strong {\n font-weight: 500;\n font-style: normal;\n}\n\n.mechanics {\n color: #27ae60;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.mechanics strong {\n font-weight: 500;\n}\n\n.tradeoffs {\n color: #e67e22;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.tradeoffs strong {\n font-weight: 500;\n}\n\n.applications {\n color: #8e44ad;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.applications strong {\n font-weight: 500;\n}\n\n.memory-hook {\n background-color: #f8f9fa;\n padding: 15px;\n border-radius: 6px;\n border-left: 4px solid #6c757d;\n font-style: italic;\n color: #495057;\n margin-top: 15px;\n font-size: 15px;\n}\n\n.memory-hook strong {\n font-weight: 500;\n font-style: normal;\n color: #343a40;\n}\n\n@media (max-width: 768px) {\n .back {\n   padding: 20px 15px;\n }\n \n .card {\n   font-size: 16px;\n }\n \n .front {\n   font-size: 18px;\n   padding: 12px;\n }\n}",
+        "flds": [
+          {
+            "__type__": "NoteModelField",
+            "font": "Arial",
+            "media": [],
+            "name": "Front",
+            "ord": 0,
+            "rtl": false,
+            "size": 20,
+            "sticky": false
+          },
+          {
+            "__type__": "NoteModelField",
+            "font": "Arial",
+            "media": [],
+            "name": "Back",
+            "ord": 1,
+            "rtl": false,
+            "size": 20,
+            "sticky": false
+          },
+          {
+            "__type__": "NoteModelField",
+            "font": "Arial",
+            "media": [],
+            "name": "Tags",
+            "ord": 2,
+            "rtl": false,
+            "size": 20,
+            "sticky": false
+          },
+          {
+            "__type__": "NoteModelField",
+            "font": "Arial",
+            "media": [],
+            "name": "Difficulty",
+            "ord": 3,
+            "rtl": false,
+            "size": 20,
+            "sticky": false
+          }
+        ],
+        "latexPost": "\\end{document}",
+        "latexPre": "\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage[utf8]{inputenc}\n\\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\\begin{document}\n",
+        "name": "ML Interview Flashcard",
+        "req": [
+          [0, "all"]
+        ],
+        "sortf": 0,
+        "tags": [],
+        "tmpls": [
+          {
+            "__type__": "CardTemplate",
+            "afmt": "{{FrontSide}}\n\n<hr id=answer>\n\n<div class=\"back\">\n{{Back}}\n</div>",
+            "bafmt": "",
+            "bqfmt": "",
+            "did": null,
+            "name": "Card 1",
+            "ord": 0,
+            "qfmt": "<div class=\"front\">{{Front}}</div>"
+          }
+        ],
+        "type": 0
+      }
+    ],
+    "notes": [
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-1",
+        "fields": [
+          "What is an attention mechanism in neural networks?",
+          "<div class=\"concept\">Concept: A mechanism that allows models to focus on different parts of the input when producing an output, weighting the importance of elements in a sequence.</div><div class=\"intuition\">Intuition: Like selectively listening to relevant parts of a conversation while ignoring noise.</div><div class=\"mechanics\">Mechanics: Computes weighted sums of input representations based on similarity scores between elements.</div><div class=\"tradeoffs\">Trade-offs: Improves context understanding but increases computational complexity, especially for long sequences (O(n²)).</div><div class=\"applications\">Applications: Machine translation, text generation in LLMs, image captioning.</div><div class=\"memory-hook\">Memory Hook: Attention = Spotlight on important words in a sentence.</div>",
+          "ML LLM Attention Easy",
+          "Easy"
+        ],
+        "flags": 0,
+        "guid": "guid-1",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Attention", "Easy"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-2",
+        "fields": [
+          "Why are attention mechanisms used in LLMs?",
+          "<div class=\"concept\">Concept: To capture long-range dependencies in sequences that traditional architectures like RNNs struggle with.</div><div class=\"intuition\">Intuition: RNNs forget distant information; attention allows direct access to any part of the input.</div><div class=\"mechanics\">Mechanics: Enables parallel processing of sequences, computing relevance scores for all pairs.</div><div class=\"tradeoffs\">Trade-offs: Solves vanishing gradients in RNNs but quadratic complexity limits sequence length.</div><div class=\"applications\">Applications: In transformers for NLP tasks like translation and generation in GPT models.</div><div class=\"memory-hook\">Memory Hook: Attention fixes RNN's 'short memory' like adding hyperlinks in a book.</div>",
+          "ML LLM Attention Easy",
+          "Easy"
+        ],
+        "flags": 0,
+        "guid": "guid-2",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Attention", "Easy"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-3",
+        "fields": [
+          "What is self-attention?",
+          "<div class=\"concept\">Concept: An attention mechanism where queries, keys, and values come from the same input sequence.</div><div class=\"intuition\">Intuition: Each element 'attends' to others in the same sequence to enrich its representation.</div><div class=\"mechanics\">Mechanics: Computes attention weights via dot products of queries and keys, then weights values.</div><div class=\"tradeoffs\">Trade-offs: Captures intra-sequence relations well but requires scaling for stability.</div><div class=\"applications\">Applications: Core of transformers in LLMs for context vector computation.</div><div class=\"memory-hook\">Memory Hook: Self-attention = Sequence talking to itself for better understanding.</div>",
+          "ML LLM SelfAttention Easy",
+          "Easy"
+        ],
+        "flags": 0,
+        "guid": "guid-3",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "SelfAttention", "Easy"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-4",
+        "fields": [
+          "Explain the mechanics of basic self-attention without trainable weights.",
+          "<div class=\"concept\">Concept: Computes context vectors as weighted sums of input embeddings using dot-product similarities.</div><div class=\"intuition\">Intuition: Measures how much each input contributes to another's context.</div><div class=\"mechanics\">Mechanics: Attention scores = dot products; weights = softmax(scores); context = weights @ inputs.</div><div class=\"tradeoffs\">Trade-offs: Simple but lacks learnability; can't adapt to data without weights.</div><div class=\"applications\">Applications: Illustrative for understanding attention in sequences like text.</div><div class=\"memory-hook\">Memory Hook: Basic self-attention = Untrained voting system among inputs.</div>",
+          "ML LLM SelfAttention Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-4",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "SelfAttention", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-5",
+        "fields": [
+          "What are the trade-offs of using self-attention compared to RNNs for sequence modeling?",
+          "<div class=\"concept\">Concept: Self-attention directly connects all positions, unlike sequential RNN processing.</div><div class=\"intuition\">Intuition: Attention jumps anywhere; RNNs walk step-by-step.</div><div class=\"mechanics\">Mechanics: O(n²) vs RNN's O(n); parallelizable vs sequential.</div><div class=\"tradeoffs\">Trade-offs: Better for long deps but higher memory; no inherent order without pos enc.</div><div class=\"applications\">Applications: LLMs favor attention for scalability in training.</div><div class=\"memory-hook\">Memory Hook: Attention = Highway network; RNN = Winding road.</div>",
+          "ML LLM SelfAttention Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-5",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "SelfAttention", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-6",
+        "fields": [
+          "How does self-attention with trainable weights work?",
+          "<div class=\"concept\">Concept: Projects inputs to queries, keys, values via linear layers before attention computation.</div><div class=\"intuition\">Intuition: Learnable transformations allow model to focus on task-relevant features.</div><div class=\"mechanics\">Mechanics: Q = X W_q, K = X W_k, V = X W_v; scores = Q K^T / sqrt(d_k); weights = softmax(scores); Z = weights V.</div><div class=\"tradeoffs\">Trade-offs: Adds parameters for flexibility but increases model size.</div><div class=\"applications\">Applications: In GPT models for generating context-aware embeddings.</div><div class=\"memory-hook\">Memory Hook: QKV = Question, Key, Value in a learned database search.</div>",
+          "ML LLM SelfAttention Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-6",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "SelfAttention", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-7",
+        "fields": [
+          "What is the mathematical formulation of scaled dot-product attention?",
+          "<div class=\"concept\">Concept: Self-attention with scaling to prevent vanishing gradients in large dimensions.</div><div class=\"intuition\">Intuition: Scaling keeps dot products manageable as dimensions grow.</div><div class=\"mechanics\">Mechanics: Attention(Q,K,V) = softmax(Q K^T / sqrt(d_k)) V, where d_k is key dimension.</div><div class=\"tradeoffs\">Trade-offs: Stabilizes training but still quadratic in sequence length.</div><div class=\"applications\">Applications: Standard in transformers for NLP and vision.</div><div class=\"memory-hook\">Memory Hook: Scaling = Dividing by sqrt(d) to tame exploding dots.</div>",
+          "ML LLM SelfAttention Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-7",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "SelfAttention", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-8",
+        "fields": [
+          "Compare basic self-attention to self-attention with trainable weights.",
+          "<div class=\"concept\">Concept: Basic uses raw inputs; trainable adds linear projections for Q, K, V.</div><div class=\"intuition\">Intuition: Trainable allows learning what to attend to, beyond fixed similarities.</div><div class=\"mechanics\">Mechanics: Basic: scores = X X^T; Trainable: scores = (X W_q) (X W_k)^T.</div><div class=\"tradeoffs\">Trade-offs: Trainable more expressive but requires optimization.</div><div class=\"applications\">Applications: Trainable in real LLMs; basic for prototypes.</div><div class=\"memory-hook\">Memory Hook: Trainable = Upgraded glasses for sharper focus.</div>",
+          "ML LLM SelfAttention Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-8",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "SelfAttention", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-9",
+        "fields": [
+          "What is causal attention and why is it important in LLMs?",
+          "<div class=\"concept\">Concept: Self-attention that masks future tokens to ensure unidirectional information flow.</div><div class=\"intuition\">Intuition: Prevents 'cheating' by looking ahead, mimicking sequential generation.</div><div class=\"mechanics\">Mechanics: Mask attention scores above diagonal with -inf before softmax.</div><div class=\"tradeoffs\">Trade-offs: Essential for autoregressive models but halves effective context in some senses.</div><div class=\"applications\">Applications: Text generation in GPT where tokens are predicted one-by-one.</div><div class=\"memory-hook\">Memory Hook: Causal = Time machine blocker for past-only access.</div>",
+          "ML LLM CausalAttention Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-9",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "CausalAttention", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-10",
+        "fields": [
+          "How does dropout work in attention mechanisms?",
+          "<div class=\"concept\">Concept: Randomly zeros out attention weights during training to prevent overfitting.</div><div class=\"intuition\">Intuition: Forces model not to rely on specific attention paths.</div><div class=\"mechanics\">Mechanics: Apply dropout after softmax; scale remaining by 1/(1-p).</div><div class=\"tradeoffs\">Trade-offs: Improves generalization but can slow convergence if rate too high.</div><div class=\"applications\">Applications: Regularization in transformer training.</div><div class=\"memory-hook\">Memory Hook: Dropout = Randomly muting some voices in a choir.</div>",
+          "ML LLM Attention Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-10",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Attention", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-11",
+        "fields": [
+          "Describe multi-head attention.",
+          "<div class=\"concept\">Concept: Parallel self-attention layers (heads) that capture different aspects of data.</div><div class=\"intuition\">Intuition: Multiple spotlights focusing on different relationships.</div><div class=\"mechanics\">Mechanics: Split Q,K,V into heads, compute attention per head, concatenate and project.</div><div class=\"tradeoffs\">Trade-offs: More expressive but higher params/compute.</div><div class=\"applications\">Applications: In GPT-2 with 12 heads for diverse feature learning.</div><div class=\"memory-hook\">Memory Hook: Multi-head = Team of detectives each on a clue.</div>",
+          "ML LLM MultiHead Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-11",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "MultiHead", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-12",
+        "fields": [
+          "What are the applications of attention mechanisms in LLMs?",
+          "<div class=\"concept\">Concept: Enable context-aware processing in transformer-based models.</div><div class=\"intuition\">Intuition: Helps model understand word relations in sentences.</div><div class=\"mechanics\">Mechanics: Used in encoder-decoder or decoder-only for sequence tasks.</div><div class=\"tradeoffs\">Trade-offs: Powerful for NLP but compute-intensive.</div><div class=\"applications\">Applications: Token generation, translation, summarization in GPT/ChatGPT.</div><div class=\"memory-hook\">Memory Hook: Attention = Glue binding words into meaning.</div>",
+          "ML LLM Attention Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-12",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Attention", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-13",
+        "fields": [
+          "How do queries, keys, and values connect to information retrieval?",
+          "<div class=\"concept\">Concept: Q as search query, K as indices, V as content in a database analogy.</div><div class=\"intuition\">Intuition: Attention as soft lookup where similarity guides retrieval.</div><div class=\"mechanics\">Mechanics: Scores from Q-K dot product determine V weighting.</div><div class=\"tradeoffs\">Trade-offs: Flexible matching vs exact in traditional DBs.</div><div class=\"applications\">Applications: Semantic search in embeddings.</div><div class=\"memory-hook\">Memory Hook: QKV = Query a Key to get Value, like asking a librarian.</div>",
+          "ML LLM SelfAttention Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-13",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "SelfAttention", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-14",
+        "fields": [
+          "Explain the problem with modeling long sequences in pre-attention architectures like RNNs.",
+          "<div class=\"concept\">Concept: RNNs compress entire input into a fixed hidden state, losing context over long distances.</div><div class=\"intuition\">Intuition: Like trying to remember a long story in one breath.</div><div class=\"mechanics\">Mechanics: Sequential processing leads to vanishing gradients and no direct access to early inputs.</div><div class=\"tradeoffs\">Trade-offs: Efficient for short seq but fails on long deps.</div><div class=\"applications\">Applications: Older translation models; attention fixes this.</div><div class=\"memory-hook\">Memory Hook: RNN bottleneck = Funnel squishing info.</div>",
+          "ML LLM RNNvsAttention Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-14",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "RNNvsAttention", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-15",
+        "fields": [
+          "Derive why scaling by sqrt(d_k) is necessary in attention, and discuss edge cases.",
+          "<div class=\"concept\">Concept: Prevents dot products from growing with dimension, keeping softmax gradients viable.</div><div class=\"intuition\">Intuition: Without scaling, large dots push softmax to extremes, causing zero gradients.</div><div class=\"mechanics\">Mechanics: Assume Q,K ~ N(0,1), dot ~ N(0,d_k), variance d_k; scale by sqrt(d_k) for unit variance.</div><div class=\"tradeoffs\">Trade-offs: Essential for high dims but irrelevant for small d_k.</div><div class=\"applications\">Applications: In GPT with d=768+ to avoid training instability.</div><div class=\"memory-hook\">Memory Hook: Sqrt(d) = Thermostat for hot dot products.</div>",
+          "ML LLM SelfAttention Hard",
+          "Hard"
+        ],
+        "flags": 0,
+        "guid": "guid-15",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "SelfAttention", "Hard"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-16",
+        "fields": [
+          "In causal attention, why does masking with -inf work, and what are potential numerical issues?",
+          "<div class=\"concept\">Concept: -inf in scores leads to 0 in softmax, effectively masking future.</div><div class=\"intuition\">Intuition: Makes future 'impossible' in probability terms.</div><div class=\"mechanics\">Mechanics: Softmax(e^{-inf}) = 0; renormalizes over past only.</div><div class=\"tradeoffs\">Trade-offs: Efficient but watch for NaN if all -inf (edge: single token).</div><div class=\"applications\">Applications: Autoregressive decoding; fix by handling empty masks.</div><div class=\"memory-hook\">Memory Hook: -inf = Black hole swallowing future probs.</div>",
+          "ML LLM CausalAttention Hard",
+          "Hard"
+        ],
+        "flags": 0,
+        "guid": "guid-16",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "CausalAttention", "Hard"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-17",
+        "fields": [
+          "How does multi-head attention optimize over single-head, and discuss parallelization.",
+          "<div class=\"concept\">Concept: Multiple projections allow diverse subspaces; efficient via batch matmul.</div><div class=\"intuition\">Intuition: Heads specialize in different relations (e.g., syntax vs semantics).</div><div class=\"mechanics\">Mechanics: Reshape to (b,h,t,d/h), transpose, batched @ for scores.</div><div class=\"tradeoffs\">Trade-offs: More params but parallel; output proj adds flexibility.</div><div class=\"applications\">Applications: GPT uses 12-96 heads for rich representations.</div><div class=\"memory-hook\">Memory Hook: Multi-head = Orchestra sections playing harmonies.</div>",
+          "ML LLM MultiHead Hard",
+          "Hard"
+        ],
+        "flags": 0,
+        "guid": "guid-17",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "MultiHead", "Hard"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-18",
+        "fields": [
+          "Discuss connections between attention and other ML concepts like kernel methods or graph networks.",
+          "<div class=\"concept\">Concept: Attention as soft selection; akin to kernel smoothing or message passing.</div><div class=\"intuition\">Intuition: Weights as similarities, aggregating neighbors like in graphs.</div><div class=\"mechanics\">Mechanics: Dot-product kernel for similarity; generalizes to non-local ops.</div><div class=\"tradeoffs\">Trade-offs: More flexible than fixed kernels but compute heavy.</div><div class=\"applications\">Applications: GNNs use attention for edges; vision transformers.</div><div class=\"memory-hook\">Memory Hook: Attention = Learnable kernel in sequence space.</div>",
+          "ML LLM Attention Hard",
+          "Hard"
+        ],
+        "flags": 0,
+        "guid": "guid-18",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Attention", "Hard"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-19",
+        "fields": [
+          "What are edge cases in implementing multi-head attention with variable sequence lengths?",
+          "<div class=\"concept\">Concept: Handling padding or truncated masks in batched inputs.</div><div class=\"intuition\">Intuition: Shorter sequences shouldn't attend to padding.</div><div class=\"mechanics\">Mechanics: Dynamic mask slicing; pad with -inf for unused positions.</div><div class=\"tradeoffs\">Trade-offs: Adds complexity but necessary for efficiency in batches.</div><div class=\"applications\">Applications: Training on variable-length texts in LLMs.</div><div class=\"memory-hook\">Memory Hook: Variable seq = Trimming the mask like cutting fabric.</div>",
+          "ML LLM MultiHead Hard",
+          "Hard"
+        ],
+        "flags": 0,
+        "guid": "guid-19",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "MultiHead", "Hard"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-20",
+        "fields": [
+          "How does attention capture data dependencies, and compare to convolutional layers?",
+          "<div class=\"concept\">Concept: Weights reflect dependency strength between positions.</div><div class=\"intuition\">Intuition: Global vs local receptive fields.</div><div class=\"mechanics\">Mechanics: Full connectivity vs fixed windows.</div><div class=\"tradeoffs\">Trade-offs: Attention global but quadratic; conv local but linear.</div><div class=\"applications\">Applications: Attention in NLP; conv in vision (but ViT uses attention).</div><div class=\"memory-hook\">Memory Hook: Attention = Web of connections; Conv = Sliding window.</div>",
+          "ML LLM Attention Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-20",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Attention", "Medium"]
+      }
+    ]
+  }

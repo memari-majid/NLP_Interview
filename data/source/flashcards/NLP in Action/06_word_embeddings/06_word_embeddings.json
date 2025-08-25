@@ -1,0 +1,401 @@
+{
+  "__type__": "Deck",
+  "children": [],
+  "crowdanki_uuid": "deck-8778",
+  "deck_config_uuid": "default-config",
+  "deck_configurations": [
+    {
+      "crowdanki_uuid": "default-config",
+      "name": "Default",
+      "autoplay": true,
+      "dyn": false,
+      "lapse": {
+        "delays": [
+          10
+        ],
+        "leechAction": 0,
+        "leechFails": 8,
+        "minInt": 1,
+        "mult": 0
+      },
+      "maxTaken": 60,
+      "new": {
+        "bury": false,
+        "delays": [
+          1,
+          10
+        ],
+        "initialFactor": 2500,
+        "ints": [
+          1,
+          4,
+          0
+        ],
+        "order": 1,
+        "perDay": 20
+      },
+      "replayq": true,
+      "rev": {
+        "bury": false,
+        "ease4": 1.3,
+        "hardFactor": 1.2,
+        "ivlFct": 1,
+        "maxIvl": 36500,
+        "perDay": 200
+      },
+      "timer": 0,
+      "__type__": "DeckConfig"
+    }
+  ],
+  "desc": "Comprehensive flashcards for 06 Word Embeddings",
+  "dyn": false,
+  "extendNew": 10,
+  "extendRev": 50,
+  "media_files": [],
+  "name": "ML:NLP:06 Word Embeddings",
+  "note_models": [
+    {
+      "crowdanki_uuid": "nlp-comprehensive-note-model",
+      "css": ".card {\n font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;\n font-size: 18px;\n text-align: center;\n color: #2c3e50;\n background-color: #fdfdfd;\n line-height: 1.5;\n}\n\n.front {\n font-weight: 600;\n color: #2c3e50;\n font-size: 20px;\n padding: 15px;\n}\n\n.back {\n text-align: left;\n padding: 25px;\n max-width: 800px;\n margin: 0 auto;\n}\n\n.concept {\n color: #e74c3c;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.concept strong {\n font-weight: 500;\n}\n\n.intuition {\n color: #3498db;\n font-style: italic;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.intuition strong {\n font-weight: 500;\n font-style: normal;\n}\n\n.mechanics {\n color: #27ae60;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.mechanics strong {\n font-weight: 500;\n}\n\n.tradeoffs {\n color: #e67e22;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.tradeoffs strong {\n font-weight: 500;\n}\n\n.applications {\n color: #8e44ad;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.applications strong {\n font-weight: 500;\n}\n\n.memory-hook {\n background-color: #f8f9fa;\n padding: 15px;\n border-radius: 6px;\n border-left: 4px solid #6c757d;\n font-style: italic;\n color: #495057;\n margin-top: 15px;\n font-size: 15px;\n}\n\n.memory-hook strong {\n font-weight: 500;\n font-style: normal;\n color: #343a40;\n}\n\n@media (max-width: 768px) {\n .back {\n   padding: 20px 15px;\n }\n \n .card {\n   font-size: 16px;\n }\n \n .front {\n   font-size: 18px;\n   padding: 12px;\n }\n}",
+      "flds": [
+        {
+          "font": "Arial",
+          "media": [],
+          "name": "Front",
+          "ord": 0,
+          "rtl": false,
+          "size": 20,
+          "sticky": false,
+          "__type__": "NoteModelField"
+        },
+        {
+          "font": "Arial",
+          "media": [],
+          "name": "Back",
+          "ord": 1,
+          "rtl": false,
+          "size": 20,
+          "sticky": false,
+          "__type__": "NoteModelField"
+        },
+        {
+          "font": "Arial",
+          "media": [],
+          "name": "Tags",
+          "ord": 2,
+          "rtl": false,
+          "size": 20,
+          "sticky": false,
+          "__type__": "NoteModelField"
+        },
+        {
+          "font": "Arial",
+          "media": [],
+          "name": "Difficulty",
+          "ord": 3,
+          "rtl": false,
+          "size": 20,
+          "sticky": false,
+          "__type__": "NoteModelField"
+        }
+      ],
+      "latexPost": "\\end{document}",
+      "latexPre": "\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage[utf8]{inputenc}\n\\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\\begin{document}\n",
+      "name": "NLP Comprehensive",
+      "req": [
+        [
+          0,
+          "all"
+        ]
+      ],
+      "sortf": 0,
+      "tags": [],
+      "tmpls": [
+        {
+          "afmt": "{{FrontSide}}\n\n<hr id=answer>\n\n<div class=\"back\">\n{{Back}}\n</div>",
+          "bafmt": "",
+          "bqfmt": "",
+          "did": null,
+          "name": "Card 1",
+          "ord": 0,
+          "qfmt": "<div class=\"front\">{{Front}}</div>",
+          "__type__": "CardTemplate"
+        }
+      ],
+      "type": 0,
+      "__type__": "NoteModel"
+    }
+  ],
+  "notes": [
+    {
+      "crowdanki_uuid": "note-8606863243572557377-8778",
+      "fields": [
+        "What are word embeddings, and why are they useful in NLP?",
+        "<div class=\"concept\">Concept: Word embeddings are dense vector representations of words that capture their semantic meanings based on context.</div><div class=\"intuition\">Intuition: Think of words as characters in a game with attributes; embeddings are like unlabeled stat sheets where similar words have similar stats.</div><div class=\"mechanics\">Mechanics: They are learned from large text corpora using algorithms that position words in a vector space based on co-occurrences.</div><div class=\"tradeoffs\">Trade-offs: They capture nuances but can embed biases from training data and struggle with polysemy in static forms.</div><div class=\"applications\">Applications: Used in semantic search, sentiment analysis, and machine translation.</div><div class=\"memory-hook\">Memory Hook: Word embeddings are like a character's 'stat sheet' in D&D – unlabeled but aligned for easy comparison and math.</div>",
+        "NLP Word Embeddings Basics",
+        "Easy"
+      ],
+      "flags": 0,
+      "guid": "guid-8606863243572557377-8778",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "NLP",
+        "Word Embeddings",
+        "Basics"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--5195154768661601641-8778",
+      "fields": [
+        "Explain the analogy between word embeddings and brain neurons.",
+        "<div class=\"concept\">Concept: Word embeddings represent patterns of neuron firings in the brain when processing words.</div><div class=\"intuition\">Intuition: Words trigger connected neurons like ripples in a pond; embeddings capture these connections numerically.</div><div class=\"mechanics\">Mechanics: Algorithms learn from word co-occurrences, mimicking neural associations without explicit labels.</div><div class=\"tradeoffs\">Trade-offs: Simplifies complex brain processes, missing dynamic aspects like real-time learning.</div><div class=\"applications\">Applications: Helps in understanding language models' mimicry of human thought in AI.</div><div class=\"memory-hook\">Memory Hook: Embeddings are 'brain ripples' – waves of neuron activity frozen into vectors.</div>",
+        "NLP Word Embeddings Intuition",
+        "Easy"
+      ],
+      "flags": 0,
+      "guid": "guid--5195154768661601641-8778",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "NLP",
+        "Word Embeddings",
+        "Intuition"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-3274284362411875023-8778",
+      "fields": [
+        "How do word embeddings enable semantic search?",
+        "<div class=\"concept\">Concept: Semantic search uses vector similarity to match query meaning to documents, beyond keywords.</div><div class=\"intuition\">Intuition: Instead of exact matches, it finds words with similar 'meanings' via vector proximity.</div><div class=\"mechanics\">Mechanics: Compute query vector, find nearest document vectors using cosine similarity.</div><div class=\"tradeoffs\">Trade-offs: More accurate than TF-IDF but requires large corpora and can be computationally intensive.</div><div class=\"applications\">Applications: Job title searches, recommendation systems like finding similar products.</div><div class=\"memory-hook\">Memory Hook: Semantic search is like a fuzzy thesaurus – closer vectors mean closer meanings.</div>",
+        "NLP Applications Search",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-3274284362411875023-8778",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "NLP",
+        "Applications",
+        "Search"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--8051609057817796684-8778",
+      "fields": [
+        "Describe how to perform analogy reasoning with word vectors.",
+        "<div class=\"concept\">Concept: Analogy reasoning involves vector arithmetic like king - man + woman ≈ queen.</div><div class=\"intuition\">Intuition: Adding/subtracting vectors shifts meaning in semantic space.</div><div class=\"mechanics\">Mechanics: Compute resultant vector, find nearest word in vocabulary using cosine distance.</div><div class=\"tradeoffs\">Trade-offs: Works well for common analogies but fails on rare words or cultural biases.</div><div class=\"applications\">Applications: Solving SAT analogies, tip-of-tongue word finders.</div><div class=\"memory-hook\">Memory Hook: Vector math is like word algebra: solve for X in 'A is to B as C is to X'.</div>",
+        "NLP Word Embeddings Reasoning",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid--8051609057817796684-8778",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "NLP",
+        "Word Embeddings",
+        "Reasoning"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--7544474656780087790-8778",
+      "fields": [
+        "What is the difference between CBOW and Skip-gram in Word2Vec?",
+        "<div class=\"concept\">Concept: CBOW predicts target from context; Skip-gram predicts context from target.</div><div class=\"intuition\">Intuition: CBOW averages context for word; Skip-gram uses word to guess neighbors.</div><div class=\"mechanics\">Mechanics: Both use neural nets with hidden layer as embeddings; Skip-gram better for rare words.</div><div class=\"tradeoffs\">Trade-offs: CBOW faster but less accurate for infrequent words; Skip-gram opposite.</div><div class=\"applications\">Applications: CBOW for syntax, Skip-gram for semantics in large corpora.</div><div class=\"memory-hook\">Memory Hook: CBOW is 'bag of contexts' predicting word; Skip-gram skips to predict bag from word.</div>",
+        "NLP Word2Vec Models",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid--7544474656780087790-8778",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "NLP",
+        "Word2Vec",
+        "Models"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--8072362085700530399-8778",
+      "fields": [
+        "Compare Word2Vec, GloVe, and fastText.",
+        "<div class=\"concept\">Concept: All create embeddings; Word2Vec neural, GloVe matrix factorization, fastText subword.</div><div class=\"intuition\">Intuition: Word2Vec learns locally, GloVe globally, fastText handles OOV via parts.</div><div class=\"mechanics\">Mechanics: Word2Vec: backprop; GloVe: SVD on co-occurrence; fastText: n-grams in Skip-gram.</div><div class=\"tradeoffs\">Trade-offs: Word2Vec slower; GloVe efficient; fastText robust to new words but larger models.</div><div class=\"applications\">Applications: fastText for multilingual, GloVe for speed, Word2Vec for baselines.</div><div class=\"memory-hook\">Memory Hook: Word2Vec: neural learner; GloVe: global optimizer; fastText: subword fixer.</div>",
+        "NLP Embeddings Comparisons",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid--8072362085700530399-8778",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "NLP",
+        "Embeddings",
+        "Comparisons"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--4092725957311383293-8778",
+      "fields": [
+        "How do static and contextualized embeddings differ?",
+        "<div class=\"concept\">Concept: Static: fixed vectors; Contextualized: vary by sentence context.</div><div class=\"intuition\">Intuition: Static packs all senses; Contextualized adapts like human understanding.</div><div class=\"mechanics\">Mechanics: Static: Word2Vec; Contextualized: BERT uses transformers for bidirectional context.</div><div class=\"tradeoffs\">Trade-offs: Static simpler/faster; Contextualized more accurate but resource-heavy.</div><div class=\"applications\">Applications: Static for quick search; Contextualized for nuanced tasks like QA.</div><div class=\"memory-hook\">Memory Hook: Static: frozen photo; Contextualized: live video of word meaning.</div>",
+        "NLP Embeddings Advanced",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid--4092725957311383293-8778",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "NLP",
+        "Embeddings",
+        "Advanced"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-6747530789425406401-8778",
+      "fields": [
+        "Explain biases in word embeddings and how to mitigate them.",
+        "<div class=\"concept\">Concept: Biases reflect training data stereotypes, e.g., gender in professions.</div><div class=\"intuition\">Intuition: Garbage in, garbage out – corpora biases embed into vectors.</div><div class=\"mechanics\">Mechanics: Measure via distances; Debias by subtracting bias subspace.</div><div class=\"tradeoffs\">Trade-offs: Debiasing reduces bias but may lose useful information.</div><div class=\"applications\">Applications: Fair AI in hiring, sentiment analysis.</div><div class=\"memory-hook\">Memory Hook: Embeddings mirror society's mirror – debias to straighten reflections.</div>",
+        "NLP Ethics Biases",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid-6747530789425406401-8778",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "NLP",
+        "Ethics",
+        "Biases"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-6150364395815407491-8778",
+      "fields": [
+        "How to visualize word vectors using PCA?",
+        "<div class=\"concept\">Concept: PCA reduces dimensions while preserving variance for 2D plots.</div><div class=\"intuition\">Intuition: Projects high-D shadows to see clusters of similar words.</div><div class=\"mechanics\">Mechanics: Fit PCA on vector matrix, transform to 2D, plot with labels.</div><div class=\"tradeoffs\">Trade-offs: Linear, may distort nonlinear relations; Use t-SNE for better clusters.</div><div class=\"applications\">Applications: Mapping city vectors to see semantic geography.</div><div class=\"memory-hook\">Memory Hook: PCA is a photographer finding the best angle for word vector group pics.</div>",
+        "NLP Visualization Dimensionality",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-6150364395815407491-8778",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "NLP",
+        "Visualization",
+        "Dimensionality"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-2872155356441743481-8778",
+      "fields": [
+        "Describe creating a graph from sentence embeddings.",
+        "<div class=\"concept\">Concept: Graph nodes as sentences, edges as similarity above threshold.</div><div class=\"intuition\">Intuition: Connects similar ideas like a mind map.</div><div class=\"mechanics\">Mechanics: Average word vectors for sentences, compute similarity matrix, use NetworkX.</div><div class=\"tradeoffs\">Trade-offs: Reveals clusters but threshold sensitive; Computationally heavy for large texts.</div><div class=\"applications\">Applications: Visualizing chapter concepts, document summarization.</div><div class=\"memory-hook\">Memory Hook: Sentence graph: web of thoughts where close vectors tangle together.</div>",
+        "NLP Graphs Applications",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid-2872155356441743481-8778",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "NLP",
+        "Graphs",
+        "Applications"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-7272661731755234754-8778",
+      "fields": [
+        "How can word embeddings handle unnatural words or IDs?",
+        "<div class=\"concept\">Concept: Treat sequences as tokens if proximity implies meaning.</div><div class=\"intuition\">Intuition: Even codes like zip codes embed if contexts are similar.</div><div class=\"mechanics\">Mechanics: Tokenize IDs, train on co-occurrences in texts.</div><div class=\"tradeoffs\">Trade-offs: Works for structured IDs but needs large data; fastText subwords help.</div><div class=\"applications\">Applications: Course recommendations from IDs, deciphering ciphers.</div><div class=\"memory-hook\">Memory Hook: Embeddings decode 'secret languages' like kids' Pig Latin or Caesar ciphers.</div>",
+        "NLP Embeddings Unnatural",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid-7272661731755234754-8778",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "NLP",
+        "Embeddings",
+        "Unnatural"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--56637955056677583-8778",
+      "fields": [
+        "What math underpins Word2Vec training?",
+        "<div class=\"concept\">Concept: Neural net minimizes loss in predicting contexts.</div><div class=\"intuition\">Intuition: Adjusts vectors to make similar contexts close.</div><div class=\"mechanics\">Mechanics: Softmax output, cross-entropy loss, backprop updates embeddings.</div><div class=\"tradeoffs\">Trade-offs: Local optima possible; GloVe uses global SVD for better convergence.</div><div class=\"applications\">Applications: Basis for all embedding models.</div><div class=\"memory-hook\">Memory Hook: Word2Vec math: neural tug-of-war pulling words by context ropes.</div>",
+        "NLP Math Word2Vec",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid--56637955056677583-8778",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "NLP",
+        "Math",
+        "Word2Vec"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--4596880287227997144-8778",
+      "fields": [
+        "Connect word embeddings to AI intelligence elements per Hofstadter.",
+        "<div class=\"concept\">Concept: Embeddings enable flexibility, ambiguity handling, analogies.</div><div class=\"intuition\">Intuition: Gives machines 'fuzzy' word understanding like humans.</div><div class=\"mechanics\">Mechanics: Vector space allows nuanced operations beyond rigid rules.</div><div class=\"tradeoffs\">Trade-offs: Mimics but not true comprehension; Risks over-attribution of intelligence.</div><div class=\"applications\">Applications: Chatbots with flexible responses.</div><div class=\"memory-hook\">Memory Hook: Embeddings: AI's 'intuition pump' for Hofstadter's elements.</div>",
+        "NLP AI Connections",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid--4596880287227997144-8778",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "NLP",
+        "AI",
+        "Connections"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-8255168209681897949-8778",
+      "fields": [
+        "How to train custom domain-specific embeddings?",
+        "<div class=\"concept\">Concept: Use gensim on tokenized domain corpus.</div><div class=\"intuition\">Intuition: Tailor vectors to specific jargon and usages.</div><div class=\"mechanics\">Mechanics: Set params like size, window, min_count; Train Word2Vec model.</div><div class=\"tradeoffs\">Trade-offs: Better accuracy in domain but less general; Needs large data.</div><div class=\"applications\">Applications: Medical texts for doctor embeddings.</div><div class=\"memory-hook\">Memory Hook: Custom embeddings: fine-tuning a universal dictionary to your niche novel.</div>",
+        "NLP Training Custom",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-8255168209681897949-8778",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "NLP",
+        "Training",
+        "Custom"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--5661405331533085114-8778",
+      "fields": [
+        "Compare LSA and Word2Vec embeddings.",
+        "<div class=\"concept\">Concept: LSA: SVD on TF-IDF; Word2Vec: neural on local contexts.</div><div class=\"intuition\">Intuition: LSA global docs; Word2Vec sentence neighborhoods.</div><div class=\"mechanics\">Mechanics: LSA faster for long docs; Word2Vec better analogies.</div><div class=\"tradeoffs\">Trade-offs: LSA efficient but less nuanced; Word2Vec data-hungry.</div><div class=\"applications\">Applications: LSA for clustering; Word2Vec for reasoning.</div><div class=\"memory-hook\">Memory Hook: LSA: broad brush; Word2Vec: fine pen for word portraits.</div>",
+        "NLP Comparisons LSA",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid--5661405331533085114-8778",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "NLP",
+        "Comparisons",
+        "LSA"
+      ],
+      "__type__": "Note"
+    }
+  ]
+}

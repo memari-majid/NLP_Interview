@@ -1,0 +1,399 @@
+{
+    "__type__": "Deck",
+    "children": [],
+    "crowdanki_uuid": "deck-llm-ch07",
+    "deck_config_uuid": "default-config",
+    "deck_configurations": [
+      {
+        "__type__": "DeckConfig",
+        "crowdanki_uuid": "default-config",
+        "name": "Default",
+        "autoplay": true,
+        "dyn": false,
+        "lapse": {
+          "delays": [10],
+          "leechAction": 0,
+          "leechFails": 8,
+          "minInt": 1,
+          "mult": 0
+        },
+        "maxTaken": 60,
+        "new": {
+          "bury": false,
+          "delays": [1, 10],
+          "initialFactor": 2500,
+          "ints": [1, 4, 0],
+          "order": 1,
+          "perDay": 20
+        },
+        "replayq": true,
+        "rev": {
+          "bury": false,
+          "ease4": 1.3,
+          "hardFactor": 1.2,
+          "ivlFct": 1,
+          "maxIvl": 36500,
+          "perDay": 200
+        },
+        "timer": 0
+      }
+    ],
+    "desc": "Comprehensive flashcards for ML:LLM:07 Fine-tuning to follow instructions",
+    "dyn": false,
+    "extendNew": 10,
+    "extendRev": 50,
+    "media_files": [],
+    "name": "ML:LLM:07 Fine-tuning to follow instructions",
+    "note_models": [
+      {
+        "__type__": "NoteModel",
+        "crowdanki_uuid": "ml-interview-flashcard-model",
+        "css": ".card {\n font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;\n font-size: 18px;\n text-align: center;\n color: #2c3e50;\n background-color: #fdfdfd;\n line-height: 1.5;\n}\n\n.front {\n font-weight: 600;\n color: #2c3e50;\n font-size: 20px;\n padding: 15px;\n}\n\n.back {\n text-align: left;\n padding: 25px;\n max-width: 800px;\n margin: 0 auto;\n}\n\n.concept {\n color: #e74c3c;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.concept strong {\n font-weight: 500;\n}\n\n.intuition {\n color: #3498db;\n font-style: italic;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.intuition strong {\n font-weight: 500;\n font-style: normal;\n}\n\n.mechanics {\n color: #27ae60;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.mechanics strong {\n font-weight: 500;\n}\n\n.tradeoffs {\n color: #e67e22;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.tradeoffs strong {\n font-weight: 500;\n}\n\n.applications {\n color: #8e44ad;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.applications strong {\n font-weight: 500;\n}\n\n.memory-hook {\n background-color: #f8f9fa;\n padding: 15px;\n border-radius: 6px;\n border-left: 4px solid #6c757d;\n font-style: italic;\n color: #495057;\n margin-top: 15px;\n font-size: 15px;\n}\n\n.memory-hook strong {\n font-weight: 500;\n font-style: normal;\n color: #343a40;\n}\n\n@media (max-width: 768px) {\n .back {\n   padding: 20px 15px;\n }\n \n .card {\n   font-size: 16px;\n }\n \n .front {\n   font-size: 18px;\n   padding: 12px;\n }\n}",
+        "flds": [
+          {
+            "__type__": "NoteModelField",
+            "font": "Arial",
+            "media": [],
+            "name": "Front",
+            "ord": 0,
+            "rtl": false,
+            "size": 20,
+            "sticky": false
+          },
+          {
+            "__type__": "NoteModelField",
+            "font": "Arial",
+            "media": [],
+            "name": "Back",
+            "ord": 1,
+            "rtl": false,
+            "size": 20,
+            "sticky": false
+          },
+          {
+            "__type__": "NoteModelField",
+            "font": "Arial",
+            "media": [],
+            "name": "Tags",
+            "ord": 2,
+            "rtl": false,
+            "size": 20,
+            "sticky": false
+          },
+          {
+            "__type__": "NoteModelField",
+            "font": "Arial",
+            "media": [],
+            "name": "Difficulty",
+            "ord": 3,
+            "rtl": false,
+            "size": 20,
+            "sticky": false
+          }
+        ],
+        "latexPost": "\\end{document}",
+        "latexPre": "\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage[utf8]{inputenc}\n\\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\\begin{document}\n",
+        "name": "ML Interview Flashcard",
+        "req": [
+          [0, "all"]
+        ],
+        "sortf": 0,
+        "tags": [],
+        "tmpls": [
+          {
+            "__type__": "CardTemplate",
+            "afmt": "{{FrontSide}}\n\n<hr id=answer>\n\n<div class=\"back\">\n{{Back}}\n</div>",
+            "bafmt": "",
+            "bqfmt": "",
+            "did": null,
+            "name": "Card 1",
+            "ord": 0,
+            "qfmt": "<div class=\"front\">{{Front}}</div>"
+          }
+        ],
+        "type": 0
+      }
+    ],
+    "notes": [
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-001",
+        "fields": [
+          "What is instruction fine-tuning in the context of LLMs?",
+          "<div class=\"concept\">Concept: A technique to adapt a pretrained LLM to follow human instructions and generate desired responses for tasks like chatbots.</div><div class=\"intuition\">Intuition: Teaching the LLM to respond like a helpful assistant by training on instruction-response pairs.</div><div class=\"mechanics\">Mechanics: Fine-tune the model using supervised learning on a dataset of instructions, inputs, and outputs.</div><div class=\"tradeoffs\">Trade-offs: Improves task-specific performance but requires high-quality instruction data, which can be expensive to curate.</div><div class=\"applications\">Applications: Chatbot development, personal assistants, conversational AI.</div><div class=\"memory-hook\">Memory Hook: Instruction fine-tuning = Turning a text completer into an obedient pupil.</div>",
+          "ML LLM Easy",
+          "Easy"
+        ],
+        "flags": 0,
+        "guid": "guid-001",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Easy"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-002",
+        "fields": [
+          "What is the Alpaca prompt style used in instruction fine-tuning?",
+          "<div class=\"concept\">Concept: A structured prompt format with sections for instruction, input, and response.</div><div class=\"intuition\">Intuition: Organizes data clearly to guide the LLM on what to do and how to respond.</div><div class=\"mechanics\">Mechanics: Format includes '### Instruction:', optional '### Input:', and '### Response:'.</div><div class=\"tradeoffs\">Trade-offs: More structured than simpler styles but may add overhead in token length.</div><div class=\"applications\">Applications: Used in models like Alpaca for fine-tuning on instruction datasets.</div><div class=\"memory-hook\">Memory Hook: Alpaca style = Labeled sections like a school worksheet.</div>",
+          "ML LLM Easy",
+          "Easy"
+        ],
+        "flags": 0,
+        "guid": "guid-002",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Easy"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-003",
+        "fields": [
+          "What is the purpose of a custom collate function in preparing training batches for instruction fine-tuning?",
+          "<div class=\"concept\">Concept: A function to merge individual data samples into batches, handling padding and formatting.</div><div class=\"intuition\">Intuition: Ensures batches are uniform for efficient model processing without wasting computation on varying lengths.</div><div class=\"mechanics\">Mechanics: Pads sequences to batch max length, creates inputs and shifted targets.</div><div class=\"tradeoffs\">Trade-offs: Custom handling increases flexibility but requires more implementation effort.</div><div class=\"applications\">Applications: Used in PyTorch DataLoaders for LLM fine-tuning.</div><div class=\"memory-hook\">Memory Hook: Collate = Collating papers into equal stacks with fillers.</div>",
+          "ML LLM Easy",
+          "Easy"
+        ],
+        "flags": 0,
+        "guid": "guid-003",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Easy"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-004",
+        "fields": [
+          "What is the ignore_index in PyTorch's cross_entropy loss function during LLM fine-tuning?",
+          "<div class=\"concept\">Concept: A value (default -100) that tells the loss function to ignore certain target indices.</div><div class=\"intuition\">Intuition: Prevents padding tokens from affecting the loss, focusing computation on meaningful data.</div><div class=\"mechanics\">Mechanics: Replace padding in targets with -100 except the first EOS token.</div><div class=\"tradeoffs\">Trade-offs: Improves efficiency but must carefully manage which tokens are ignored.</div><div class=\"applications\">Applications: Masking padding in sequence models like GPT during training.</div><div class=\"memory-hook\">Memory Hook: Ignore_index = Blindfolding the loss to skip fillers.</div>",
+          "ML LLM Easy",
+          "Easy"
+        ],
+        "flags": 0,
+        "guid": "guid-004",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Easy"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-005",
+        "fields": [
+          "How do you prepare a dataset for supervised instruction fine-tuning of an LLM?",
+          "<div class=\"concept\">Concept: Process of downloading, formatting, and partitioning instruction-response pairs.</div><div class=\"intuition\">Intuition: Curate examples that teach the model to map instructions to correct outputs.</div><div class=\"mechanics\">Mechanics: Download JSON, format with prompt styles, split into train/val/test (85/5/10%).</div><div class=\"tradeoffs\">Trade-offs: Larger datasets improve performance but increase computation; quality over quantity.</div><div class=\"applications\">Applications: Fine-tuning GPT models for task-specific responses.</div><div class=\"memory-hook\">Memory Hook: Dataset prep = Assembling a recipe book with instructions and results.</div>",
+          "ML LLM Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-005",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-006",
+        "fields": [
+          "Explain the mechanics of the format_input function in instruction fine-tuning.",
+          "<div class=\"concept\">Concept: Function to convert dataset entries into formatted prompts.</div><div class=\"intuition\">Intuition: Structures raw data into a readable instruction format for the LLM.</div><div class=\"mechanics\">Mechanics: Concatenates instruction prefix, instruction, optional input; skips empty inputs.</div><div class=\"tradeoffs\">Trade-offs: Flexible for varying inputs but may lead to inconsistent prompt lengths.</div><div class=\"applications\">Applications: Preparing Alpaca-style prompts for training.</div><div class=\"memory-hook\">Memory Hook: Format_input = Dressing up data in a formal suit.</div>",
+          "ML LLM Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-006",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-007",
+        "fields": [
+          "How do you partition an instruction dataset for fine-tuning, and what are the trade-offs?",
+          "<div class=\"concept\">Concept: Splitting data into train, validation, and test sets.</div><div class=\"intuition\">Intuition: Balances learning, tuning, and unbiased evaluation.</div><div class=\"mechanics\">Mechanics: Use 85% train, 10% test, 5% val based on dataset length.</div><div class=\"tradeoffs\">Trade-offs: Larger train set improves learning but smaller val/test may lead to overfitting or poor evaluation.</div><div class=\"applications\">Applications: Preventing data leakage in LLM training.</div><div class=\"memory-hook\">Memory Hook: Partition = Dividing a pie: most for eating (train), some for tasting (val), rest for judging (test).</div>",
+          "ML LLM Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-007",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-008",
+        "fields": [
+          "Describe the InstructionDataset class and its role in fine-tuning.",
+          "<div class=\"concept\">Concept: A PyTorch Dataset subclass for handling instruction data.</div><div class=\"intuition\">Intuition: Prepares and stores tokenized full prompts for efficient access.</div><div class=\"mechanics\">Mechanics: In __init__, formats and tokenizes each entry; __getitem__ returns token IDs.</div><div class=\"tradeoffs\">Trade-offs: Pretokenization speeds loading but uses more memory for large datasets.</div><div class=\"applications\">Applications: Feeding data to DataLoaders for batching.</div><div class=\"memory-hook\">Memory Hook: InstructionDataset = A pre-packed lunchbox of tokenized instructions.</div>",
+          "ML LLM Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-008",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-009",
+        "fields": [
+          "What are the mechanics of the custom_collate_fn in batch preparation?",
+          "<div class=\"concept\">Concept: Custom function for dynamic padding and target creation in batches.</div><div class=\"intuition\">Intuition: Adapts to varying sequence lengths per batch for efficiency.</div><div class=\"mechanics\">Mechanics: Find max length, pad with EOS, create inputs ([:-1]), targets ([1:]), mask extra pads with -100.</div><div class=\"tradeoffs\">Trade-offs: Reduces padding waste vs global max but more complex than static padding.</div><div class=\"applications\">Applications: Handling variable-length instructions in LLM training.</div><div class=\"memory-hook\">Memory Hook: Custom collate = Tailoring batches like custom suits.</div>",
+          "ML LLM Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-009",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-010",
+        "fields": [
+          "Why do we mask padding tokens with -100 in targets during fine-tuning, and what are the applications?",
+          "<div class=\"concept\">Concept: To exclude padding from loss computation using ignore_index.</div><div class=\"intuition\">Intuition: Focuses learning on actual content, ignoring fillers.</div><div class=\"mechanics\">Mechanics: Replace all but first EOS in targets with -100 after shifting.</div><div class=\"tradeoffs\">Trade-offs: Prevents bias from padding but requires precise masking to retain EOS learning.</div><div class=\"applications\">Applications: Efficient training in seq2seq tasks like instruction following.</div><div class=\"memory-hook\">Memory Hook: -100 mask = Sweeping dust (padding) under the rug.</div>",
+          "ML LLM Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-010",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-011",
+        "fields": [
+          "How do you create data loaders for an instruction dataset in PyTorch?",
+          "<div class=\"concept\">Concept: Wrappers for batching and shuffling datasets.</div><div class=\"intuition\">Intuition: Automates feeding data in manageable chunks to the model.</div><div class=\"mechanics\">Mechanics: Use DataLoader with InstructionDataset, custom_collate_fn, batch_size=8, shuffle for train.</div><div class=\"tradeoffs\">Trade-offs: Higher batch_size speeds training but increases memory use.</div><div class=\"applications\">Applications: Iterative training loops in LLM fine-tuning.</div><div class=\"memory-hook\">Memory Hook: DataLoader = Conveyor belt delivering batched goods.</div>",
+          "ML LLM Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-011",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-012",
+        "fields": [
+          "Compare loading GPT-2 small vs medium for instruction fine-tuning.",
+          "<div class=\"concept\">Concept: Importing pretrained weights into a GPTModel instance.</div><div class=\"intuition\">Intuition: Larger models have more capacity for complex tasks.</div><div class=\"mechanics\">Mechanics: Update config for emb_dim, n_layers, n_heads; download and load weights.</div><div class=\"tradeoffs\">Trade-offs: Medium (355M) better for instructions but requires more compute than small (124M).</div><div class=\"applications\">Applications: Starting point for task-specific fine-tuning.</div><div class=\"memory-hook\">Memory Hook: Loading models = Upgrading from economy to business class.</div>",
+          "ML LLM Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-012",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-013",
+        "fields": [
+          "What is the process of fine-tuning a pretrained LLM on instruction data?",
+          "<div class=\"concept\">Concept: Further training on instruction dataset to improve response generation.</div><div class=\"intuition\">Intuition: Refines the model's ability to follow specific commands.</div><div class=\"mechanics\">Mechanics: Use AdamW optimizer, cross-entropy loss, 2 epochs, evaluate periodically.</div><div class=\"tradeoffs\">Trade-offs: Low LR prevents catastrophic forgetting but may need more epochs.</div><div class=\"applications\">Applications: Enhancing chatbots for user queries.</div><div class=\"memory-hook\">Memory Hook: Fine-tuning = Polishing a rough diamond into a gem.</div>",
+          "ML LLM Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-013",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-014",
+        "fields": [
+          "How do you extract and save LLM-generated responses for evaluation?",
+          "<div class=\"concept\">Concept: Generating and storing model outputs on test data.</div><div class=\"intuition\">Intuition: Captures what the model produces for comparison.</div><div class=\"mechanics\">Mechanics: Use generate function, slice response, add to dict, save as JSON.</div><div class=\"tradeoffs\">Trade-offs: Max_new_tokens limits verbosity but may truncate useful info.</div><div class=\"applications\">Applications: Post-fine-tuning analysis and scoring.</div><div class=\"memory-hook\">Memory Hook: Extract responses = Harvesting fruits from the trained tree.</div>",
+          "ML LLM Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-014",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-015",
+        "fields": [
+          "What methods are used to evaluate an instruction-fine-tuned LLM?",
+          "<div class=\"concept\">Concept: Assessing response quality and correctness.</div><div class=\"intuition\">Intuition: Measures how well the model follows instructions beyond accuracy.</div><div class=\"mechanics\">Mechanics: Human eval, benchmarks like MMLU, automated scoring with another LLM.</div><div class=\"tradeoffs\">Trade-offs: Automated is scalable but less nuanced than human judgment.</div><div class=\"applications\">Applications: Comparing models in chatbot arenas.</div><div class=\"memory-hook\">Memory Hook: Evaluation = Grading a student's essay.</div>",
+          "ML LLM Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-015",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-016",
+        "fields": [
+          "Explain how to use Ollama and Llama3 for automated evaluation of LLM responses.",
+          "<div class=\"concept\">Concept: Using a larger LLM to score generated responses.</div><div class=\"intuition\">Intuition: Leverages advanced models for objective, scalable judging.</div><div class=\"mechanics\">Mechanics: Query via API with prompt to score 0-100 based on reference output.</div><div class=\"tradeoffs\">Trade-offs: Fast but depends on evaluator's bias; not fully deterministic.</div><div class=\"applications\">Applications: Quantifying performance on custom test sets.</div><div class=\"memory-hook\">Memory Hook: Ollama eval = Asking a teacher to grade homework.</div>",
+          "ML LLM Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-016",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-017",
+        "fields": [
+          "What are the trade-offs of masking instructions in target token IDs during fine-tuning?",
+          "<div class=\"concept\">Concept: Optionally replacing instruction tokens in targets with -100.</div><div class=\"intuition\">Intuition: Focuses loss on responses, potentially reducing overfitting to prompts.</div><div class=\"mechanics\">Mechanics: Mask after shifting targets; compute loss only on response parts.</div><div class=\"tradeoffs\">Trade-offs: May improve generalization but recent papers show not masking can boost performance.</div><div class=\"applications\">Applications: Experimenting in instruction tuning setups.</div><div class=\"memory-hook\">Memory Hook: Masking instructions = Ignoring the question, grading only the answer.</div>",
+          "ML LLM Hard",
+          "Hard"
+        ],
+        "flags": 0,
+        "guid": "guid-017",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Hard"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-018",
+        "fields": [
+          "Why do we shift target token IDs by one position in instruction fine-tuning, and what edge cases arise?",
+          "<div class=\"concept\">Concept: Aligning targets for next-token prediction.</div><div class=\"intuition\">Intuition: Teaches the model to predict the next word based on previous context.</div><div class=\"mechanics\">Mechanics: Targets = inputs[1:] + EOS; ensures autoregressive learning.</div><div class=\"tradeoffs\">Trade-offs: Essential for generation but complicates padding handling.</div><div class=\"applications\">Applications: Core to GPT-style training.</div><div class=\"memory-hook\">Memory Hook: Shifting targets = Peeking one step ahead in a chain.</div>",
+          "ML LLM Hard",
+          "Hard"
+        ],
+        "flags": 0,
+        "guid": "guid-018",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Hard"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-019",
+        "fields": [
+          "How do edge cases like empty input fields affect prompt formatting and fine-tuning?",
+          "<div class=\"concept\">Concept: Handling missing or optional data in dataset entries.</div><div class=\"intuition\">Intuition: Ensures robustness to varied instruction formats.</div><div class=\"mechanics\">Mechanics: Skip '### Input:' section if empty; model learns from instruction alone.</div><div class=\"tradeoffs\">Trade-offs: Flexible but may confuse model if not consistent.</div><div class=\"applications\">Applications: Real-world datasets with incomplete fields.</div><div class=\"memory-hook\">Memory Hook: Empty input = Instruction without homework example.</div>",
+          "ML LLM Hard",
+          "Hard"
+        ],
+        "flags": 0,
+        "guid": "guid-019",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Hard"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-020",
+        "fields": [
+          "How can parameter-efficient fine-tuning (PEFT) like LoRA optimize instruction fine-tuning?",
+          "<div class=\"concept\">Concept: Adapting LLMs with fewer trainable parameters.</div><div class=\"intuition\">Intuition: Updates low-rank matrices instead of full weights for efficiency.</div><div class=\"mechanics\">Mechanics: Add LoRA adapters to attention layers; train only adapters.</div><div class=\"tradeoffs\">Trade-offs: Reduces memory/compute but may slightly lower performance vs full tuning.</div><div class=\"applications\">Applications: Fine-tuning large models on limited hardware.</div><div class=\"memory-hook\">Memory Hook: LoRA = Lightweight backpack for heavy lifting.</div>",
+          "ML LLM Hard",
+          "Hard"
+        ],
+        "flags": 0,
+        "guid": "guid-020",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Hard"]
+      }
+    ]
+  }

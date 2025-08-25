@@ -1,0 +1,491 @@
+{
+  "__type__": "Deck",
+  "children": [],
+  "crowdanki_uuid": "deck-10-large-language-models",
+  "deck_config_uuid": "default-config",
+  "deck_configurations": [
+    {
+      "__type__": "DeckConfig",
+      "crowdanki_uuid": "default-config",
+      "name": "Default",
+      "autoplay": true,
+      "dyn": false,
+      "lapse": {
+        "delays": [
+          10
+        ],
+        "leechAction": 0,
+        "leechFails": 8,
+        "minInt": 1,
+        "mult": 0
+      },
+      "maxTaken": 60,
+      "new": {
+        "bury": false,
+        "delays": [
+          1,
+          10
+        ],
+        "initialFactor": 2500,
+        "ints": [
+          1,
+          4,
+          0
+        ],
+        "order": 1,
+        "perDay": 20
+      },
+      "replayq": true,
+      "rev": {
+        "bury": false,
+        "ease4": 1.3,
+        "hardFactor": 1.2,
+        "ivlFct": 1,
+        "maxIvl": 36500,
+        "perDay": 200
+      },
+      "timer": 0
+    }
+  ],
+  "desc": "Comprehensive flashcards for 10 Large Language Models",
+  "dyn": false,
+  "extendNew": 10,
+  "extendRev": 50,
+  "media_files": [],
+  "name": "ML:NLP:10 Large Language Models",
+  "note_models": [
+    {
+      "__type__": "NoteModel",
+      "crowdanki_uuid": "ml-nlp-interview-model",
+      "css": ".card {\n font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;\n font-size: 18px;\n text-align: center;\n color: #2c3e50;\n background-color: #fdfdfd;\n line-height: 1.5;\n}\n\n.front {\n font-weight: 600;\n color: #2c3e50;\n font-size: 20px;\n padding: 15px;\n}\n\n.back {\n text-align: left;\n padding: 25px;\n max-width: 800px;\n margin: 0 auto;\n}\n\n.concept {\n color: #e74c3c;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.concept strong {\n font-weight: 500;\n}\n\n.intuition {\n color: #3498db;\n font-style: italic;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.intuition strong {\n font-weight: 500;\n font-style: normal;\n}\n\n.mechanics {\n color: #27ae60;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.mechanics strong {\n font-weight: 500;\n}\n\n.tradeoffs {\n color: #e67e22;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.tradeoffs strong {\n font-weight: 500;\n}\n\n.applications {\n color: #8e44ad;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.applications strong {\n font-weight: 500;\n}\n\n.memory-hook {\n background-color: #f8f9fa;\n padding: 15px;\n border-radius: 6px;\n border-left: 4px solid #6c757d;\n font-style: italic;\n color: #495057;\n margin-top: 15px;\n font-size: 15px;\n}\n\n.memory-hook strong {\n font-weight: 500;\n font-style: normal;\n color: #343a40;\n}\n\n@media (max-width: 768px) {\n .back {\n   padding: 20px 15px;\n }\n \n .card {\n   font-size: 16px;\n }\n \n .front {\n   font-size: 18px;\n   padding: 12px;\n }\n}",
+      "flds": [
+        {
+          "__type__": "NoteModelField",
+          "font": "Arial",
+          "media": [],
+          "name": "Front",
+          "ord": 0,
+          "rtl": false,
+          "size": 20,
+          "sticky": false
+        },
+        {
+          "__type__": "NoteModelField",
+          "font": "Arial",
+          "media": [],
+          "name": "Back",
+          "ord": 1,
+          "rtl": false,
+          "size": 20,
+          "sticky": false
+        },
+        {
+          "__type__": "NoteModelField",
+          "font": "Arial",
+          "media": [],
+          "name": "Tags",
+          "ord": 2,
+          "rtl": false,
+          "size": 20,
+          "sticky": false
+        },
+        {
+          "__type__": "NoteModelField",
+          "font": "Arial",
+          "media": [],
+          "name": "Difficulty",
+          "ord": 3,
+          "rtl": false,
+          "size": 20,
+          "sticky": false
+        }
+      ],
+      "latexPost": "\\end{document}",
+      "latexPre": "\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage[utf8]{inputenc}\n\\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\\begin{document}\n",
+      "name": "ML/NLP Interview",
+      "req": [
+        [
+          0,
+          "all"
+        ]
+      ],
+      "sortf": 0,
+      "tags": [],
+      "tmpls": [
+        {
+          "__type__": "CardTemplate",
+          "afmt": "{{FrontSide}}\n\n<hr id=answer>\n\n<div class=\"back\">\n{{Back}}\n</div>",
+          "bafmt": "",
+          "bqfmt": "",
+          "did": null,
+          "name": "Card 1",
+          "ord": 0,
+          "qfmt": "<div class=\"front\">{{Front}}</div>"
+        }
+      ],
+      "type": 0
+    }
+  ],
+  "notes": [
+    {
+      "__type__": "Note",
+      "crowdanki_uuid": "note-10-1",
+      "fields": [
+        "What is a Large Language Model (LLM)?",
+        "<div class=\"concept\">Concept: A transformer-based language model with a very large number of parameters, often billions or trillions.</div><div class=\"intuition\">Intuition: Like a super-sized predictive text on your phone, but trained on vast internet data to mimic human-like conversation.</div><div class=\"mechanics\">Mechanics: Built by scaling up transformer architectures, trained on massive text corpora to predict next words.</div><div class=\"tradeoffs\">Trade-offs: High computational cost and energy use vs. impressive text generation capabilities.</div><div class=\"applications\">Applications: Chatbots like ChatGPT, content generation, virtual assistants.</div><div class=\"memory-hook\">Memory Hook: Imagine a giant parrot that repeats patterns from everything it's heard, sounding smart but without true understanding.</div>",
+        "NLP Definition Easy",
+        "Easy"
+      ],
+      "flags": 0,
+      "guid": "guid-10-1",
+      "note_model_uuid": "ml-nlp-interview-model",
+      "tags": [
+        "NLP",
+        "Definition",
+        "Easy"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "crowdanki_uuid": "note-10-2",
+      "fields": [
+        "Explain emergent properties in LLMs and why they might be a mirage.",
+        "<div class=\"concept\">Concept: Surprising capabilities that appear as models scale up, like reasoning or few-shot learning.</div><div class=\"intuition\">Intuition: Like how adding more ingredients to a soup suddenly makes it taste gourmet, but it's just better pattern matching.</div><div class=\"mechanics\">Mechanics: Arise from memorizing more patterns; benchmarks show linear or flat scaling, not sudden jumps.</div><div class=\"tradeoffs\">Trade-offs: Perceived intelligence vs. actual lack of reasoning; hype drives investment but ignores flaws.</div><div class=\"applications\">Applications: Creative writing, but fails on novel problems post-training.</div><div class=\"memory-hook\">Memory Hook: A bigger sponge absorbs more water but doesn't become a thinking brain.</div>",
+        "ML Intuition Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-10-2",
+      "note_model_uuid": "ml-nlp-interview-model",
+      "tags": [
+        "ML",
+        "Intuition",
+        "Medium"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "crowdanki_uuid": "note-10-3",
+      "fields": [
+        "How do LLMs generate text mathematically?",
+        "<div class=\"concept\">Concept: Conditional probability distribution for next tokens based on previous ones.</div><div class=\"intuition\">Intuition: Predicting the next word in a sentence like autocomplete, but smarter.</div><div class=\"mechanics\">Mechanics: Use softmax on logits to get probabilities; sample or greedy search for next token.</div><div class=\"tradeoffs\">Trade-offs: Greedy vs. sampling: determinism vs. creativity; temperature controls randomness.</div><div class=\"applications\">Applications: Text completion, story generation.</div><div class=\"memory-hook\">Memory Hook: A branching tree where each branch is a probable word, pruned by probability.</div>",
+        "ML Math Hard",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid-10-3",
+      "note_model_uuid": "ml-nlp-interview-model",
+      "tags": [
+        "ML",
+        "Math",
+        "Hard"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "crowdanki_uuid": "note-10-4",
+      "fields": [
+        "What are the main problems with practical applications of LLMs?",
+        "<div class=\"concept\">Concept: Issues like misinformation, reliability, bias, accessibility, environmental impact.</div><div class=\"intuition\">Intuition: Trained on noisy internet data, so outputs reflect societal flaws amplified.</div><div class=\"mechanics\">Mechanics: Hallucinations from pattern matching without grounding; RLHF optimizes likability over truth.</div><div class=\"tradeoffs\">Trade-offs: Impressive output vs. errors harming users/society; scale increases problems.</div><div class=\"applications\">Applications: Code generation with bugs, biased hiring tools.</div><div class=\"memory-hook\">Memory Hook: A mirror reflecting distorted internet reality, magnifying biases and lies.</div>",
+        "NLP Application Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-10-4",
+      "note_model_uuid": "ml-nlp-interview-model",
+      "tags": [
+        "NLP",
+        "Application",
+        "Medium"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "crowdanki_uuid": "note-10-5",
+      "fields": [
+        "Describe jailbreaking in LLMs and how to prevent it.",
+        "<div class=\"concept\">Concept: Tricking LLMs to output restricted content despite safeguards.</div><div class=\"intuition\">Intuition: Like convincing a rule-follower to break rules with clever phrasing.</div><div class=\"mechanics\">Mechanics: Use suffixes/prefixes to bypass filters; red teaming finds vulnerabilities.</div><div class=\"tradeoffs\">Trade-offs: Open access vs. toxicity; constant updates needed.</div><div class=\"applications\">Applications: Toxic content generation if not prevented.</div><div class=\"memory-hook\">Memory Hook: Picking a lock on a safe full of forbidden words.</div>",
+        "ML Tradeoffs Easy",
+        "Easy"
+      ],
+      "flags": 0,
+      "guid": "guid-10-5",
+      "note_model_uuid": "ml-nlp-interview-model",
+      "tags": [
+        "ML",
+        "Tradeoffs",
+        "Easy"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "crowdanki_uuid": "note-10-6",
+      "fields": [
+        "How does fine-tuning work for LLMs?",
+        "<div class=\"concept\">Concept: Adjusting pre-trained model weights on domain-specific data.</div><div class=\"intuition\">Intuition: Teaching a generalist to specialize in your field.</div><div class=\"mechanics\">Mechanics: Use datasets like book lines; train with Trainer class in Hugging Face.</div><div class=\"tradeoffs\">Trade-offs: Better relevance vs. compute cost; risk of overfitting.</div><div class=\"applications\">Applications: Domain-specific chatbots, code generation.</div><div class=\"memory-hook\">Memory Hook: Tailoring a suit to fit perfectly after buying off-the-rack.</div>",
+        "ML Mechanics Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-10-6",
+      "note_model_uuid": "ml-nlp-interview-model",
+      "tags": [
+        "ML",
+        "Mechanics",
+        "Medium"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "crowdanki_uuid": "note-10-7",
+      "fields": [
+        "What is Retrieval-Augmented Generation (RAG)?",
+        "<div class=\"concept\">Concept: Combining semantic search retrieval with generative models for grounded answers.</div><div class=\"intuition\">Intuition: Looking up facts before speaking to avoid lies.</div><div class=\"mechanics\">Mechanics: Retrieve docs via embeddings, feed to generator with prompt.</div><div class=\"tradeoffs\">Trade-offs: Accuracy vs. speed; needs good retriever.</div><div class=\"applications\">Applications: QA systems, fact-based chatbots.</div><div class=\"memory-hook\">Memory Hook: A student checking notes before answering exam questions.</div>",
+        "NLP Connections Hard",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid-10-7",
+      "note_model_uuid": "ml-nlp-interview-model",
+      "tags": [
+        "NLP",
+        "Connections",
+        "Hard"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "crowdanki_uuid": "note-10-8",
+      "fields": [
+        "Compare full-text search and semantic search.",
+        "<div class=\"concept\">Concept: Full-text matches exact words; semantic matches meaning via embeddings.</div><div class=\"intuition\">Intuition: Keyword hunt vs. understanding intent.</div><div class=\"mechanics\">Mechanics: Inverted indices for full-text; ANN for semantic.</div><div class=\"tradeoffs\">Trade-offs: Speed (full-text) vs. relevance (semantic).</div><div class=\"applications\">Applications: Hybrid for QA pipelines.</div><div class=\"memory-hook\">Memory Hook: Searching for 'apple' fruit vs. company—semantic knows context.</div>",
+        "NLP Tradeoffs Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-10-8",
+      "note_model_uuid": "ml-nlp-interview-model",
+      "tags": [
+        "NLP",
+        "Tradeoffs",
+        "Medium"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "crowdanki_uuid": "note-10-9",
+      "fields": [
+        "What are guardrails in LLMs?",
+        "<div class=\"concept\">Concept: Filters to detect/prevent toxic or erroneous outputs.</div><div class=\"intuition\">Intuition: Bumpers on a bowling lane to keep the ball on track.</div><div class=\"mechanics\">Mechanics: Classifiers for toxicity; spaCy matchers for patterns.</div><div class=\"tradeoffs\">Trade-offs: Safety vs. over-censorship; ongoing updates needed.</div><div class=\"applications\">Applications: Moderating chatbots, preventing bias.</div><div class=\"memory-hook\">Memory Hook: A fence around a playground to keep kids safe.</div>",
+        "ML Applications Easy",
+        "Easy"
+      ],
+      "flags": 0,
+      "guid": "guid-10-9",
+      "note_model_uuid": "ml-nlp-interview-model",
+      "tags": [
+        "ML",
+        "Applications",
+        "Easy"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "crowdanki_uuid": "note-10-10",
+      "fields": [
+        "Explain Approximate Nearest Neighbor (ANN) search.",
+        "<div class=\"concept\">Concept: Fast search for similar vectors, trading exactness for speed.</div><div class=\"intuition\">Intuition: Finding close friends in a crowd without checking everyone.</div><div class=\"mechanics\">Mechanics: Hash/tree/graph-based; e.g., HNSW layers for navigation.</div><div class=\"tradeoffs\">Trade-offs: Speed/memory vs. accuracy; quantization reduces size.</div><div class=\"applications\">Applications: Semantic search in vector DBs.</div><div class=\"memory-hook\">Memory Hook: GPS approximating shortest path, not calculating all routes.</div>",
+        "ML Theory Hard",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid-10-10",
+      "note_model_uuid": "ml-nlp-interview-model",
+      "tags": [
+        "ML",
+        "Theory",
+        "Hard"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "crowdanki_uuid": "note-10-11",
+      "fields": [
+        "How does red teaming work for LLMs?",
+        "<div class=\"concept\">Concept: Adversarial testing to find vulnerabilities in guardrails.</div><div class=\"intuition\">Intuition: Hiring hackers to break in before real ones do.</div><div class=\"mechanics\">Mechanics: Prompt injections, suffixes to bypass filters.</div><div class=\"tradeoffs\">Trade-offs: Proactive security vs. resource cost.</div><div class=\"applications\">Applications: Improving chatbot safety.</div><div class=\"memory-hook\">Memory Hook: Stress-testing a bridge with heavy loads.</div>",
+        "NLP Intuition Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-10-11",
+      "note_model_uuid": "ml-nlp-interview-model",
+      "tags": [
+        "NLP",
+        "Intuition",
+        "Medium"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "crowdanki_uuid": "note-10-12",
+      "fields": [
+        "What is the difference between AI ethics and AI safety?",
+        "<div class=\"concept\">Concept: Ethics: immediate harms like bias; Safety: long-term existential risks.</div><div class=\"intuition\">Intuition: Fixing current biases vs. preventing robot apocalypse.</div><div class=\"mechanics\">Mechanics: Ethics uses guardrails; safety aligns superintelligence.</div><div class=\"tradeoffs\">Trade-offs: Short-term fixes vs. hypothetical prevention.</div><div class=\"applications\">Applications: Bias mitigation vs. AGI control.</div><div class=\"memory-hook\">Memory Hook: Band-aid for cuts vs. vaccine for pandemics.</div>",
+        "ML Connections Easy",
+        "Easy"
+      ],
+      "flags": 0,
+      "guid": "guid-10-12",
+      "note_model_uuid": "ml-nlp-interview-model",
+      "tags": [
+        "ML",
+        "Connections",
+        "Easy"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "crowdanki_uuid": "note-10-13",
+      "fields": [
+        "Describe semantic routing in LLMs.",
+        "<div class=\"concept\">Concept: Classifying prompts to route to best LLM or tool.</div><div class=\"intuition\">Intuition: Directing traffic to the right highway based on destination.</div><div class=\"mechanics\">Mechanics: Use classifiers on embeddings to switch models.</div><div class=\"tradeoffs\">Trade-offs: Efficiency vs. prompt engineering overhead.</div><div class=\"applications\">Applications: Multi-model chat systems.</div><div class=\"memory-hook\">Memory Hook: A switchboard operator connecting calls.</div>",
+        "NLP Mechanics Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-10-13",
+      "note_model_uuid": "ml-nlp-interview-model",
+      "tags": [
+        "NLP",
+        "Mechanics",
+        "Medium"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "crowdanki_uuid": "note-10-14",
+      "fields": [
+        "How does quantization improve vector search?",
+        "<div class=\"concept\">Concept: Reducing vector precision to integers for faster computation.</div><div class=\"intuition\">Intuition: Rounding numbers to save space and speed math.</div><div class=\"mechanics\">Mechanics: Scale and cast to int; product quantization splits vectors.</div><div class=\"tradeoffs\">Trade-offs: Speed/memory vs. slight accuracy loss.</div><div class=\"applications\">Applications: Large-scale semantic search.</div><div class=\"memory-hook\">Memory Hook: Compressing a photo: smaller file, minor quality drop.</div>",
+        "ML Tradeoffs Hard",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid-10-14",
+      "note_model_uuid": "ml-nlp-interview-model",
+      "tags": [
+        "ML",
+        "Tradeoffs",
+        "Hard"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "crowdanki_uuid": "note-10-15",
+      "fields": [
+        "What is Haystack and how is it used in RAG?",
+        "<div class=\"concept\">Concept: Framework for building search/QA pipelines with retrievers and readers/generators.</div><div class=\"intuition\">Intuition: Lego blocks for assembling semantic search systems.</div><div class=\"mechanics\">Mechanics: Pipeline connects retriever to prompt node; uses FAISS for indexing.</div><div class=\"tradeoffs\">Trade-offs: Ease of use vs. customization depth.</div><div class=\"applications\">Applications: Book QA app deployment.</div><div class=\"memory-hook\">Memory Hook: Building a haystack to find needles efficiently.</div>",
+        "NLP Applications Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-10-15",
+      "note_model_uuid": "ml-nlp-interview-model",
+      "tags": [
+        "NLP",
+        "Applications",
+        "Medium"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "crowdanki_uuid": "note-10-16",
+      "fields": [
+        "Compare scaling up LLMs vs. using smaller, smarter models.",
+        "<div class=\"concept\">Concept: Bigger models for more capacity vs. efficient open-source for better generalization.</div><div class=\"intuition\">Intuition: Brute force vs. clever algorithms.</div><div class=\"mechanics\">Mechanics: Trillion params vs. fine-tuned 7B like Vicuna.</div><div class=\"tradeoffs\">Trade-offs: Power/cost vs. accessibility/reproducibility.</div><div class=\"applications\">Applications: Open-source beats proprietary in efficiency.</div><div class=\"memory-hook\">Memory Hook: Elephant vs. fox: size vs. cunning.</div>",
+        "ML Comparisons Hard",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid-10-16",
+      "note_model_uuid": "ml-nlp-interview-model",
+      "tags": [
+        "ML",
+        "Comparisons",
+        "Hard"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "crowdanki_uuid": "note-10-17",
+      "fields": [
+        "What causes hallucinations in LLMs?",
+        "<div class=\"concept\">Concept: Generating plausible but false text due to lack of grounding.</div><div class=\"intuition\">Intuition: Making up stories from patterns without fact-checking.</div><div class=\"mechanics\">Mechanics: Pattern regurgitation from ungrounded training data.</div><div class=\"tradeoffs\">Trade-offs: Fluency vs. factual accuracy.</div><div class=\"applications\">Applications: Misinfo in news generation.</div><div class=\"memory-hook\">Memory Hook: Daydreaming facts in a test without studying reality.</div>",
+        "NLP Limitations Easy",
+        "Easy"
+      ],
+      "flags": 0,
+      "guid": "guid-10-17",
+      "note_model_uuid": "ml-nlp-interview-model",
+      "tags": [
+        "NLP",
+        "Limitations",
+        "Easy"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "crowdanki_uuid": "note-10-18",
+      "fields": [
+        "How to deploy a QA app using Streamlit and Hugging Face?",
+        "<div class=\"concept\">Concept: Web UI for interactive QA with cloud hosting.</div><div class=\"intuition\">Intuition: Turning script into shareable web page.</div><div class=\"mechanics\">Mechanics: Use st components; cache models; deploy to Spaces.</div><div class=\"tradeoffs\">Trade-offs: Ease vs. customization; free tier limits.</div><div class=\"applications\">Applications: Public NLP book QA.</div><div class=\"memory-hook\">Memory Hook: Baking a cake (code) and serving it online.</div>",
+        "ML Deployment Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-10-18",
+      "note_model_uuid": "ml-nlp-interview-model",
+      "tags": [
+        "ML",
+        "Deployment",
+        "Medium"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "crowdanki_uuid": "note-10-19",
+      "fields": [
+        "What is the role of RLHF in LLMs?",
+        "<div class=\"concept\">Concept: Reinforcement Learning from Human Feedback to align outputs.</div><div class=\"intuition\">Intuition: Training a pet with treats for good behavior.</div><div class=\"mechanics\">Mechanics: Humans rate responses; adjust weights for likability.</div><div class=\"tradeoffs\">Trade-offs: User satisfaction vs. truthfulness.</div><div class=\"applications\">Applications: ChatGPT's engaging responses.</div><div class=\"memory-hook\">Memory Hook: Thumbs up/down shaping a thumbs-up bot.</div>",
+        "ML Mechanics Easy",
+        "Easy"
+      ],
+      "flags": 0,
+      "guid": "guid-10-19",
+      "note_model_uuid": "ml-nlp-interview-model",
+      "tags": [
+        "ML",
+        "Mechanics",
+        "Easy"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "crowdanki_uuid": "note-10-20",
+      "fields": [
+        "Discuss open-source LLMs like Vicuna and Mistral.",
+        "<div class=\"concept\">Concept: Efficient alternatives to proprietary giants with fewer parameters.</div><div class=\"intuition\">Intuition: David vs. Goliath: smaller but smarter.</div><div class=\"mechanics\">Mechanics: Fine-tuned on conversations; run locally.</div><div class=\"tradeoffs\">Trade-offs: Accessibility vs. raw power.</div><div class=\"applications\">Applications: Local chatbots, research.</div><div class=\"memory-hook\">Memory Hook: A pony outrunning a horse with better training.</div>",
+        "NLP Connections Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-10-20",
+      "note_model_uuid": "ml-nlp-interview-model",
+      "tags": [
+        "NLP",
+        "Connections",
+        "Medium"
+      ]
+    }
+  ]
+}

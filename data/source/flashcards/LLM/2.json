@@ -1,0 +1,399 @@
+{
+    "__type__": "Deck",
+    "children": [],
+    "crowdanki_uuid": "deck-llm-ch2",
+    "deck_config_uuid": "default-config",
+    "deck_configurations": [
+      {
+        "__type__": "DeckConfig",
+        "crowdanki_uuid": "default-config",
+        "name": "Default",
+        "autoplay": true,
+        "dyn": false,
+        "lapse": {
+          "delays": [10],
+          "leechAction": 0,
+          "leechFails": 8,
+          "minInt": 1,
+          "mult": 0
+        },
+        "maxTaken": 60,
+        "new": {
+          "bury": false,
+          "delays": [1, 10],
+          "initialFactor": 2500,
+          "ints": [1, 4, 0],
+          "order": 1,
+          "perDay": 20
+        },
+        "replayq": true,
+        "rev": {
+          "bury": false,
+          "ease4": 1.3,
+          "hardFactor": 1.2,
+          "ivlFct": 1,
+          "maxIvl": 36500,
+          "perDay": 200
+        },
+        "timer": 0
+      }
+    ],
+    "desc": "Comprehensive flashcards for ML:LLM:02 Working with text data",
+    "dyn": false,
+    "extendNew": 10,
+    "extendRev": 50,
+    "media_files": [],
+    "name": "ML:LLM:02 Working with text data",
+    "note_models": [
+      {
+        "__type__": "NoteModel",
+        "crowdanki_uuid": "ml-interview-flashcard-model",
+        "css": ".card {\n font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;\n font-size: 18px;\n text-align: center;\n color: #2c3e50;\n background-color: #fdfdfd;\n line-height: 1.5;\n}\n\n.front {\n font-weight: 600;\n color: #2c3e50;\n font-size: 20px;\n padding: 15px;\n}\n\n.back {\n text-align: left;\n padding: 25px;\n max-width: 800px;\n margin: 0 auto;\n}\n\n.concept {\n color: #e74c3c;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.concept strong {\n font-weight: 500;\n}\n\n.intuition {\n color: #3498db;\n font-style: italic;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.intuition strong {\n font-weight: 500;\n font-style: normal;\n}\n\n.mechanics {\n color: #27ae60;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.mechanics strong {\n font-weight: 500;\n}\n\n.tradeoffs {\n color: #e67e22;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.tradeoffs strong {\n font-weight: 500;\n}\n\n.applications {\n color: #8e44ad;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.applications strong {\n font-weight: 500;\n}\n\n.memory-hook {\n background-color: #f8f9fa;\n padding: 15px;\n border-radius: 6px;\n border-left: 4px solid #6c757d;\n font-style: italic;\n color: #495057;\n margin-top: 15px;\n font-size: 15px;\n}\n\n.memory-hook strong {\n font-weight: 500;\n font-style: normal;\n color: #343a40;\n}\n\n@media (max-width: 768px) {\n .back {\n   padding: 20px 15px;\n }\n \n .card {\n   font-size: 16px;\n }\n \n .front {\n   font-size: 18px;\n   padding: 12px;\n }\n}",
+        "flds": [
+          {
+            "__type__": "NoteModelField",
+            "font": "Arial",
+            "media": [],
+            "name": "Front",
+            "ord": 0,
+            "rtl": false,
+            "size": 20,
+            "sticky": false
+          },
+          {
+            "__type__": "NoteModelField",
+            "font": "Arial",
+            "media": [],
+            "name": "Back",
+            "ord": 1,
+            "rtl": false,
+            "size": 20,
+            "sticky": false
+          },
+          {
+            "__type__": "NoteModelField",
+            "font": "Arial",
+            "media": [],
+            "name": "Tags",
+            "ord": 2,
+            "rtl": false,
+            "size": 20,
+            "sticky": false
+          },
+          {
+            "__type__": "NoteModelField",
+            "font": "Arial",
+            "media": [],
+            "name": "Difficulty",
+            "ord": 3,
+            "rtl": false,
+            "size": 20,
+            "sticky": false
+          }
+        ],
+        "latexPost": "\\end{document}",
+        "latexPre": "\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage[utf8]{inputenc}\n\\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\\begin{document}\n",
+        "name": "ML Interview Flashcard",
+        "req": [
+          [0, "all"]
+        ],
+        "sortf": 0,
+        "tags": [],
+        "tmpls": [
+          {
+            "__type__": "CardTemplate",
+            "afmt": "{{FrontSide}}\n\n<hr id=answer>\n\n<div class=\"back\">\n{{Back}}\n</div>",
+            "bafmt": "",
+            "bqfmt": "",
+            "did": null,
+            "name": "Card 1",
+            "ord": 0,
+            "qfmt": "<div class=\"front\">{{Front}}</div>"
+          }
+        ],
+        "type": 0
+      }
+    ],
+    "notes": [
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-1",
+        "fields": [
+          "What is tokenization in the context of preparing text for LLMs?",
+          "<div class=\"concept\">Concept: The process of splitting raw text into smaller units called tokens, which can be words, subwords, or characters, to make it suitable for LLM processing.</div><div class=\"intuition\">Intuition: Like breaking a sentence into individual building blocks so the model can understand and learn from them piece by piece.</div><div class=\"mechanics\">Mechanics: Use regular expressions or advanced algorithms like BPE to split text on whitespace, punctuation, etc., while handling special cases.</div><div class=\"tradeoffs\">Trade-offs: Simple tokenization is fast but may not handle unknown words well; advanced methods like BPE are more flexible but computationally intensive.</div><div class=\"applications\">Applications: Preprocessing text for LLM training, such as splitting 'Hello, world!' into ['Hello', ',', 'world', '!'].</div><div class=\"memory-hook\">Memory Hook: Tokenization = Text 'token' chopping, like chopping veggies for a soup.</div>",
+          "ML LLM Tokenization Easy",
+          "Easy"
+        ],
+        "flags": 0,
+        "guid": "guid-1",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Easy"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-2",
+        "fields": [
+          "What is a word embedding?",
+          "<div class=\"concept\">Concept: A continuous vector representation of words or tokens that captures semantic meaning, allowing neural networks to process text mathematically.</div><div class=\"intuition\">Intuition: Words as points in a high-dimensional space where similar words cluster together, like a map of meanings.</div><div class=\"mechanics\">Mechanics: Map discrete tokens to dense vectors via an embedding layer, often learned during training.</div><div class=\"tradeoffs\">Trade-offs: Higher dimensions capture more nuance but increase computation; lower dimensions are efficient but less expressive.</div><div class=\"applications\">Applications: Input to LLMs, e.g., GPT-3 uses 12,288-dimensional embeddings for tokens.</div><div class=\"memory-hook\">Memory Hook: Embedding = 'Embed' words in vector space, like burying treasures in a multidimensional map.</div>",
+          "ML LLM Embeddings Easy",
+          "Easy"
+        ],
+        "flags": 0,
+        "guid": "guid-2",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Easy"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-3",
+        "fields": [
+          "What are special context tokens in LLMs?",
+          "<div class=\"concept\">Concept: Tokens like <|unk|> for unknown words and <|endoftext|> to separate unrelated texts, enhancing model handling of contexts.</div><div class=\"intuition\">Intuition: Signposts in text that guide the model, like 'stop' signs between documents.</div><div class=\"mechanics\">Mechanics: Added to vocabulary; tokenizer replaces unknowns with <|unk|> or inserts <|endoftext|> between sources.</div><div class=\"tradeoffs\">Trade-offs: Improves robustness but increases vocabulary size; not always needed in advanced tokenizers like BPE.</div><div class=\"applications\">Applications: Handling OOV words or concatenating multiple documents for training.</div><div class=\"memory-hook\">Memory Hook: Special tokens = 'Special' helpers, like lifelines in a quiz show for tricky parts.</div>",
+          "ML LLM SpecialTokens Easy",
+          "Easy"
+        ],
+        "flags": 0,
+        "guid": "guid-3",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Easy"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-4",
+        "fields": [
+          "What is Byte Pair Encoding (BPE)?",
+          "<div class=\"concept\">Concept: A subword tokenization algorithm that iteratively merges frequent character pairs to build a vocabulary, handling unknown words efficiently.</div><div class=\"intuition\">Intuition: Building words like Lego blocks from common subparts, starting from characters.</div><div class=\"mechanics\">Mechanics: Start with characters, merge frequent pairs based on frequency, repeat until vocabulary size is reached.</div><div class=\"tradeoffs\">Trade-offs: Handles OOV well without <|unk|>, but building vocabulary requires computation; fixed size limits rare words.</div><div class=\"applications\">Applications: Used in GPT-2/3 for tokenizing any text, e.g., breaking 'someunknownPlace' into subwords.</div><div class=\"memory-hook\">Memory Hook: BPE = 'Byte Pair' merging, like pairing dancers at a ball based on popularity.</div>",
+          "ML LLM BPE Easy",
+          "Easy"
+        ],
+        "flags": 0,
+        "guid": "guid-4",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Easy"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-5",
+        "fields": [
+          "How does a simple tokenizer work mechanically for splitting text?",
+          "<div class=\"concept\">Concept: Basic tokenization using regular expressions to split text into words and punctuation.</div><div class=\"intuition\">Intuition: Scanning text and cutting at spaces or special chars, like a knife slicing at boundaries.</div><div class=\"mechanics\">Mechanics: Use re.split with patterns like ([,.:;?_!\"()\']|--|\\s) to separate, then strip whitespace.</div><div class=\"tradeoffs\">Trade-offs: Simple and fast for known vocab, but fails on unknowns without <|unk|>; less flexible than BPE.</div><div class=\"applications\">Applications: Initial processing of short stories like 'The Verdict' into 4690 tokens.</div><div class=\"memory-hook\">Memory Hook: Simple tokenizer = 'Simple' splitter, like dividing a pizza with straight cuts.</div>",
+          "ML LLM Tokenization Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-5",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-6",
+        "fields": [
+          "Explain how to convert tokens into token IDs using a vocabulary.",
+          "<div class=\"concept\">Concept: Mapping unique tokens to integer IDs via a dictionary built from the dataset.</div><div class=\"intuition\">Intuition: Assigning each unique word a unique number, like jersey numbers for players.</div><div class=\"mechanics\">Mechanics: Collect unique sorted tokens, create dict {token: index}, encode by lookup.</div><div class=\"tradeoffs\">Trade-offs: Efficient for lookup, but vocabulary size grows with data; misses unknowns without special handling.</div><div class=\"applications\">Applications: Preparing inputs for embeddings, e.g., vocabulary of 1132 for 'The Verdict' with specials.</div><div class=\"memory-hook\">Memory Hook: Token to ID = 'To ID' assignment, like issuing IDs at a conference.</div>",
+          "ML LLM TokenIDs Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-6",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-7",
+        "fields": [
+          "Describe the sliding window approach for sampling training examples in LLMs.",
+          "<div class=\"concept\">Concept: A method to create overlapping sequences from text for next-word prediction training.</div><div class=\"intuition\">Intuition: Sliding a fixed-size window across text, shifting by stride, to capture contexts efficiently.</div><div class=\"mechanics\">Mechanics: For sequence length max_length and stride, extract chunks input[i:i+max_length], targets[i+1:i+max_length+1].</div><div class=\"tradeoffs\">Trade-offs: Smaller stride increases overlap (more data, less overfitting risk) but computation; larger stride reduces redundancy.</div><div class=\"applications\">Applications: Generating batches for LLM pretraining, e.g., with stride=1 for dense sampling.</div><div class=\"memory-hook\">Memory Hook: Sliding window = 'Sliding' viewer, like moving a magnifying glass over a page.</div>",
+          "ML LLM SlidingWindow Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-7",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-8",
+        "fields": [
+          "How do you create input-target pairs for LLM training?",
+          "<div class=\"concept\">Concept: Pairs where input is a sequence of tokens, target is the next token or shifted sequence for prediction.</div><div class=\"intuition\">Intuition: Teaching the model to guess the next word by showing context and expected follow-up.</div><div class=\"mechanics\">Mechanics: From tokenized text, inputs = tokens[:context], targets = tokens[1:context+1].</div><div class=\"tradeoffs\">Trade-offs: Enables autoregressive training but requires large data; masking needed for efficiency.</div><div class=\"applications\">Applications: Next-word prediction in GPT, e.g., input 'and established himself' -> target 'in'.</div><div class=\"memory-hook\">Memory Hook: Input-target = 'Input' question, 'target' answer, like quiz pairs.</div>",
+          "ML LLM InputTarget Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-8",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-9",
+        "fields": [
+          "What are the trade-offs between absolute and relative positional embeddings?",
+          "<div class=\"concept\">Concept: Absolute: Fixed embeddings per position; Relative: Encodes distances between tokens.</div><div class=\"intuition\">Intuition: Absolute like seat numbers in a theater; relative like how far apart seats are.</div><div class=\"mechanics\">Mechanics: Absolute added directly to token embeds; relative modifies attention based on offsets.</div><div class=\"tradeoffs\">Trade-offs: Absolute simple but poor on varying lengths; relative generalizes better but more complex to implement.</div><div class=\"applications\">Applications: GPT uses absolute; T5 uses relative for better extrapolation.</div><div class=\"memory-hook\">Memory Hook: Absolute vs Relative = 'Absolute' fixed spots vs 'relative' distance measures.</div>",
+          "ML LLM PosEmbeddings Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-9",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-10",
+        "fields": [
+          "How does an embedding layer function in PyTorch for LLMs?",
+          "<div class=\"concept\">Concept: A neural network layer that maps token IDs to dense vectors via lookup.</div><div class=\"intuition\">Intuition: Like a dictionary where keys are IDs and values are vector meanings.</div><div class=\"mechanics\">Mechanics: nn.Embedding(vocab_size, embed_dim), weights initialized randomly, lookup via ID indexing.</div><div class=\"tradeoffs\">Trade-offs: Efficient alternative to one-hot + linear, but memory scales with vocab*dim.</div><div class=\"applications\">Applications: Converting token IDs to inputs for GPT, e.g., ID 2 -> [1.2753, -0.2010, -0.1606].</div><div class=\"memory-hook\">Memory Hook: Embedding layer = 'Embed' lookup, like pulling files from a cabinet by number.</div>",
+          "ML LLM EmbeddingLayer Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-10",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-11",
+        "fields": [
+          "Why are positional embeddings necessary in transformer-based LLMs?",
+          "<div class=\"concept\">Concept: To inject order information since self-attention is permutation-invariant.</div><div class=\"intuition\">Intuition: Without them, words are just a bag; positions make it a sequence with structure.</div><div class=\"mechanics\">Mechanics: Add or concatenate position vectors to token embeds before feeding to layers.</div><div class=\"tradeoffs\">Trade-offs: Adds parameters/complexity; learned positions adapt better than fixed sinusoidal.</div><div class=\"applications\">Applications: Enabling sequence understanding in GPT, e.g., distinguishing 'dog bites man' from reverse.</div><div class=\"memory-hook\">Memory Hook: Positional = 'Position' tags, like labeling seats in a row.</div>",
+          "ML LLM PosEmbeddings Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-11",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-12",
+        "fields": [
+          "Compare simple tokenization with Byte Pair Encoding for LLMs.",
+          "<div class=\"concept\">Concept: Simple: Word/punctuation split; BPE: Subword merging based on frequency.</div><div class=\"intuition\">Intuition: Simple is whole words; BPE breaks into common parts for flexibility.</div><div class=\"mechanics\">Mechanics: Simple uses regex; BPE iteratively merges pairs, no need for <|unk|>.</div><div class=\"tradeoffs\">Trade-offs: Simple faster/easier but brittle to OOV; BPE robust but slower to train vocabulary.</div><div class=\"applications\">Applications: Simple for small datasets; BPE in GPT for handling diverse text.</div><div class=\"memory-hook\">Memory Hook: Simple vs BPE = 'Simple' whole cake vs 'BPE' sliced optimally.</div>",
+          "ML LLM Tokenization Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-12",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-13",
+        "fields": [
+          "What are applications and trade-offs of BPE in handling unknown words?",
+          "<div class=\"concept\">Concept: BPE decomposes unknowns into subwords or characters.</div><div class=\"intuition\">Intuition: Falls back to smaller units when whole word unknown, like spelling out.</div><div class=\"mechanics\">Mechanics: Vocabulary includes subwords; encode by greedy longest match.</div><div class=\"tradeoffs\">Trade-offs: No <|unk|> needed, generalizes well; but longer sequences for rare words increase computation.</div><div class=\"applications\">Applications: Tokenizing neologisms in GPT, e.g., 'Akwirw ier' -> subparts.</div><div class=\"memory-hook\">Memory Hook: BPE unknowns = 'Break' down, like disassembling a puzzle.</div>",
+          "ML LLM BPE Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-13",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-14",
+        "fields": [
+          "Discuss trade-offs in choosing embedding dimensions for LLMs.",
+          "<div class=\"concept\">Concept: Size of vector space for token representations.</div><div class=\"intuition\">Intuition: More dimensions = richer meanings, like more colors in a palette.</div><div class=\"mechanics\">Mechanics: Set in nn.Embedding, e.g., 768 for small GPT-2, 12288 for GPT-3 large.</div><div class=\"tradeoffs\">Trade-offs: Larger captures nuance but higher memory/compute; smaller efficient but less accurate.</div><div class=\"applications\">Applications: Balancing performance in models like GPT-3 variants.</div><div class=\"memory-hook\">Memory Hook: Embed dim = 'Dim' ensions, like room size for furniture (meanings).</div>",
+          "ML LLM Embeddings Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-14",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-15",
+        "fields": [
+          "How do you implement a data loader for LLM training batches?",
+          "<div class=\"concept\">Concept: Using PyTorch Dataset/DataLoader to yield batched input-target pairs.</div><div class=\"intuition\">Intuition: Automated feeder of prepared data chunks to the model.</div><div class=\"mechanics\">Mechanics: Custom Dataset with encode, sliding chunks; DataLoader with batch_size, shuffle, drop_last.</div><div class=\"tradeoffs\">Trade-offs: Larger batches stable but memory-heavy; stride affects overlap/efficiency.</div><div class=\"applications\">Applications: Training GPT on texts like 'The Verdict' with max_length=256.</div><div class=\"memory-hook\">Memory Hook: Data loader = 'Loader' truck, delivering batches of data.</div>",
+          "ML LLM DataLoader Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-15",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-16",
+        "fields": [
+          "What is the role of stride in data sampling for LLMs?",
+          "<div class=\"concept\">Concept: The step size for shifting the sliding window in sequence generation.</div><div class=\"intuition\">Intuition: Controls overlap; small stride = more similar samples, large = distinct.</div><div class=\"mechanics\">Mechanics: In loop, i += stride for chunk extraction.</div><div class=\"tradeoffs\">Trade-offs: Small reduces overfitting risk but increases data size/compute; large efficient but potential underuse.</div><div class=\"applications\">Applications: Stride=1 for dense, stride=max_length for no overlap in batching.</div><div class=\"memory-hook\">Memory Hook: Stride = 'Stride' steps, like walking pace over text.</div>",
+          "ML LLM SlidingWindow Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-16",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-17",
+        "fields": [
+          "Explain the deep mechanics of the BPE algorithm, including edge cases.",
+          "<div class=\"concept\">Concept: Iterative merging of most frequent byte pairs to form subwords.</div><div class=\"intuition\">Intuition: Greedily combining common patterns, building from chars to words.</div><div class=\"mechanics\">Mechanics: Count pair freq, merge highest, update corpus, repeat; encode with longest matches, fallback to chars for edges like rare symbols.</div><div class=\"tradeoffs\">Trade-offs: Robust to OOV but merge order affects efficiency; fixed merges may suboptimal for some languages.</div><div class=\"applications\">Applications: Handling misspellings or new words in real-time inference.</div><div class=\"memory-hook\">Memory Hook: BPE deep = 'Deep' merging waves, like ocean currents forming islands.</div>",
+          "ML LLM BPE Hard",
+          "Hard"
+        ],
+        "flags": 0,
+        "guid": "guid-17",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Hard"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-18",
+        "fields": [
+          "What is the mathematical representation and optimization of positional embeddings?",
+          "<div class=\"concept\">Concept: Vectors added to token embeds to encode position, learned or fixed.</div><div class=\"intuition\">Intuition: Numeric tags for order, optimized to minimize loss.</div><div class=\"mechanics\">Mechanics: For pos i, embed = nn.Embedding(context_len, dim)(i); input = token_embed + pos_embed; optimized via backprop on weights.</div><div class=\"tradeoffs\">Trade-offs: Learned adapt to data but overfit; fixed (sin/cos) generalize but less flexible.</div><div class=\"applications\">Applications: In GPT, learned absolute for sequences up to 1024/2048.</div><div class=\"memory-hook\">Memory Hook: Pos math = 'Math' position vectors, like coordinates in optimization space.</div>",
+          "ML LLM PosEmbeddings Hard",
+          "Hard"
+        ],
+        "flags": 0,
+        "guid": "guid-18",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Hard"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-19",
+        "fields": [
+          "Discuss edge cases in tokenization and how to handle them.",
+          "<div class=\"concept\">Concept: Scenarios like punctuation attachments, capitalization, or multilingual text.</div><div class=\"intuition\">Intuition: Tricky boundaries where splits can alter meaning, like 'it's' vs 'it' 's'.</div><div class=\"mechanics\">Mechanics: Regex for punctuation; preserve case; BPE handles via merges, but edges like emojis need special inclusion.</div><div class=\"tradeoffs\">Trade-offs: Over-splitting loses context; under-splitting bloats vocab; multilingual needs diverse training.</div><div class=\"applications\">Applications: Processing code (indent-sensitive) or tweets with emojis.</div><div class=\"memory-hook\">Memory Hook: Token edges = 'Edge' cases, like navigating cliffs in text landscape.</div>",
+          "ML LLM Tokenization Hard",
+          "Hard"
+        ],
+        "flags": 0,
+        "guid": "guid-19",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Hard"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-20",
+        "fields": [
+          "How are embeddings optimized during LLM training, considering connections to other components?",
+          "<div class=\"concept\">Concept: Embedding weights updated via backpropagation to minimize prediction loss.</div><div class=\"intuition\">Intuition: Fine-tuning vectors so similar contexts pull them closer.</div><div class=\"mechanics\">Mechanics: Gradients from loss flow back to embed layer; connected to attention where positions matter.</div><div class=\"tradeoffs\">Trade-offs: Task-specific better than pretrained, but requires data; large dims slow optimization.</div><div class=\"applications\">Applications: End-to-end training in GPT, linking to output embeddings for efficiency.</div><div class=\"memory-hook\">Memory Hook: Embed optimize = 'Optimize' vectors, like sculpting clay with feedback.</div>",
+          "ML LLM Embeddings Hard",
+          "Hard"
+        ],
+        "flags": 0,
+        "guid": "guid-20",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Hard"]
+      }
+    ]
+  }

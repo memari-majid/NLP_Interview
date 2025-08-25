@@ -1,0 +1,399 @@
+{
+    "__type__": "Deck",
+    "children": [],
+    "crowdanki_uuid": "deck-llm-ch1",
+    "deck_config_uuid": "default-config",
+    "deck_configurations": [
+      {
+        "__type__": "DeckConfig",
+        "crowdanki_uuid": "default-config",
+        "name": "Default",
+        "autoplay": true,
+        "dyn": false,
+        "lapse": {
+          "delays": [10],
+          "leechAction": 0,
+          "leechFails": 8,
+          "minInt": 1,
+          "mult": 0
+        },
+        "maxTaken": 60,
+        "new": {
+          "bury": false,
+          "delays": [1, 10],
+          "initialFactor": 2500,
+          "ints": [1, 4, 0],
+          "order": 1,
+          "perDay": 20
+        },
+        "replayq": true,
+        "rev": {
+          "bury": false,
+          "ease4": 1.3,
+          "hardFactor": 1.2,
+          "ivlFct": 1,
+          "maxIvl": 36500,
+          "perDay": 200
+        },
+        "timer": 0
+      }
+    ],
+    "desc": "Comprehensive flashcards for ML:LLM:01 Understanding large language models",
+    "dyn": false,
+    "extendNew": 10,
+    "extendRev": 50,
+    "media_files": [],
+    "name": "ML:LLM:01 Understanding large language models",
+    "note_models": [
+      {
+        "__type__": "NoteModel",
+        "crowdanki_uuid": "ml-interview-flashcard-model",
+        "css": ".card {\n font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;\n font-size: 18px;\n text-align: center;\n color: #2c3e50;\n background-color: #fdfdfd;\n line-height: 1.5;\n}\n\n.front {\n font-weight: 600;\n color: #2c3e50;\n font-size: 20px;\n padding: 15px;\n}\n\n.back {\n text-align: left;\n padding: 25px;\n max-width: 800px;\n margin: 0 auto;\n}\n\n.concept {\n color: #e74c3c;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.concept strong {\n font-weight: 500;\n}\n\n.intuition {\n color: #3498db;\n font-style: italic;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.intuition strong {\n font-weight: 500;\n font-style: normal;\n}\n\n.mechanics {\n color: #27ae60;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.mechanics strong {\n font-weight: 500;\n}\n\n.tradeoffs {\n color: #e67e22;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.tradeoffs strong {\n font-weight: 500;\n}\n\n.applications {\n color: #8e44ad;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.applications strong {\n font-weight: 500;\n}\n\n.memory-hook {\n background-color: #f8f9fa;\n padding: 15px;\n border-radius: 6px;\n border-left: 4px solid #6c757d;\n font-style: italic;\n color: #495057;\n margin-top: 15px;\n font-size: 15px;\n}\n\n.memory-hook strong {\n font-weight: 500;\n font-style: normal;\n color: #343a40;\n}\n\n@media (max-width: 768px) {\n .back {\n   padding: 20px 15px;\n }\n \n .card {\n   font-size: 16px;\n }\n \n .front {\n   font-size: 18px;\n   padding: 12px;\n }\n}",
+        "flds": [
+          {
+            "__type__": "NoteModelField",
+            "font": "Arial",
+            "media": [],
+            "name": "Front",
+            "ord": 0,
+            "rtl": false,
+            "size": 20,
+            "sticky": false
+          },
+          {
+            "__type__": "NoteModelField",
+            "font": "Arial",
+            "media": [],
+            "name": "Back",
+            "ord": 1,
+            "rtl": false,
+            "size": 20,
+            "sticky": false
+          },
+          {
+            "__type__": "NoteModelField",
+            "font": "Arial",
+            "media": [],
+            "name": "Tags",
+            "ord": 2,
+            "rtl": false,
+            "size": 20,
+            "sticky": false
+          },
+          {
+            "__type__": "NoteModelField",
+            "font": "Arial",
+            "media": [],
+            "name": "Difficulty",
+            "ord": 3,
+            "rtl": false,
+            "size": 20,
+            "sticky": false
+          }
+        ],
+        "latexPost": "\\end{document}",
+        "latexPre": "\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage[utf8]{inputenc}\n\\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\\begin{document}\n",
+        "name": "ML Interview Flashcard",
+        "req": [
+          [0, "all"]
+        ],
+        "sortf": 0,
+        "tags": [],
+        "tmpls": [
+          {
+            "__type__": "CardTemplate",
+            "afmt": "{{FrontSide}}\n\n<hr id=answer>\n\n<div class=\"back\">\n{{Back}}\n</div>",
+            "bafmt": "",
+            "bqfmt": "",
+            "did": null,
+            "name": "Card 1",
+            "ord": 0,
+            "qfmt": "<div class=\"front\">{{Front}}</div>"
+          }
+        ],
+        "type": 0
+      }
+    ],
+    "notes": [
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-1",
+        "fields": [
+          "What is a large language model (LLM)?",
+          "<div class=\"concept\">Concept: A deep neural network trained on vast text data to understand, generate, and interpret human-like text.</div><div class=\"intuition\">Intuition: Like a super-smart text predictor that learns patterns from reading almost everything on the internet.</div><div class=\"mechanics\">Mechanics: Uses transformer architecture with billions of parameters optimized via next-word prediction on massive datasets.</div><div class=\"tradeoffs\">Trade-offs: Requires enormous computational resources for training but enables broad capabilities without task-specific designs.</div><div class=\"applications\">Applications: Text generation, translation, summarization, question answering.</div><div class=\"memory-hook\">Memory Hook: LLM = Large Learner of Language, Massive in size and data.</div>",
+          "ML LLM Easy",
+          "Easy"
+        ],
+        "flags": 0,
+        "guid": "guid-1",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Easy"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-2",
+        "fields": [
+          "How do LLMs differ from traditional NLP methods?",
+          "<div class=\"concept\">Concept: LLMs use deep learning on vast data for complex language tasks, unlike rule-based or simple statistical NLP.</div><div class=\"intuition\">Intuition: Traditional NLP is like following a recipe; LLMs learn by example from billions of recipes.</div><div class=\"mechanics\">Mechanics: Traditional methods rely on handcrafted features/rules; LLMs learn features automatically via neural networks.</div><div class=\"tradeoffs\">Trade-offs: LLMs handle nuance better but need more data/compute; traditional are faster for simple tasks.</div><div class=\"applications\">Applications: LLMs excel in generation and context; traditional in basic classification.</div><div class=\"memory-hook\">Memory Hook: Old NLP: Rules rule; New LLMs: Data dominates.</div>",
+          "ML LLM Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-2",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-3",
+        "fields": [
+          "What is the relationship between AI, machine learning, deep learning, and LLMs?",
+          "<div class=\"concept\">Concept: AI > ML > DL > LLMs, where LLMs are a specific DL application for language.</div><div class=\"intuition\">Intuition: AI is the big dream; ML is learning from data; DL uses deep nets; LLMs apply DL to talk like humans.</div><div class=\"mechanics\">Mechanics: AI includes rules/ML; ML uses algorithms on data; DL uses multi-layer nets; LLMs use transformers for text.</div><div class=\"tradeoffs\">Trade-offs: Broader fields offer variety; narrower like LLMs provide depth in language but limit to text.</div><div class=\"applications\">Applications: Spam filters (ML), image recognition (DL), chatbots (LLMs).</div><div class=\"memory-hook\">Memory Hook: AI umbrella, ML tent, DL sleeping bag, LLM pillow for language dreams.</div>",
+          "ML LLM Easy",
+          "Easy"
+        ],
+        "flags": 0,
+        "guid": "guid-3",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Easy"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-4",
+        "fields": [
+          "What are some key applications of LLMs?",
+          "<div class=\"concept\">Concept: LLMs parse/generate text for various NLP tasks.</div><div class=\"intuition\">Intuition: Anything involving words: writing, translating, answering, summarizing.</div><div class=\"mechanics\">Mechanics: Fine-tuned on tasks like translation or generation using pretrained models.</div><div class=\"tradeoffs\">Trade-offs: Versatile but may hallucinate; great for automation but need verification.</div><div class=\"applications\">Applications: Chatbots (ChatGPT), content creation, knowledge retrieval in medicine/law.</div><div class=\"memory-hook\">Memory Hook: LLMs = Language Labor-savers for Mundane tasks.</div>",
+          "ML LLM Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-4",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-5",
+        "fields": [
+          "Explain the stages of building and using LLMs.",
+          "<div class=\"concept\">Concept: Pretraining on large unlabeled data, then fine-tuning on smaller labeled data.</div><div class=\"intuition\">Intuition: Learn general language first (pretrain), then specialize (fine-tune).</div><div class=\"mechanics\">Mechanics: Pretrain via next-word prediction; fine-tune with instructions or labels.</div><div class=\"tradeoffs\">Trade-offs: Pretraining expensive but reusable; fine-tuning cheaper but task-specific.</div><div class=\"applications\">Applications: Base model for completion; fine-tuned for chat or classification.</div><div class=\"memory-hook\">Memory Hook: Pretrain: Broad base; Fine-tune: Sharp tip.</div>",
+          "ML LLM Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-5",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-6",
+        "fields": [
+          "What is the transformer architecture?",
+          "<div class=\"concept\">Concept: Deep neural network with encoder-decoder for sequence tasks, using self-attention.</div><div class=\"intuition\">Intuition: Pays 'attention' to relevant parts of input like a reader focusing on key words.</div><div class=\"mechanics\">Mechanics: Encoder processes input to embeddings; decoder generates output using attention layers.</div><div class=\"tradeoffs\">Trade-offs: Handles long contexts well but computationally intensive.</div><div class=\"applications\">Applications: Translation (original), generation (GPT), classification (BERT).</div><div class=\"memory-hook\">Memory Hook: Transformer = Attention engine transforming sequences.</div>",
+          "ML LLM Easy",
+          "Easy"
+        ],
+        "flags": 0,
+        "guid": "guid-6",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Easy"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-7",
+        "fields": [
+          "How does self-attention work in transformers?",
+          "<div class=\"concept\">Concept: Mechanism weighing importance of tokens relative to each other in a sequence.</div><div class=\"intuition\">Intuition: Like highlighting connections between words for context understanding.</div><div class=\"mechanics\">Mechanics: Computes queries, keys, values; scores via dot products, softened and applied.</div><div class=\"tradeoffs\">Trade-offs: Captures long-range deps but O(n^2) complexity for sequence length.</div><div class=\"applications\">Applications: Contextual embeddings in encoding/decoding.</div><div class=\"memory-hook\">Memory Hook: Self-attention = Selective spotlight on sequence parts.</div>",
+          "ML LLM Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-7",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-8",
+        "fields": [
+          "Compare BERT and GPT architectures.",
+          "<div class=\"concept\">Concept: BERT uses encoder for bidirectional context; GPT uses decoder for autoregressive generation.</div><div class=\"intuition\">Intuition: BERT reads whole text at once; GPT writes one word at a time looking left.</div><div class=\"mechanics\">Mechanics: BERT masks words for prediction; GPT predicts next word.</div><div class=\"tradeoffs\">Trade-offs: BERT better for classification; GPT for generation; BERT bidirectional but not generative by default.</div><div class=\"applications\">Applications: BERT for sentiment/toxicity; GPT for chat/translation.</div><div class=\"memory-hook\">Memory Hook: BERT: Both directions; GPT: Generate progressively.</div>",
+          "ML LLM Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-8",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-9",
+        "fields": [
+          "What are zero-shot and few-shot learning in LLMs?",
+          "<div class=\"concept\">Concept: Performing tasks without (zero) or with few examples, no retraining.</div><div class=\"intuition\">Intuition: Generalizes from pretraining; like inferring from context alone or with hints.</div><div class=\"mechanics\">Mechanics: Provide task description/examples in prompt; model infers.</div><div class=\"tradeoffs\">Trade-offs: Flexible but less accurate than fine-tuning; depends on model size.</div><div class=\"applications\">Applications: Quick adaptation to new tasks like classification without data.</div><div class=\"memory-hook\">Memory Hook: Zero: No hints; Few: Few clues.</div>",
+          "ML LLM Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-9",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-10",
+        "fields": [
+          "Why are large datasets crucial for LLMs?",
+          "<div class=\"concept\">Concept: Diverse, massive text corpora enable capturing nuances and general knowledge.</div><div class=\"intuition\">Intuition: More reading = better understanding of language patterns and world facts.</div><div class=\"mechanics\">Mechanics: Datasets like CommonCrawl (410B tokens) for pretraining.</div><div class=\"tradeoffs\">Trade-offs: Improves performance but raises privacy/cost issues; may include biases.</div><div class=\"applications\">Applications: Enables emergent abilities like translation from monolingual training.</div><div class=\"memory-hook\">Memory Hook: Big data = Big brain for LLMs.</div>",
+          "ML LLM Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-10",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-11",
+        "fields": [
+          "Describe the GPT architecture.",
+          "<div class=\"concept\">Concept: Decoder-only transformer for autoregressive text generation.</div><div class=\"intuition\">Intuition: Builds text step-by-step, remembering what's written so far.</div><div class=\"mechanics\">Mechanics: Stacked decoder layers (96 in GPT-3) with self-attention, no encoder.</div><div class=\"tradeoffs\">Trade-offs: Simpler than full transformer but unidirectional; scales well.</div><div class=\"applications\">Applications: Text completion, chat, code generation.</div><div class=\"memory-hook\">Memory Hook: GPT = Generate Piece by Piece Transformer.</div>",
+          "ML LLM Easy",
+          "Easy"
+        ],
+        "flags": 0,
+        "guid": "guid-11",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Easy"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-12",
+        "fields": [
+          "What are emergent behaviors in LLMs?",
+          "<div class=\"concept\">Concept: Capabilities not explicitly trained for, arising from scale and data.</div><div class=\"intuition\">Intuition: Surprising skills like translation from next-word prediction alone.</div><div class=\"mechanics\">Mechanics: From exposure to multilingual/diverse data during pretraining.</div><div class=\"tradeoffs\">Trade-offs: Powerful but unpredictable; may include unwanted behaviors.</div><div class=\"applications\">Applications: Multi-task without separate models.</div><div class=\"memory-hook\">Memory Hook: Emergent = Unexpected gifts from giant models.</div>",
+          "ML LLM Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-12",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-13",
+        "fields": [
+          "What are the advantages of building custom LLMs?",
+          "<div class=\"concept\">Concept: Tailored models for specific domains/tasks, using own data.</div><div class=\"intuition\">Intuition: Like a specialist vs generalist doctor for better results.</div><div class=\"mechanics\">Mechanics: Fine-tune on domain data; deploy locally for privacy.</div><div class=\"tradeoffs\">Trade-offs: Outperforms general but requires expertise; smaller for devices.</div><div class=\"applications\">Applications: Finance (BloombergGPT), medical Q&A.</div><div class=\"memory-hook\">Memory Hook: Custom = Crafted for your corner.</div>",
+          "ML LLM Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-13",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-14",
+        "fields": [
+          "Explain next-word prediction in LLM pretraining.",
+          "<div class=\"concept\">Concept: Self-supervised task predicting subsequent token in sequence.</div><div class=\"intuition\">Intuition: Teaches context by guessing what's next, like finishing sentences.</div><div class=\"mechanics\">Mechanics: Optimize weights to minimize prediction error on unlabeled text.</div><div class=\"tradeoffs\">Trade-offs: Simple task enables huge data use but may not directly teach complex reasoning.</div><div class=\"applications\">Applications: Foundation for generation, translation via emergence.</div><div class=\"memory-hook\">Memory Hook: Next-word = Narrative continuation game.</div>",
+          "ML LLM Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-14",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-15",
+        "fields": [
+          "What are instruction and classification fine-tuning?",
+          "<div class=\"concept\">Concept: Adapting pretrained LLM to follow instructions or classify texts.</div><div class=\"intuition\">Intuition: Teaching the model to respond to queries or label data specifically.</div><div class=\"mechanics\">Mechanics: Train on instruction-answer pairs or text-label pairs.</div><div class=\"tradeoffs\">Trade-offs: Improves task performance but risks overfitting; less data needed.</div><div class=\"applications\">Applications: Chatbots (instruction), spam detection (classification).</div><div class=\"memory-hook\">Memory Hook: Instruction: Obey orders; Classification: Sort stuff.</div>",
+          "ML LLM Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-15",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-16",
+        "fields": [
+          "How does model size affect LLM capabilities?",
+          "<div class=\"concept\">Concept: Larger parameters/datasets lead to better performance and emergence.</div><div class=\"intuition\">Intuition: Bigger brain holds more knowledge, spots subtler patterns.</div><div class=\"mechanics\">Mechanics: GPT-3: 175B params, 96 layers; scales compute proportionally.</div><div class=\"tradeoffs\">Trade-offs: Superior abilities but huge training/inference costs.</div><div class=\"applications\">Applications: Complex tasks like code generation in large models.</div><div class=\"memory-hook\">Memory Hook: Size matters for smarts in silicon.</div>",
+          "ML LLM Hard",
+          "Hard"
+        ],
+        "flags": 0,
+        "guid": "guid-16",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Hard"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-17",
+        "fields": [
+          "Discuss trade-offs between pretraining and fine-tuning LLMs.",
+          "<div class=\"concept\">Concept: Pretraining builds general knowledge; fine-tuning specializes.</div><div class=\"intuition\">Intuition: Pretrain for breadth, fine-tune for depth; balance generality vs specificity.</div><div class=\"mechanics\">Mechanics: Pretrain on billions tokens; fine-tune on thousands labeled examples.</div><div class=\"tradeoffs\">Trade-offs: Pretraining costly/reusable; fine-tuning efficient but may forget general knowledge (catastrophic forgetting).</div><div class=\"applications\">Applications: General Q&A vs domain-specific like legal summarization.</div><div class=\"memory-hook\">Memory Hook: Pre: Wide net; Fine: Sharp hook.</div>",
+          "ML LLM Hard",
+          "Hard"
+        ],
+        "flags": 0,
+        "guid": "guid-17",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Hard"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-18",
+        "fields": [
+          "How can emergent behaviors be explained theoretically in LLMs?",
+          "<div class=\"concept\">Concept: Arise from scaling laws where performance improves predictably with size/data/compute.</div><div class=\"intuition\">Intuition: Enough data/parameters allow implicit learning of rules like grammar/translation.</div><div class=\"mechanics\">Mechanics: Follow power laws; e.g., loss decreases as N^{-alpha} where N is parameters.</div><div class=\"tradeoffs\">Trade-offs: Predictable scaling but diminishing returns; risks amplifying biases.</div><div class=\"applications\">Applications: Zero-shot translation from monolingual data.</div><div class=\"memory-hook\">Memory Hook: Emergence = Scale surprises.</div>",
+          "ML LLM Hard",
+          "Hard"
+        ],
+        "flags": 0,
+        "guid": "guid-18",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Hard"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-19",
+        "fields": [
+          "What challenges arise from using massive datasets in LLM training?",
+          "<div class=\"concept\">Concept: Issues like bias, privacy, copyright in diverse web-scraped data.</div><div class=\"intuition\">Intuition: Garbage in, garbage out amplified; reflects internet's flaws.</div><div class=\"mechanics\">Mechanics: Filter for quality but hard to remove all biases; e.g., CommonCrawl filtering.</div><div class=\"tradeoffs\">Trade-offs: Diversity boosts robustness but introduces ethical risks; mitigation adds cost.</div><div class=\"applications\">Applications: Debiasing techniques for fair AI in hiring/medicine.</div><div class=\"memory-hook\">Memory Hook: Big data = Big problems if not cleaned.</div>",
+          "ML LLM Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-19",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-20",
+        "fields": [
+          "Compare transformer-based LLMs to alternative architectures.",
+          "<div class=\"concept\">Concept: Transformers dominant; alternatives like RNN/convolutional for efficiency.</div><div class=\"intuition\">Intuition: Transformers parallelize well; others sequential but lighter.</div><div class=\"mechanics\">Mechanics: RNNs process sequentially; convs use filters; transformers use attention.</div><div class=\"tradeoffs\">Trade-offs: Transformers capable but slow; alternatives faster but may underperform.</div><div class=\"applications\">Applications: Mobile LLMs with efficient arches.</div><div class=\"memory-hook\">Memory Hook: Transformer king; Others efficiency princes.</div>",
+          "ML LLM Hard",
+          "Hard"
+        ],
+        "flags": 0,
+        "guid": "guid-20",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Hard"]
+      }
+    ]
+  }

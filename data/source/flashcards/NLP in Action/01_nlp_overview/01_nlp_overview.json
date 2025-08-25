@@ -1,0 +1,504 @@
+{
+  "__type__": "Deck",
+  "children": [],
+  "crowdanki_uuid": "deck-7678",
+  "deck_config_uuid": "default-config",
+  "deck_configurations": [
+    {
+      "crowdanki_uuid": "default-config",
+      "name": "Default",
+      "autoplay": true,
+      "dyn": false,
+      "lapse": {
+        "delays": [
+          10
+        ],
+        "leechAction": 0,
+        "leechFails": 8,
+        "minInt": 1,
+        "mult": 0
+      },
+      "maxTaken": 60,
+      "new": {
+        "bury": false,
+        "delays": [
+          1,
+          10
+        ],
+        "initialFactor": 2500,
+        "ints": [
+          1,
+          4,
+          0
+        ],
+        "order": 1,
+        "perDay": 20
+      },
+      "replayq": true,
+      "rev": {
+        "bury": false,
+        "ease4": 1.3,
+        "hardFactor": 1.2,
+        "ivlFct": 1,
+        "maxIvl": 36500,
+        "perDay": 200
+      },
+      "timer": 0,
+      "__type__": "DeckConfig"
+    }
+  ],
+  "desc": "Comprehensive flashcards for 01 NLP Overview",
+  "dyn": false,
+  "extendNew": 10,
+  "extendRev": 50,
+  "media_files": [],
+  "name": "ML:NLP:01 NLP Overview",
+  "note_models": [
+    {
+      "crowdanki_uuid": "nlp-comprehensive-note-model",
+      "css": ".card {\n font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;\n font-size: 18px;\n text-align: center;\n color: #2c3e50;\n background-color: #fdfdfd;\n line-height: 1.5;\n}\n\n.front {\n font-weight: 600;\n color: #2c3e50;\n font-size: 20px;\n padding: 15px;\n}\n\n.back {\n text-align: left;\n padding: 25px;\n max-width: 800px;\n margin: 0 auto;\n}\n\n.concept {\n color: #e74c3c;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.concept strong {\n font-weight: 500;\n}\n\n.intuition {\n color: #3498db;\n font-style: italic;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.intuition strong {\n font-weight: 500;\n font-style: normal;\n}\n\n.mechanics {\n color: #27ae60;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.mechanics strong {\n font-weight: 500;\n}\n\n.tradeoffs {\n color: #e67e22;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.tradeoffs strong {\n font-weight: 500;\n}\n\n.applications {\n color: #8e44ad;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.applications strong {\n font-weight: 500;\n}\n\n.memory-hook {\n background-color: #f8f9fa;\n padding: 15px;\n border-radius: 6px;\n border-left: 4px solid #6c757d;\n font-style: italic;\n color: #495057;\n margin-top: 15px;\n font-size: 15px;\n}\n\n.memory-hook strong {\n font-weight: 500;\n font-style: normal;\n color: #343a40;\n}\n\n@media (max-width: 768px) {\n .back {\n   padding: 20px 15px;\n }\n \n .card {\n   font-size: 16px;\n }\n \n .front {\n   font-size: 18px;\n   padding: 12px;\n }\n}",
+      "flds": [
+        {
+          "font": "Arial",
+          "media": [],
+          "name": "Front",
+          "ord": 0,
+          "rtl": false,
+          "size": 20,
+          "sticky": false,
+          "__type__": "NoteModelField"
+        },
+        {
+          "font": "Arial",
+          "media": [],
+          "name": "Back",
+          "ord": 1,
+          "rtl": false,
+          "size": 20,
+          "sticky": false,
+          "__type__": "NoteModelField"
+        },
+        {
+          "font": "Arial",
+          "media": [],
+          "name": "Tags",
+          "ord": 2,
+          "rtl": false,
+          "size": 20,
+          "sticky": false,
+          "__type__": "NoteModelField"
+        },
+        {
+          "font": "Arial",
+          "media": [],
+          "name": "Difficulty",
+          "ord": 3,
+          "rtl": false,
+          "size": 20,
+          "sticky": false,
+          "__type__": "NoteModelField"
+        }
+      ],
+      "latexPost": "\\end{document}",
+      "latexPre": "\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage[utf8]{inputenc}\n\\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\\begin{document}\n",
+      "name": "NLP Comprehensive",
+      "req": [
+        [
+          0,
+          "all"
+        ]
+      ],
+      "sortf": 0,
+      "tags": [],
+      "tmpls": [
+        {
+          "afmt": "{{FrontSide}}\n\n<hr id=answer>\n\n<div class=\"back\">\n{{Back}}\n</div>",
+          "bafmt": "",
+          "bqfmt": "",
+          "did": null,
+          "name": "Card 1",
+          "ord": 0,
+          "qfmt": "<div class=\"front\">{{Front}}</div>",
+          "__type__": "CardTemplate"
+        }
+      ],
+      "type": 0,
+      "__type__": "NoteModel"
+    }
+  ],
+  "notes": [
+    {
+      "crowdanki_uuid": "note--5403185254754927702-7678",
+      "fields": [
+        "What is Natural Language Processing (NLP)?",
+        "<div class=\"concept\">Concept: NLP is the field of computer science and AI that enables machines to read, understand, and generate human language.</div><div class=\"intuition\">Intuition: It's like teaching a computer to converse like a human, turning words into actionable data.</div><div class=\"mechanics\">Mechanics: Involves parsing text into tokens, applying grammars, and using machine learning to extract meaning.</div><div class=\"tradeoffs\">Trade-offs: Powerful for automation but can struggle with ambiguity and requires large datasets.</div><div class=\"applications\">Applications: Chatbots, search engines, sentiment analysis.</div><div class=\"memory-hook\">Memory Hook: NLP: Computers 'speaking' human – from Siri to spam filters.</div>",
+        "NLP Definition Easy",
+        "Easy"
+      ],
+      "flags": 0,
+      "guid": "guid--5403185254754927702-7678",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "NLP",
+        "Definition",
+        "Easy"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-6107803508957184244-7678",
+      "fields": [
+        "How does NLP differ from programming languages in terms of ambiguity?",
+        "<div class=\"concept\">Concept: Programming languages are unambiguous with fixed rules, while NLP deals with natural languages that are fuzzy and context-dependent.</div><div class=\"intuition\">Intuition: Code runs exactly as written; natural language can mean multiple things, like 'The chicken is ready to eat.'</div><div class=\"mechanics\">Mechanics: Programming uses compilers/interpreters for precise execution; NLP uses parsers and ML to handle variations.</div><div class=\"tradeoffs\">Trade-offs: Programming is reliable but rigid; NLP is flexible but error-prone in interpretation.</div><div class=\"applications\">Applications: NLP for chatbots handling user queries; programming for software development.</div><div class=\"memory-hook\">Memory Hook: Programming: One meaning per line; NLP: Fuzzy like a riddle.</div>",
+        "NLP Programming Languages Comparison Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-6107803508957184244-7678",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "NLP",
+        "Programming Languages",
+        "Comparison",
+        "Medium"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--1345717225636450054-7678",
+      "fields": [
+        "Explain the intuition behind why NLP is considered a key to Artificial General Intelligence (AGI).",
+        "<div class=\"concept\">Concept: NLP enables machines to process human-like communication, a core aspect of intelligence.</div><div class=\"intuition\">Intuition: Humans think and share ideas via language; machines mastering it mimic human cognition.</div><div class=\"mechanics\">Mechanics: Involves understanding semantics, context, and generation, building towards broader AI capabilities.</div><div class=\"tradeoffs\">Trade-offs: Advances AGI but risks misuse like manipulation if not ethical.</div><div class=\"applications\">Applications: Conversational AI like ChatGPT pushing towards AGI.</div><div class=\"memory-hook\">Memory Hook: NLP unlocks AGI: Words as keys to the mind's door.</div>",
+        "NLP AGI Intuition Easy",
+        "Easy"
+      ],
+      "flags": 0,
+      "guid": "guid--1345717225636450054-7678",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "NLP",
+        "AGI",
+        "Intuition",
+        "Easy"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--4373799130270859666-7678",
+      "fields": [
+        "What are the mechanics of tokenization in NLP?",
+        "<div class=\"concept\">Concept: Tokenization splits text into tokens (words or subwords).</div><div class=\"intuition\">Intuition: Breaking a sentence into puzzle pieces for the machine to analyze.</div><div class=\"mechanics\">Mechanics: Use methods like str.split() or advanced tokenizers to handle punctuation and variations.</div><div class=\"tradeoffs\">Trade-offs: Simple tokenizers miss nuances like contractions; advanced ones are computationally heavier.</div><div class=\"applications\">Applications: First step in pipelines for search or chatbots.</div><div class=\"memory-hook\">Memory Hook: Tokenization: Chopping text like firewood for the NLP fire.</div>",
+        "NLP Tokenization Mechanics Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid--4373799130270859666-7678",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "NLP",
+        "Tokenization",
+        "Mechanics",
+        "Medium"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-1466940441073870623-7678",
+      "fields": [
+        "Compare the trade-offs between pattern-based and data-driven approaches in NLP.",
+        "<div class=\"concept\">Concept: Pattern-based uses rules like regex; data-driven uses ML on large datasets.</div><div class=\"intuition\">Intuition: Rules are handcrafted blueprints; data-driven learns from examples like a child.</div><div class=\"mechanics\">Mechanics: Pattern: Hardcode regex for matches; Data: Train models on corpora for predictions.</div><div class=\"tradeoffs\">Trade-offs: Pattern is precise but brittle and labor-intensive; data-driven scalable but needs quality data and can overfit.</div><div class=\"applications\">Applications: Pattern for simple chatbots; data for advanced like LLMs.</div><div class=\"memory-hook\">Memory Hook: Pattern: Rigid ruler; Data: Flexible sponge absorbing knowledge.</div>",
+        "NLP Approaches Trade-offs Hard",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid-1466940441073870623-7678",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "NLP",
+        "Approaches",
+        "Trade-offs",
+        "Hard"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-8311867396096289256-7678",
+      "fields": [
+        "What is Natural Language Understanding (NLU) and its core applications?",
+        "<div class=\"concept\">Concept: NLU is the subfield of NLP focused on extracting meaning from text, often as vectors.</div><div class=\"intuition\">Intuition: Machine 'comprehending' text like a reader grasping a story.</div><div class=\"mechanics\">Mechanics: Convert text to vectors via encoders, then analyze for sentiment, intent, etc.</div><div class=\"tradeoffs\">Trade-offs: Handles common tasks well but struggles with sarcasm or complex logic without advanced models.</div><div class=\"applications\">Applications: Semantic search, sentiment analysis, intent classification.</div><div class=\"memory-hook\">Memory Hook: NLU: Machine's 'ears' turning words into insights.</div>",
+        "NLU Applications Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-8311867396096289256-7678",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "NLU",
+        "Applications",
+        "Medium"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-4091374410545280616-7678",
+      "fields": [
+        "Describe the theory behind vector representations in NLP.",
+        "<div class=\"concept\">Concept: Text is represented as numerical vectors in a vector space model for computation.</div><div class=\"intuition\">Intuition: Words as points in space; similar meanings cluster together.</div><div class=\"mechanics\">Mechanics: Use bag-of-words, TF-IDF, or embeddings; compute distances like cosine.</div><div class=\"tradeoffs\">Trade-offs: High-dimensional vectors curse dimensionality; reductions like embeddings help but lose some info.</div><div class=\"applications\">Applications: Search, clustering, similarity matching.</div><div class=\"memory-hook\">Memory Hook: Vectors: Words as stars in a semantic galaxy.</div>",
+        "NLP Vectors Theory Hard",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid-4091374410545280616-7678",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "NLP",
+        "Vectors",
+        "Theory",
+        "Hard"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--1365460864077795049-7678",
+      "fields": [
+        "How does Natural Language Generation (NLG) work intuitively?",
+        "<div class=\"concept\">Concept: NLG generates human-like text from structured data or vectors.</div><div class=\"intuition\">Intuition: Machine 'writing' stories from ideas, reverse of understanding.</div><div class=\"mechanics\">Mechanics: Decode vectors into text using templates, models, or LLMs.</div><div class=\"tradeoffs\">Trade-offs: Creates plausible text but can hallucinate or be biased.</div><div class=\"applications\">Applications: Chatbot responses, summarization, code generation.</div><div class=\"memory-hook\">Memory Hook: NLG: Machine's 'mouth' crafting words from thoughts.</div>",
+        "NLG Intuition Easy",
+        "Easy"
+      ],
+      "flags": 0,
+      "guid": "guid--1365460864077795049-7678",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "NLG",
+        "Intuition",
+        "Easy"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--2993055329500465972-7678",
+      "fields": [
+        "What are the applications of NLP in society and business?",
+        "<div class=\"concept\">Concept: NLP automates language tasks, impacting communication and decisions.</div><div class=\"intuition\">Intuition: From spam filters to virtual assistants, making life efficient.</div><div class=\"mechanics\">Mechanics: Pipelines process text for insights, generation, or actions.</div><div class=\"tradeoffs\">Trade-offs: Profitable but risky like misinformation or bias.</div><div class=\"applications\">Applications: Search engines, chatbots, sentiment analysis, fake review detection.</div><div class=\"memory-hook\">Memory Hook: NLP apps: Invisible helpers in emails, searches, and chats.</div>",
+        "NLP Applications Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid--2993055329500465972-7678",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "NLP",
+        "Applications",
+        "Medium"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--8441839609970634308-7678",
+      "fields": [
+        "Explain the connection between language and thought in NLP.",
+        "<div class=\"concept\">Concept: Language shapes and reflects thought; NLP manipulates 'packets of thought'.</div><div class=\"intuition\">Intuition: Words as building blocks of ideas; editing text refines thinking.</div><div class=\"mechanics\">Mechanics: Symbol manipulation in AI; NLP processes to mimic cognition.</div><div class=\"tradeoffs\">Trade-offs: Enhances machine 'thinking' but limited without commonsense.</div><div class=\"applications\">Applications: Conversational AI, therapeutic chatbots.</div><div class=\"memory-hook\">Memory Hook: Language-thought: Words as Lego bricks for mind castles.</div>",
+        "NLP Language and Thought Connections Hard",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid--8441839609970634308-7678",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "NLP",
+        "Language and Thought",
+        "Connections",
+        "Hard"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--2669955652516969959-7678",
+      "fields": [
+        "What is a chatbot and how does it use NLP?",
+        "<div class=\"concept\">Concept: A chatbot is a machine that converses using NLP pipelines.</div><div class=\"intuition\">Intuition: Digital friend responding to your words intelligently.</div><div class=\"mechanics\">Mechanics: Parse input, analyze, generate response, decide via ML or rules.</div><div class=\"tradeoffs\">Trade-offs: Engaging but can mislead if not aligned with ethics.</div><div class=\"applications\">Applications: Customer service, therapy, games.</div><div class=\"memory-hook\">Memory Hook: Chatbot: NLP-powered echo with a brain.</div>",
+        "Chatbots NLP Definition Easy",
+        "Easy"
+      ],
+      "flags": 0,
+      "guid": "guid--2669955652516969959-7678",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Chatbots",
+        "NLP",
+        "Definition",
+        "Easy"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--1044592665232213652-7678",
+      "fields": [
+        "How do regular expressions work in building a simple chatbot?",
+        "<div class=\"concept\">Concept: Regex matches patterns in text for intent recognition.</div><div class=\"intuition\">Intuition: Like a lock recognizing a key phrase to unlock a response.</div><div class=\"mechanics\">Mechanics: Compile patterns like '(hi|hello)' and match user input.</div><div class=\"tradeoffs\">Trade-offs: Precise for known patterns but fails on variations or typos.</div><div class=\"applications\">Applications: Greeting recognition in basic bots.</div><div class=\"memory-hook\">Memory Hook: Regex: Pattern keys opening chatbot doors.</div>",
+        "Regex Chatbots Mechanics Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid--1044592665232213652-7678",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Regex",
+        "Chatbots",
+        "Mechanics",
+        "Medium"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--832965481581849189-7678",
+      "fields": [
+        "Discuss the trade-offs of using bag-of-words (BOW) models.",
+        "<div class=\"concept\">Concept: BOW represents text as word count vectors, ignoring order.</div><div class=\"intuition\">Intuition: Tossing words in a bag; counts reveal topics but not grammar.</div><div class=\"mechanics\">Mechanics: Use Counter to bin words; compute vectors for similarity.</div><div class=\"tradeoffs\">Trade-offs: Simple and fast but loses word order, leading to ambiguity in complex sentences.</div><div class=\"applications\">Applications: Sentiment analysis, basic search.</div><div class=\"memory-hook\">Memory Hook: BOW: Word salad vector – tasty but unordered.</div>",
+        "BOW Trade-offs Hard",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid--832965481581849189-7678",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "BOW",
+        "Trade-offs",
+        "Hard"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-8922030424364104388-7678",
+      "fields": [
+        "Why is word order important in NLP, and what are its limitations?",
+        "<div class=\"concept\">Concept: Grammar conveys logic; ignoring it loses meaning.</div><div class=\"intuition\">Intuition: Shuffled words confuse like a jumbled puzzle.</div><div class=\"mechanics\">Mechanics: Use parsers for syntax trees to capture relationships.</div><div class=\"tradeoffs\">Trade-offs: Essential for logic but BOW suffices for short phrases.</div><div class=\"applications\">Applications: Query understanding, translation.</div><div class=\"memory-hook\">Memory Hook: Word order: Sentence skeleton holding meaning together.</div>",
+        "Grammar Word Order Intuition Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-8922030424364104388-7678",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Grammar",
+        "Word Order",
+        "Intuition",
+        "Medium"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--812839198012722091-7678",
+      "fields": [
+        "What are the five main subsystems in a chatbot NLP pipeline?",
+        "<div class=\"concept\">Concept: Parse, Analyze, Generate, Decide, Database.</div><div class=\"intuition\">Intuition: Stages from understanding input to crafting and choosing output.</div><div class=\"mechanics\">Mechanics: Extract features, score, compose responses, select best, store knowledge.</div><div class=\"tradeoffs\">Trade-offs: Comprehensive but complex to implement.</div><div class=\"applications\">Applications: Full conversational systems.</div><div class=\"memory-hook\">Memory Hook: PAGDD: Pipeline Assembly for Grokking Dialogues Daily.</div>",
+        "Chatbots Pipeline Theory Easy",
+        "Easy"
+      ],
+      "flags": 0,
+      "guid": "guid--812839198012722091-7678",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Chatbots",
+        "Pipeline",
+        "Theory",
+        "Easy"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-6010600034501739303-7678",
+      "fields": [
+        "How does depth in NLP processing enhance capabilities?",
+        "<div class=\"concept\">Concept: Layers like POS tagging, entity recognition build to knowledge bases.</div><div class=\"intuition\">Intuition: Peeling onion layers for deeper insights.</div><div class=\"mechanics\">Mechanics: Stack algorithms for feature extraction to inference.</div><div class=\"tradeoffs\">Trade-offs: More accurate but computationally intensive.</div><div class=\"applications\">Applications: Advanced chatbots, QA systems.</div><div class=\"memory-hook\">Memory Hook: NLP depth: Diving deeper for pearl-like knowledge.</div>",
+        "NLP Processing Depth Applications Hard",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid-6010600034501739303-7678",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "NLP",
+        "Processing Depth",
+        "Applications",
+        "Hard"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--8225495466993514479-7678",
+      "fields": [
+        "Explain Natural Language IQ dimensions for NLP systems.",
+        "<div class=\"concept\">Concept: Measured by breadth (variety) and depth (complexity) of capabilities.</div><div class=\"intuition\">Intuition: Broad: Jack-of-all-trades; Deep: Master specialist.</div><div class=\"mechanics\">Mechanics: Plot systems on axes; e.g., Alexa broad but shallow.</div><div class=\"tradeoffs\">Trade-offs: Broad systems versatile but superficial; deep ones focused but limited.</div><div class=\"applications\">Applications: Evaluating chatbots or translators.</div><div class=\"memory-hook\">Memory Hook: NL IQ: Breadth vs. Depth – wide ocean or deep well.</div>",
+        "NLP IQ Connections Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid--8225495466993514479-7678",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "NLP",
+        "IQ",
+        "Connections",
+        "Medium"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note--3164283328331898414-7678",
+      "fields": [
+        "What are the dangers and profits of unleashing NLP, as per the chapter?",
+        "<div class=\"concept\">Concept: Profitable for business; dangerous for manipulation or bias.</div><div class=\"intuition\">Intuition: Genie granting wishes but with twists.</div><div class=\"mechanics\">Mechanics: Automates tasks but can spread misinformation.</div><div class=\"tradeoffs\">Trade-offs: Efficiency gains vs. ethical risks like AI safety.</div><div class=\"applications\">Applications: Social media bots, customer service.</div><div class=\"memory-hook\">Memory Hook: NLP genie: Wish for profit, beware the curse.</div>",
+        "NLP Ethics Trade-offs Easy",
+        "Easy"
+      ],
+      "flags": 0,
+      "guid": "guid--3164283328331898414-7678",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "NLP",
+        "Ethics",
+        "Trade-offs",
+        "Easy"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-8677214430076626423-7678",
+      "fields": [
+        "How can embeddings improve upon basic vector models mathematically?",
+        "<div class=\"concept\">Concept: Embeddings reduce dimensions while capturing semantics.</div><div class=\"intuition\">Intuition: Compressing word meanings into dense vectors.</div><div class=\"mechanics\">Mechanics: Train neural nets to predict contexts; use cosine distance.</div><div class=\"tradeoffs\">Trade-offs: Better similarity but requires training data.</div><div class=\"applications\">Applications: Semantic search, analogy solving.</div><div class=\"memory-hook\">Memory Hook: Embeddings: Word essence bottled in vectors.</div>",
+        "Embeddings Math Hard",
+        "Hard"
+      ],
+      "flags": 0,
+      "guid": "guid-8677214430076626423-7678",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "Embeddings",
+        "Math",
+        "Hard"
+      ],
+      "__type__": "Note"
+    },
+    {
+      "crowdanki_uuid": "note-7706659699730377564-7678",
+      "fields": [
+        "Describe a use case for finite state machines in NLP.",
+        "<div class=\"concept\">Concept: FSMs process sequences with states, like regex for patterns.</div><div class=\"intuition\">Intuition: Machine following a map of language rules.</div><div class=\"mechanics\">Mechanics: States transition on inputs; output based on matches.</div><div class=\"tradeoffs\">Trade-offs: Efficient for simple patterns but not for complex ambiguity.</div><div class=\"applications\">Applications: Greeting recognition in chatbots.</div><div class=\"memory-hook\">Memory Hook: FSM: Language lock with state keys.</div>",
+        "FSM Use Cases Medium",
+        "Medium"
+      ],
+      "flags": 0,
+      "guid": "guid-7706659699730377564-7678",
+      "note_model_uuid": "nlp-comprehensive-note-model",
+      "tags": [
+        "FSM",
+        "Use Cases",
+        "Medium"
+      ],
+      "__type__": "Note"
+    }
+  ]
+}

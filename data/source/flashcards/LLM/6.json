@@ -1,0 +1,413 @@
+{
+    "__type__": "Deck",
+    "children": [],
+    "crowdanki_uuid": "deck-06-finetuning-classification",
+    "deck_config_uuid": "default-config",
+    "deck_configurations": [
+      {
+        "__type__": "DeckConfig",
+        "crowdanki_uuid": "default-config",
+        "name": "Default",
+        "autoplay": true,
+        "dyn": false,
+        "lapse": {
+          "delays": [10],
+          "leechAction": 0,
+          "leechFails": 8,
+          "minInt": 1,
+          "mult": 0
+        },
+        "maxTaken": 60,
+        "new": {
+          "bury": false,
+          "delays": [1, 10],
+          "initialFactor": 2500,
+          "ints": [1, 4, 0],
+          "order": 1,
+          "perDay": 20
+        },
+        "replayq": true,
+        "rev": {
+          "bury": false,
+          "ease4": 1.3,
+          "hardFactor": 1.2,
+          "ivlFct": 1,
+          "maxIvl": 36500,
+          "perDay": 200
+        },
+        "timer": 0
+      }
+    ],
+    "desc": "Comprehensive flashcards for ML:LLM:06 Fine-tuning for classification",
+    "dyn": false,
+    "extendNew": 10,
+    "extendRev": 50,
+    "media_files": [],
+    "name": "ML:LLM:06 Fine-tuning for classification",
+    "note_models": [
+      {
+        "__type__": "NoteModel",
+        "crowdanki_uuid": "ml-interview-flashcard-model",
+        "css": ".card {\n font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;\n font-size: 18px;\n text-align: center;\n color: #2c3e50;\n background-color: #fdfdfd;\n line-height: 1.5;\n}\n\n.front {\n font-weight: 600;\n color: #2c3e50;\n font-size: 20px;\n padding: 15px;\n}\n\n.back {\n text-align: left;\n padding: 25px;\n max-width: 800px;\n margin: 0 auto;\n}\n\n.concept {\n color: #e74c3c;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.concept strong {\n font-weight: 500;\n}\n\n.intuition {\n color: #3498db;\n font-style: italic;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.intuition strong {\n font-weight: 500;\n font-style: normal;\n}\n\n.mechanics {\n color: #27ae60;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.mechanics strong {\n font-weight: 500;\n}\n\n.tradeoffs {\n color: #e67e22;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.tradeoffs strong {\n font-weight: 500;\n}\n\n.applications {\n color: #8e44ad;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.applications strong {\n font-weight: 500;\n}\n\n.memory-hook {\n background-color: #f8f9fa;\n padding: 15px;\n border-radius: 6px;\n border-left: 4px solid #6c757d;\n font-style: italic;\n color: #495057;\n margin-top: 15px;\n font-size: 15px;\n}\n\n.memory-hook strong {\n font-weight: 500;\n font-style: normal;\n color: #343a40;\n}\n\n@media (max-width: 768px) {\n .back {\n   padding: 20px 15px;\n }\n \n .card {\n   font-size: 16px;\n }\n \n .front {\n   font-size: 18px;\n   padding: 12px;\n }\n}",
+        "flds": [
+          {
+            "__type__": "NoteModelField",
+            "font": "Arial",
+            "media": [],
+            "name": "Front",
+            "ord": 0,
+            "rtl": false,
+            "size": 20,
+            "sticky": false
+          },
+          {
+            "__type__": "NoteModelField",
+            "font": "Arial",
+            "media": [],
+            "name": "Back",
+            "ord": 1,
+            "rtl": false,
+            "size": 20,
+            "sticky": false
+          },
+          {
+            "__type__": "NoteModelField",
+            "font": "Arial",
+            "media": [],
+            "name": "Tags",
+            "ord": 2,
+            "rtl": false,
+            "size": 20,
+            "sticky": false
+          },
+          {
+            "__type__": "NoteModelField",
+            "font": "Arial",
+            "media": [],
+            "name": "Difficulty",
+            "ord": 3,
+            "rtl": false,
+            "size": 20,
+            "sticky": false
+          }
+        ],
+        "latexPost": "\\end{document}",
+        "latexPre": "\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage[utf8]{inputenc}\n\\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\\begin{document}\n",
+        "name": "ML Interview Flashcard",
+        "req": [
+          [0, "all"]
+        ],
+        "sortf": 0,
+        "tags": [],
+        "tmpls": [
+          {
+            "__type__": "CardTemplate",
+            "afmt": "{{FrontSide}}\n\n<hr id=answer>\n\n<div class=\"back\">\n{{Back}}\n</div>",
+            "bafmt": "",
+            "bqfmt": "",
+            "did": null,
+            "name": "Card 1",
+            "ord": 0,
+            "qfmt": "<div class=\"front\">{{Front}}</div>"
+          }
+        ],
+        "type": 0
+      }
+    ],
+    "notes": [
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-001",
+        "fields": [
+          "What is classification fine-tuning in the context of LLMs?",
+          "<div class=\"concept\">Concept: A method to adapt a pretrained LLM for predicting specific class labels on input data.</div><div class=\"intuition\">Intuition: Like specializing a generalist AI to become an expert judge in categorizing items into predefined bins.</div><div class=\"mechanics\">Mechanics: Replace the LLM's output layer with a smaller one matching the number of classes, then train on labeled data using cross-entropy loss.</div><div class=\"tradeoffs\">Trade-offs: Less versatile than instruction fine-tuning but requires fewer resources and data; limited to trained classes.</div><div class=\"applications\">Applications: Spam detection, sentiment analysis, topic categorization in news.</div><div class=\"memory-hook\">Memory Hook: Classification = Pigeonholing data into fixed categories, like sorting mail into spam/not spam boxes.</div>",
+          "ML LLM FineTuning Easy",
+          "Easy"
+        ],
+        "flags": 0,
+        "guid": "guid-001",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "FineTuning", "Easy"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-002",
+        "fields": [
+          "What is instruction fine-tuning for LLMs?",
+          "<div class=\"concept\">Concept: Training an LLM on tasks with explicit instructions to improve its ability to follow natural language prompts.</div><div class=\"intuition\">Intuition: Teaching the model to act like a versatile assistant that understands and executes varied commands.</div><div class=\"mechanics\">Mechanics: Use datasets with instruction-response pairs, fine-tune the full model to generate appropriate outputs based on prompts.</div><div class=\"tradeoffs\">Trade-offs: More flexible for diverse tasks but demands larger datasets and more compute than classification fine-tuning.</div><div class=\"applications\">Applications: Chatbots, translation with style, summarization with constraints.</div><div class=\"memory-hook\">Memory Hook: Instruction = Following recipes; model learns to cook up responses from user directions.</div>",
+          "ML LLM FineTuning Easy",
+          "Easy"
+        ],
+        "flags": 0,
+        "guid": "guid-002",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "FineTuning", "Easy"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-003",
+        "fields": [
+          "Why is dataset balancing important in classification fine-tuning?",
+          "<div class=\"concept\">Concept: Adjusting class proportions in training data to prevent bias toward majority classes.</div><div class=\"intuition\">Intuition: Ensures the model doesn't ignore minority classes like overlooking spam in a sea of ham messages.</div><div class=\"mechanics\">Mechanics: Undersample majority class or oversample minority; here, sample equal 'ham' to match 'spam' count.</div><div class=\"tradeoffs\">Trade-offs: Reduces data size (undersampling) or risks overfitting (oversampling); simpler than advanced techniques like SMOTE.</div><div class=\"applications\">Applications: Imbalanced problems like fraud detection, medical diagnosis.</div><div class=\"memory-hook\">Memory Hook: Balancing = Fair play; equal teams prevent one side dominating the game.</div>",
+          "ML LLM Dataset Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-003",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Dataset", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-004",
+        "fields": [
+          "How do you prepare a dataset for LLM fine-tuning in text classification?",
+          "<div class=\"concept\">Concept: Process of downloading, cleaning, balancing, splitting, and tokenizing data for model input.</div><div class=\"intuition\">Intuition: Grooming raw text into uniform, labeled chunks ready for the model to digest.</div><div class=\"mechanics\">Mechanics: Download zip, extract TSV, load to DataFrame, balance classes, map labels to ints, split 70/10/20, save CSVs.</div><div class=\"tradeoffs\">Trade-offs: Balancing simplifies but discards data; fixed splits may not capture variability.</div><div class=\"applications\">Applications: Spam filtering, sentiment on reviews.</div><div class=\"memory-hook\">Memory Hook: Preparation = Kitchen prep; chop, measure, portion data before cooking (training).</div>",
+          "ML LLM Dataset Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-004",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Dataset", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-005",
+        "fields": [
+          "Explain the mechanics of creating data loaders for variable-length texts in PyTorch.",
+          "<div class=\"concept\">Concept: Batching tokenized texts with padding to uniform length for efficient training.</div><div class=\"intuition\">Intuition: Aligning jagged texts like straightening books on a shelf for neat stacking.</div><div class=\"mechanics\">Mechanics: Use custom Dataset: tokenize, find max length, pad with <|endoftext|> (ID 50256), return tensors; DataLoader batches them.</div><div class=\"tradeoffs\">Trade-offs: Padding preserves info vs. truncation's loss; but increases compute for long pads.</div><div class=\"applications\">Applications: Any seq data like sentences in NLP tasks.</div><div class=\"memory-hook\">Memory Hook: Loaders = Conveyor belts; pad to fit boxes uniformly for smooth processing.</div>",
+          "ML LLM DataLoader Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-005",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "DataLoader", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-006",
+        "fields": [
+          "How does modifying a pretrained LLM for classification work?",
+          "<div class=\"concept\">Concept: Replacing the token prediction head with a classification head.</div><div class=\"intuition\">Intuition: Swapping a vast dictionary output for a simple yes/no switch.</div><div class=\"mechanics\">Mechanics: Load pretrained weights, freeze most layers, replace out_head Linear(vocab_size) with Linear(emb_dim, num_classes).</div><div class=\"tradeoffs\">Trade-offs: Efficient adaptation but may need unfreezing layers for better performance.</div><div class=\"applications\">Applications: Binary classifiers like spam, multi-class like topic tagging.</div><div class=\"memory-hook\">Memory Hook: Modification = Head transplant; change brain's output from words to labels.</div>",
+          "ML LLM ModelSetup Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-006",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "ModelSetup", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-007",
+        "fields": [
+          "Why focus on the last output token for classification in GPT models?",
+          "<div class=\"concept\">Concept: Due to causal attention, the last token aggregates info from all prior tokens.</div><div class=\"intuition\">Intuition: Last token 'sees' the whole sequence, like the end of a story summarizing the plot.</div><div class=\"mechanics\">Mechanics: Extract model outputs[:, -1, :], apply argmax after softmax for label.</div><div class=\"tradeoffs\">Trade-offs: Efficient but assumes sequence order matters; first token wouldn't capture full context.</div><div class=\"applications\">Applications: Sequence classification tasks in NLP.</div><div class=\"memory-hook\">Memory Hook: Last token = Grand finale; it wraps up all the preceding drama.</div>",
+          "ML LLM Classification Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-007",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Classification", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-008",
+        "fields": [
+          "What are the trade-offs between classification and instruction fine-tuning?",
+          "<div class=\"concept\">Concept: Classification is specialized, instruction is generalist.</div><div class=\"intuition\">Intuition: Specialist vs. jack-of-all-trades; one excels deep, the other broad.</div><div class=\"mechanics\">Mechanics: Classification: fixed labels, smaller head; Instruction: prompt-response, full model tune.</div><div class=\"tradeoffs\">Trade-offs: Classification: less data/compute, but rigid; Instruction: versatile, but resource-heavy.</div><div class=\"applications\">Applications: Classification for spam; Instruction for chat AI.</div><div class=\"memory-hook\">Memory Hook: Trade-off = Hammer vs. Swiss knife; hammer nails one job, knife handles many.</div>",
+          "ML LLM FineTuning Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-008",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "FineTuning", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-009",
+        "fields": [
+          "How is cross-entropy loss adapted for classification fine-tuning?",
+          "<div class=\"concept\">Concept: Measures discrepancy between predicted probabilities and true labels.</div><div class=\"intuition\">Intuition: Penalizes confident wrong predictions more, guiding model to correct classes.</div><div class=\"mechanics\">Mechanics: Use torch.nn.functional.cross_entropy on last token logits and target labels.</div><div class=\"tradeoffs\">Trade-offs: Works for multi-class; for binary, could use BCE but CE generalizes.</div><div class=\"applications\">Applications: Any categorical prediction task.</div><div class=\"memory-hook\">Memory Hook: Cross-entropy = Surprise measure; high when model is wrongly sure.</div>",
+          "ML LLM Loss Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-009",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Loss", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-010",
+        "fields": [
+          "Compare fine-tuning loop for classification vs. pretraining.",
+          "<div class=\"concept\">Concept: Both optimize loss over epochs, but targets differ.</div><div class=\"intuition\">Intuition: Pretraining predicts next word; classification predicts label.</div><div class=\"mechanics\">Mechanics: Classification: class labels as targets, accuracy metric, examples seen vs. tokens.</div><div class=\"tradeoffs\">Trade-offs: Classification simpler/faster, but task-specific; pretraining builds general knowledge.</div><div class=\"applications\">Applications: Adapt pretrained models to downstream tasks.</div><div class=\"memory-hook\">Memory Hook: Fine-tuning = Specialization course after general education (pretraining).</div>",
+          "ML LLM Training Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-010",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Training", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-011",
+        "fields": [
+          "How do you evaluate a fine-tuned classification LLM?",
+          "<div class=\"concept\">Concept: Compute accuracy and loss on held-out sets.</div><div class=\"intuition\">Intuition: Test how often the model gets the label right, like grading an exam.</div><div class=\"mechanics\">Mechanics: Argmax on last token logits, compare to targets; average over batches.</div><div class=\"tradeoffs\">Trade-offs: Accuracy simple but ignores confidence; use F1 for imbalanced.</div><div class=\"applications\">Applications: Model selection, overfitting check.</div><div class=\"memory-hook\">Memory Hook: Evaluation = Report card; accuracy is the overall grade.</div>",
+          "ML LLM Evaluation Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-011",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Evaluation", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-012",
+        "fields": [
+          "What are applications of classification fine-tuned LLMs?",
+          "<div class=\"concept\">Concept: Specialized models for labeling inputs.</div><div class=\"intuition\">Intuition: Automated sorters for data streams.</div><div class=\"mechanics\">Mechanics: Input text, output class via modified head.</div><div class=\"tradeoffs\">Trade-offs: High accuracy on task, but retrain for new classes.</div><div class=\"applications\">Applications: Spam/email filtering, sentiment, medical image classification.</div><div class=\"memory-hook\">Memory Hook: Applications = Tagging machine; labels everything from texts to tumors.</div>",
+          "ML LLM Applications Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-012",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Applications", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-013",
+        "fields": [
+          "Why fine-tune only the last layers in classification?",
+          "<div class=\"concept\">Concept: Lower layers capture general features, upper are task-specific.</div><div class=\"intuition\">Intuition: Base knowledge is solid; tweak the top for new tricks.</div><div class=\"mechanics\">Mechanics: Freeze all but last block, norm, and head; train those.</div><div class=\"tradeoffs\">Trade-offs: Faster, less overfitting; but may miss deep adaptations.</div><div class=\"applications\">Applications: Resource-constrained fine-tuning.</div><div class=\"memory-hook\">Memory Hook: Partial tune = Polish the surface; core remains unchanged.</div>",
+          "ML LLM Optimization Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-013",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Optimization", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-014",
+        "fields": [
+          "What is the role of causal attention in choosing the last token?",
+          "<div class=\"concept\">Concept: Masks future tokens, making last token context-rich.</div><div class=\"intuition\">Intuition: Builds story sequentially; end has full narrative.</div><div class=\"mechanics\">Mechanics: Attention matrix triangular; last row attends to all.</div><div class=\"tradeoffs\">Trade-offs: Causal preserves generation; but for classification, pooling alternatives exist.</div><div class=\"applications\">Applications: Any autoregressive model classification.</div><div class=\"memory-hook\">Memory Hook: Causal = Time travel ban; only past influences present.</div>",
+          "ML LLM Attention Hard",
+          "Hard"
+        ],
+        "flags": 0,
+        "guid": "guid-014",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Attention", "Hard"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-015",
+        "fields": [
+          "How does padding affect model performance in long sequences?",
+          "<div class=\"concept\">Concept: Adds dummy tokens to uniform length, but can dilute attention.</div><div class=\"intuition\">Intuition: Filler words in a sentence; model learns to ignore but wastes compute.</div><div class=\"mechanics\">Mechanics: Pad with 50256; if too many, may exceed context or slow training.</div><div class=\"tradeoffs\">Trade-offs: Full info vs. efficiency; alternatives like dynamic batching.</div><div class=\"applications\">Applications: Variable text lengths in datasets.</div><div class=\"memory-hook\">Memory Hook: Padding = Stuffing turkey; necessary for even cooking but overdo and it's dry.</div>",
+          "ML LLM Padding Hard",
+          "Hard"
+        ],
+        "flags": 0,
+        "guid": "guid-015",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Padding", "Hard"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-016",
+        "fields": [
+          "Explain mathematically why cross-entropy is used for classification.",
+          "<div class=\"concept\">Concept: Negative log-likelihood for categorical distributions.</div><div class=\"intuition\">Intuition: Measures info mismatch between true and predicted probs.</div><div class=\"mechanics\">Mechanics: Loss = -sum(y_i * log(p_i)), where y one-hot, p softmax logits.</div><div class=\"tradeoffs\">Trade-offs: Differentiable proxy for accuracy; sensitive to confidence.</div><div class=\"applications\">Applications: Multi-class problems.</div><div class=\"memory-hook\">Memory Hook: CE = Info theory tax; pay more for bigger prediction errors.</div>",
+          "ML LLM Loss Hard",
+          "Hard"
+        ],
+        "flags": 0,
+        "guid": "guid-016",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Loss", "Hard"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-017",
+        "fields": [
+          "What edge cases arise when fine-tuning on imbalanced data without balancing?",
+          "<div class=\"concept\">Concept: Model biases toward majority class, poor minority recall.</div><div class=\"intuition\">Intuition: Learns to always say 'common' , ignoring rares.</div><div class=\"mechanics\">Mechanics: High accuracy but low F1; use weighted loss or sampling.</div><div class=\"tradeoffs\">Trade-offs: Simple but ineffective; balancing discards data.</div><div class=\"applications\">Applications: Rare event detection.</div><div class=\"memory-hook\">Memory Hook: Imbalance = Loaded dice; always rolls majority.</div>",
+          "ML LLM Imbalance Hard",
+          "Hard"
+        ],
+        "flags": 0,
+        "guid": "guid-017",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Imbalance", "Hard"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-018",
+        "fields": [
+          "How to optimize the number of epochs in fine-tuning?",
+          "<div class=\"concept\">Concept: Balance underfitting and overfitting via validation monitoring.</div><div class=\"intuition\">Intuition: Stop when learning plateaus or diverges.</div><div class=\"mechanics\">Mechanics: Plot losses; early stop if val loss rises; start with 5, adjust.</div><div class=\"tradeoffs\">Trade-offs: More epochs risk overfit, less underfit.</div><div class=\"applications\">Applications: Any training process.</div><div class=\"memory-hook\">Memory Hook: Epochs = Baking time; too short raw, too long burnt.</div>",
+          "ML LLM Optimization Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-018",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Optimization", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-019",
+        "fields": [
+          "What connections exist between pretraining and classification fine-tuning?",
+          "<div class=\"concept\">Concept: Fine-tuning builds on pretrained representations.</div><div class=\"intuition\">Intuition: Pretraining lays foundation, fine-tuning adds roof for specific house.</div><div class=\"mechanics\">Mechanics: Load weights, adapt head; use same tokenizer, loss type.</div><div class=\"tradeoffs\">Trade-offs: Leverages general knowledge but may inherit biases.</div><div class=\"applications\">Applications: Transfer learning in NLP.</div><div class=\"memory-hook\">Memory Hook: Connection = Building blocks; pretrain base, fine-tune tower.</div>",
+          "ML LLM Connections Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-019",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Connections", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-020",
+        "fields": [
+          "How do you use a fine-tuned LLM for new data classification?",
+          "<div class=\"concept\">Concept: Inference on processed input to get label.</div><div class=\"intuition\">Intuition: Feed text, get verdict like a quick judge.</div><div class=\"mechanics\">Mechanics: Tokenize, pad/truncate, model eval, argmax on last logit.</div><div class=\"tradeoffs\">Trade-offs: Fast but model-specific; save/load for reuse.</div><div class=\"applications\">Applications: Real-time spam filtering.</div><div class=\"memory-hook\">Memory Hook: Usage = Vending machine; insert text, out pops label.</div>",
+          "ML LLM Inference Easy",
+          "Easy"
+        ],
+        "flags": 0,
+        "guid": "guid-020",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Inference", "Easy"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-021",
+        "fields": [
+          "What is the purpose of freezing layers during fine-tuning?",
+          "<div class=\"concept\">Concept: Prevent updating pretrained weights to retain general knowledge.</div><div class=\"intuition\">Intuition: Lock the basics, tweak the specifics.</div><div class=\"mechanics\">Mechanics: Set requires_grad=False for params except selected layers.</div><div class=\"tradeoffs\">Trade-offs: Saves compute, reduces overfit; but limits adaptation.</div><div class=\"applications\">Applications: Efficient transfer learning.</div><div class=\"memory-hook\">Memory Hook: Freezing = Preserve in ice; keep core intact while shaping surface.</div>",
+          "ML LLM FineTuning Easy",
+          "Easy"
+        ],
+        "flags": 0,
+        "guid": "guid-021",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "FineTuning", "Easy"]
+      }
+    ]
+  }

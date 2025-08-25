@@ -1,0 +1,399 @@
+{
+    "__type__": "Deck",
+    "children": [],
+    "crowdanki_uuid": "deck-llm-pretraining-082425",
+    "deck_config_uuid": "default-config",
+    "deck_configurations": [
+      {
+        "__type__": "DeckConfig",
+        "crowdanki_uuid": "default-config",
+        "name": "Default",
+        "autoplay": true,
+        "dyn": false,
+        "lapse": {
+          "delays": [10],
+          "leechAction": 0,
+          "leechFails": 8,
+          "minInt": 1,
+          "mult": 0
+        },
+        "maxTaken": 60,
+        "new": {
+          "bury": false,
+          "delays": [1, 10],
+          "initialFactor": 2500,
+          "ints": [1, 4, 0],
+          "order": 1,
+          "perDay": 20
+        },
+        "replayq": true,
+        "rev": {
+          "bury": false,
+          "ease4": 1.3,
+          "hardFactor": 1.2,
+          "ivlFct": 1,
+          "maxIvl": 36500,
+          "perDay": 200
+        },
+        "timer": 0
+      }
+    ],
+    "desc": "Comprehensive flashcards for ML:LLM:05 Pretraining on unlabeled data",
+    "dyn": false,
+    "extendNew": 10,
+    "extendRev": 50,
+    "media_files": [],
+    "name": "ML:LLM:05 Pretraining on unlabeled data",
+    "note_models": [
+      {
+        "__type__": "NoteModel",
+        "crowdanki_uuid": "ml-interview-flashcard-model",
+        "css": ".card {\n font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;\n font-size: 18px;\n text-align: center;\n color: #2c3e50;\n background-color: #fdfdfd;\n line-height: 1.5;\n}\n\n.front {\n font-weight: 600;\n color: #2c3e50;\n font-size: 20px;\n padding: 15px;\n}\n\n.back {\n text-align: left;\n padding: 25px;\n max-width: 800px;\n margin: 0 auto;\n}\n\n.concept {\n color: #e74c3c;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.concept strong {\n font-weight: 500;\n}\n\n.intuition {\n color: #3498db;\n font-style: italic;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.intuition strong {\n font-weight: 500;\n font-style: normal;\n}\n\n.mechanics {\n color: #27ae60;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.mechanics strong {\n font-weight: 500;\n}\n\n.tradeoffs {\n color: #e67e22;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.tradeoffs strong {\n font-weight: 500;\n}\n\n.applications {\n color: #8e44ad;\n margin-bottom: 12px;\n font-size: 16px;\n}\n\n.applications strong {\n font-weight: 500;\n}\n\n.memory-hook {\n background-color: #f8f9fa;\n padding: 15px;\n border-radius: 6px;\n border-left: 4px solid #6c757d;\n font-style: italic;\n color: #495057;\n margin-top: 15px;\n font-size: 15px;\n}\n\n.memory-hook strong {\n font-weight: 500;\n font-style: normal;\n color: #343a40;\n}\n\n@media (max-width: 768px) {\n .back {\n   padding: 20px 15px;\n }\n \n .card {\n   font-size: 16px;\n }\n \n .front {\n   font-size: 18px;\n   padding: 12px;\n }\n}",
+        "flds": [
+          {
+            "__type__": "NoteModelField",
+            "font": "Arial",
+            "media": [],
+            "name": "Front",
+            "ord": 0,
+            "rtl": false,
+            "size": 20,
+            "sticky": false
+          },
+          {
+            "__type__": "NoteModelField",
+            "font": "Arial",
+            "media": [],
+            "name": "Back",
+            "ord": 1,
+            "rtl": false,
+            "size": 20,
+            "sticky": false
+          },
+          {
+            "__type__": "NoteModelField",
+            "font": "Arial",
+            "media": [],
+            "name": "Tags",
+            "ord": 2,
+            "rtl": false,
+            "size": 20,
+            "sticky": false
+          },
+          {
+            "__type__": "NoteModelField",
+            "font": "Arial",
+            "media": [],
+            "name": "Difficulty",
+            "ord": 3,
+            "rtl": false,
+            "size": 20,
+            "sticky": false
+          }
+        ],
+        "latexPost": "\\end{document}",
+        "latexPre": "\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage[utf8]{inputenc}\n\\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\\begin{document}\n",
+        "name": "ML Interview Flashcard",
+        "req": [
+          [0, "all"]
+        ],
+        "sortf": 0,
+        "tags": [],
+        "tmpls": [
+          {
+            "__type__": "CardTemplate",
+            "afmt": "{{FrontSide}}\n\n<hr id=answer>\n\n<div class=\"back\">\n{{Back}}\n</div>",
+            "bafmt": "",
+            "bqfmt": "",
+            "did": null,
+            "name": "Card 1",
+            "ord": 0,
+            "qfmt": "<div class=\"front\">{{Front}}</div>"
+          }
+        ],
+        "type": 0
+      }
+    ],
+    "notes": [
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-llm-pretrain-01",
+        "fields": [
+          "What are weight parameters in the context of LLMs?",
+          "<div class=\"concept\">Concept: Trainable parameters in deep learning models that are adjusted during training to minimize loss.</div><div class=\"intuition\">Intuition: Like knobs on a machine that get tuned based on examples to improve performance.</div><div class=\"mechanics\">Mechanics: Stored in layers like linear or embedding in PyTorch; accessed via .weight or model.parameters().</div><div class=\"tradeoffs\">Trade-offs: More parameters increase capacity but raise computational costs and overfitting risk.</div><div class=\"applications\">Applications: Used in attention mechanisms and overall LLM architecture for text generation.</div><div class=\"memory-hook\">Memory Hook: Weights = Adjustable 'wires' in the neural net brain.</div>",
+          "ML LLM Weights Easy",
+          "Easy"
+        ],
+        "flags": 0,
+        "guid": "guid-llm-pretrain-01",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Pretraining", "Easy"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-llm-pretrain-02",
+        "fields": [
+          "Explain the intuition behind evaluating generative text models using loss.",
+          "<div class=\"concept\">Concept: Numerical assessment of generated text quality by measuring prediction error against targets.</div><div class=\"intuition\">Intuition: Like grading how close a student's answers are to the correct ones in a test.</div><div class=\"mechanics\">Mechanics: Compute cross-entropy loss on logits vs. shifted target tokens.</div><div class=\"tradeoffs\">Trade-offs: Low loss indicates good fit but may signal overfitting if not generalized.</div><div class=\"applications\">Applications: Monitoring training progress in LLMs like GPT.</div><div class=\"memory-hook\">Memory Hook: Loss = Distance from perfect prediction.</div>",
+          "ML LLM Evaluation Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-llm-pretrain-02",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Evaluation", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-llm-pretrain-03",
+        "fields": [
+          "What is cross-entropy loss in LLM training?",
+          "<div class=\"concept\">Concept: Measure of difference between predicted and true token probability distributions.</div><div class=\"intuition\">Intuition: Quantifies surprise or uncertainty in predictions.</div><div class=\"mechanics\">Mechanics: -avg(log(p_target)); in PyTorch, F.cross_entropy on flattened logits and targets.</div><div class=\"tradeoffs\">Trade-offs: Sensitive to class imbalance; alternatives like focal loss for hard examples.</div><div class=\"applications\">Applications: Next-token prediction in autoregressive models.</div><div class=\"memory-hook\">Memory Hook: Cross-entropy = How 'cross' the model is at wrong guesses.</div>",
+          "ML LLM Loss Easy",
+          "Easy"
+        ],
+        "flags": 0,
+        "guid": "guid-llm-pretrain-03",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Loss", "Easy"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-llm-pretrain-04",
+        "fields": [
+          "How do you compute perplexity from cross-entropy loss?",
+          "<div class=\"concept\">Concept: Exponential of cross-entropy loss, measuring model uncertainty.</div><div class=\"intuition\">Intuition: Effective vocabulary size the model is 'confused' about.</div><div class=\"mechanics\">Mechanics: ppl = exp(loss); lower is better.</div><div class=\"tradeoffs\">Trade-offs: Interpretable but exponential scale amplifies small loss differences.</div><div class=\"applications\">Applications: Comparing language models' predictive power.</div><div class=\"memory-hook\">Memory Hook: Perplexity = How 'perplexed' the model is (exp(loss)).</div>",
+          "ML LLM Perplexity Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-llm-pretrain-04",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Perplexity", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-llm-pretrain-05",
+        "fields": [
+          "Describe the mechanics of preparing datasets for LLM pretraining.",
+          "<div class=\"concept\">Concept: Splitting text into train/val sets and creating batched loaders.</div><div class=\"intuition\">Intuition: Dividing a book into chapters for study and practice quizzes.</div><div class=\"mechanics\">Mechanics: Tokenize, split (e.g., 90/10), use dataloaders with batch_size, max_length, stride.</div><div class=\"tradeoffs\">Trade-offs: Small datasets cause overfitting; large ones require more compute.</div><div class=\"applications\">Applications: Pretraining on books like from Project Gutenberg.</div><div class=\"memory-hook\">Memory Hook: Dataset prep = Slicing text cake into train/val pieces.</div>",
+          "ML LLM DataPrep Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-llm-pretrain-05",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "DataPrep", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-llm-pretrain-06",
+        "fields": [
+          "What are the trade-offs in choosing batch sizes for LLM training?",
+          "<div class=\"concept\">Concept: Number of samples processed before weight update.</div><div class=\"intuition\">Intuition: Larger batches average noise but need more memory.</div><div class=\"mechanics\">Mechanics: In dataloaders, e.g., batch_size=2 for small data, 1024+ in practice.</div><div class=\"tradeoffs\">Trade-offs: Large: stable gradients but high memory/GPU use; small: noisy but efficient.</div><div class=\"applications\">Applications: Scaling to large datasets in distributed training.</div><div class=\"memory-hook\">Memory Hook: Batch size = Plate size at buffet; bigger fills faster but heavier.</div>",
+          "ML LLM BatchSize Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-llm-pretrain-06",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Training", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-llm-pretrain-07",
+        "fields": [
+          "Explain the training loop for pretraining an LLM.",
+          "<div class=\"concept\">Concept: Iterative process to minimize loss over epochs using optimizer.</div><div class=\"intuition\">Intuition: Repeated practice sessions adjusting based on errors.</div><div class=\"mechanics\">Mechanics: For each epoch/batch: zero_grad, compute loss, backward, step; evaluate periodically.</div><div class=\"tradeoffs\">Trade-offs: More epochs improve fit but risk overfitting/compute cost.</div><div class=\"applications\">Applications: Pretraining GPT on unlabeled text.</div><div class=\"memory-hook\">Memory Hook: Training loop = Gym workout routine for model muscles.</div>",
+          "ML LLM TrainingLoop Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-llm-pretrain-07",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Training", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-llm-pretrain-08",
+        "fields": [
+          "What is greedy decoding in text generation?",
+          "<div class=\"concept\">Concept: Selecting the token with the highest probability at each step.</div><div class=\"intuition\">Intuition: Always picking the most obvious next word.</div><div class=\"mechanics\">Mechanics: Use torch.argmax on softmax(logits).</div><div class=\"tradeoffs\">Trade-offs: Deterministic and coherent but lacks diversity, often repetitive.</div><div class=\"applications\">Applications: Baseline for LLM output generation.</div><div class=\"memory-hook\">Memory Hook: Greedy = Grabbing the biggest cookie first every time.</div>",
+          "ML LLM Decoding Easy",
+          "Easy"
+        ],
+        "flags": 0,
+        "guid": "guid-llm-pretrain-08",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Decoding", "Easy"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-llm-pretrain-09",
+        "fields": [
+          "How does temperature scaling affect text generation?",
+          "<div class=\"concept\">Concept: Dividing logits by a temperature value before softmax.</div><div class=\"intuition\">Intuition: Controls 'randomness' in sampling; high temp = more creative, low = more focused.</div><div class=\"mechanics\">Mechanics: logits / T; T>1 uniform, T<1 peaky; then multinomial sample.</div><div class=\"tradeoffs\">Trade-offs: High: diverse but nonsensical; low: repetitive but coherent.</div><div class=\"applications\">Applications: Creative writing (high T), factual Q&A (low T).</div><div class=\"memory-hook\">Memory Hook: Temperature = Heat level; hot = wild ideas, cold = sharp focus.</div>",
+          "ML LLM Temperature Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-llm-pretrain-09",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Decoding", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-llm-pretrain-10",
+        "fields": [
+          "Describe top-k sampling and its role in decoding.",
+          "<div class=\"concept\">Concept: Restricting sampling to top k probable tokens, masking others.</div><div class=\"intuition\">Intuition: Choosing from the best few options to avoid silly mistakes.</div><div class=\"mechanics\">Mechanics: torch.topk(logits, k); mask below min with -inf; softmax then sample.</div><div class=\"tradeoffs\">Trade-offs: Reduces nonsense but limits creativity if k too small.</div><div class=\"applications\">Applications: Combined with temperature for balanced generation.</div><div class=\"memory-hook\">Memory Hook: Top-k = Picking from top k students for team, not the whole class.</div>",
+          "ML LLM TopK Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-llm-pretrain-10",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Decoding", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-llm-pretrain-11",
+        "fields": [
+          "Compare greedy decoding, temperature scaling, and top-k sampling.",
+          "<div class=\"concept\">Concept: Strategies for selecting next tokens in generation.</div><div class=\"intuition\">Intuition: Greedy: safe path; temperature: adjust adventure; top-k: gated options.</div><div class=\"mechanics\">Mechanics: Greedy: argmax; Temp: scale+multinomial; Top-k: mask+sample.</div><div class=\"tradeoffs\">Trade-offs: Greedy deterministic; others add variety but risk incoherence.</div><div class=\"applications\">Applications: Greedy for precision, others for creativity in chatbots.</div><div class=\"memory-hook\">Memory Hook: Decoding strategies = Routes on a map: straight, scenic, or top paths.</div>",
+          "ML LLM DecodingCompare Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-llm-pretrain-11",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Decoding", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-llm-pretrain-12",
+        "fields": [
+          "How do you save and load model weights in PyTorch for LLMs?",
+          "<div class=\"concept\">Concept: Persisting trained parameters for reuse.</div><div class=\"intuition\">Intuition: Saving a snapshot of the model's 'knowledge'.</div><div class=\"mechanics\">Mechanics: torch.save(model.state_dict()); model.load_state_dict(torch.load()).</div><div class=\"tradeoffs\">Trade-offs: Saves time but large files; include optimizer for continuation.</div><div class=\"applications\">Applications: Checkpointing during long pretraining.</div><div class=\"memory-hook\">Memory Hook: Save/load = Bookmarking a book's progress.</div>",
+          "ML LLM WeightsSave Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-llm-pretrain-12",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Weights", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-llm-pretrain-13",
+        "fields": [
+          "What is the process for loading pretrained GPT-2 weights from OpenAI?",
+          "<div class=\"concept\">Concept: Transferring shared model parameters into custom implementation.</div><div class=\"intuition\">Intuition: Importing a pre-built engine into your car design.</div><div class=\"mechanics\">Mechanics: Download files, map params to model layers using assign function.</div><div class=\"tradeoffs\">Trade-offs: Saves training cost but requires matching architectures.</div><div class=\"applications\">Applications: Starting point for fine-tuning on custom tasks.</div><div class=\"memory-hook\">Memory Hook: Loading weights = Plugging in a pre-charged battery.</div>",
+          "ML LLM PretrainedLoad Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-llm-pretrain-13",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Pretrained", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-llm-pretrain-14",
+        "fields": [
+          "Why might an LLM overfit during pretraining on small datasets?",
+          "<div class=\"concept\">Concept: Model memorizes training data instead of generalizing.</div><div class=\"intuition\">Intuition: Like memorizing answers without understanding questions.</div><div class=\"mechanics\">Mechanics: Diverging train/val losses; verbatim text reproduction.</div><div class=\"tradeoffs\">Trade-offs: Good on train but poor on new data; mitigated by larger datasets.</div><div class=\"applications\">Applications: Detected in small corpus like single short story.</div><div class=\"memory-hook\">Memory Hook: Overfit = Parrot repeating words without comprehension.</div>",
+          "ML LLM Overfit Hard",
+          "Hard"
+        ],
+        "flags": 0,
+        "guid": "guid-llm-pretrain-14",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Training", "Hard"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-llm-pretrain-15",
+        "fields": [
+          "Discuss the mathematical reasoning behind temperature scaling.",
+          "<div class=\"concept\">Concept: Adjusting logit sharpness for probability distribution.</div><div class=\"intuition\">Intuition: Softens or sharpens confidence in predictions.</div><div class=\"mechanics\">Mechanics: p = softmax(logits / T); T->0 approaches argmax, T->inf uniform.</div><div class=\"tradeoffs\">Trade-offs: Optimizes diversity vs. quality; edge cases like T=0 deterministic.</div><div class=\"applications\">Applications: Tuning for creative vs. precise generation.</div><div class=\"memory-hook\">Memory Hook: Temp scaling = Thermostat for probability 'climate'.</div>",
+          "ML LLM TempMath Hard",
+          "Hard"
+        ],
+        "flags": 0,
+        "guid": "guid-llm-pretrain-15",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Decoding", "Hard"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-llm-pretrain-16",
+        "fields": [
+          "How does backpropagation relate to maximizing target token probabilities?",
+          "<div class=\"concept\">Concept: Algorithm to compute gradients for weight updates.</div><div class=\"intuition\">Intuition: Backward pass to trace errors and adjust causes.</div><div class=\"mechanics\">Mechanics: loss.backward() computes dL/dw; optimizer.step() updates.</div><div class=\"tradeoffs\">Trade-offs: Efficient but vanishes/explodes in deep nets; use residuals.</div><div class=\"applications\">Applications: Training LLMs to increase p(target).</div><div class=\"memory-hook\">Memory Hook: Backprop = Rewinding a movie to fix plot holes.</div>",
+          "ML LLM Backprop Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-llm-pretrain-16",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Training", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-llm-pretrain-17",
+        "fields": [
+          "What are connections between cross-entropy loss and information theory?",
+          "<div class=\"concept\">Concept: Cross-entropy as expected bits needed to encode true dist with predicted.</div><div class=\"intuition\">Intuition: Measures inefficiency in model's 'code' for data.</div><div class=\"mechanics\">Mechanics: H(p,q) = -sum p log q; for one-hot, -log q_target.</div><div class=\"tradeoffs\">Trade-offs: Assumes independence; extensions for sequences.</div><div class=\"applications\">Applications: Language modeling where perplexity = 2^H.</div><div class=\"memory-hook\">Memory Hook: Cross-entropy = Extra 'talk' needed due to wrong assumptions.</div>",
+          "ML LLM LossTheory Hard",
+          "Hard"
+        ],
+        "flags": 0,
+        "guid": "guid-llm-pretrain-17",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Theory", "Hard"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-llm-pretrain-18",
+        "fields": [
+          "Explain why AdamW is preferred over Adam for LLM training.",
+          "<div class=\"concept\">Concept: Variant of Adam with decoupled weight decay.</div><div class=\"intuition\">Intuition: Better regularization by applying decay directly to weights.</div><div class=\"mechanics\">Mechanics: torch.optim.AdamW; decay penalizes large weights.</div><div class=\"tradeoffs\">Trade-offs: Improves generalization but tuning decay rate needed.</div><div class=\"applications\">Applications: Standard in transformer training like GPT.</div><div class=\"memory-hook\">Memory Hook: AdamW = Adam with 'Weight watch' for slimmer models.</div>",
+          "ML LLM Optimizer Medium",
+          "Medium"
+        ],
+        "flags": 0,
+        "guid": "guid-llm-pretrain-18",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Optimization", "Medium"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-llm-pretrain-19",
+        "fields": [
+          "What edge cases arise in top-k sampling with small k?",
+          "<div class=\"concept\">Concept: Limiting to top k can cause mode collapse or repetition.</div><div class=\"intuition\">Intuition: Too restrictive menu leads to boring meals.</div><div class=\"mechanics\">Mechanics: If k=1, equals greedy; small k ignores rare but correct tokens.</div><div class=\"tradeoffs\">Trade-offs: Avoids garbage but reduces diversity in low-prob domains.</div><div class=\"applications\">Applications: Fine-tuned with nucleus sampling alternatives.</div><div class=\"memory-hook\">Memory Hook: Small k = Tiny toolbox; can't fix complex problems.</div>",
+          "ML LLM TopKEdge Hard",
+          "Hard"
+        ],
+        "flags": 0,
+        "guid": "guid-llm-pretrain-19",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Decoding", "Hard"]
+      },
+      {
+        "__type__": "Note",
+        "crowdanki_uuid": "note-llm-pretrain-20",
+        "fields": [
+          "How does context length affect LLM pretraining?",
+          "<div class=\"concept\">Concept: Maximum tokens the model can process at once.</div><div class=\"intuition\">Intuition: Window size for viewing text; larger sees more context.</div><div class=\"mechanics\">Mechanics: Set in config; GPT-2 uses 1024 vs. reduced 256 for efficiency.</div><div class=\"tradeoffs\">Trade-offs: Longer: better long-range deps but higher compute/memory.</div><div class=\"applications\">Applications: Adjusted for hardware in training/fine-tuning.</div><div class=\"memory-hook\">Memory Hook: Context length = Attention span of the model.</div>",
+          "ML LLM Context Easy",
+          "Easy"
+        ],
+        "flags": 0,
+        "guid": "guid-llm-pretrain-20",
+        "note_model_uuid": "ml-interview-flashcard-model",
+        "tags": ["ML", "LLM", "Config", "Easy"]
+      }
+    ]
+  }
